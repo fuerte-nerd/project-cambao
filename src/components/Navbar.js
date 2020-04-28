@@ -1,6 +1,13 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Box, AppBar, Toolbar, IconButton, Typography } from "@material-ui/core"
+import {
+  Hidden,
+  Box,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+} from "@material-ui/core"
 import { Menu } from "@material-ui/icons"
 import Img from "gatsby-image"
 
@@ -9,7 +16,7 @@ const Navbar = () => {
     {
       file(name: { eq: "logo" }, sourceInstanceName: { eq: "images" }) {
         childImageSharp {
-          fixed(height: 70, width: 70) {
+          fixed(height: 40, width: 40) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -20,15 +27,18 @@ const Navbar = () => {
   return (
     <AppBar>
       <Toolbar>
-        <IconButton>
-          <Menu />
-        </IconButton>
         <Box my={1}>
           <Img fixed={data.file.childImageSharp.fixed} />
         </Box>
-        <Typography variant="h5" variantMapping={{ h5: "h1" }}>
-          FDR
-        </Typography>
+        <Hidden xsDown>
+          <Typography variant="h5" variantMapping={{ h5: "h1" }}>
+            FDR
+          </Typography>
+        </Hidden>
+        <Box style={{ flex: 1 }} />
+        <IconButton color="inherit" edge="end">
+          <Menu />
+        </IconButton>
       </Toolbar>
     </AppBar>
   )
