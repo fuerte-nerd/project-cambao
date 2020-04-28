@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Box } from "@material-ui/core"
-
+import { Box, ThemeProvider } from "@material-ui/core"
+import theme from "./theme"
 import Navbar from "./Navbar"
 
 const Layout = ({ children }) => {
@@ -17,10 +17,10 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Navbar />
       <main>{children}</main>
-    </>
+    </ThemeProvider>
   )
 }
 
