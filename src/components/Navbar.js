@@ -25,7 +25,7 @@ const Navbar = () => {
     }
   `)
   return (
-    <AppBar>
+    <AppBar color="primaryDark">
       <Toolbar>
         <Box display="flex">
           <Img fixed={data.file.childImageSharp.fixed} />

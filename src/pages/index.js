@@ -9,7 +9,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Box
-      bgcolor="primary.light"
+      bgcolor="primary.main"
       minWidth="100vw"
       minHeight="100vh"
       display="flex"
