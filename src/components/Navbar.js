@@ -27,13 +27,15 @@ const Navbar = () => {
   return (
     <AppBar>
       <Toolbar>
-        <Box display="flex" height="100%" justifyContent="center">
+        <Box display="flex">
           <Img fixed={data.file.childImageSharp.fixed} />
         </Box>
         <Hidden xsDown>
-          <Typography variant="h5" variantMapping={{ h5: "h1" }}>
-            FDR
-          </Typography>
+          <Box ml={2}>
+            <Typography variant="h5" variantMapping={{ h5: "h1" }}>
+              Fuerteventura Dog Rescue
+            </Typography>
+          </Box>
         </Hidden>
         <Box style={{ flex: 1 }} />
         <IconButton color="inherit" edge="end">
