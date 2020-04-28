@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <AppBar>
       <Toolbar>
-        <Box my={1}>
+        <Box display="flex" height="100%" justifyContent="center">
           <Img fixed={data.file.childImageSharp.fixed} />
         </Box>
         <Hidden xsDown>
