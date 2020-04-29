@@ -41,14 +41,14 @@ const IndexPage = () => {
           <Grid item xs={12} md={6}>
             <BackgroundImage
               fluid={data.file.childImageSharp.fluid}
-              style={{ height: "100vh", width: "100%" }}
+              style={{ height: "100vh" }}
             ></BackgroundImage>
           </Grid>
 
           <Grid item xs={12} md={6}>
             <Container>
               <Paper>
-                <Box p={3}>
+                <Box>
                   <Typography>Hello</Typography>
                 </Box>
               </Paper>
