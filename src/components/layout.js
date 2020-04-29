@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
         <Navbar siteTitle={data.site.siteMetadata.title} />
         <NavMenu />
         <Box
-          bgcolor="secondary.main"
+          bgcolor="#fafafa"
           display="flex"
           flexDirection="column"
           alignItems="center"
