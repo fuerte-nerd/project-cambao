@@ -30,17 +30,26 @@ const NavMenu = () => {
       >
         <Box>
           <List>
-            <ListItem>
-              <ListItemText>Home</ListItemText>
+            <ListItem button>
+              <ListItemText
+                primary="Home"
+                secondary="Latest news and articles"
+              />
             </ListItem>
-            <ListItem>
-              <ListItemText>The Dogs</ListItemText>
+            <ListItem button>
+              <ListItemText
+                primary="The Dogs"
+                secondary="Meet our current guests"
+              />
             </ListItem>
-            <ListItem>
-              <ListItemText>Who are we?</ListItemText>
+            <ListItem button>
+              <ListItemText primary="Who are we?" secondary="Get to know us" />
             </ListItem>
-            <ListItem>
-              <ListItemText onClick={handleClick}>Help us</ListItemText>
+            <ListItem onClick={handleClick} button>
+              <ListItemText
+                primary="Help us"
+                secondary="Find out how you can help"
+              />
               {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={helpUsOpen}>
@@ -56,9 +65,12 @@ const NavMenu = () => {
                 </ListItem>
               </List>
             </Collapse>
-            <ListItem>
-              <ListItemText>Contact</ListItemText>
-            </ListItem>
+            <ListItem Button>
+              <ListItemText
+                primary="Contact"
+                secondary="Get in touch with us"
+              />
+            
           </List>
         </Box>
       </Box>
