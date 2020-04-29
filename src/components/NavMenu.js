@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import {
@@ -26,6 +26,12 @@ const NavMenu = props => {
         return
     }
   }
+
+  useEffect(() => {
+    if (!props.isOpen) {
+      setHelpUsOpen(false)
+    }
+  }, [props.isOpen])
 
   return (
     <Dialog open={props.isOpen} fullScreen>
@@ -65,20 +71,29 @@ const NavMenu = props => {
             </ListItem>
             <Collapse in={helpUsOpen}>
               <List dense>
-                <ListItem button divider alignItems="center">
+                <ListItem button divider>
                   <ListItemText
                     primary="Adopt"
-                    style={{ display: "block", textAlign: "center" }}
+                    style={{ textAlign: "center" }}
                   />
                 </ListItem>
                 <ListItem button divider>
-                  <ListItemText primary="Foster" />
+                  <ListItemText
+                    primary="Foster"
+                    style={{ textAlign: "center" }}
+                  />
                 </ListItem>
                 <ListItem button divider>
-                  <ListItemText primary="Donate" />
+                  <ListItemText
+                    primary="Donate"
+                    style={{ textAlign: "center" }}
+                  />
                 </ListItem>
                 <ListItem button>
-                  <ListItemText primary="Volunteer" />
+                  <ListItemText
+                    primary="Volunteer"
+                    style={{ textAlign: "center" }}
+                  />
                 </ListItem>
               </List>
             </Collapse>
