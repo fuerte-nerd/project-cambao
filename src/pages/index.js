@@ -28,7 +28,12 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Box bgcolor="secondary.main" minHeight="100vh">
+      <Box
+        bgcolor="secondary.main"
+        minHeight="100vh"
+        width="100vw"
+        style={{ overflow: "hidden" }}
+      >
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Img
