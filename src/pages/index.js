@@ -40,55 +40,59 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Grid container>
         <Grid item xs={12} md={10} justify="center">
-          <Container>
-            <Box my={2} align="center" width="100%">
-              <Img
-                fluid={data.logo.childImageSharp.fluid}
-                style={{
-                  maxWidth: 205,
-                }}
-              />
-            </Box>
-            <Typography variant="h2" align="center">
-              Latest news
-            </Typography>
-          </Container>
+          <Box bgcolor="primary.main">
+            <Container>
+              <Box py={2} align="center" width="100%">
+                <Img
+                  fluid={data.logo.childImageSharp.fluid}
+                  style={{
+                    maxWidth: 205,
+                  }}
+                />
+              </Box>
+              <Typography variant="h2" align="center">
+                Latest news
+              </Typography>
+            </Container>
+          </Box>
         </Grid>
         <Hidden smDown>
           <Grid item xs={0} md={2}>
-            <List>
-              <ListSubheader>Site Updates</ListSubheader>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-            </List>
+            <Box bgcolor="secondary.dark">
+              <List>
+                <ListSubheader>Site Updates</ListSubheader>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+              </List>
+            </Box>
           </Grid>
         </Hidden>
       </Grid>
