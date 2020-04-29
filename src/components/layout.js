@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
           flexDirection="column"
           alignItems="center"
           justifyContent="center"
-          maxWidth="100%"
+          width="100vw"
           minHeight="100vh"
           component="main"
         >
