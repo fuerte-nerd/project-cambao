@@ -49,7 +49,9 @@ const IndexPage = () => {
                 }}
               />
             </Box>
-            <Typography variant="h2">Latest news</Typography>
+            <Typography variant="h2" align="center">
+              Latest news
+            </Typography>
           </Container>
         </Grid>
         <Hidden smDown>
