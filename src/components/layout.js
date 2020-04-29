@@ -6,6 +6,7 @@ import { Box, CssBaseline } from "@material-ui/core"
 import { ThemeProvider } from "@material-ui/core/styles"
 import theme from "./theme"
 import Navbar from "./Navbar"
+import NavMenu from "./NavMenu"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <CssBaseline>
         <Navbar />
+        <NavMenu />
         <main>{children}</main>
       </CssBaseline>
     </ThemeProvider>
