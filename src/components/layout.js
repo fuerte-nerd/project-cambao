@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Box, CssBaseline } from "@material-ui/core"
+import { Toolbar, CssBaseline } from "@material-ui/core"
 import { ThemeProvider } from "@material-ui/core/styles"
 import theme from "./theme"
 import Navbar from "./Navbar"
@@ -30,7 +30,11 @@ const Layout = ({ children }) => {
       <CssBaseline>
         <Navbar siteTitle={data.site.siteMetadata.title} />
         <NavMenu />
-        <main>{children}</main>
+        <main>
+          <Toolbar />
+          {children}
+          <Toolbar />
+        </main>
       </CssBaseline>
     </ThemeProvider>
   )
