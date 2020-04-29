@@ -12,6 +12,8 @@ import {
   GridListTile,
 } from "@material-ui/core"
 
+import BackgroundImage from "gatsby-background-image"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -20,7 +22,7 @@ const IndexPage = () => {
     {
       dog1: file(name: { eq: "test" }) {
         childImageSharp {
-          fluid(maxWidth: 600, maxHeight: 600) {
+          fluid(maxWidth: 2000, maxHeight: 2000, quality: 35) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -44,6 +46,12 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <Box minWidth="100vw" minHeight="100vh">
+        <BackgroundImage
+          fluid={data.dog1.childImageSharp.fluid}
+          style={{ width: "100%", height: "100%" }}
+        ></BackgroundImage>
+      </Box>
       <Grid container alignItems="center">
         <Grid item xs={12} md={7}>
           <Container>
