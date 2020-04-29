@@ -59,8 +59,13 @@ const NavMenu = props => {
         bgcolor="primary.light"
         color="inherit"
       >
-        <Box width="90vw" maxWidth={600}>
-          <List>
+        <Box
+          width="90vw"
+          maxWidth={400}
+          border={1}
+          borderColor="text.secondary"
+        >
+          <List dense>
             <ListItem button divider>
               <ListItemText
                 primary="Home"
