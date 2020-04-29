@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import {
   Paper,
   Box,
@@ -8,7 +9,6 @@ import {
   Button,
   Container,
 } from "@material-ui/core"
-import BackgroundImage from "gatsby-background-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -39,18 +39,28 @@ const IndexPage = () => {
       >
         <Grid container>
           <Grid item xs={12} md={6}>
-            <BackgroundImage
+            <Img
               fluid={data.file.childImageSharp.fluid}
-              style={{ height: "100vh", overflow: "hidden" }}
-            ></BackgroundImage>
+              style={{ maxHeight: "100vh" }}
+            />
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Paper>
-              <Box>
-                <Typography>Hello</Typography>
-              </Box>
-            </Paper>
+            <Container>
+              <Paper>
+                <Box>
+                  <Typography>
+                    Sit libero saepe quis autem dolorem dolore Quaerat velit
+                    atque esse itaque assumenda A saepe architecto repudiandae
+                    amet doloribus Quis earum quae odio nemo debitis? Harum
+                    quidem non vero assumenda at quo, mollitia. Voluptas
+                    voluptatum laudantium repellendus delectus delectus. Quas
+                    eaque dignissimos in earum magni Odit sequi sint similique
+                    ullam.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Container>
           </Grid>
         </Grid>
       </Box>
