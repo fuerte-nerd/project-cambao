@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Box, Typography, Button } from "@material-ui/core"
+import { Paper, Box, Typography, Button, Container } from "@material-ui/core"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -17,14 +17,13 @@ const IndexPage = () => (
       alignItems="center"
       justifyContent="center"
     >
-      <Box>
-        <Typography></Typography>
-      </Box>
-      <Box>
-        <Typography></Typography>
-        <Typography></Typography>
-        <Button></Button>
-      </Box>
+      <Container>
+        <Paper>
+          <Container>
+            <Typography>Hello</Typography>
+          </Container>
+        </Paper>
+      </Container>
     </Box>
   </Layout>
 )
