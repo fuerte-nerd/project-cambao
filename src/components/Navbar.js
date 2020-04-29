@@ -1,4 +1,6 @@
 import React from "react"
+import { connect } from "react-redux"
+import { setMenu } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
   Hidden,
@@ -11,7 +13,17 @@ import {
 import { Menu } from "@material-ui/icons"
 import Img from "gatsby-image"
 
-const Navbar = () => {
+const Navbar = props => {
+  const handleClick = e => {
+    const f = e.currentTarget
+    switch (f.id) {
+      case "open-menu":
+        return props.dispatch(setMenu(true))
+      default:
+        return
+    }
+  }
+
   const data = useStaticQuery(graphql`
     {
       file(name: { eq: "logo" }, sourceInstanceName: { eq: "images" }) {
@@ -38,7 +50,12 @@ const Navbar = () => {
           </Box>
         </Hidden>
         <Box style={{ flex: 1 }} />
-        <IconButton color="inherit" edge="end">
+        <IconButton
+          onClick={handleClick}
+          id="open-menu"
+          color="inherit"
+          edge="end"
+        >
           <Menu />
         </IconButton>
       </Toolbar>
@@ -46,4 +63,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default connect()(Navbar)
