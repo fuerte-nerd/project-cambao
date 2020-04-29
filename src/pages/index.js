@@ -2,15 +2,15 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import {
-  Paper,
-  Dialog,
+  Hidden,
+  List,
+  ListSubheader,
+  ListItem,
+  ListItemText,
   Box,
   Grid,
   Typography,
-  Button,
   Container,
-  GridList,
-  GridListTile,
 } from "@material-ui/core"
 
 import BackgroundImage from "gatsby-background-image"
@@ -24,13 +24,6 @@ const IndexPage = () => {
       dog1: file(name: { eq: "test" }) {
         childImageSharp {
           fluid(maxWidth: 2000, maxHeight: 2000, quality: 15) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      dog2: file(name: { eq: "test" }) {
-        childImageSharp {
-          fluid(maxWidth: 600, maxHeight: 300) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -61,40 +54,43 @@ const IndexPage = () => {
             </Box>
             <Typography></Typography>
           </Grid>
-          <Grid item xs={0} sm={4} md={3}>
-            <List>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
-              </ListItem>
-            </List>
-          </Grid>
+          <Hidden xsDown>
+            <Grid item xs={0} sm={4} md={3}>
+              <List>
+                <ListSubheader>Site Updates</ListSubheader>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+              </List>
+            </Grid>
+          </Hidden>
         </Grid>
       </Container>
     </Layout>
