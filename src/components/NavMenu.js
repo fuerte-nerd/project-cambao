@@ -13,6 +13,10 @@ import {
 } from "@material-ui/core"
 import { Close, ExpandMore, ExpandLess } from "@material-ui/icons"
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />
+})
+
 const NavMenu = props => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
 
@@ -37,10 +41,6 @@ const NavMenu = props => {
       setHelpUsOpen(false)
     }
   }, [props.isOpen])
-
-  const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />
-  })
 
   return (
     <Dialog
