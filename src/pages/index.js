@@ -18,9 +18,23 @@ import SEO from "../components/seo"
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     {
-      file(name: { eq: "test" }) {
+      dog1: file(name: { eq: "test" }) {
         childImageSharp {
           fluid(maxWidth: 600, maxHeight: 600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      dog2: file(name: { eq: "test" }) {
+        childImageSharp {
+          fluid(maxWidth: 600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      logo: file(name: { eq: "logo" }) {
+        childImageSharp {
+          fluid(maxWidth: 300, maxHeight: 300) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -46,17 +60,17 @@ const IndexPage = () => {
                 cols={2}
                 style={{ maxWidth: 650, overflow: "hidden", margin: "auto" }}
               >
-                <GridListTile>
-                  <Img fluid={data.file.childImageSharp.fluid} />
+                <GridListTile cols={2}>
+                  <Img
+                    fluid={data.logo.childImageSharp.fluid}
+                    style={{ margin: 10 }}
+                  />
                 </GridListTile>
                 <GridListTile>
-                  <Img fluid={data.file.childImageSharp.fluid} />
+                  <Img fluid={data.dog1.childImageSharp.fluid} />
                 </GridListTile>
                 <GridListTile>
-                  <Img fluid={data.file.childImageSharp.fluid} />
-                </GridListTile>
-                <GridListTile>
-                  <Img fluid={data.file.childImageSharp.fluid} />
+                  <Img fluid={data.dog1.childImageSharp.fluid} />
                 </GridListTile>
               </GridList>
             </Box>
