@@ -4,6 +4,7 @@ import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
   Hidden,
+  Divider,
   Box,
   AppBar,
   Toolbar,
@@ -50,9 +51,10 @@ const Navbar = props => {
           </Box>
         </Hidden>
         <Box style={{ flex: 1 }} />
-        <IconButton size="small" color="inherit" style={{ fontSize: "1rem" }}>
-          <Chat />
+        <IconButton color="inherit">
+          <Chat style={{ fontSize: "1rem" }} />
         </IconButton>
+        <Divider flexItem orientation="vertical" variant="middle" />
         <IconButton
           onClick={handleClick}
           id="open-menu"
