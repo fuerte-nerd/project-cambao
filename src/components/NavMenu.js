@@ -44,7 +44,7 @@ const NavMenu = props => {
 
   return (
     <Dialog
-      transition={Slide}
+      TransitionComponent={Transition}
       open={props.isOpen}
       onClose={handleClose}
       fullScreen
