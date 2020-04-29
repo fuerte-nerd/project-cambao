@@ -39,6 +39,7 @@ const Layout = ({ children }) => {
           maxWidth="100%"
           minHeight="100vh"
           component="main"
+          py={2}
         >
           <Toolbar />
           {children}
