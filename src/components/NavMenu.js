@@ -39,7 +39,7 @@ const NavMenu = props => {
         bgcolor="primary.light"
         color="inherit"
       >
-        <Box width="90vw" maxWidth="md">
+        <Box width="90vw" maxWidth={600}>
           <List>
             <ListItem button divider>
               <ListItemText
@@ -65,7 +65,7 @@ const NavMenu = props => {
             </ListItem>
             <Collapse in={helpUsOpen}>
               <List dense>
-                <ListItem button divider>
+                <ListItem button divider alignItems="center">
                   <ListItemText primary="Adopt" />
                 </ListItem>
                 <ListItem button divider>
