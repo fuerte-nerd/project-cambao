@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import {
+  Divider,
   Hidden,
   List,
   ListSubheader,
@@ -39,30 +40,11 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Grid container>
-        <Grid item xs={12} md={10} justify="center">
-          <Box bgcolor="primary.main">
-            <Container>
-              <Box py={2} align="center" width="100%">
-                <Img
-                  fluid={data.logo.childImageSharp.fluid}
-                  style={{
-                    maxWidth: 205,
-                  }}
-                />
-              </Box>
-              <Typography variant="h2" align="center">
-                Latest news
-              </Typography>
-            </Container>
-          </Box>
-        </Grid>
         <Hidden smDown>
           <Grid item xs={0} md={2}>
             <Box bgcolor="primary.light">
               <List>
-                <ListSubheader style={{ textAlign: "center" }}>
-                  Quick Links
-                </ListSubheader>
+                <ListSubheader>Quick Links</ListSubheader>
                 <ListItem>
                   <ListItemText></ListItemText>
                 </ListItem>
@@ -95,8 +77,26 @@ const IndexPage = () => {
                 </ListItem>
               </List>
             </Box>
+            <Divider flexItem orientation="vertical" />
           </Grid>
         </Hidden>
+        <Grid item xs={12} md={10} justify="center">
+          <Box bgcolor="primary.main">
+            <Container>
+              <Box py={2} align="center" width="100%">
+                <Img
+                  fluid={data.logo.childImageSharp.fluid}
+                  style={{
+                    maxWidth: 205,
+                  }}
+                />
+              </Box>
+              <Typography variant="h2" align="center">
+                Latest news
+              </Typography>
+            </Container>
+          </Box>
+        </Grid>
       </Grid>
     </Layout>
   )
