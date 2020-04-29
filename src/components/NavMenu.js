@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   Dialog,
   Box,
@@ -8,9 +8,15 @@ import {
   List,
   Collapse,
 } from "@material-ui/core"
-import { ExpandMore } from "@material-ui/icons"
+import { ExpandMore, ExpandLess } from "@material-ui/icons"
 
 const NavMenu = () => {
+  const [helpUsOpen, setHelpUsOpen] = useState(false)
+
+  const handleClick = () => {
+    setHelpUsOpen(!helpUsOpen)
+  }
+
   return (
     <Dialog open={true} fullScreen>
       <Box
@@ -20,6 +26,7 @@ const NavMenu = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
+        bgcolor="secondary"
       >
         <Box>
           <List>
@@ -33,12 +40,10 @@ const NavMenu = () => {
               <ListItemText>Who are we?</ListItemText>
             </ListItem>
             <ListItem>
-              <ListItemText>Help us</ListItemText>
-              <ListItemIcon>
-                <ExpandMore />
-              </ListItemIcon>
+              <ListItemText onClick={handleClick}>Help us</ListItemText>
+              {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
-            <Collapse in>
+            <Collapse in={helpUsOpen}>
               <List>
                 <ListItem>
                   <ListItemText></ListItemText>
