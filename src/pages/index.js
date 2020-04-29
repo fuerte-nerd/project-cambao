@@ -28,15 +28,22 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Box bgcolor="secondary.main" m={0} maxWidth="100%" minHeight="100vh">
-        <Grid container>
+      <Box
+        bgcolor="secondary.main"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        maxWidth="100%"
+        minHeight="100vh"
+      >
+        <Grid container alignItems="center">
           <Grid item xs={12} md={6}>
             <Img fluid={data.file.childImageSharp.fluid} />
           </Grid>
 
           <Grid item xs={12} md={6}>
             <Container>
-              <Box>
+              <Paper>
                 <Typography align="justify">
                   Sit libero saepe quis autem dolorem dolore Quaerat velit atque
                   esse itaque assumenda A saepe architecto repudiandae amet
@@ -45,7 +52,7 @@ const IndexPage = () => {
                   laudantium repellendus delectus delectus. Quas eaque
                   dignissimos in earum magni Odit sequi sint similique ullam.
                 </Typography>
-              </Box>
+              </Paper>
             </Container>
           </Grid>
         </Grid>
