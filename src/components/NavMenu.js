@@ -66,7 +66,10 @@ const NavMenu = props => {
             <Collapse in={helpUsOpen}>
               <List dense>
                 <ListItem button divider alignItems="center">
-                  <ListItemText primary="Adopt" />
+                  <ListItemText
+                    primary="Adopt"
+                    style={{ display: "block", textAlign: "center" }}
+                  />
                 </ListItem>
                 <ListItem button divider>
                   <ListItemText primary="Foster" />
