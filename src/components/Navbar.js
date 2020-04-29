@@ -10,7 +10,7 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core"
-import { Menu } from "@material-ui/icons"
+import { Menu, Chat } from "@material-ui/icons"
 import Img from "gatsby-image"
 
 const Navbar = props => {
@@ -50,6 +50,9 @@ const Navbar = props => {
           </Box>
         </Hidden>
         <Box style={{ flex: 1 }} />
+        <IconButton size="small" color="inherit" style={{ fontSize: "1rem" }}>
+          <Chat />
+        </IconButton>
         <IconButton
           onClick={handleClick}
           id="open-menu"
