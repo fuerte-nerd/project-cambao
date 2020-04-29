@@ -60,6 +60,7 @@ const NavMenu = props => {
         color="inherit"
       >
         <Box
+          bgcolor="#fafafa"
           width="90vw"
           maxWidth={400}
           border={1}
