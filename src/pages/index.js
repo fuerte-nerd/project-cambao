@@ -38,20 +38,28 @@ const IndexPage = () => {
       >
         <Grid container alignItems="center">
           <Grid item xs={12} md={6}>
-            <Img fluid={data.file.childImageSharp.fluid} />
+            <Box align="center">
+              <Img
+                style={{ maxWidth: 450, borderRadius: "50%" }}
+                fluid={data.file.childImageSharp.fluid}
+              />
+            </Box>
           </Grid>
 
           <Grid item xs={12} md={6}>
             <Container>
               <Paper>
-                <Typography align="justify">
-                  Sit libero saepe quis autem dolorem dolore Quaerat velit atque
-                  esse itaque assumenda A saepe architecto repudiandae amet
-                  doloribus Quis earum quae odio nemo debitis? Harum quidem non
-                  vero assumenda at quo, mollitia. Voluptas voluptatum
-                  laudantium repellendus delectus delectus. Quas eaque
-                  dignissimos in earum magni Odit sequi sint similique ullam.
-                </Typography>
+                <Box p={4}>
+                  <Typography align="justify">
+                    Sit libero saepe quis autem dolorem dolore Quaerat velit
+                    atque esse itaque assumenda A saepe architecto repudiandae
+                    amet doloribus Quis earum quae odio nemo debitis? Harum
+                    quidem non vero assumenda at quo, mollitia. Voluptas
+                    voluptatum laudantium repellendus delectus delectus. Quas
+                    eaque dignissimos in earum magni Odit sequi sint similique
+                    ullam.
+                  </Typography>
+                </Box>
               </Paper>
             </Container>
           </Grid>
