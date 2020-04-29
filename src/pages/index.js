@@ -27,14 +27,14 @@ const IndexPage = () => {
       }
       dog2: file(name: { eq: "test" }) {
         childImageSharp {
-          fluid(maxWidth: 600) {
+          fluid(maxWidth: 600, maxHeight: 300) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       logo: file(name: { eq: "logo" }) {
         childImageSharp {
-          fluid(maxWidth: 300, maxHeight: 300) {
+          fluid(maxWidth: 205, maxHeight: 205) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -61,10 +61,7 @@ const IndexPage = () => {
                 style={{ maxWidth: 650, overflow: "hidden", margin: "auto" }}
               >
                 <GridListTile cols={2}>
-                  <Img
-                    fluid={data.logo.childImageSharp.fluid}
-                    style={{ margin: 10 }}
-                  />
+                  <Img fluid={data.dog2.childImageSharp.fluid} />
                 </GridListTile>
                 <GridListTile>
                   <Img fluid={data.dog1.childImageSharp.fluid} />
@@ -77,6 +74,10 @@ const IndexPage = () => {
           </Grid>
 
           <Grid item xs={12} md={6}>
+            <Img
+              fluid={data.logo.childImageSharp.fluid}
+              style={{ maxWidth: 205, display: "block", margin: "auto" }}
+            />
             <Container>
               <Paper>
                 <Box p={4}>
