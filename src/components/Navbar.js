@@ -51,10 +51,11 @@ const Navbar = props => {
           </Box>
         </Hidden>
         <Box style={{ flex: 1 }} />
-        <IconButton color="inherit">
-          <Chat style={{ fontSize: "1rem" }} />
-        </IconButton>
-        <Divider flexItem orientation="vertical" variant="middle" />
+        <Hidden xsDown>
+          <IconButton color="inherit">
+            <Chat />
+          </IconButton>
+        </Hidden>
         <IconButton
           onClick={handleClick}
           id="open-menu"
