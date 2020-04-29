@@ -38,59 +38,58 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Container>
-        <Grid container>
-          <Grid item xs={12} sm={10} md={9}>
+      <Grid container>
+        <Grid item xs={12} md={10} justify="center">
+          <Container>
             <Box my={2} align="center" width="100%">
               <Img
                 fluid={data.logo.childImageSharp.fluid}
                 style={{
                   maxWidth: 205,
-                  margin: "auto",
                 }}
               />
             </Box>
-            <Typography></Typography>
-          </Grid>
-          <Hidden xsDown>
-            <Grid item xs={0} sm={2} md={3}>
-              <List>
-                <ListSubheader>Site Updates</ListSubheader>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-              </List>
-            </Grid>
-          </Hidden>
+            <Typography variant="h2">Latest news</Typography>
+          </Container>
         </Grid>
-      </Container>
+        <Hidden smDown>
+          <Grid item xs={0} md={2}>
+            <List>
+              <ListSubheader>Site Updates</ListSubheader>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+            </List>
+          </Grid>
+        </Hidden>
+      </Grid>
     </Layout>
   )
 }
