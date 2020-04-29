@@ -45,7 +45,7 @@ const Navbar = props => {
         <Hidden xsDown>
           <Box ml={2}>
             <Typography variant="h6" variantMapping={{ h6: "h1" }}>
-              Fuerteventura Dog Rescue
+              {props.siteTitle}
             </Typography>
           </Box>
         </Hidden>

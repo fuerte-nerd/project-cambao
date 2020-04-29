@@ -28,8 +28,8 @@ const Layout = ({ children }) => {
         />
       </Helmet>
       <CssBaseline>
-        {/*<Navbar /> */}
-        {/*  <NavMenu /> */}
+        <Navbar siteTitle={data.site.siteMetadata.title} />
+        <NavMenu />
         <main>{children}</main>
       </CssBaseline>
     </ThemeProvider>
