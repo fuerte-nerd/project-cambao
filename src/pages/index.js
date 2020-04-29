@@ -30,14 +30,14 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Box
         bgcolor="secondary.main"
-        minWidth="100vw"
+        width="100vw"
         minHeight="100vh"
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
       >
-        <Grid container>
+        <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Img
               fluid={data.file.childImageSharp.fluid}
@@ -47,19 +47,16 @@ const IndexPage = () => {
 
           <Grid item xs={12} md={6}>
             <Container>
-              <Paper>
-                <Box>
-                  <Typography>
-                    Sit libero saepe quis autem dolorem dolore Quaerat velit
-                    atque esse itaque assumenda A saepe architecto repudiandae
-                    amet doloribus Quis earum quae odio nemo debitis? Harum
-                    quidem non vero assumenda at quo, mollitia. Voluptas
-                    voluptatum laudantium repellendus delectus delectus. Quas
-                    eaque dignissimos in earum magni Odit sequi sint similique
-                    ullam.
-                  </Typography>
-                </Box>
-              </Paper>
+              <Box>
+                <Typography>
+                  Sit libero saepe quis autem dolorem dolore Quaerat velit atque
+                  esse itaque assumenda A saepe architecto repudiandae amet
+                  doloribus Quis earum quae odio nemo debitis? Harum quidem non
+                  vero assumenda at quo, mollitia. Voluptas voluptatum
+                  laudantium repellendus delectus delectus. Quas eaque
+                  dignissimos in earum magni Odit sequi sint similique ullam.
+                </Typography>
+              </Box>
             </Container>
           </Grid>
         </Grid>
