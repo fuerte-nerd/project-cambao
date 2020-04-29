@@ -47,16 +47,56 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-
-      <Box mb={2} align="center" width="100%">
-        <Img
-          fluid={data.logo.childImageSharp.fluid}
-          style={{
-            maxWidth: 205,
-            margin: "auto",
-          }}
-        />
-      </Box>
+      <Container>
+        <Grid container>
+          <Grid item xs={12} sm={8} md={9}>
+            <Box mb={2} align="center" width="100%">
+              <Img
+                fluid={data.logo.childImageSharp.fluid}
+                style={{
+                  maxWidth: 205,
+                  margin: "auto",
+                }}
+              />
+            </Box>
+            <Typography></Typography>
+          </Grid>
+          <Grid item xs={0} sm={4} md={3}>
+            <List>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+            </List>
+          </Grid>
+        </Grid>
+      </Container>
     </Layout>
   )
 }
