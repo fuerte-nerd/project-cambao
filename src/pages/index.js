@@ -58,9 +58,11 @@ const IndexPage = () => {
         </Grid>
         <Hidden smDown>
           <Grid item xs={0} md={2}>
-            <Box bgcolor="secondary.dark">
+            <Box bgcolor="primary.light">
               <List>
-                <ListSubheader>Site Updates</ListSubheader>
+                <ListSubheader style={{ textAlign: "center" }}>
+                  Quick Links
+                </ListSubheader>
                 <ListItem>
                   <ListItemText></ListItemText>
                 </ListItem>
