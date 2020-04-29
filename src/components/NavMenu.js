@@ -26,26 +26,26 @@ const NavMenu = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        bgcolor="secondary"
+        bgcolor="secondary.dark"
       >
         <Box>
           <List>
-            <ListItem button>
+            <ListItem button divider>
               <ListItemText
                 primary="Home"
                 secondary="Latest news and articles"
               />
             </ListItem>
-            <ListItem button>
+            <ListItem button divider>
               <ListItemText
                 primary="The Dogs"
                 secondary="Meet our current guests"
               />
             </ListItem>
-            <ListItem button>
+            <ListItem button divider>
               <ListItemText primary="Who are we?" secondary="Get to know us" />
             </ListItem>
-            <ListItem onClick={handleClick} button>
+            <ListItem onClick={handleClick} button divider>
               <ListItemText
                 primary="Help us"
                 secondary="Find out how you can help"
@@ -53,15 +53,18 @@ const NavMenu = () => {
               {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={helpUsOpen}>
-              <List>
-                <ListItem>
-                  <ListItemText></ListItemText>
+              <List dense>
+                <ListItem button divider>
+                  <ListItemText primary="Adopt" />
                 </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
+                <ListItem button divider>
+                  <ListItemText primary="Foster" />
                 </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
+                <ListItem button divider>
+                  <ListItemText primary="Donate" />
+                </ListItem>
+                <ListItem button>
+                  <ListItemText primary="Volunteer" />
                 </ListItem>
               </List>
             </Collapse>
@@ -70,7 +73,7 @@ const NavMenu = () => {
                 primary="Contact"
                 secondary="Get in touch with us"
               />
-            
+            </ListItem>
           </List>
         </Box>
       </Box>
