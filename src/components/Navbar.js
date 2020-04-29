@@ -4,14 +4,13 @@ import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
   Hidden,
-  Divider,
   Box,
   AppBar,
   Toolbar,
   IconButton,
   Typography,
 } from "@material-ui/core"
-import { Menu, Chat } from "@material-ui/icons"
+import { Menu, Facebook, Instagram, Share } from "@material-ui/icons"
 import Img from "gatsby-image"
 
 const Navbar = props => {
@@ -45,15 +44,21 @@ const Navbar = props => {
         </Box>
         <Hidden xsDown>
           <Box ml={2}>
-            <Typography variant="h5" variantMapping={{ h5: "h1" }}>
+            <Typography variant="h6" variantMapping={{ h6: "h1" }}>
               Fuerteventura Dog Rescue
             </Typography>
           </Box>
         </Hidden>
         <Box style={{ flex: 1 }} />
+        <IconButton color="inherit">
+          <Share />
+        </IconButton>
         <Hidden xsDown>
           <IconButton color="inherit">
-            <Chat />
+            <Facebook />
+          </IconButton>
+          <IconButton color="inherit">
+            <Instagram />
           </IconButton>
         </Hidden>
         <IconButton
