@@ -13,8 +13,6 @@ import {
   Container,
 } from "@material-ui/core"
 
-import BackgroundImage from "gatsby-background-image"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -42,8 +40,8 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Container>
         <Grid container>
-          <Grid item xs={12} sm={8} md={9}>
-            <Box mb={2} align="center" width="100%">
+          <Grid item xs={12} sm={10} md={9}>
+            <Box my={2} align="center" width="100%">
               <Img
                 fluid={data.logo.childImageSharp.fluid}
                 style={{
@@ -55,7 +53,7 @@ const IndexPage = () => {
             <Typography></Typography>
           </Grid>
           <Hidden xsDown>
-            <Grid item xs={0} sm={4} md={3}>
+            <Grid item xs={0} sm={2} md={3}>
               <List>
                 <ListSubheader>Site Updates</ListSubheader>
                 <ListItem>
