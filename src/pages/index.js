@@ -28,20 +28,12 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Box
-        bgcolor="secondary.main"
-        width="100vw"
-        minHeight="100vh"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-      >
+      <Box bgcolor="secondary.main" minHeight="100vh">
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Img
               fluid={data.file.childImageSharp.fluid}
-              style={{ maxHeight: "100vh" }}
+              style={{ maxHeight: "100vh", maxWidth: "100%" }}
             />
           </Grid>
 
