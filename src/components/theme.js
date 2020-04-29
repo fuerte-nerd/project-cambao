@@ -10,6 +10,9 @@ let theme = createMuiTheme({
     },
     background: {},
   },
+  typography: {
+    fontFamily: "Sniglet",
+  },
 })
 
 theme = responsiveFontSizes(theme)
