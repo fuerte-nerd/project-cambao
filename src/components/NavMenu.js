@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { connect } from "react-redux"
+import { setMenu } from "../redux/actions"
 import {
   Dialog,
   Box,
@@ -10,15 +12,23 @@ import {
 } from "@material-ui/core"
 import { Close, ExpandMore, ExpandLess } from "@material-ui/icons"
 
-const NavMenu = () => {
+const NavMenu = props => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
 
-  const handleClick = () => {
-    setHelpUsOpen(!helpUsOpen)
+  const handleClick = e => {
+    const f = e.currentTarget
+    switch (f.id) {
+      case "help-us":
+        return setHelpUsOpen(!helpUsOpen)
+      case "close":
+        return props.dispatch(setMenu(false))
+      default:
+        return
+    }
   }
 
   return (
-    <Dialog open={true} fullScreen>
+    <Dialog open={props.isOpen} fullScreen>
       <Box
         width="100vw"
         minHeight="100vh"
@@ -78,11 +88,19 @@ const NavMenu = () => {
           </List>
         </Box>
       </Box>
-      <Fab style={{ position: "fixed", top: "1rem", right: "1rem" }}>
+      <Fab
+        id="close"
+        onClick={handleClick}
+        style={{ position: "fixed", top: "1rem", right: "1rem" }}
+      >
         <Close />
       </Fab>
     </Dialog>
   )
 }
 
-export default NavMenu
+const mapStateToProps = state => ({
+  isOpen: state.navOpen,
+})
+
+export default connect(mapStateToProps)(NavMenu)
