@@ -4,11 +4,11 @@ import {
   Box,
   ListItem,
   ListItemText,
-  ListItemIcon,
   List,
+  Fab,
   Collapse,
 } from "@material-ui/core"
-import { ExpandMore, ExpandLess } from "@material-ui/icons"
+import { Close, ExpandMore, ExpandLess } from "@material-ui/icons"
 
 const NavMenu = () => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
@@ -26,7 +26,8 @@ const NavMenu = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        bgcolor="secondary.dark"
+        bgcolor="primary.light"
+        color="inherit"
       >
         <Box>
           <List>
@@ -77,6 +78,9 @@ const NavMenu = () => {
           </List>
         </Box>
       </Box>
+      <Fab style={{ position: "fixed", top: "1rem", right: "1rem" }}>
+        <Close />
+      </Fab>
     </Dialog>
   )
 }
