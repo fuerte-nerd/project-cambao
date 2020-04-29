@@ -1,5 +1,14 @@
 import React from "react"
-import { Dialog, Box, ListItem, ListItemText, List } from "@material-ui/core"
+import {
+  Dialog,
+  Box,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  List,
+  Collapse,
+} from "@material-ui/core"
+import { ExpandMore } from "@material-ui/icons"
 
 const NavMenu = () => {
   return (
@@ -25,7 +34,23 @@ const NavMenu = () => {
             </ListItem>
             <ListItem>
               <ListItemText>Help us</ListItemText>
+              <ListItemIcon>
+                <ExpandMore />
+              </ListItemIcon>
             </ListItem>
+            <Collapse in>
+              <List>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+                <ListItem>
+                  <ListItemText></ListItemText>
+                </ListItem>
+              </List>
+            </Collapse>
             <ListItem>
               <ListItemText>Contact</ListItemText>
             </ListItem>
