@@ -8,6 +8,8 @@ import {
   Typography,
   Button,
   Container,
+  GridList,
+  GridListTile,
 } from "@material-ui/core"
 
 import Layout from "../components/layout"
@@ -39,10 +41,24 @@ const IndexPage = () => {
         <Grid container alignItems="center">
           <Grid item xs={12} md={6}>
             <Box align="center">
-              <Img
-                style={{ maxWidth: 450, borderRadius: "50%" }}
-                fluid={data.file.childImageSharp.fluid}
-              />
+              <GridList
+                cellHeight="auto"
+                cols={2}
+                style={{ maxWidth: 650, overflow: "hidden", margin: "auto" }}
+              >
+                <GridListTile>
+                  <Img fluid={data.file.childImageSharp.fluid} />
+                </GridListTile>
+                <GridListTile>
+                  <Img fluid={data.file.childImageSharp.fluid} />
+                </GridListTile>
+                <GridListTile>
+                  <Img fluid={data.file.childImageSharp.fluid} />
+                </GridListTile>
+                <GridListTile>
+                  <Img fluid={data.file.childImageSharp.fluid} />
+                </GridListTile>
+              </GridList>
             </Box>
           </Grid>
 
