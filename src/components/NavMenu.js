@@ -9,6 +9,7 @@ import {
   List,
   Fab,
   Collapse,
+  Slide,
 } from "@material-ui/core"
 import { Close, ExpandMore, ExpandLess } from "@material-ui/icons"
 
@@ -33,8 +34,12 @@ const NavMenu = props => {
     }
   }, [props.isOpen])
 
+  const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />
+  })
+
   return (
-    <Dialog open={props.isOpen} fullScreen>
+    <Dialog TransitionComponent={Transition} open={props.isOpen} fullScreen>
       <Box
         width="100vw"
         minHeight="100vh"
