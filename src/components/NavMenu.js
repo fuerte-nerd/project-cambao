@@ -29,7 +29,7 @@ const NavMenu = () => {
         bgcolor="primary.light"
         color="inherit"
       >
-        <Box>
+        <Box width="90vw">
           <List>
             <ListItem button divider>
               <ListItemText
