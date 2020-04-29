@@ -28,6 +28,10 @@ const NavMenu = props => {
     }
   }
 
+  const handleClose = () => {
+    props.dispatch(setNav(false))
+  }
+
   useEffect(() => {
     if (!props.isOpen) {
       setHelpUsOpen(false)
@@ -39,7 +43,12 @@ const NavMenu = props => {
   })
 
   return (
-    <Dialog TransitionComponent={Transition} open={props.isOpen} fullScreen>
+    <Dialog
+      transition={Slide}
+      open={props.isOpen}
+      onClose={handleClose}
+      fullScreen
+    >
       <Box
         width="100vw"
         minHeight="100vh"
