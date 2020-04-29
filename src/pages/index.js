@@ -74,13 +74,13 @@ const IndexPage = () => {
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Img
-              fluid={data.logo.childImageSharp.fluid}
-              style={{ maxWidth: 205, display: "block", margin: "auto" }}
-            />
             <Container>
               <Paper>
                 <Box p={4}>
+                  <Img
+                    fluid={data.logo.childImageSharp.fluid}
+                    style={{ maxWidth: 205, display: "block", margin: "auto" }}
+                  />
                   <Typography align="justify">
                     Sit libero saepe quis autem dolorem dolore Quaerat velit
                     atque esse itaque assumenda A saepe architecto repudiandae
