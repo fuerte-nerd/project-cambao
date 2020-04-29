@@ -42,7 +42,7 @@ const IndexPage = () => {
       <Grid container>
         <Hidden smDown>
           <Grid item xs={0} md={2}>
-            <Box bgcolor="primary.light">
+            <Box boxShadow={2}>
               <List>
                 <ListSubheader>Quick Links</ListSubheader>
                 <ListItem>
@@ -77,11 +77,10 @@ const IndexPage = () => {
                 </ListItem>
               </List>
             </Box>
-            <Divider flexItem orientation="vertical" />
           </Grid>
         </Hidden>
         <Grid item xs={12} md={10} justify="center">
-          <Box bgcolor="primary.main">
+          <Box>
             <Container>
               <Box py={2} align="center" width="100%">
                 <Img

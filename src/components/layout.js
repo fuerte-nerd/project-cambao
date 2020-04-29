@@ -30,7 +30,12 @@ const Layout = ({ children }) => {
       <CssBaseline>
         <Navbar siteTitle={data.site.siteMetadata.title} />
         <NavMenu />
-        <Box bgcolor="#fafafa" width="100vw" minHeight="100vh" component="main">
+        <Box
+          bgcolor="primary.main"
+          width="100vw"
+          minHeight="100vh"
+          component="main"
+        >
           <Toolbar />
           {children}
           <Toolbar />
