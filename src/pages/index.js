@@ -52,49 +52,59 @@ const IndexPage = () => {
         maxWidth="100%"
         minHeight="100vh"
       >
-        <Grid container alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Box align="center">
-              <GridList
-                cellHeight="auto"
-                cols={2}
-                style={{ maxWidth: 650, overflow: "hidden", margin: "auto" }}
-              >
-                <GridListTile cols={2}>
-                  <Img fluid={data.dog2.childImageSharp.fluid} />
-                </GridListTile>
-                <GridListTile>
-                  <Img fluid={data.dog1.childImageSharp.fluid} />
-                </GridListTile>
-                <GridListTile>
-                  <Img fluid={data.dog1.childImageSharp.fluid} />
-                </GridListTile>
-              </GridList>
-            </Box>
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <Container>
-              <Paper>
-                <Box p={4}>
-                  <Img
-                    fluid={data.logo.childImageSharp.fluid}
-                    style={{ maxWidth: 205, display: "block", margin: "auto" }}
-                  />
-                  <Typography align="justify">
-                    Sit libero saepe quis autem dolorem dolore Quaerat velit
-                    atque esse itaque assumenda A saepe architecto repudiandae
-                    amet doloribus Quis earum quae odio nemo debitis? Harum
-                    quidem non vero assumenda at quo, mollitia. Voluptas
-                    voluptatum laudantium repellendus delectus delectus. Quas
-                    eaque dignissimos in earum magni Odit sequi sint similique
-                    ullam.
-                  </Typography>
+        <Container>
+          <Paper>
+            <Grid container alignItems="center">
+              <Grid item xs={12} md={6}>
+                <Container>
+                  <Box p={4}>
+                    <Box mb={2} align="center">
+                      <Img
+                        fluid={data.logo.childImageSharp.fluid}
+                        style={{
+                          maxWidth: 205,
+                          margin: "auto",
+                        }}
+                      />
+                    </Box>
+                    <Typography variant="subtitle1" align="justify">
+                      Sit libero saepe quis autem dolorem dolore Quaerat velit
+                      atque esse itaque assumenda A saepe architecto repudiandae
+                      amet doloribus Quis earum quae odio nemo debitis? Harum
+                      quidem non vero assumenda at quo, mollitia. Voluptas
+                      voluptatum laudantium repellendus delectus delectus. Quas
+                      eaque dignissimos in earum magni Odit sequi sint similique
+                      ullam.
+                    </Typography>
+                  </Box>
+                </Container>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Box align="center">
+                  <GridList
+                    cellHeight="auto"
+                    cols={2}
+                    style={{
+                      maxWidth: 650,
+                      overflow: "hidden",
+                      margin: "auto",
+                    }}
+                  >
+                    <GridListTile cols={2}>
+                      <Img fluid={data.dog2.childImageSharp.fluid} />
+                    </GridListTile>
+                    <GridListTile>
+                      <Img fluid={data.dog1.childImageSharp.fluid} />
+                    </GridListTile>
+                    <GridListTile>
+                      <Img fluid={data.dog1.childImageSharp.fluid} />
+                    </GridListTile>
+                  </GridList>
                 </Box>
-              </Paper>
-            </Container>
-          </Grid>
-        </Grid>
+              </Grid>
+            </Grid>
+          </Paper>
+        </Container>
       </Box>
     </Layout>
   )
