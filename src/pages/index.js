@@ -42,7 +42,7 @@ const IndexPage = () => {
       <Grid container>
         <Hidden smDown>
           <Grid item xs={0} md={2}>
-            <Box boxShadow={2}>
+            <Box bgcolor="primary.light" boxShadow={2}>
               <List>
                 <ListSubheader>Quick Links</ListSubheader>
                 <ListItem>
