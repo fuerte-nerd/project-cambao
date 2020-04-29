@@ -65,7 +65,7 @@ const NavMenu = props => {
           border={1}
           borderColor="text.secondary"
         >
-          <List dense>
+          <List disablePadding>
             <ListItem button divider>
               <ListItemText
                 primary="Home"
@@ -89,7 +89,7 @@ const NavMenu = props => {
               {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={helpUsOpen}>
-              <List dense>
+              <List dense disablePadding>
                 <ListItem button divider>
                   <ListItemText
                     primary="Adopt"
@@ -108,7 +108,7 @@ const NavMenu = props => {
                     style={{ textAlign: "center" }}
                   />
                 </ListItem>
-                <ListItem button>
+                <ListItem button divider>
                   <ListItemText
                     primary="Volunteer"
                     style={{ textAlign: "center" }}
@@ -116,7 +116,7 @@ const NavMenu = props => {
                 </ListItem>
               </List>
             </Collapse>
-            <ListItem Button>
+            <ListItem button>
               <ListItemText
                 primary="Contact"
                 secondary="Get in touch with us"
