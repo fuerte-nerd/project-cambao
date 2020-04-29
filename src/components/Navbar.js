@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { setMenu } from "../redux/actions"
+import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
   Hidden,
@@ -18,7 +18,7 @@ const Navbar = props => {
     const f = e.currentTarget
     switch (f.id) {
       case "open-menu":
-        return props.dispatch(setMenu(true))
+        return props.dispatch(setNav(true))
       default:
         return
     }

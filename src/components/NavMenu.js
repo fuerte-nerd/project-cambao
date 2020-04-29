@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { connect } from "react-redux"
-import { setMenu } from "../redux/actions"
+import { setNav } from "../redux/actions"
 import {
   Dialog,
   Box,
@@ -21,7 +21,7 @@ const NavMenu = props => {
       case "help-us":
         return setHelpUsOpen(!helpUsOpen)
       case "close":
-        return props.dispatch(setMenu(false))
+        return props.dispatch(setNav(false))
       default:
         return
     }
@@ -39,7 +39,7 @@ const NavMenu = props => {
         bgcolor="primary.light"
         color="inherit"
       >
-        <Box width="90vw">
+        <Box width="90vw" maxWidth="md">
           <List>
             <ListItem button divider>
               <ListItemText
@@ -56,7 +56,7 @@ const NavMenu = props => {
             <ListItem button divider>
               <ListItemText primary="Who are we?" secondary="Get to know us" />
             </ListItem>
-            <ListItem onClick={handleClick} button divider>
+            <ListItem onClick={handleClick} id="help-us" button divider>
               <ListItemText
                 primary="Help us"
                 secondary="Find out how you can help"
