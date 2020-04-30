@@ -87,7 +87,7 @@ const IndexPage = () => {
                     ab necessitatibus similique itaque Exercitationem assumenda
                     nemo.
                   </Typography>
-                  <Box mt={2} align="end">
+                  <Box align="end">
                     <Button variant="outlined" color="secondary">
                       Read more
                     </Button>
