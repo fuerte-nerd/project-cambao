@@ -68,7 +68,9 @@ const IndexPage = () => {
                   </Typography>
                   <Box align="end">
                     {" "}
-                    <Button color="secondary">Read more</Button>
+                    <Button variant="outlined" color="secondary">
+                      Read more
+                    </Button>
                   </Box>
                 </Grid>
               </Grid>
