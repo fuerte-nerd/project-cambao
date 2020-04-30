@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import {
+  Typography,
   Container,
   Box,
   Collapse,
@@ -66,58 +67,55 @@ const Layout = ({ children }) => {
             <Hidden smDown>
               <Grid item xs={0} md={2}>
                 <Box bgcolor="primary.light" boxShadow={2}>
-                  <List disablePadding>
-                    <ListSubheader
-                      disableGutters
-                      style={{ textAlign: "center" }}
-                    >
-                      Quick Links
-                    </ListSubheader>
-                    <ListItem button divider>
-                      <ListItemText primary="Home" />
-                    </ListItem>
-                    <ListItem button divider>
-                      <ListItemText primary="The Dogs" />
-                    </ListItem>
-                    <ListItem button divider>
-                      <ListItemText primary="Who are we?" />
-                    </ListItem>
-                    <ListItem onClick={handleClick} id="help-us" button divider>
-                      <ListItemText primary="Help us" />
-                      {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
-                    <Collapse in={helpUsOpen}>
-                      <List dense disablePadding>
-                        <ListItem button divider>
-                          <ListItemText
-                            primary="Adopt"
-                            style={{ textAlign: "center" }}
-                          />
-                        </ListItem>
-                        <ListItem button divider>
-                          <ListItemText
-                            primary="Foster"
-                            style={{ textAlign: "center" }}
-                          />
-                        </ListItem>
-                        <ListItem button divider>
-                          <ListItemText
-                            primary="Donate"
-                            style={{ textAlign: "center" }}
-                          />
-                        </ListItem>
-                        <ListItem button divider>
-                          <ListItemText
-                            primary="Volunteer"
-                            style={{ textAlign: "center" }}
-                          />
-                        </ListItem>
-                      </List>
-                    </Collapse>
-                    <ListItem button>
-                      <ListItemText primary="Contact" />
-                    </ListItem>
-                  </List>
+                  <Container>
+                    <Typography variant="overline">Quick Links</Typography>
+                    <List disablePadding dense>
+                      <ListItem button>
+                        <ListItemText primary="Home" />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemText primary="The Dogs" />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemText primary="Who are we?" />
+                      </ListItem>
+                      <ListItem onClick={handleClick} id="help-us" button>
+                        <ListItemText primary="Help us" />
+                        {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
+                      </ListItem>
+                      <Collapse in={helpUsOpen}>
+                        <List dense disablePadding>
+                          <ListItem button>
+                            <ListItemText
+                              primary="Adopt"
+                              style={{ textAlign: "center" }}
+                            />
+                          </ListItem>
+                          <ListItem button>
+                            <ListItemText
+                              primary="Foster"
+                              style={{ textAlign: "center" }}
+                            />
+                          </ListItem>
+                          <ListItem button>
+                            <ListItemText
+                              primary="Donate"
+                              style={{ textAlign: "center" }}
+                            />
+                          </ListItem>
+                          <ListItem button>
+                            <ListItemText
+                              primary="Volunteer"
+                              style={{ textAlign: "center" }}
+                            />
+                          </ListItem>
+                        </List>
+                      </Collapse>
+                      <ListItem button>
+                        <ListItemText primary="Contact" />
+                      </ListItem>
+                    </List>
+                  </Container>
                 </Box>
               </Grid>
             </Hidden>
