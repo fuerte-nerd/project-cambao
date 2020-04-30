@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import {
   Box,
+  Collapse,
   Grid,
   Hidden,
   List,
@@ -13,12 +14,25 @@ import {
   Toolbar,
   CssBaseline,
 } from "@material-ui/core"
+import { ExpandLess, ExpandMore } from "@material-ui/icons"
 import { ThemeProvider } from "@material-ui/core/styles"
 import theme from "./theme"
 import Navbar from "./Navbar"
 import NavMenu from "./NavMenu"
 
 const Layout = ({ children }) => {
+  const [helpUsOpen, setHelpUsOpen] = useState(false)
+
+  const handleClick = e => {
+    const f = e.currentTarget
+
+    switch (f.id) {
+      case "help-us":
+        return setHelpUsOpen(!helpUsOpen)
+      default:
+        return
+    }
+  }
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -51,37 +65,66 @@ const Layout = ({ children }) => {
             <Hidden smDown>
               <Grid item xs={0} md={2}>
                 <Box bgcolor="primary.light" boxShadow={2}>
-                  <List>
+                  <List disablePadding>
                     <ListSubheader>Quick Links</ListSubheader>
-                    <ListItem>
-                      <ListItemText></ListItemText>
+                    <ListItem button divider>
+                      <ListItemText
+                        primary="Home"
+                        secondary="Latest news and articles"
+                      />
                     </ListItem>
-                    <ListItem>
-                      <ListItemText></ListItemText>
+                    <ListItem button divider>
+                      <ListItemText
+                        primary="The Dogs"
+                        secondary="Meet our current guests"
+                      />
                     </ListItem>
-                    <ListItem>
-                      <ListItemText></ListItemText>
+                    <ListItem button divider>
+                      <ListItemText
+                        primary="Who are we?"
+                        secondary="Get to know us"
+                      />
                     </ListItem>
-                    <ListItem>
-                      <ListItemText></ListItemText>
+                    <ListItem onClick={handleClick} id="help-us" button divider>
+                      <ListItemText
+                        primary="Help us"
+                        secondary="Find out how you can help"
+                      />
+                      {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <ListItem>
-                      <ListItemText></ListItemText>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText></ListItemText>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText></ListItemText>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText></ListItemText>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText></ListItemText>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText></ListItemText>
+                    <Collapse in={helpUsOpen}>
+                      <List dense disablePadding>
+                        <ListItem button divider>
+                          <ListItemText
+                            primary="Adopt"
+                            style={{ textAlign: "center" }}
+                          />
+                        </ListItem>
+                        <ListItem button divider>
+                          <ListItemText
+                            primary="Foster"
+                            style={{ textAlign: "center" }}
+                          />
+                        </ListItem>
+                        <ListItem button divider>
+                          <ListItemText
+                            primary="Donate"
+                            style={{ textAlign: "center" }}
+                          />
+                        </ListItem>
+                        <ListItem button divider>
+                          <ListItemText
+                            primary="Volunteer"
+                            style={{ textAlign: "center" }}
+                          />
+                        </ListItem>
+                      </List>
+                    </Collapse>
+                    <ListItem button>
+                      <ListItemText
+                        primary="Contact"
+                        secondary="Get in touch with us"
+                      />
                     </ListItem>
                   </List>
                 </Box>
