@@ -29,7 +29,7 @@ const IndexPage = () => {
     {
       dog1: file(name: { eq: "test" }) {
         childImageSharp {
-          fluid(maxWidth: 400, maxHeight: 400, quality: 15) {
+          fluid(maxWidth: 500, maxHeight: 400, quality: 15) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -56,18 +56,23 @@ const IndexPage = () => {
               }}
             />
           </Box>
-          <Typography variant="h2" align="center">
-            Latest news
-          </Typography>
-          <Box>
+          <Box bgcolor="#fafafa" p={2}>
             <Grid container>
               <Grid item xs={12} sm={3}>
                 <Img fluid={data.dog1.childImageSharp.fluid} />
               </Grid>
               <Grid item xs={12} sm={9}>
-                <Typography></Typography>
-                <Typography></Typography>
-                <Typography></Typography>
+                <Typography variant="h3">Post title</Typography>
+                <Typography variant="overline">27 April 2020</Typography>
+                <Typography>
+                  Consectetur laborum incidunt dolore maiores architecto Quis
+                  molestias ipsa mollitia eveniet dignissimos Numquam commodi
+                  quod quaerat quo fugit. Itaque fugit alias reiciendis facere
+                  voluptates? Odit perspiciatis labore velit autem aut, est Vel
+                  cumque excepturi molestias omnis est? Cum quisquam sint esse
+                  officia labore odit. Saepe eaque atque veniam repellendus
+                  ratione
+                </Typography>
                 <Button></Button>
               </Grid>
             </Grid>
