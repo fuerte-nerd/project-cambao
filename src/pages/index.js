@@ -29,8 +29,8 @@ const IndexPage = () => {
     {
       dog1: file(name: { eq: "test" }) {
         childImageSharp {
-          fixed(width: 600, height: 300, quality: 15) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 400, maxHeight: 400, quality: 15) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -59,15 +59,19 @@ const IndexPage = () => {
           <Typography variant="h2" align="center">
             Latest news
           </Typography>
-          <Card>
-            <CardActionArea>
-              <CardContent></CardContent>
-              <CardMedia
-                image={data.dog1.childImageSharp.fixed.src}
-                height={140}
-              />
-            </CardActionArea>
-          </Card>
+          <Box>
+            <Grid container>
+              <Grid item xs={12} sm={3}>
+                <Img fluid={data.dog1.childImageSharp.fluid} />
+              </Grid>
+              <Grid item xs={12} sm={9}>
+                <Typography></Typography>
+                <Typography></Typography>
+                <Typography></Typography>
+                <Button></Button>
+              </Grid>
+            </Grid>
+          </Box>
         </Container>
       </Box>
     </Layout>
