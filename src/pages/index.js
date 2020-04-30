@@ -63,7 +63,7 @@ const IndexPage = () => {
           </Box>
         </Hidden>
         <Box>
-          <Typography variant="h4" align="center" color="textLight" paragraph>
+          <Typography variant="h4" align="center" color="white" paragraph>
             We are their voice!
           </Typography>
         </Box>
