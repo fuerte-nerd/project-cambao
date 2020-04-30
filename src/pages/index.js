@@ -46,7 +46,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Box m={1}>
+      <Box m={3}>
         <Card>
           <CardActionArea>
             <CardContent>
@@ -66,8 +66,7 @@ const IndexPage = () => {
                     ab necessitatibus similique itaque Exercitationem assumenda
                     nemo.
                   </Typography>
-                  <Box align="end">
-                    {" "}
+                  <Box mt={2} align="end">
                     <Button variant="outlined" color="secondary">
                       Read more
                     </Button>
