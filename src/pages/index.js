@@ -20,16 +20,15 @@ import {
   Grid,
   Typography,
   Container,
-  useTheme
+  useTheme,
 } from "@material-ui/core"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-
   const theme = useTheme()
-  const isNotMobile = useMediaQuery(theme.breakpoints.up('sm'))
+  const isNotMobile = useMediaQuery(theme.breakpoints.up("sm"))
   const data = useStaticQuery(graphql`
     {
       dog1: file(name: { eq: "test" }) {
@@ -51,7 +50,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Box m={3}>
+      <Box m={isNotMobile ? 3 : 1}>
         <Card>
           <CardActionArea>
             <CardContent>
@@ -60,9 +59,12 @@ const IndexPage = () => {
                   <Img fluid={data.dog1.childImageSharp.fluid} />
                 </Grid>
                 <Grid item xs={12} sm={7} md={9}>
-                  <Typography variant="h3">{isNotMobile ? `Post title` : `Balls`</Typography>
+                  <Typography variant="h3">Post title</Typography>
                   <Typography variant="overline">27 April 2020</Typography>
-                  <Divider />
+                  <Box mb={2}>
+                    <Divider variant="middle" />
+                  </Box>
+
                   <Typography>
                     Lorem possimus non perspiciatis quibusdam iste. Numquam
                     veritatis consequatur velit ea ad quia? Deleniti autem
