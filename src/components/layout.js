@@ -23,6 +23,7 @@ import Img from "gatsby-image"
 import theme from "./theme"
 import Navbar from "./Navbar"
 import NavMenu from "./NavMenu"
+import LocationMap from "./LocationMap"
 import Footer from "./Footer"
 
 const Layout = ({ children }) => {
@@ -130,6 +131,7 @@ const Layout = ({ children }) => {
                         <ListItemText primary="Contact" />
                       </ListItem>
                     </List>
+                    <Map />
                   </Container>
                 </Box>
               </Grid>
