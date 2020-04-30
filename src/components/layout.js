@@ -15,6 +15,7 @@ import {
   ListItemText,
   Toolbar,
   CssBaseline,
+  Divider,
 } from "@material-ui/core"
 import { ExpandLess, ExpandMore } from "@material-ui/icons"
 import { ThemeProvider } from "@material-ui/core/styles"
@@ -86,6 +87,7 @@ const Layout = ({ children }) => {
                       />
                     </Box>
                     <Typography variant="overline">Quick Links</Typography>
+                    <Divider />
                     <List disablePadding dense>
                       <ListItem disableGutters button>
                         <ListItemText primary="Home" />

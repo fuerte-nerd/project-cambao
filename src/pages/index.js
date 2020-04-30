@@ -57,14 +57,14 @@ const IndexPage = () => {
                 <Grid item xs={12} sm={9}>
                   <Typography variant="h3">Post title</Typography>
                   <Typography variant="overline">27 April 2020</Typography>
+                  <Divider />
                   <Typography>
-                    Consectetur laborum incidunt dolore maiores architecto Quis
-                    molestias ipsa mollitia eveniet dignissimos Numquam commodi
-                    quod quaerat quo fugit. Itaque fugit alias reiciendis facere
-                    voluptates? Odit perspiciatis labore velit autem aut, est
-                    Vel cumque excepturi molestias omnis est? Cum quisquam sint
-                    esse officia labore odit. Saepe eaque atque veniam
-                    repellendus ratione
+                    Lorem possimus non perspiciatis quibusdam iste. Numquam
+                    veritatis consequatur velit ea ad quia? Deleniti autem
+                    dolorum consequatur labore natus. Obcaecati assumenda
+                    debitis quas accusantium temporibus animi! Facilis molestias
+                    ab necessitatibus similique itaque Exercitationem assumenda
+                    nemo.
                   </Typography>
                   <Box align="end">
                     {" "}
