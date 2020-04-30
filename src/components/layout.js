@@ -89,32 +89,34 @@ const Layout = ({ children }) => {
                         {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
                       </ListItem>
                       <Collapse in={helpUsOpen}>
-                        <List dense disablePadding>
-                          <ListItem button>
-                            <ListItemText
-                              primary="Adopt"
-                              style={{ marginLeft: "1rem" }}
-                            />
-                          </ListItem>
-                          <ListItem button>
-                            <ListItemText
-                              primary="Foster"
-                              style={{ textAlign: "center" }}
-                            />
-                          </ListItem>
-                          <ListItem button>
-                            <ListItemText
-                              primary="Donate"
-                              style={{ textAlign: "center" }}
-                            />
-                          </ListItem>
-                          <ListItem button>
-                            <ListItemText
-                              primary="Volunteer"
-                              style={{ textAlign: "center" }}
-                            />
-                          </ListItem>
-                        </List>
+                        <Box bgcolor="#fafafa">
+                          <List dense disablePadding>
+                            <ListItem button>
+                              <ListItemText
+                                primary="Adopt"
+                                style={{ marginLeft: "1rem" }}
+                              />
+                            </ListItem>
+                            <ListItem button>
+                              <ListItemText
+                                primary="Foster"
+                                style={{ textAlign: "center" }}
+                              />
+                            </ListItem>
+                            <ListItem button>
+                              <ListItemText
+                                primary="Donate"
+                                style={{ textAlign: "center" }}
+                              />
+                            </ListItem>
+                            <ListItem button>
+                              <ListItemText
+                                primary="Volunteer"
+                                style={{ textAlign: "center" }}
+                              />
+                            </ListItem>
+                          </List>
+                        </Box>
                       </Collapse>
                       <ListItem disableGutters button>
                         <ListItemText primary="Contact" />
