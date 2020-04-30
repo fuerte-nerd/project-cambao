@@ -51,6 +51,17 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Box m={isNotMobile ? 3 : 1}>
+        <Hidden smUp>
+          <Box mb={2} align="center" width="100%">
+            <Img
+              fluid={data.logo.childImageSharp.fluid}
+              style={{
+                width: "100%",
+                maxWidth: 205,
+              }}
+            />
+          </Box>
+        </Hidden>
         <Card>
           <CardActionArea>
             <CardContent>
@@ -73,7 +84,7 @@ const IndexPage = () => {
                     ab necessitatibus similique itaque Exercitationem assumenda
                     nemo.
                   </Typography>
-                  <Divider />
+                  <Divider variant="middle" />
                   <Box mt={2} align="center">
                     <Button variant="outlined" color="secondary">
                       Read more
