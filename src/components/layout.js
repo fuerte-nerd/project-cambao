@@ -58,12 +58,12 @@ const Layout = ({ children }) => {
         <NavMenu />
         <Box
           bgcolor="primary.main"
-          width="100vw"
+          width="100%"
           minHeight="100vh"
           component="main"
         >
           <Toolbar />
-          <Grid container>
+          <Grid container spacing={2}>
             <Hidden smDown>
               <Grid item xs={0} md={2}>
                 <Box bgcolor="primary.light" boxShadow={2}>

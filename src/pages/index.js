@@ -46,7 +46,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Box>
+      <Box mx={2}>
         <Box py={2} align="center" width="100%">
           <Img
             fluid={data.logo.childImageSharp.fluid}
