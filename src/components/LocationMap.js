@@ -10,12 +10,11 @@ export default function LocationMap() {
     <Box>
       <Map
         center={[28.609654, -13.92936]}
-        zoom={16}
+        zoom={15}
         style={{
           height: "20rem",
           width: "100%",
         }}
-        className="rounded"
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
