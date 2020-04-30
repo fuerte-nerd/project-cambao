@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import {
+  Container,
   Box,
   Collapse,
   Grid,
@@ -61,79 +62,73 @@ const Layout = ({ children }) => {
           component="main"
         >
           <Toolbar />
-          <Grid container>
-            <Hidden smDown>
-              <Grid item xs={0} md={2}>
-                <Box bgcolor="primary.light" boxShadow={2}>
-                  <List disablePadding>
-                    <ListSubheader>Quick Links</ListSubheader>
-                    <ListItem button divider>
-                      <ListItemText
-                        primary="Home"
-                        secondary="Latest news and articles"
-                      />
-                    </ListItem>
-                    <ListItem button divider>
-                      <ListItemText
-                        primary="The Dogs"
-                        secondary="Meet our current guests"
-                      />
-                    </ListItem>
-                    <ListItem button divider>
-                      <ListItemText
-                        primary="Who are we?"
-                        secondary="Get to know us"
-                      />
-                    </ListItem>
-                    <ListItem onClick={handleClick} id="help-us" button divider>
-                      <ListItemText
-                        primary="Help us"
-                        secondary="Find out how you can help"
-                      />
-                      {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
-                    <Collapse in={helpUsOpen}>
-                      <List dense disablePadding>
-                        <ListItem button divider>
-                          <ListItemText
-                            primary="Adopt"
-                            style={{ textAlign: "center" }}
-                          />
-                        </ListItem>
-                        <ListItem button divider>
-                          <ListItemText
-                            primary="Foster"
-                            style={{ textAlign: "center" }}
-                          />
-                        </ListItem>
-                        <ListItem button divider>
-                          <ListItemText
-                            primary="Donate"
-                            style={{ textAlign: "center" }}
-                          />
-                        </ListItem>
-                        <ListItem button divider>
-                          <ListItemText
-                            primary="Volunteer"
-                            style={{ textAlign: "center" }}
-                          />
-                        </ListItem>
-                      </List>
-                    </Collapse>
-                    <ListItem button>
-                      <ListItemText
-                        primary="Contact"
-                        secondary="Get in touch with us"
-                      />
-                    </ListItem>
-                  </List>
-                </Box>
+          <Container>
+            <Grid container>
+              <Hidden smDown>
+                <Grid item xs={0} md={2}>
+                  <Box bgcolor="primary.light" boxShadow={2}>
+                    <List disablePadding>
+                      <ListSubheader style={{ textAlign: "center" }}>
+                        Quick Links
+                      </ListSubheader>
+                      <ListItem button divider>
+                        <ListItemText primary="Home" />
+                      </ListItem>
+                      <ListItem button divider>
+                        <ListItemText primary="The Dogs" />
+                      </ListItem>
+                      <ListItem button divider>
+                        <ListItemText primary="Who are we?" />
+                      </ListItem>
+                      <ListItem
+                        onClick={handleClick}
+                        id="help-us"
+                        button
+                        divider
+                      >
+                        <ListItemText primary="Help us" />
+                        {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
+                      </ListItem>
+                      <Collapse in={helpUsOpen}>
+                        <List dense disablePadding>
+                          <ListItem button divider>
+                            <ListItemText
+                              primary="Adopt"
+                              style={{ textAlign: "center" }}
+                            />
+                          </ListItem>
+                          <ListItem button divider>
+                            <ListItemText
+                              primary="Foster"
+                              style={{ textAlign: "center" }}
+                            />
+                          </ListItem>
+                          <ListItem button divider>
+                            <ListItemText
+                              primary="Donate"
+                              style={{ textAlign: "center" }}
+                            />
+                          </ListItem>
+                          <ListItem button divider>
+                            <ListItemText
+                              primary="Volunteer"
+                              style={{ textAlign: "center" }}
+                            />
+                          </ListItem>
+                        </List>
+                      </Collapse>
+                      <ListItem button>
+                        <ListItemText primary="Contact" />
+                      </ListItem>
+                    </List>
+                  </Box>
+                </Grid>
+              </Hidden>
+              <Grid item xs={12} md={10} justify="center">
+                {children}
               </Grid>
-            </Hidden>
-            <Grid item xs={12} md={10} justify="center">
-              {children}
             </Grid>
-          </Grid>
+          </Container>
           <Toolbar />
         </Box>
       </CssBaseline>
