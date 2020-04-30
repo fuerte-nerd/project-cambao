@@ -56,27 +56,34 @@ const IndexPage = () => {
             }}
           />
         </Box>
-        <Box bgcolor="#fafafa" p={2}>
-          <Grid container>
-            <Grid item xs={12} sm={3}>
-              <Img fluid={data.dog1.childImageSharp.fluid} />
-            </Grid>
-            <Grid item xs={12} sm={9}>
-              <Typography variant="h3">Post title</Typography>
-              <Typography variant="overline">27 April 2020</Typography>
-              <Typography>
-                Consectetur laborum incidunt dolore maiores architecto Quis
-                molestias ipsa mollitia eveniet dignissimos Numquam commodi quod
-                quaerat quo fugit. Itaque fugit alias reiciendis facere
-                voluptates? Odit perspiciatis labore velit autem aut, est Vel
-                cumque excepturi molestias omnis est? Cum quisquam sint esse
-                officia labore odit. Saepe eaque atque veniam repellendus
-                ratione
-              </Typography>
-              <Button></Button>
-            </Grid>
-          </Grid>
-        </Box>
+        <Card>
+          <CardActionArea>
+            <CardContent>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={3}>
+                  <Img fluid={data.dog1.childImageSharp.fluid} />
+                </Grid>
+                <Grid item xs={12} sm={9}>
+                  <Typography variant="h3">Post title</Typography>
+                  <Typography variant="overline">27 April 2020</Typography>
+                  <Typography>
+                    Consectetur laborum incidunt dolore maiores architecto Quis
+                    molestias ipsa mollitia eveniet dignissimos Numquam commodi
+                    quod quaerat quo fugit. Itaque fugit alias reiciendis facere
+                    voluptates? Odit perspiciatis labore velit autem aut, est
+                    Vel cumque excepturi molestias omnis est? Cum quisquam sint
+                    esse officia labore odit. Saepe eaque atque veniam
+                    repellendus ratione
+                  </Typography>
+                  <Button color="secondary">Read more</Button>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button color="secondary">Read more</Button>
+          </CardActions>
+        </Card>
       </Box>
     </Layout>
   )
