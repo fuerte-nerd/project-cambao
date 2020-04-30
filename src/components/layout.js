@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
           component="main"
         >
           <Toolbar />
-          <Grid container spacing={2}>
+          <Grid container>
             <Hidden smDown>
               <Grid item xs={0} md={2}>
                 <Box bgcolor="primary.light" boxShadow={2}>
