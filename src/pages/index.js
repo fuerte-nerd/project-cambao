@@ -55,17 +55,17 @@ const IndexPage = () => {
           <CardActionArea>
             <CardContent>
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={5} md={3}>
+                <Grid item xs={12} sm={5} md={4} lg={4}>
                   <Img fluid={data.dog1.childImageSharp.fluid} />
                 </Grid>
-                <Grid item xs={12} sm={7} md={9}>
+                <Grid item xs={12} sm={7} md={8} lg={8}>
                   <Typography variant="h3">Post title</Typography>
                   <Typography variant="overline">27 April 2020</Typography>
                   <Box mb={2}>
                     <Divider />
                   </Box>
 
-                  <Typography>
+                  <Typography align="justify" paragraph>
                     Lorem possimus non perspiciatis quibusdam iste. Numquam
                     veritatis consequatur velit ea ad quia? Deleniti autem
                     dolorum consequatur labore natus. Obcaecati assumenda
@@ -73,7 +73,8 @@ const IndexPage = () => {
                     ab necessitatibus similique itaque Exercitationem assumenda
                     nemo.
                   </Typography>
-                  <Box mt={2} align="end">
+                  <Divider />
+                  <Box mt={2} align="center">
                     <Button variant="outlined" color="secondary">
                       Read more
                     </Button>
