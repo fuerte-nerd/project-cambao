@@ -56,7 +56,7 @@ const IndexPage = () => {
             fluid={data.logo.childImageSharp.fluid}
             style={{
               width: "100%",
-              maxWidth: 105,
+              maxWidth: 150,
             }}
           />
         </Box>
