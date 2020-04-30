@@ -47,15 +47,6 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Box m={1}>
-        <Box py={2} align="center" width="100%">
-          <Img
-            fluid={data.logo.childImageSharp.fluid}
-            style={{
-              width: "100%",
-              maxWidth: 205,
-            }}
-          />
-        </Box>
         <Card>
           <CardActionArea>
             <CardContent>
@@ -75,14 +66,14 @@ const IndexPage = () => {
                     esse officia labore odit. Saepe eaque atque veniam
                     repellendus ratione
                   </Typography>
-                  <Button color="secondary">Read more</Button>
+                  <Box align="end">
+                    {" "}
+                    <Button color="secondary">Read more</Button>
+                  </Box>
                 </Grid>
               </Grid>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button color="secondary">Read more</Button>
-          </CardActions>
         </Card>
       </Box>
     </Layout>

@@ -18,6 +18,7 @@ import {
 } from "@material-ui/core"
 import { ExpandLess, ExpandMore } from "@material-ui/icons"
 import { ThemeProvider } from "@material-ui/core/styles"
+import Img from "gatsby-image"
 import theme from "./theme"
 import Navbar from "./Navbar"
 import NavMenu from "./NavMenu"
@@ -36,10 +37,17 @@ const Layout = ({ children }) => {
     }
   }
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
+    {
+      siteTitle: site {
         siteMetadata {
           title
+        }
+      }
+      logo: file(name: { eq: "logo" }) {
+        childImageSharp {
+          fluid(maxWidth: 205, maxHeight: 205) {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }
@@ -54,7 +62,7 @@ const Layout = ({ children }) => {
         />
       </Helmet>
       <CssBaseline>
-        <Navbar siteTitle={data.site.siteMetadata.title} />
+        <Navbar siteTitle={data.siteTitle.siteMetadata.title} />
         <NavMenu />
         <Box
           bgcolor="primary.main"
@@ -68,6 +76,15 @@ const Layout = ({ children }) => {
               <Grid item xs={0} md={2}>
                 <Box bgcolor="primary.light" boxShadow={2}>
                   <Container>
+                    <Box py={2} align="center" width="100%">
+                      <Img
+                        fluid={data.logo.childImageSharp.fluid}
+                        style={{
+                          width: "100%",
+                          maxWidth: 205,
+                        }}
+                      />
+                    </Box>
                     <Typography variant="overline">Quick Links</Typography>
                     <List disablePadding dense>
                       <ListItem disableGutters button>
