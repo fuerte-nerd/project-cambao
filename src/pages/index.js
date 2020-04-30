@@ -62,7 +62,7 @@ const IndexPage = () => {
                   <Typography variant="h3">Post title</Typography>
                   <Typography variant="overline">27 April 2020</Typography>
                   <Box mb={2}>
-                    <Divider variant="middle" />
+                    <Divider />
                   </Box>
 
                   <Typography>

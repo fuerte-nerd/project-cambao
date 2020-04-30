@@ -56,7 +56,7 @@ const NavMenu = props => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        bgcolor="primary.light"
+        bgcolor="secondary.main"
         color="inherit"
       >
         <Box
