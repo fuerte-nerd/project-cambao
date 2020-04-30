@@ -23,6 +23,7 @@ import Img from "gatsby-image"
 import theme from "./theme"
 import Navbar from "./Navbar"
 import NavMenu from "./NavMenu"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
@@ -135,6 +136,7 @@ const Layout = ({ children }) => {
             </Hidden>
             <Grid item xs={12} md={10} justify="center">
               {children}
+              <Footer />
             </Grid>
           </Grid>
           <Toolbar />
