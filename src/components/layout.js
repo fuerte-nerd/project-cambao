@@ -131,7 +131,7 @@ const Layout = ({ children }) => {
                         <ListItemText primary="Contact" />
                       </ListItem>
                     </List>
-                    <Map />
+                    <LocationMap />
                   </Container>
                 </Box>
               </Grid>

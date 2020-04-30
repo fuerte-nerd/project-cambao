@@ -2,11 +2,12 @@ import React from "react"
 
 import { Map, Marker, TileLayer } from "react-leaflet"
 import { Icon } from "leaflet"
+import { Box } from "@material-ui/core"
 import logoPin from "../images/logopin.png"
 
 export default function LocationMap() {
   return typeof window !== "undefined" ? (
-    <>
+    <Box>
       <Map
         center={[28.609654, -13.92936]}
         zoom={16}
@@ -31,6 +32,6 @@ export default function LocationMap() {
           }
         />
       </Map>
-    </>
+    </Box>
   ) : null
 }
