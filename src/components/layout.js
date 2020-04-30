@@ -70,16 +70,21 @@ const Layout = ({ children }) => {
                   <Container>
                     <Typography variant="overline">Quick Links</Typography>
                     <List disablePadding dense>
-                      <ListItem button>
+                      <ListItem disableGutters button>
                         <ListItemText primary="Home" />
                       </ListItem>
-                      <ListItem button>
+                      <ListItem disableGutters button>
                         <ListItemText primary="The Dogs" />
                       </ListItem>
-                      <ListItem button>
+                      <ListItem disableGutters button>
                         <ListItemText primary="Who are we?" />
                       </ListItem>
-                      <ListItem onClick={handleClick} id="help-us" button>
+                      <ListItem
+                        disableGutters
+                        onClick={handleClick}
+                        id="help-us"
+                        button
+                      >
                         <ListItemText primary="Help us" />
                         {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
                       </ListItem>
@@ -111,7 +116,7 @@ const Layout = ({ children }) => {
                           </ListItem>
                         </List>
                       </Collapse>
-                      <ListItem button>
+                      <ListItem disableGutters button>
                         <ListItemText primary="Contact" />
                       </ListItem>
                     </List>
