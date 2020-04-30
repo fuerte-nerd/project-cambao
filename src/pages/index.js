@@ -39,64 +39,21 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Grid container>
-        <Hidden smDown>
-          <Grid item xs={0} md={2}>
-            <Box bgcolor="primary.light" boxShadow={2}>
-              <List>
-                <ListSubheader>Quick Links</ListSubheader>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText></ListItemText>
-                </ListItem>
-              </List>
-            </Box>
-          </Grid>
-        </Hidden>
-        <Grid item xs={12} md={10} justify="center">
-          <Box>
-            <Container>
-              <Box py={2} align="center" width="100%">
-                <Img
-                  fluid={data.logo.childImageSharp.fluid}
-                  style={{
-                    maxWidth: 205,
-                  }}
-                />
-              </Box>
-              <Typography variant="h2" align="center">
-                Latest news
-              </Typography>
-            </Container>
+      <Box>
+        <Container>
+          <Box py={2} align="center" width="100%">
+            <Img
+              fluid={data.logo.childImageSharp.fluid}
+              style={{
+                maxWidth: 205,
+              }}
+            />
           </Box>
-        </Grid>
-      </Grid>
+          <Typography variant="h2" align="center">
+            Latest news
+          </Typography>
+        </Container>
+      </Box>
     </Layout>
   )
 }

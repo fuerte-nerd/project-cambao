@@ -2,7 +2,17 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Box, Toolbar, CssBaseline } from "@material-ui/core"
+import {
+  Box,
+  Grid,
+  Hidden,
+  List,
+  ListSubheader,
+  ListItem,
+  ListItemText,
+  Toolbar,
+  CssBaseline,
+} from "@material-ui/core"
 import { ThemeProvider } from "@material-ui/core/styles"
 import theme from "./theme"
 import Navbar from "./Navbar"
@@ -37,7 +47,50 @@ const Layout = ({ children }) => {
           component="main"
         >
           <Toolbar />
-          {children}
+          <Grid container>
+            <Hidden smDown>
+              <Grid item xs={0} md={2}>
+                <Box bgcolor="primary.light" boxShadow={2}>
+                  <List>
+                    <ListSubheader>Quick Links</ListSubheader>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText></ListItemText>
+                    </ListItem>
+                  </List>
+                </Box>
+              </Grid>
+            </Hidden>
+            <Grid item xs={12} md={10} justify="center">
+              {children}
+            </Grid>
+          </Grid>
           <Toolbar />
         </Box>
       </CssBaseline>
