@@ -51,10 +51,10 @@ const IndexPage = () => {
           <CardActionArea>
             <CardContent>
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={5} md={3}>
                   <Img fluid={data.dog1.childImageSharp.fluid} />
                 </Grid>
-                <Grid item xs={12} sm={9}>
+                <Grid item xs={12} sm={7} md={9}>
                   <Typography variant="h3">Post title</Typography>
                   <Typography variant="overline">27 April 2020</Typography>
                   <Divider />
