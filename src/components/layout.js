@@ -89,31 +89,19 @@ const Layout = ({ children }) => {
                         {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
                       </ListItem>
                       <Collapse in={helpUsOpen}>
-                        <Box bgcolor="#fafafa">
+                        <Box p={1} bgcolor="#fafafa">
                           <List dense disablePadding>
                             <ListItem button>
-                              <ListItemText
-                                primary="Adopt"
-                                style={{ marginLeft: "1rem" }}
-                              />
+                              <ListItemText primary="Adopt" />
                             </ListItem>
                             <ListItem button>
-                              <ListItemText
-                                primary="Foster"
-                                style={{ textAlign: "center" }}
-                              />
+                              <ListItemText primary="Foster" />
                             </ListItem>
                             <ListItem button>
-                              <ListItemText
-                                primary="Donate"
-                                style={{ textAlign: "center" }}
-                              />
+                              <ListItemText primary="Donate" />
                             </ListItem>
                             <ListItem button>
-                              <ListItemText
-                                primary="Volunteer"
-                                style={{ textAlign: "center" }}
-                              />
+                              <ListItemText primary="Volunteer" />
                             </ListItem>
                           </List>
                         </Box>
