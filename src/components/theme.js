@@ -9,6 +9,9 @@ let theme = createMuiTheme({
       main: "#f07937",
     },
     background: {},
+    text: {
+      light: "#fafafa",
+    },
   },
   typography: {
     fontFamily: "Sniglet",
