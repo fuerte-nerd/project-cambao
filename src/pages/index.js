@@ -51,17 +51,22 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Box m={isNotMobile ? 3 : 1}>
-        <Hidden smUp>
-          <Box mb={2} align="center" width="100%">
-            <Img
-              fluid={data.logo.childImageSharp.fluid}
-              style={{
-                width: "50%",
-                maxWidth: 205,
-              }}
-            />
-          </Box>
-        </Hidden>
+        <Grid container>
+          <Hidden smUp>
+            <Grid item xs={12}>
+              <Box mb={2} align="center" width="100%">
+                <Img
+                  fluid={data.logo.childImageSharp.fluid}
+                  style={{
+                    width: "100%",
+                    maxWidth: 105,
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Hidden>
+          <Grid item xs={12} sm={9}></Grid>
+        </Grid>
         <Card>
           <CardActionArea>
             <CardContent>
