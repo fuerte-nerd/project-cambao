@@ -2,6 +2,13 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import {
+  Card,
+  CardMedia,
+  CardHeader,
+  CardContent,
+  CardActionArea,
+  CardActions,
+  Button,
   Divider,
   Hidden,
   List,
@@ -22,8 +29,8 @@ const IndexPage = () => {
     {
       dog1: file(name: { eq: "test" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, maxHeight: 2000, quality: 15) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 600, height: 300, quality: 15) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -52,6 +59,15 @@ const IndexPage = () => {
           <Typography variant="h2" align="center">
             Latest news
           </Typography>
+          <Card>
+            <CardActionArea>
+              <CardContent></CardContent>
+              <CardMedia
+                image={data.dog1.childImageSharp.fixed.src}
+                height={140}
+              />
+            </CardActionArea>
+          </Card>
         </Container>
       </Box>
     </Layout>
