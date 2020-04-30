@@ -51,19 +51,17 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Box m={isNotMobile ? 3 : 1}>
-        <Hidden smUp>
-          <Box mb={2} align="center" width="100%">
-            <Img
-              fluid={data.logo.childImageSharp.fluid}
-              style={{
-                width: "100%",
-                maxWidth: 105,
-              }}
-            />
-          </Box>
-        </Hidden>
+        <Box mb={2} align="center" width="100%">
+          <Img
+            fluid={data.logo.childImageSharp.fluid}
+            style={{
+              width: "100%",
+              maxWidth: 105,
+            }}
+          />
+        </Box>
         <Box>
-          <Typography variant="h4" align="center" paragraph>
+          <Typography variant="h3" align="center" paragraph>
             We are their voice!
           </Typography>
         </Box>

@@ -79,16 +79,7 @@ const Layout = ({ children }) => {
               <Grid item xs={0} md={2}>
                 <Box py={2} bgcolor="primary.light" boxShadow={2}>
                   <Container>
-                    <Box align="center" width="100%">
-                      <Img
-                        fluid={data.logo.childImageSharp.fluid}
-                        style={{
-                          width: "100%",
-                          maxWidth: 205,
-                        }}
-                      />
-                    </Box>
-                    <Box pt={2} pb={1}>
+                    <Box pb={1}>
                       <Typography variant="overline">Quick Links</Typography>
                       <Divider />
                     </Box>
