@@ -93,7 +93,7 @@ const Layout = ({ children }) => {
                           <ListItem button>
                             <ListItemText
                               primary="Adopt"
-                              style={{ textAlign: "center" }}
+                              style={{ marginLeft: "1rem" }}
                             />
                           </ListItem>
                           <ListItem button>
