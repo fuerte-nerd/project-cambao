@@ -88,7 +88,7 @@ const Layout = ({ children }) => {
                         }}
                       />
                     </Box>
-                    <Box py={2}>
+                    <Box pt={2} pb={1}>
                       <Typography variant="overline">Quick Links</Typography>
                       <Divider />
                     </Box>
@@ -133,7 +133,7 @@ const Layout = ({ children }) => {
                         <ListItemText primary="Contact" />
                       </ListItem>
                     </List>
-                    <Box py={2}>
+                    <Box pt={2} pb={1}>
                       <Typography variant="overline">Location</Typography>
                       <Divider />
                     </Box>
