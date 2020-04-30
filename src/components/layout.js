@@ -77,9 +77,9 @@ const Layout = ({ children }) => {
           <Grid container>
             <Hidden smDown>
               <Grid item xs={0} md={2}>
-                <Box bgcolor="primary.light" boxShadow={2}>
+                <Box py={2} bgcolor="primary.light" boxShadow={2}>
                   <Container>
-                    <Box py={2} align="center" width="100%">
+                    <Box align="center" width="100%">
                       <Img
                         fluid={data.logo.childImageSharp.fluid}
                         style={{
@@ -88,8 +88,10 @@ const Layout = ({ children }) => {
                         }}
                       />
                     </Box>
-                    <Typography variant="overline">Quick Links</Typography>
-                    <Divider />
+                    <Box py={2}>
+                      <Typography variant="overline">Quick Links</Typography>
+                      <Divider />
+                    </Box>
                     <List disablePadding dense>
                       <ListItem disableGutters button>
                         <ListItemText primary="Home" />
@@ -131,6 +133,10 @@ const Layout = ({ children }) => {
                         <ListItemText primary="Contact" />
                       </ListItem>
                     </List>
+                    <Box py={2}>
+                      <Typography variant="overline">Location</Typography>
+                      <Divider />
+                    </Box>
                     <LocationMap />
                   </Container>
                 </Box>
