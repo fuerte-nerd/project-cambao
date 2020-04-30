@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import {
+  useMediaQuery,
   Card,
   CardMedia,
   CardHeader,
@@ -19,12 +20,16 @@ import {
   Grid,
   Typography,
   Container,
+  useTheme
 } from "@material-ui/core"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
+
+  const theme = useTheme()
+  const isNotMobile = useMediaQuery(theme.breakpoints.up('sm'))
   const data = useStaticQuery(graphql`
     {
       dog1: file(name: { eq: "test" }) {
@@ -55,7 +60,7 @@ const IndexPage = () => {
                   <Img fluid={data.dog1.childImageSharp.fluid} />
                 </Grid>
                 <Grid item xs={12} sm={7} md={9}>
-                  <Typography variant="h3">Post title</Typography>
+                  <Typography variant="h3">{isNotMobile ? `Post title` : `Balls`</Typography>
                   <Typography variant="overline">27 April 2020</Typography>
                   <Divider />
                   <Typography>
