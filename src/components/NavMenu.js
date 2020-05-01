@@ -8,6 +8,7 @@ import {
   Hidden,
   Container,
   Grid,
+  IconButton,
   Tooltip,
   Dialog,
   Box,
@@ -18,7 +19,13 @@ import {
   Collapse,
   Slide,
 } from "@material-ui/core"
-import { Close, ExpandMore, ExpandLess } from "@material-ui/icons"
+import {
+  Close,
+  ExpandMore,
+  ExpandLess,
+  Facebook,
+  Instagram,
+} from "@material-ui/icons"
 import Img from "gatsby-image"
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -85,7 +92,7 @@ const NavMenu = props => {
         alignItems="center"
         justifyContent="center"
       >
-        <Box display="flex">
+        <Box display="flex" alignItems="center" width="100%" maxWidth={400}>
           <Box
             mb={2}
             mx={isLandscapeMobile ? "auto" : 0}
@@ -95,6 +102,11 @@ const NavMenu = props => {
             align="center"
           >
             <Img fluid={data.logo.childImageSharp.fluid} />
+          </Box>
+          <Box>
+            <IconButton color="#fafafa">
+              <Facebook />
+            </IconButton>
           </Box>
         </Box>
         <Box
