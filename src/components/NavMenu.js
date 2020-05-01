@@ -71,6 +71,7 @@ const NavMenu = props => {
       fullScreen
     >
       <Box
+        p={isLandscapeMobile ? 2 : 0}
         width="100%"
         height="100%"
         minHeight="100vh"
@@ -80,19 +81,16 @@ const NavMenu = props => {
         justifyContent="center"
         bgcolor="secondary.main"
       >
-        {isLandscapeMobile ? null : (
-          <Box
-            mb={2}
-            style={{ margin: isLandscapeMobile ? "auto" : 0 }}
-            display="block"
-            width="25%"
-            maxWidth={150}
-            align="center"
-          >
-            <Img fluid={data.logo.childImageSharp.fluid} />
-          </Box>
-        )}
-
+        <Box
+          mb={2}
+          mx={isLandscapeMobile ? "auto" : 0}
+          display="block"
+          width="25%"
+          maxWidth={150}
+          align="center"
+        >
+          <Img fluid={data.logo.childImageSharp.fluid} />
+        </Box>
         <Box
           m={isLandscapeMobile ? "auto" : 0}
           bgcolor="#fafafa"
