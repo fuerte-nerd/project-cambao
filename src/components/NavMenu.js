@@ -80,11 +80,10 @@ const NavMenu = props => {
         justifyContent="center"
         bgcolor="secondary.main"
       >
-        <Hidden xsDown>
+        {isLandscapeMobile ? null : (
           <Box
             mb={2}
             style={{ margin: isLandscapeMobile ? "auto" : 0 }}
-            m={isLandscapeMobile ? "auto" : 0}
             display="block"
             width="25%"
             maxWidth={150}
@@ -92,8 +91,15 @@ const NavMenu = props => {
           >
             <Img fluid={data.logo.childImageSharp.fluid} />
           </Box>
-        </Hidden>
-        <Box bgcolor="#fafafa" width="90vw" maxWidth={400} boxShadow={3}>
+        )}
+
+        <Box
+          m={isLandscapeMobile ? "auto" : 0}
+          bgcolor="#fafafa"
+          width="90vw"
+          maxWidth={400}
+          boxShadow={3}
+        >
           <List disablePadding dense>
             <ListItem button divider>
               <ListItemText
