@@ -40,9 +40,11 @@ const Navbar = props => {
   return (
     <AppBar>
       <Toolbar>
-        <Box display="flex">
-          <Img fixed={data.file.childImageSharp.fixed} />
-        </Box>
+        <Tooltip title="Return home!" color="secondary.main">
+          <Box display="flex" style={{ cursor: "pointer" }}>
+            <Img fixed={data.file.childImageSharp.fixed} />
+          </Box>
+        </Tooltip>
         <Hidden xsDown>
           <Box ml={2}>
             <Typography variant="h6" variantMapping={{ h6: "h1" }}>
