@@ -92,7 +92,13 @@ const NavMenu = props => {
         alignItems="center"
         justifyContent="center"
       >
-        <Box display="flex" alignItems="center" width="100%" maxWidth={400}>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          width="100%"
+          maxWidth={400}
+        >
           <Box
             mb={2}
             mx={isLandscapeMobile ? "auto" : 0}
@@ -103,9 +109,12 @@ const NavMenu = props => {
           >
             <Img fluid={data.logo.childImageSharp.fluid} />
           </Box>
-          <Box>
-            <IconButton color="#fafafa">
+          <Box color="#fafafa">
+            <IconButton color="inherit">
               <Facebook />
+            </IconButton>
+            <IconButton color="inherit">
+              <Instagram />
             </IconButton>
           </Box>
         </Box>
