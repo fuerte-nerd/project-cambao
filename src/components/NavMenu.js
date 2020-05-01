@@ -73,7 +73,7 @@ const NavMenu = props => {
       fullScreen
     >
       <Box
-        mt={isLandscapeMobile ? 20 : 0}
+        mt={isLandscapeMobile ? 2 : 0}
         mb={isLandscapeMobile ? 20 : 0}
         width="100%"
         height="100%"
