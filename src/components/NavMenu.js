@@ -88,7 +88,7 @@ const NavMenu = props => {
           mb={2}
           mx={isLandscapeMobile ? "auto" : 0}
           display="block"
-          width="25%"
+          width="30%"
           maxWidth={150}
           align="center"
         >
