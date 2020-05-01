@@ -76,24 +76,26 @@ const NavMenu = props => {
       <Box
         mt={isLandscapeMobile ? 2 : 0}
         mb={isLandscapeMobile ? 20 : 0}
-        width="100%"
+        mx="auto"
+        width="90vw"
         height="100%"
         minHeight="100vh"
         display={isLandscapeMobile ? "block" : "flex"}
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        bgcolor="secondary.main"
       >
-        <Box
-          mb={2}
-          mx={isLandscapeMobile ? "auto" : 0}
-          display="block"
-          width="30%"
-          maxWidth={150}
-          align="center"
-        >
-          <Img fluid={data.logo.childImageSharp.fluid} />
+        <Box display="flex">
+          <Box
+            mb={2}
+            mx={isLandscapeMobile ? "auto" : 0}
+            display="block"
+            width="30%"
+            maxWidth={150}
+            align="center"
+          >
+            <Img fluid={data.logo.childImageSharp.fluid} />
+          </Box>
         </Box>
         <Box
           m={isLandscapeMobile ? "auto" : 0}
