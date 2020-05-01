@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
+import { graphql, useStaticQuery } from "gatsby"
 import {
   Container,
   Grid,
@@ -45,6 +46,17 @@ const NavMenu = props => {
       setHelpUsOpen(false)
     }
   }, [props.isOpen])
+  const data = useStaticQuery(graphql`
+    {
+      logo: file(name: { eq: "logo" }) {
+        childImageSharp {
+          fluid(maxWidth: 205, maxHeight: 205) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <Dialog
@@ -65,7 +77,9 @@ const NavMenu = props => {
       >
         <Container>
           <Grid container>
-            <Grid item xs={12} sm={4}></Grid>
+            <Grid item xs={12} sm={4}>
+              <Img fluid={data.log.childImageSharp.fluid} />
+            </Grid>
             <Grid item xs={12}>
               <Box
                 bgcolor="#fafafa"
