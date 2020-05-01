@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
+  Hidden,
   Container,
   Grid,
   Tooltip,
@@ -74,16 +75,12 @@ const NavMenu = props => {
         justifyContent="center"
         bgcolor="secondary.main"
       >
-        <Box mb={2} display="block" width="25%" maxWidth={205} align="center">
-          <Img fluid={data.logo.childImageSharp.fluid} />
-        </Box>
-        <Box
-          bgcolor="#fafafa"
-          width="90vw"
-          maxWidth={400}
-          border={1}
-          borderColor="text.secondary"
-        >
+        <Hidden xsDown>
+          <Box mb={2} display="block" width="25%" maxWidth={205} align="center">
+            <Img fluid={data.logo.childImageSharp.fluid} />
+          </Box>
+        </Hidden>
+        <Box bgcolor="#fafafa" width="90vw" maxWidth={400} boxShadow={3}>
           <List disablePadding dense>
             <ListItem button divider>
               <ListItemText
