@@ -81,7 +81,15 @@ const NavMenu = props => {
         bgcolor="secondary.main"
       >
         <Hidden xsDown>
-          <Box mb={2} display="block" width="25%" maxWidth={150} align="center">
+          <Box
+            mb={2}
+            style={{ margin: isLandscapeMobile ? "auto" : 0 }}
+            m={isLandscapeMobile ? "auto" : 0}
+            display="block"
+            width="25%"
+            maxWidth={150}
+            align="center"
+          >
             <Img fluid={data.logo.childImageSharp.fluid} />
           </Box>
         </Hidden>
