@@ -66,7 +66,7 @@ const NavMenu = props => {
       fullScreen
     >
       <Box
-        width="100vw"
+        width="100%"
         minHeight="100vh"
         display="flex"
         flexDirection="column"
@@ -75,11 +75,11 @@ const NavMenu = props => {
         bgcolor="secondary.main"
         color="inherit"
       >
-        <Grid container alignItems="center" justify="center">
+        <Grid container spacing={2} alignItems="center">
           <Grid item xs={12} sm={4}>
             <Img
               fluid={data.logo.childImageSharp.fluid}
-              style={{ maxWidth: 205 }}
+              style={{ maxWidth: 205, margin: "auto" }}
             />
           </Grid>
           <Grid item xs={12} sm={8}>
@@ -88,6 +88,7 @@ const NavMenu = props => {
               width="90vw"
               maxWidth={400}
               border={1}
+              m="auto"
               borderColor="text.secondary"
             >
               <List disablePadding>
