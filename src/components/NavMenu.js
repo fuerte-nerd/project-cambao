@@ -105,15 +105,9 @@ const NavMenu = props => {
           justifyContent="space-between"
           width="100%"
           maxWidth={400}
+          m={isLandscapeMobile ? "auto" : 0}
         >
-          <Box
-            mb={2}
-            mx={isLandscapeMobile ? "auto" : 0}
-            display="block"
-            width="30%"
-            maxWidth={150}
-            align="center"
-          >
+          <Box mb={2} display="block" width="30%" maxWidth={150} align="center">
             <Img fluid={data.logo.childImageSharp.fluid} />
           </Box>
           <Box color="#fafafa">
