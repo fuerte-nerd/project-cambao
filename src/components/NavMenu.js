@@ -64,8 +64,18 @@ const NavMenu = props => {
       TransitionComponent={Transition}
       open={props.isOpen}
       onClose={handleClose}
+      PaperProps={{
+        style: {
+          background: "orangered",
+          padding: "1rem",
+          alignItems: "center",
+          justifyContent: "center",
+          display: "flex",
+          height: "100%",
+        },
+      }}
       fullScreen
-      scroll="body"
+      scroll="paper"
     >
       <Hidden xsDown>
         <Box mb={2} display="block" width="25%" maxWidth={205} align="center">
