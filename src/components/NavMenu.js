@@ -65,6 +65,7 @@ const NavMenu = props => {
       open={props.isOpen}
       onClose={handleClose}
       fullScreen
+      scroll="body"
     >
       <Box
         width="100%"
