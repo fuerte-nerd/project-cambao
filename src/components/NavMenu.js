@@ -28,7 +28,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const NavMenu = props => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const isLandscapeMobile = useMediaQuery(
-    "(max-width:600px) and (orientation: landscape)"
+    "(max-width:800px) and (orientation: landscape)"
   )
   const theme = useTheme()
   const handleClick = e => {
@@ -73,7 +73,7 @@ const NavMenu = props => {
       fullScreen
     >
       <Box
-        mt={isLandscapeMobile ? 2 : 0}
+        mt={isLandscapeMobile ? 20 : 0}
         mb={isLandscapeMobile ? 20 : 0}
         width="100%"
         height="100%"
