@@ -30,6 +30,7 @@ const NavMenu = props => {
   const isLandscapeMobile = useMediaQuery(
     "(max-width:600px) and (orientation: landscape)"
   )
+  const theme = useTheme()
   const handleClick = e => {
     const f = e.currentTarget
     switch (f.id) {
@@ -68,11 +69,12 @@ const NavMenu = props => {
       TransitionComponent={Transition}
       open={props.isOpen}
       onClose={handleClose}
-      PaperProps={{ style={background: 'black'}}}
+      PaperProps={{ style: { background: theme.palette.secondary.main } }}
       fullScreen
     >
       <Box
-        my={isLandscapeMobile ? 20 : 0}
+        mt={isLandscapeMobile ? 2 : 0}
+        mb={isLandscapeMobile ? 20 : 0}
         width="100%"
         height="100%"
         minHeight="100vh"
