@@ -40,7 +40,7 @@ const Navbar = props => {
   return (
     <AppBar>
       <Toolbar>
-        <Tooltip title="Return home!" color="secondary.main">
+        <Tooltip title="Return home!">
           <Box display="flex" style={{ cursor: "pointer" }}>
             <Img fixed={data.file.childImageSharp.fixed} />
           </Box>
