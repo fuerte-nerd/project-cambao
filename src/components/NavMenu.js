@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import {
+  Tooltip,
   Dialog,
   Box,
   ListItem,
@@ -12,6 +13,7 @@ import {
   Slide,
 } from "@material-ui/core"
 import { Close, ExpandMore, ExpandLess } from "@material-ui/icons"
+import Img from "gatsby-image"
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />
@@ -126,13 +128,15 @@ const NavMenu = props => {
           </List>
         </Box>
       </Box>
-      <Fab
-        id="close"
-        onClick={handleClick}
-        style={{ position: "fixed", top: "1rem", right: "1rem" }}
-      >
-        <Close />
-      </Fab>
+      <Tooltip title="Close menu">
+        <Fab
+          id="close"
+          onClick={handleClick}
+          style={{ position: "fixed", top: "1rem", right: "1rem" }}
+        >
+          <Close />
+        </Fab>
+      </Tooltip>
     </Dialog>
   )
 }
