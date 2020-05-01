@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
+  Tooltip,
   Hidden,
   Box,
   AppBar,
@@ -50,25 +51,33 @@ const Navbar = props => {
           </Box>
         </Hidden>
         <Box style={{ flex: 1 }} />
-        <IconButton color="inherit">
-          <Share />
-        </IconButton>
+        <Tooltip title="Share this page!">
+          <IconButton color="inherit">
+            <Share />
+          </IconButton>
+        </Tooltip>
         <Hidden xsDown>
-          <IconButton color="inherit">
-            <Facebook />
-          </IconButton>
-          <IconButton color="inherit">
-            <Instagram />
-          </IconButton>
+          <Tooltip title="Visit us on Facebook!">
+            <IconButton color="inherit">
+              <Facebook />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Visit us on Instagram!">
+            <IconButton color="inherit">
+              <Instagram />
+            </IconButton>
+          </Tooltip>
         </Hidden>
-        <IconButton
-          onClick={handleClick}
-          id="open-menu"
-          color="inherit"
-          edge="end"
-        >
-          <Menu />
-        </IconButton>
+        <Tooltip title="Show me the menu!">
+          <IconButton
+            onClick={handleClick}
+            id="open-menu"
+            color="inherit"
+            edge="end"
+          >
+            <Menu />
+          </IconButton>
+        </Tooltip>
       </Toolbar>
     </AppBar>
   )

@@ -5,4 +5,5 @@ Todos
 - [ ] add logo to navmenu and make menu dense on mobile
 - [ ] add grid layout for index header
 - [ ] position footer in new full width grid row
+- [ ] add language selector
 - [ ] trial pagination layout for index page
