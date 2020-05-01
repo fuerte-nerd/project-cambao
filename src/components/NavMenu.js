@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
+  makeStyles,
   useTheme,
   useMediaQuery,
   Hidden,
@@ -32,6 +33,11 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />
 })
 
+  const useStyles = makeStyles(theme->({
+  socialButton: {
+    border: "1px solid #fafafa"
+  }
+  }))
 const NavMenu = props => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const isLandscapeMobile = useMediaQuery(
