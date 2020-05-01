@@ -33,12 +33,13 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />
 })
 
-  const useStyles = makeStyles(theme->({
+const useStyles = makeStyles(theme => ({
   socialButton: {
-    border: "1px solid #fafafa"
-  }
-  }))
+    fontSize: "4rem",
+  },
+}))
 const NavMenu = props => {
+  const classes = useStyles()
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const isLandscapeMobile = useMediaQuery(
     "(max-width:800px) and (orientation: landscape)"
@@ -117,10 +118,10 @@ const NavMenu = props => {
           </Box>
           <Box color="#fafafa">
             <IconButton color="inherit">
-              <Facebook />
+              <Facebook className={classes.socialButton} />
             </IconButton>
             <IconButton color="inherit">
-              <Instagram />
+              <Instagram className={classes.socialButton} />
             </IconButton>
           </Box>
         </Box>
