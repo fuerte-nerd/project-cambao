@@ -67,14 +67,12 @@ const NavMenu = props => {
     >
       <Box
         width="100%"
-        height="100%"
         minHeight="100vh"
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
         bgcolor="secondary.main"
-        color="inherit"
       >
         <Box mb={2} display="block" width="25%" maxWidth={205} align="center">
           <Img fluid={data.logo.childImageSharp.fluid} />
