@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
+  useTheme,
+  useMediaQuery,
   Hidden,
   Container,
   Grid,
@@ -25,7 +27,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const NavMenu = props => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
-
+  const isLandscapeMobile = useMediaQuery(
+    "(max-width:600px) and (orientation: landscape)"
+  )
   const handleClick = e => {
     const f = e.currentTarget
     switch (f.id) {
@@ -65,13 +69,12 @@ const NavMenu = props => {
       open={props.isOpen}
       onClose={handleClose}
       fullScreen
-      scroll="body"
     >
       <Box
         width="100%"
         height="100%"
         minHeight="100vh"
-        display="flex"
+        display={isLandscapeMobile ? "block" : "flex"}
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
