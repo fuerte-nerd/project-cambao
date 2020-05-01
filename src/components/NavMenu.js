@@ -68,10 +68,11 @@ const NavMenu = props => {
       TransitionComponent={Transition}
       open={props.isOpen}
       onClose={handleClose}
+      PaperProps={{ style={background: 'black'}}}
       fullScreen
     >
       <Box
-        p={isLandscapeMobile ? 2 : 0}
+        my={isLandscapeMobile ? 20 : 0}
         width="100%"
         height="100%"
         minHeight="100vh"
