@@ -31,6 +31,7 @@ const NavMenu = props => {
     "(max-width:800px) and (orientation: landscape)"
   )
   const theme = useTheme()
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"))
   const handleClick = e => {
     const f = e.currentTarget
     switch (f.id) {
@@ -101,7 +102,7 @@ const NavMenu = props => {
           maxWidth={400}
           boxShadow={3}
         >
-          <List disablePadding dense>
+          <List disablePadding dense={isLargeScreen ? false : true}>
             <ListItem button divider>
               <ListItemText
                 primary="Home"
