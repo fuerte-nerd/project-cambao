@@ -75,7 +75,7 @@ const NavMenu = props => {
         bgcolor="secondary.main"
         color="inherit"
       >
-        <Box mb={3} display="block" width="35%" maxWidth={205} align="center">
+        <Box mb={2} display="block" width="25%" maxWidth={205} align="center">
           <Img fluid={data.logo.childImageSharp.fluid} />
         </Box>
         <Box
@@ -85,7 +85,7 @@ const NavMenu = props => {
           border={1}
           borderColor="text.secondary"
         >
-          <List disablePadding>
+          <List disablePadding dense>
             <ListItem button divider>
               <ListItemText
                 primary="Home"
