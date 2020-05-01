@@ -64,86 +64,84 @@ const NavMenu = props => {
       TransitionComponent={Transition}
       open={props.isOpen}
       onClose={handleClose}
-      PaperProps={{
-        style: {
-          background: "orangered",
-          padding: "1rem",
-          alignItems: "center",
-          justifyContent: "center",
-          display: "flex",
-          height: "100%",
-        },
-      }}
       fullScreen
-      scroll="paper"
+      scroll="body"
     >
-      <Hidden xsDown>
-        <Box mb={2} display="block" width="25%" maxWidth={205} align="center">
-          <Img fluid={data.logo.childImageSharp.fluid} />
+      <Box
+        width="100%"
+        height="100%"
+        minHeight="100vh"
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        bgcolor="secondary.main"
+      >
+        <Hidden xsDown>
+          <Box mb={2} display="block" width="25%" maxWidth={150} align="center">
+            <Img fluid={data.logo.childImageSharp.fluid} />
+          </Box>
+        </Hidden>
+        <Box bgcolor="#fafafa" width="90vw" maxWidth={400} boxShadow={3}>
+          <List disablePadding dense>
+            <ListItem button divider>
+              <ListItemText
+                primary="Home"
+                secondary="Latest news and articles"
+              />
+            </ListItem>
+            <ListItem button divider>
+              <ListItemText
+                primary="The Dogs"
+                secondary="Meet our current guests"
+              />
+            </ListItem>
+            <ListItem button divider>
+              <ListItemText primary="Who are we?" secondary="Get to know us" />
+            </ListItem>
+            <ListItem onClick={handleClick} id="help-us" button divider>
+              <ListItemText
+                primary="Help us"
+                secondary="Find out how you can help"
+              />
+              {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={helpUsOpen}>
+              <List dense disablePadding>
+                <ListItem button divider>
+                  <ListItemText
+                    primary="Adopt"
+                    style={{ textAlign: "center" }}
+                  />
+                </ListItem>
+                <ListItem button divider>
+                  <ListItemText
+                    primary="Foster"
+                    style={{ textAlign: "center" }}
+                  />
+                </ListItem>
+                <ListItem button divider>
+                  <ListItemText
+                    primary="Donate"
+                    style={{ textAlign: "center" }}
+                  />
+                </ListItem>
+                <ListItem button divider>
+                  <ListItemText
+                    primary="Volunteer"
+                    style={{ textAlign: "center" }}
+                  />
+                </ListItem>
+              </List>
+            </Collapse>
+            <ListItem button>
+              <ListItemText
+                primary="Contact"
+                secondary="Get in touch with us"
+              />
+            </ListItem>
+          </List>
         </Box>
-      </Hidden>
-      <Box bgcolor="#fafafa" width="90vw" maxWidth={400} boxShadow={3}>
-        <List disablePadding dense>
-          <ListItem button divider>
-            <ListItemText primary="Home" secondary="Latest news and articles" />
-          </ListItem>
-          <ListItem button divider>
-            <ListItemText
-              primary="The Dogs"
-              secondary="Meet our current guests"
-            />
-          </ListItem>
-          <ListItem button divider>
-            <ListItemText
-              primary="The Dogs"
-              secondary="Meet our current guests"
-            />
-          </ListItem>
-          <ListItem button divider>
-            <ListItemText
-              primary="The Dogs"
-              secondary="Meet our current guests"
-            />
-          </ListItem>
-          <ListItem button divider>
-            <ListItemText primary="Who are we?" secondary="Get to know us" />
-          </ListItem>
-          <ListItem onClick={handleClick} id="help-us" button divider>
-            <ListItemText
-              primary="Help us"
-              secondary="Find out how you can help"
-            />
-            {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
-          </ListItem>
-          <Collapse in={helpUsOpen}>
-            <List dense disablePadding>
-              <ListItem button divider>
-                <ListItemText primary="Adopt" style={{ textAlign: "center" }} />
-              </ListItem>
-              <ListItem button divider>
-                <ListItemText
-                  primary="Foster"
-                  style={{ textAlign: "center" }}
-                />
-              </ListItem>
-              <ListItem button divider>
-                <ListItemText
-                  primary="Donate"
-                  style={{ textAlign: "center" }}
-                />
-              </ListItem>
-              <ListItem button divider>
-                <ListItemText
-                  primary="Volunteer"
-                  style={{ textAlign: "center" }}
-                />
-              </ListItem>
-            </List>
-          </Collapse>
-          <ListItem button>
-            <ListItemText primary="Contact" secondary="Get in touch with us" />
-          </ListItem>
-        </List>
       </Box>
       <Tooltip title="Close menu">
         <Fab
