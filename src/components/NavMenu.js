@@ -63,13 +63,7 @@ const NavMenu = props => {
       TransitionComponent={Transition}
       open={props.isOpen}
       onClose={handleClose}
-      fullWidth
-      PaperProps={{
-        style: {
-          maxWidth: "100vw",
-          minHeight: "100vh",
-        },
-      }}
+      fullScreen
     >
       <Box
         width="100%"
