@@ -35,7 +35,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const useStyles = makeStyles(theme => ({
   socialButton: {
-    fontSize: "4rem",
+    fontSize: "3rem",
   },
 }))
 const NavMenu = props => {
@@ -117,12 +117,16 @@ const NavMenu = props => {
             <Img fluid={data.logo.childImageSharp.fluid} />
           </Box>
           <Box color="#fafafa">
-            <IconButton color="inherit">
-              <Facebook className={classes.socialButton} />
-            </IconButton>
-            <IconButton color="inherit">
-              <Instagram className={classes.socialButton} />
-            </IconButton>
+            <Tooltip title="Visit us on Facebook!">
+              <IconButton color="inherit">
+                <Facebook className={classes.socialButton} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Visit us on Instagram!">
+              <IconButton edge="end" color="inherit">
+                <Instagram className={classes.socialButton} />
+              </IconButton>
+            </Tooltip>
           </Box>
         </Box>
         <Box
