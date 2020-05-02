@@ -30,13 +30,28 @@ const SidebarQuickLinks = () => {
     <>
       <SidebarSectionTitle title="Quick Links" top />
       <List disablePadding dense>
-        <SidebarQuickLinksItem label="Home" />
-        <SidebarQuickLinksItem label="The Dogs" />
-        <SidebarQuickLinksItem label="Who are we?" />
-        <ListItem disableGutters button>
-          <ListItemText primary="Who are we?" />
-        </ListItem>
-        <ListItem disableGutters onClick={handleClick} id="help-us" button>
+        <SidebarQuickLinksItem
+          label="Home"
+          id="home"
+          clickEvent={handleClick}
+        />
+        <SidebarQuickLinksItem
+          label="The Dogs"
+          id="the-dogs"
+          clickEvent={handleClick}
+        />
+        <SidebarQuickLinksItem
+          label="Who are we?"
+          id="who-are-we"
+          clickEvent={handleClick}
+        />
+        <SidebarQuickLinksItem
+          label="Help us"
+          id="help-us"
+          clickEvent={handleClick}
+          dropdown
+        />
+        <ListItem disableGutters onClick={handleClick} id="help-us" butto>
           <ListItemText primary="Help us" />
           {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
