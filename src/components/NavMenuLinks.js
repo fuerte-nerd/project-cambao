@@ -27,13 +27,7 @@ const NavMenuLinks = props => {
     }
   }, [props.isOpen])
   return (
-    <Box
-      m={isLandscapeMobile ? "auto" : 0}
-      bgcolor="#fafafa"
-      width="90vw"
-      maxWidth={400}
-      boxShadow={3}
-    >
+    <Box m={isLandscapeMobile ? "auto" : 0} width="90vw" maxWidth={400}>
       <List disablePadding dense={isLargeScreen ? false : true}>
         <NavMenuLinksItem
           id="home"
