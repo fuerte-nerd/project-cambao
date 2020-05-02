@@ -50,11 +50,8 @@ const SidebarQuickLinks = () => {
           id="help-us"
           clickEvent={handleClick}
           dropdown
+          isOpen={helpUsOpen}
         />
-        <ListItem disableGutters onClick={handleClick} id="help-us" butto>
-          <ListItemText primary="Help us" />
-          {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
         <Collapse in={helpUsOpen}>
           <Box p={1} bgcolor="#fafafa">
             <List dense disablePadding>
@@ -73,9 +70,11 @@ const SidebarQuickLinks = () => {
             </List>
           </Box>
         </Collapse>
-        <ListItem disableGutters button>
-          <ListItemText primary="Contact" />
-        </ListItem>
+        <SidebarQuickLinksItem
+          label="Contact"
+          id="contact"
+          clickEvent={handleClick}
+        />
       </List>
     </>
   )
