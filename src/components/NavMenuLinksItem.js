@@ -11,7 +11,6 @@ const NavMenuLinksItem = props => {
       onClick={props.clickEvent}
     >
       <ListItemText
-        disableTypography
         primary={props.title}
         secondary={props.subtitle}
         primaryTypographyProps={{ style: { color: "#fafafa" } }}

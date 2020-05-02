@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 
-import { Box, List, Collapse, useMediaQuery, useTheme } from "@material-ui/core"
+import {
+  Box,
+  Divider,
+  List,
+  Collapse,
+  useMediaQuery,
+  useTheme,
+} from "@material-ui/core"
 import NavMenuLinksItem from "./NavMenuLinksItem"
 import NavMenuHelpUsSubmenu from "./NavMenuHelpUsSubmenu"
 
@@ -28,6 +35,7 @@ const NavMenuLinks = props => {
   }, [props.isOpen])
   return (
     <Box m={isLandscapeMobile ? "auto" : 0} width="90vw" maxWidth={400}>
+      <Divider />
       <List disablePadding dense={isLargeScreen ? false : true}>
         <NavMenuLinksItem
           id="home"
