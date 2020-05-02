@@ -112,7 +112,12 @@ const NavMenu = props => {
           <Box mb={2} display="block" width="30%" maxWidth={150} align="center">
             <Img fluid={data.logo.childImageSharp.fluid} />
           </Box>
-          <Box color="#fafafa" display="flex" flexDirection="column">
+          <Box
+            color="#fafafa"
+            display="flex"
+            alignItems="flex-end"
+            flexDirection="column"
+          >
             <ButtonGroup size="small">
               <Button>EN</Button>
               <Button>ES</Button>
