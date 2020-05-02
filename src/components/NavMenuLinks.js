@@ -1,9 +1,11 @@
 import React, { useState } from "react"
+import { connect } from "react-redux"
+
 import { List, Collapse, useMediaQuery, useTheme } from "@material-ui/core"
 import NavMenuLinksItem from "./NavMenuLinksItem"
 import NavMenuHelpUsSubmenu from "./NavMenuHelpUsSubmenu"
 
-const NavMenuLinks = () => {
+const NavMenuLinks = props => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const theme = useTheme()
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"))
@@ -16,6 +18,11 @@ const NavMenuLinks = () => {
         return
     }
   }
+  useEffect(() => {
+    if (!props.isOpen) {
+      setHelpUsOpen(false)
+    }
+  }, [props.isOpen])
   return (
     <List disablePadding dense={isLargeScreen ? false : true}>
       <NavMenuLinksItem
@@ -62,4 +69,8 @@ const NavMenuLinks = () => {
   )
 }
 
-export default NavMenuLinks
+const mapStateToProps = state => ({
+  isOpen: state.navOpen,
+})
+
+export default connect(mapStateToProps)(NavMenuLinks)
