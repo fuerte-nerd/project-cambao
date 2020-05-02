@@ -33,7 +33,6 @@ const Navbar = props => {
             ...GatsbyImageSharpFixed
           }
         }
-        sourceInstanceName
       }
     }
   `)
