@@ -23,6 +23,7 @@ import Img from "gatsby-image"
 import theme from "./theme"
 import Navbar from "./Navbar"
 import NavMenu from "./NavMenu"
+import Sidebar from "./Sidebar"
 import LocationMap from "./LocationMap"
 import Footer from "./Footer"
 
@@ -76,62 +77,7 @@ const Layout = ({ children }) => {
           <Toolbar />
           <Grid container>
             <Hidden smDown>
-              <Grid item xs={0} md={2}>
-                <Box py={2} bgcolor="primary.light" boxShadow={2}>
-                  <Container>
-                    <Box pb={1}>
-                      <Typography variant="overline">Quick Links</Typography>
-                      <Divider />
-                    </Box>
-                    <List disablePadding dense>
-                      <ListItem disableGutters button>
-                        <ListItemText primary="Home" />
-                      </ListItem>
-                      <ListItem disableGutters button>
-                        <ListItemText primary="The Dogs" />
-                      </ListItem>
-                      <ListItem disableGutters button>
-                        <ListItemText primary="Who are we?" />
-                      </ListItem>
-                      <ListItem
-                        disableGutters
-                        onClick={handleClick}
-                        id="help-us"
-                        button
-                      >
-                        <ListItemText primary="Help us" />
-                        {helpUsOpen ? <ExpandLess /> : <ExpandMore />}
-                      </ListItem>
-                      <Collapse in={helpUsOpen}>
-                        <Box p={1} bgcolor="#fafafa">
-                          <List dense disablePadding>
-                            <ListItem button>
-                              <ListItemText primary="Adopt" />
-                            </ListItem>
-                            <ListItem button>
-                              <ListItemText primary="Foster" />
-                            </ListItem>
-                            <ListItem button>
-                              <ListItemText primary="Donate" />
-                            </ListItem>
-                            <ListItem button>
-                              <ListItemText primary="Volunteer" />
-                            </ListItem>
-                          </List>
-                        </Box>
-                      </Collapse>
-                      <ListItem disableGutters button>
-                        <ListItemText primary="Contact" />
-                      </ListItem>
-                    </List>
-                    <Box pt={2} pb={1}>
-                      <Typography variant="overline">Location</Typography>
-                      <Divider />
-                    </Box>
-                    <LocationMap />
-                  </Container>
-                </Box>
-              </Grid>
+              <Sidebar />
             </Hidden>
             <Grid item xs={12} md={10} justify="center">
               {children}
