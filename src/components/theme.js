@@ -1,13 +1,14 @@
+import { fdr_orange, fdr_blue } from "../../colors"
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
 
 let rawTheme = createMuiTheme({
   palette: {
     primary: {
-      main: "#3ba39c",
+      main: fdr_blue,
       contrastText: "#fafafa",
     },
     secondary: {
-      main: "#f07937",
+      main: fdr_orange,
     },
     background: {},
     text: {},

@@ -1,3 +1,5 @@
+const colors = require("./colors")
+
 module.exports = {
   siteMetadata: {
     title: `Fuerteventura Dog Rescue`,
@@ -18,12 +20,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Fuerteventura Dog Rescue`,
+        short_name: `FDR`,
         start_url: `/`,
-        background_color: require("./src/components/theme").palette.primary
-          .main,
-        theme_color: `#663399`,
+        background_color: colors.fdr_blue,
+        theme_color: colors.fdr_orange,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
