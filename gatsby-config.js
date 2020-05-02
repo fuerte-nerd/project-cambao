@@ -1,5 +1,3 @@
-const theme = require("./src/components/theme")
-
 module.exports = {
   siteMetadata: {
     title: `Fuerteventura Dog Rescue`,
@@ -23,7 +21,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: theme.palette.primary.main,
+        background_color: require("./src/components/theme").palette.primary
+          .main,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
