@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 
 import { Box, List, Collapse, useMediaQuery, useTheme } from "@material-ui/core"
-import { isLandscapeMobile } from "./mediaQueries"
 import NavMenuLinksItem from "./NavMenuLinksItem"
 import NavMenuHelpUsSubmenu from "./NavMenuHelpUsSubmenu"
 
 const NavMenuLinks = props => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const theme = useTheme()
+  const isLandscapeMobile = useMediaQuery(
+    "(max-width:800px) and (orientation: landscape)"
+  )
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"))
   const handleClick = e => {
     const f = e.currentTarget
