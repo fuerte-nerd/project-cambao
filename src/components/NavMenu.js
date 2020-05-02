@@ -9,8 +9,6 @@ import {
   useTheme,
   useMediaQuery,
   Hidden,
-  Container,
-  Grid,
   IconButton,
   Tooltip,
   Dialog,
@@ -34,6 +32,8 @@ import Img from "gatsby-image"
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />
 })
+
+import LanguageSelector from "./LanguageSelector"
 
 const useStyles = makeStyles(theme => ({
   socialButton: {
@@ -131,22 +131,7 @@ const NavMenu = props => {
                 </IconButton>
               </Tooltip>
             </Box>
-            <Hidden smUp>
-              <Tooltip title="Tap to change">
-                <Button size="small" color="inherit" variant="outlined">
-                  Language: Eng
-                </Button>
-              </Tooltip>
-            </Hidden>
-            <Hidden xsDown>
-              <ButtonGroup size="small" disableElevation>
-                <Button variant="contained">EN</Button>
-                <Button>ES</Button>
-                <Button>DE</Button>
-                <Button>IT</Button>
-                <Button>FR</Button>
-              </ButtonGroup>
-            </Hidden>
+            <LanguageSelector />
           </Box>
         </Box>
         <Box
