@@ -7,30 +7,43 @@ const NavMenuLinks = () => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const theme = useTheme()
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"))
+  const handleClick = e => {
+    const f = e.currentTarget
+    switch (f.id) {
+      case "help-us":
+        return setHelpUsOpen(!helpUsOpen)
+      default:
+        return
+    }
+  }
   return (
     <List disablePadding dense={isLargeScreen ? false : true}>
       <NavMenuLinksItem
         id="home"
         title="Home"
         subtitle="Latest news and articles"
+        clickEvent={handleClick}
         divider
       />
       <NavMenuLinksItem
         id="the-dogs"
         title="The Dogs"
         subtitle="Meet our current guests"
+        clickEvent={handleClick}
         divider
       />
       <NavMenuLinksItem
         id="who-are-we"
         title="Who are we?"
         subtitle="Get to know us"
+        clickEvent={handleClick}
         divider
       />
       <NavMenuLinksItem
         id="help-us"
         title="Help us"
         subtitle="Find out how you can help"
+        clickEvent={handleClick}
         divider
         dropdown
         isOpen={helpUsOpen}
@@ -42,6 +55,7 @@ const NavMenuLinks = () => {
         id="contact"
         title="Contact"
         subtitle="Get in touch with us"
+        clickEvent={handleClick}
         divider
       />
     </List>
