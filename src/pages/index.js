@@ -25,6 +25,7 @@ import {
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Heading from "../components/index/Heading"
 
 const IndexPage = () => {
   const theme = useTheme()
@@ -50,63 +51,38 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Box m={isNotMobile ? 3 : 1}>
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection={isNotMobile ? "row" : "column"}
-          mb={2}
-          width="100%"
-        >
-          <Img
-            fluid={data.logo.childImageSharp.fluid}
-            style={{
-              width: "100%",
-              maxWidth: 150,
-            }}
-          />
-          <Box ml={isNotMobile ? 2 : 0} mt={isNotMobile ? 0 : 1} align="center">
-            <Typography variant="h3">We are their voice!</Typography>
-            <Typography variant="subtitle1">
-              Taking care of the abandoned and mistreated dogs of the La Oliva
-              area in Fuerteventura since 2013
-            </Typography>
-          </Box>
-        </Box>
-        <Card>
-          <CardActionArea>
-            <CardContent>
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={5} md={4} lg={3}>
-                  <Img fluid={data.dog1.childImageSharp.fluid} />
-                </Grid>
-                <Grid item xs={12} sm={7} md={8} lg={9}>
-                  <Typography variant="h3">Post title</Typography>
-                  <Typography variant="overline">27 April 2020</Typography>
-                  <Box mb={2}>
-                    <Divider />
-                  </Box>
-
-                  <Typography align="justify" paragraph>
-                    Lorem possimus non perspiciatis quibusdam iste. Numquam
-                    veritatis consequatur velit ea ad quia? Deleniti autem
-                    dolorum consequatur labore natus. Obcaecati assumenda
-                    debitis quas accusantium temporibus animi! Facilis molestias
-                    ab necessitatibus similique itaque Exercitationem assumenda
-                    nemo.
-                  </Typography>
-                  <Box align="end">
-                    <Button variant="outlined" color="secondary">
-                      Read more
-                    </Button>
-                  </Box>
-                </Grid>
+      <Heading />
+      <Card>
+        <CardActionArea>
+          <CardContent>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={5} md={4} lg={3}>
+                <Img fluid={data.dog1.childImageSharp.fluid} />
               </Grid>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </Box>
+              <Grid item xs={12} sm={7} md={8} lg={9}>
+                <Typography variant="h3">Post title</Typography>
+                <Typography variant="overline">27 April 2020</Typography>
+                <Box mb={2}>
+                  <Divider />
+                </Box>
+
+                <Typography align="justify" paragraph>
+                  Lorem possimus non perspiciatis quibusdam iste. Numquam
+                  veritatis consequatur velit ea ad quia? Deleniti autem dolorum
+                  consequatur labore natus. Obcaecati assumenda debitis quas
+                  accusantium temporibus animi! Facilis molestias ab
+                  necessitatibus similique itaque Exercitationem assumenda nemo.
+                </Typography>
+                <Box align="end">
+                  <Button variant="outlined" color="secondary">
+                    Read more
+                  </Button>
+                </Box>
+              </Grid>
+            </Grid>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     </Layout>
   )
 }

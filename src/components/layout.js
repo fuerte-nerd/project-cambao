@@ -10,10 +10,12 @@ import {
   Hidden,
   Toolbar,
   CssBaseline,
+  useTheme,
+  useMediaQuery,
 } from "@material-ui/core"
 
 import { ThemeProvider } from "@material-ui/core/styles"
-import theme from "./theme"
+import siteTheme from "./theme"
 
 import Navbar from "./Navbar"
 import NavMenu from "./NavMenu"
@@ -21,6 +23,8 @@ import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 
 const Layout = ({ children }) => {
+  const theme = useTheme()
+  const isNotMobile = useMediaQuery(theme.breakpoints.up("sm"))
   const data = useStaticQuery(graphql`
     {
       siteTitle: site {
@@ -32,7 +36,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={siteTheme}>
       <Helmet>
         <link
           href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap"
@@ -54,7 +58,7 @@ const Layout = ({ children }) => {
               <Sidebar />
             </Hidden>
             <Grid item xs={12} md={10} justify="center">
-              {children}
+              <Box m={isNotMobile ? 3 : 1}>{children}</Box>
             </Grid>
             <Grid item xs={12}>
               <Container>
