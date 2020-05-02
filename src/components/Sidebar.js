@@ -1,19 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 
-import {
-  Grid,
-  Box,
-  Container,
-  Typography,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  Collapse,
-} from "@material-ui/core"
+import { Grid, Box, Container } from "@material-ui/core"
 
-import LocationMap from "./LocationMap"
 import SidebarQuickLinks from "./SidebarQuickLinks"
+import SidebarLocation from "./SidebarLocation"
 
 const Sidebar = () => {
   return (
@@ -21,11 +11,7 @@ const Sidebar = () => {
       <Box py={2} bgcolor="primary.light" boxShadow={2}>
         <Container>
           <SidebarQuickLinks />
-          <Box pt={2} pb={1}>
-            <Typography variant="overline">Location</Typography>
-            <Divider />
-          </Box>
-          <LocationMap />
+          <SidebarLocation />
         </Container>
       </Box>
     </Grid>

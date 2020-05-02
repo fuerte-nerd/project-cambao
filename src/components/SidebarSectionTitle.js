@@ -3,7 +3,7 @@ import { Box, Typography, Divider } from "@material-ui/core"
 
 const SidebarSectionTitle = props => {
   return (
-    <Box pb={1}>
+    <Box pt={props.top ? 0 : 2} pb={1}>
       <Typography variant="overline">{props.title}</Typography>
       <Divider />
     </Box>

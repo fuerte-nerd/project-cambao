@@ -27,7 +27,7 @@ const SidebarQuickLinks = () => {
   }
   return (
     <>
-      <SidebarSectionTitle title="Quick Links" />
+      <SidebarSectionTitle title="Quick Links" top />
       <List disablePadding dense>
         <ListItem disableGutters button>
           <ListItemText primary="Home" />
