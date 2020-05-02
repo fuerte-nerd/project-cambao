@@ -112,24 +112,26 @@ const NavMenu = props => {
           <Box mb={2} display="block" width="30%" maxWidth={150} align="center">
             <Img fluid={data.logo.childImageSharp.fluid} />
           </Box>
-          <Box color="#fafafa">
-            <ButtonGroup>
+          <Box color="#fafafa" display="flex" flexDirection="column">
+            <ButtonGroup size="small">
               <Button>EN</Button>
               <Button>ES</Button>
               <Button>DE</Button>
               <Button>IT</Button>
               <Button>FR</Button>
             </ButtonGroup>
-            <Tooltip title="Visit us on Facebook!">
-              <IconButton color="inherit">
-                <Facebook className={classes.socialButton} />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Visit us on Instagram!">
-              <IconButton edge="end" color="inherit">
-                <Instagram className={classes.socialButton} />
-              </IconButton>
-            </Tooltip>
+            <Box>
+              <Tooltip title="Visit us on Facebook!">
+                <IconButton color="inherit">
+                  <Facebook className={classes.socialButton} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Visit us on Instagram!">
+                <IconButton edge="end" color="inherit">
+                  <Instagram className={classes.socialButton} />
+                </IconButton>
+              </Tooltip>
+            </Box>
           </Box>
         </Box>
         <Box
