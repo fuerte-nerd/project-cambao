@@ -51,20 +51,28 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Box m={isNotMobile ? 3 : 1}>
-        <Box mb={2} align="center" width="100%">
-          <Img
-            fluid={data.logo.childImageSharp.fluid}
-            style={{
-              width: "100%",
-              maxWidth: 150,
-            }}
-          />
-        </Box>
-        <Box>
-          <Typography variant="h3" align="center" paragraph>
-            We are their voice!
-          </Typography>
-        </Box>
+        <Grid container>
+          <Grid item xs={12} sm={3}>
+            <Box mb={2} align="center" width="100%">
+              <Img
+                fluid={data.logo.childImageSharp.fluid}
+                style={{
+                  width: "100%",
+                  maxWidth: 150,
+                }}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={9}>
+            <Box align="center">
+              <Typography variant="h3">We are their voice!</Typography>
+              <Typography variant="subtitle1">
+                Taking care of the abandoned and mistreated dogs of the La Oliva
+                area in Fuerteventura since 2013
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
         <Card>
           <CardActionArea>
             <CardContent>
