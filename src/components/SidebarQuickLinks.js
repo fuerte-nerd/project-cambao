@@ -11,6 +11,8 @@ import {
 
 import { ExpandLess, ExpandMore } from "@material-ui/icons"
 
+import SidebarSectionTitle from "./SidebarSectionTitle"
+
 const SidebarQuickLinks = () => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const handleClick = e => {
@@ -25,10 +27,7 @@ const SidebarQuickLinks = () => {
   }
   return (
     <>
-      <Box pb={1}>
-        <Typography variant="overline">Quick Links</Typography>
-        <Divider />
-      </Box>
+      <SidebarSectionTitle title="Quick Links" />
       <List disablePadding dense>
         <ListItem disableGutters button>
           <ListItemText primary="Home" />
