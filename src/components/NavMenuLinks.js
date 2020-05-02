@@ -1,8 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
+import { List, Collapse, useMediaQuery, useTheme } from "@material-ui/core"
 import NavMenuLinksItem from "./NavMenuLinksItem"
 import NavMenuHelpUsSubmenu from "./NavMenuHelpUsSubmenu"
 
 const NavMenuLinks = () => {
+  const [helpUsOpen, setHelpUsOpen] = useState(false)
+  const theme = useTheme()
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"))
   return (
     <List disablePadding dense={isLargeScreen ? false : true}>
       <NavMenuLinksItem
