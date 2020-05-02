@@ -1,43 +1,34 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
-  useTheme,
   useMediaQuery,
   Tooltip,
   Dialog,
   Box,
-  ListItem,
-  ListItemText,
-  List,
   Fab,
-  Collapse,
   Slide,
 } from "@material-ui/core"
-import { Close, ExpandMore, ExpandLess } from "@material-ui/icons"
+import { Close } from "@material-ui/icons"
 import Img from "gatsby-image"
 
 import NavMenuSocialLinks from "./NavMenuSocialLinks"
 import LanguageSelector from "./LanguageSelector"
 import NavMenuLinks from "./NavMenuLinks"
+import CloseMenuButton from "./CloseMenuButton"
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />
 })
 
 const NavMenu = props => {
-  const [helpUsOpen, setHelpUsOpen] = useState(false)
   const isLandscapeMobile = useMediaQuery(
     "(max-width:800px) and (orientation: landscape)"
   )
-  const theme = useTheme()
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"))
   const handleClick = e => {
     const f = e.currentTarget
     switch (f.id) {
-      case "help-us":
-        return setHelpUsOpen(!helpUsOpen)
       case "close":
         return props.dispatch(setNav(false))
       default:
@@ -49,11 +40,6 @@ const NavMenu = props => {
     props.dispatch(setNav(false))
   }
 
-  useEffect(() => {
-    if (!props.isOpen) {
-      setHelpUsOpen(false)
-    }
-  }, [props.isOpen])
   const data = useStaticQuery(graphql`
     {
       logo: file(name: { eq: "logo" }) {
@@ -118,15 +104,7 @@ const NavMenu = props => {
           <NavMenuLinks />
         </Box>
       </Box>
-      <Tooltip title="Close menu">
-        <Fab
-          id="close"
-          onClick={handleClick}
-          style={{ position: "fixed", top: "1rem", right: "1rem" }}
-        >
-          <Close />
-        </Fab>
-      </Tooltip>
+      <CloseMenuButton />
     </Dialog>
   )
 }
