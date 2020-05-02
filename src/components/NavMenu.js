@@ -131,11 +131,13 @@ const NavMenu = props => {
                 </IconButton>
               </Tooltip>
             </Box>
-            <Tooltip title="Tap to change">
-              <Button size="small" color="inherit" variant="outlined">
-                Language: Eng
-              </Button>
-            </Tooltip>
+            <Hidden smUp>
+              <Tooltip title="Tap to change">
+                <Button size="small" color="inherit" variant="outlined">
+                  Language: Eng
+                </Button>
+              </Tooltip>
+            </Hidden>
             <Hidden xsDown>
               <ButtonGroup size="small" disableElevation>
                 <Button variant="contained">EN</Button>
