@@ -118,15 +118,6 @@ const NavMenu = props => {
             alignItems="flex-end"
             flexDirection="column"
           >
-            <ButtonGroup size="small" variant="contained">
-              <Button variant="contained" color="primary">
-                EN
-              </Button>
-              <Button>ES</Button>
-              <Button>DE</Button>
-              <Button>IT</Button>
-              <Button>FR</Button>
-            </ButtonGroup>
             <Box>
               <Tooltip title="Visit us on Facebook!">
                 <IconButton color="inherit">
@@ -139,6 +130,13 @@ const NavMenu = props => {
                 </IconButton>
               </Tooltip>
             </Box>
+            <ButtonGroup size="small" disableElevation>
+              <Button variant="contained">EN</Button>
+              <Button>ES</Button>
+              <Button>DE</Button>
+              <Button>IT</Button>
+              <Button>FR</Button>
+            </ButtonGroup>
           </Box>
         </Box>
         <Box
