@@ -6,7 +6,7 @@ const NavMenuHelpUsSubmenuItem = props => {
     <ListItem button id={props.id} divider>
       <ListItemText
         primary={props.title}
-        style={{ color: "#fafafa", textAlign: "center" }}
+        style={{ textAlign: "center" }}
         primaryTypographyProps={{ style: { fontSize: ".75rem" } }}
       />
     </ListItem>
