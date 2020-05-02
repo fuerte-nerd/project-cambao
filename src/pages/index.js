@@ -51,7 +51,13 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Box m={isNotMobile ? 3 : 1}>
-        <Box display="flex" alignItems="center" mb={2} width="100%">
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mb={2}
+          width="100%"
+        >
           <Img
             fluid={data.logo.childImageSharp.fluid}
             style={{
@@ -59,7 +65,7 @@ const IndexPage = () => {
               maxWidth: 150,
             }}
           />
-          <Box>
+          <Box ml={2} align="center">
             <Typography variant="h3">We are their voice!</Typography>
             <Typography variant="subtitle1">
               Taking care of the abandoned and mistreated dogs of the La Oliva
