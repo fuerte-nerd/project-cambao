@@ -78,15 +78,7 @@ const NavMenu = props => {
             <LanguageSelector />
           </Box>
         </Box>
-        <Box
-          m={isLandscapeMobile ? "auto" : 0}
-          bgcolor="#fafafa"
-          width="90vw"
-          maxWidth={400}
-          boxShadow={3}
-        >
-          <NavMenuLinks />
-        </Box>
+        <NavMenuLinks />
       </Box>
       <CloseMenuButton />
     </Dialog>

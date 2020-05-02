@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 
-import { List, Collapse, useMediaQuery, useTheme } from "@material-ui/core"
+import { Box, List, Collapse, useMediaQuery, useTheme } from "@material-ui/core"
 import NavMenuLinksItem from "./NavMenuLinksItem"
 import NavMenuHelpUsSubmenu from "./NavMenuHelpUsSubmenu"
 
@@ -24,48 +24,56 @@ const NavMenuLinks = props => {
     }
   }, [props.isOpen])
   return (
-    <List disablePadding dense={isLargeScreen ? false : true}>
-      <NavMenuLinksItem
-        id="home"
-        title="Home"
-        subtitle="Latest news and articles"
-        clickEvent={handleClick}
-        divider
-      />
-      <NavMenuLinksItem
-        id="the-dogs"
-        title="The Dogs"
-        subtitle="Meet our current guests"
-        clickEvent={handleClick}
-        divider
-      />
-      <NavMenuLinksItem
-        id="who-are-we"
-        title="Who are we?"
-        subtitle="Get to know us"
-        clickEvent={handleClick}
-        divider
-      />
-      <NavMenuLinksItem
-        id="help-us"
-        title="Help us"
-        subtitle="Find out how you can help"
-        clickEvent={handleClick}
-        divider
-        dropdown
-        isOpen={helpUsOpen}
-      />
-      <Collapse in={helpUsOpen}>
-        <NavMenuHelpUsSubmenu />
-      </Collapse>
-      <NavMenuLinksItem
-        id="contact"
-        title="Contact"
-        subtitle="Get in touch with us"
-        clickEvent={handleClick}
-        divider
-      />
-    </List>
+    <Box
+      m={isLandscapeMobile ? "auto" : 0}
+      bgcolor="#fafafa"
+      width="90vw"
+      maxWidth={400}
+      boxShadow={3}
+    >
+      <List disablePadding dense={isLargeScreen ? false : true}>
+        <NavMenuLinksItem
+          id="home"
+          title="Home"
+          subtitle="Latest news and articles"
+          clickEvent={handleClick}
+          divider
+        />
+        <NavMenuLinksItem
+          id="the-dogs"
+          title="The Dogs"
+          subtitle="Meet our current guests"
+          clickEvent={handleClick}
+          divider
+        />
+        <NavMenuLinksItem
+          id="who-are-we"
+          title="Who are we?"
+          subtitle="Get to know us"
+          clickEvent={handleClick}
+          divider
+        />
+        <NavMenuLinksItem
+          id="help-us"
+          title="Help us"
+          subtitle="Find out how you can help"
+          clickEvent={handleClick}
+          divider
+          dropdown
+          isOpen={helpUsOpen}
+        />
+        <Collapse in={helpUsOpen}>
+          <NavMenuHelpUsSubmenu />
+        </Collapse>
+        <NavMenuLinksItem
+          id="contact"
+          title="Contact"
+          subtitle="Get in touch with us"
+          clickEvent={handleClick}
+          divider
+        />
+      </List>
+    </Box>
   )
 }
 
