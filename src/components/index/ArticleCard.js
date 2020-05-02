@@ -25,37 +25,39 @@ const ArticleCard = () => {
     }
   `)
   return (
-    <Card>
-      <CardActionArea>
-        <CardContent>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={5} md={4} lg={3}>
-              <Img fluid={data.dog1.childImageSharp.fluid} />
-            </Grid>
-            <Grid item xs={12} sm={7} md={8} lg={9}>
-              <Typography variant="h3">Post title</Typography>
-              <Typography variant="overline">27 April 2020</Typography>
-              <Box mb={2}>
-                <Divider />
-              </Box>
+    <Box mb={1}>
+      <Card>
+        <CardActionArea>
+          <CardContent>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={5} md={4} lg={3}>
+                <Img fluid={data.dog1.childImageSharp.fluid} />
+              </Grid>
+              <Grid item xs={12} sm={7} md={8} lg={9}>
+                <Typography variant="h3">Post title</Typography>
+                <Typography variant="overline">27 April 2020</Typography>
+                <Box mb={2}>
+                  <Divider />
+                </Box>
 
-              <Typography align="justify" paragraph>
-                Lorem possimus non perspiciatis quibusdam iste. Numquam
-                veritatis consequatur velit ea ad quia? Deleniti autem dolorum
-                consequatur labore natus. Obcaecati assumenda debitis quas
-                accusantium temporibus animi! Facilis molestias ab
-                necessitatibus similique itaque Exercitationem assumenda nemo.
-              </Typography>
-              <Box align="end">
-                <Button variant="outlined" color="secondary">
-                  Read more
-                </Button>
-              </Box>
+                <Typography align="justify" paragraph>
+                  Lorem possimus non perspiciatis quibusdam iste. Numquam
+                  veritatis consequatur velit ea ad quia? Deleniti autem dolorum
+                  consequatur labore natus. Obcaecati assumenda debitis quas
+                  accusantium temporibus animi! Facilis molestias ab
+                  necessitatibus similique itaque Exercitationem assumenda nemo.
+                </Typography>
+                <Box align="end">
+                  <Button variant="outlined" color="secondary">
+                    Read more
+                  </Button>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Box>
   )
 }
 
