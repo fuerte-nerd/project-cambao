@@ -29,11 +29,11 @@ import {
 } from "@material-ui/icons"
 import Img from "gatsby-image"
 
+import LanguageSelector from "./LanguageSelector"
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />
 })
-
-import LanguageSelector from "./LanguageSelector"
 
 const useStyles = makeStyles(theme => ({
   socialButton: {
