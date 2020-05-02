@@ -29,19 +29,14 @@ import {
 } from "@material-ui/icons"
 import Img from "gatsby-image"
 
+import NavMenuSocialLinks from "./NavMenuSocialLinks"
 import LanguageSelector from "./LanguageSelector"
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />
 })
 
-const useStyles = makeStyles(theme => ({
-  socialButton: {
-    fontSize: "3rem",
-  },
-}))
 const NavMenu = props => {
-  const classes = useStyles()
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const isLandscapeMobile = useMediaQuery(
     "(max-width:800px) and (orientation: landscape)"
@@ -119,18 +114,7 @@ const NavMenu = props => {
             alignItems="flex-end"
             flexDirection="column"
           >
-            <Box>
-              <Tooltip title="Visit us on Facebook!">
-                <IconButton color="inherit">
-                  <Facebook className={classes.socialButton} />
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="Visit us on Instagram!">
-                <IconButton edge="end" color="inherit">
-                  <Instagram className={classes.socialButton} />
-                </IconButton>
-              </Tooltip>
-            </Box>
+            <NavMenuSocialLinks />
             <LanguageSelector />
           </Box>
         </Box>
