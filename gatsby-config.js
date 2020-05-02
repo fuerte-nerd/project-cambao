@@ -1,5 +1,5 @@
-let { useTheme } = require("@material-ui/core/styles")
-let theme = useTheme()
+const theme = require("./src/components/theme")
+
 module.exports = {
   siteMetadata: {
     title: `Fuerteventura Dog Rescue`,
