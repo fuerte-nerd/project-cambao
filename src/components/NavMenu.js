@@ -108,8 +108,9 @@ const NavMenu = props => {
           width="100%"
           maxWidth={400}
           m={isLandscapeMobile ? "auto" : 0}
+          mb={1}
         >
-          <Box mb={2} display="block" width="30%" maxWidth={150} align="center">
+          <Box display="block" width="30%" maxWidth={150} align="center">
             <Img fluid={data.logo.childImageSharp.fluid} />
           </Box>
           <Box
@@ -130,13 +131,15 @@ const NavMenu = props => {
                 </IconButton>
               </Tooltip>
             </Box>
-            <ButtonGroup size="small" disableElevation>
-              <Button variant="contained">EN</Button>
-              <Button>ES</Button>
-              <Button>DE</Button>
-              <Button>IT</Button>
-              <Button>FR</Button>
-            </ButtonGroup>
+            <Hidden xsDown>
+              <ButtonGroup size="small" disableElevation>
+                <Button variant="contained">EN</Button>
+                <Button>ES</Button>
+                <Button>DE</Button>
+                <Button>IT</Button>
+                <Button>FR</Button>
+              </ButtonGroup>
+            </Hidden>
           </Box>
         </Box>
         <Box
