@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import { useTheme, useMediaQuery, Dialog, Box, Slide } from "@material-ui/core"
+import { isLandscapeMobile } from "./mediaQueries"
 import Img from "gatsby-image"
 
 import NavMenuSocialLinks from "./NavMenuSocialLinks"
@@ -15,9 +16,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 })
 
 const NavMenu = props => {
-  const isLandscapeMobile = useMediaQuery(
-    "(max-width:800px) and (orientation: landscape)"
-  )
   const theme = useTheme()
 
   const handleClose = () => {

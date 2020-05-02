@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 
 import { Box, List, Collapse, useMediaQuery, useTheme } from "@material-ui/core"
+import { isLandscapeMobile } from "./mediaQueries"
 import NavMenuLinksItem from "./NavMenuLinksItem"
 import NavMenuHelpUsSubmenu from "./NavMenuHelpUsSubmenu"
 
