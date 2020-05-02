@@ -1,8 +1,15 @@
 import React from "react"
+import NavMenuLinksItem from "./NavMenuLinksItem"
 
 const NavMenuLinks = () => {
   return (
     <List disablePadding dense={isLargeScreen ? false : true}>
+      <NavMenuLinksItem
+        title="Home"
+        subtitle="Latest news and articles"
+        divider
+      />
+
       <ListItem button divider>
         <ListItemText primary="Home" secondary="Latest news and articles" />
       </ListItem>
