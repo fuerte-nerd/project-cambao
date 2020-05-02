@@ -51,26 +51,22 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Box m={isNotMobile ? 3 : 1}>
-        <Grid container justifyContent="center" alignItems="center" spacing={2}>
-          <Grid item xs={12} sm={3}>
-            <Img
-              fluid={data.logo.childImageSharp.fluid}
-              style={{
-                width: "100%",
-                maxWidth: 150,
-              }}
-            />
-          </Grid>
-          <Grid item xs={12} sm={9}>
-            <Box align="center">
-              <Typography variant="h3">We are their voice!</Typography>
-              <Typography variant="subtitle1">
-                Taking care of the abandoned and mistreated dogs of the La Oliva
-                area in Fuerteventura since 2013
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
+        <Box display="flex" alignItems="center" mb={2} width="100%">
+          <Img
+            fluid={data.logo.childImageSharp.fluid}
+            style={{
+              width: "100%",
+              maxWidth: 150,
+            }}
+          />
+          <Box>
+            <Typography variant="h3">We are their voice!</Typography>
+            <Typography variant="subtitle1">
+              Taking care of the abandoned and mistreated dogs of the La Oliva
+              area in Fuerteventura since 2013
+            </Typography>
+          </Box>
+        </Box>
         <Card>
           <CardActionArea>
             <CardContent>
