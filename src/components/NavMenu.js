@@ -118,8 +118,10 @@ const NavMenu = props => {
             alignItems="flex-end"
             flexDirection="column"
           >
-            <ButtonGroup size="small">
-              <Button>EN</Button>
+            <ButtonGroup size="small" variant="contained">
+              <Button variant="contained" color="primary">
+                EN
+              </Button>
               <Button>ES</Button>
               <Button>DE</Button>
               <Button>IT</Button>
