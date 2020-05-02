@@ -3,7 +3,7 @@ import { ListItem, ListItemText } from "@material-ui/core"
 
 const NavMenuHelpUsSubmenuItem = props => {
   return (
-    <ListItem button divider={props.divider}>
+    <ListItem button id={props.id} divider={props.divider}>
       <ListItemText primary={props.title} style={{ textAlign: "center" }} />
     </ListItem>
   )

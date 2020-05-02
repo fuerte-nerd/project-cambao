@@ -1,20 +1,14 @@
 import React from "react"
+import { List } from "@material-ui/core"
+import NavMenuHelpUsSubmenuItem from "./NavMenuHelpUsSubmenuItem"
 
 const NavMenuHelpUsSubmenu = () => {
   return (
     <List dense disablePadding>
-      <ListItem button divider>
-        <ListItemText primary="Adopt" style={{ textAlign: "center" }} />
-      </ListItem>
-      <ListItem button divider>
-        <ListItemText primary="Foster" style={{ textAlign: "center" }} />
-      </ListItem>
-      <ListItem button divider>
-        <ListItemText primary="Donate" style={{ textAlign: "center" }} />
-      </ListItem>
-      <ListItem button divider>
-        <ListItemText primary="Volunteer" style={{ textAlign: "center" }} />
-      </ListItem>
+      <NavMenuHelpUsSubmenuItem title="Adopt" id="adopt" />
+      <NavMenuHelpUsSubmenuItem title="Foster" id="foster" />
+      <NavMenuHelpUsSubmenuItem title="Donate" id="donate" />
+      <NavMenuHelpUsSubmenuItem title="Volunteer" id="volunteer" />
     </List>
   )
 }
