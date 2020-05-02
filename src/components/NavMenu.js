@@ -2,15 +2,7 @@ import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
-import {
-  useMediaQuery,
-  Tooltip,
-  Dialog,
-  Box,
-  Fab,
-  Slide,
-} from "@material-ui/core"
-import { Close } from "@material-ui/icons"
+import { useTheme, useMediaQuery, Dialog, Box, Slide } from "@material-ui/core"
 import Img from "gatsby-image"
 
 import NavMenuSocialLinks from "./NavMenuSocialLinks"
@@ -26,15 +18,7 @@ const NavMenu = props => {
   const isLandscapeMobile = useMediaQuery(
     "(max-width:800px) and (orientation: landscape)"
   )
-  const handleClick = e => {
-    const f = e.currentTarget
-    switch (f.id) {
-      case "close":
-        return props.dispatch(setNav(false))
-      default:
-        return
-    }
-  }
+  const theme = useTheme()
 
   const handleClose = () => {
     props.dispatch(setNav(false))

@@ -1,13 +1,15 @@
 import React from "react"
+import { connect } from "react-redux"
+import { setNav } from "../redux/actions"
 import { Tooltip, Fab } from "@material-ui/core"
 import { Close } from "@material-ui/icons"
 
-const CloseMenuButton = () => {
+const CloseMenuButton = props => {
   return (
     <Tooltip title="Close menu">
       <Fab
         id="close"
-        onClick={handleClick}
+        onClick={() => props.dispatch(setNav(false))}
         style={{ position: "fixed", top: "1rem", right: "1rem" }}
       >
         <Close />
@@ -16,4 +18,4 @@ const CloseMenuButton = () => {
   )
 }
 
-export default CloseMenuButton
+export default connect()(CloseMenuButton)
