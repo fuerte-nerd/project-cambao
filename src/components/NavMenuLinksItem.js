@@ -6,6 +6,7 @@ const NavMenuLinksItem = props => {
   return (
     <ListItem
       button
+      id={props.id}
       divider={props.divider ? true : false}
       onClick={props.clickEvent}
     >
