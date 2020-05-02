@@ -13,6 +13,7 @@ import { ExpandLess, ExpandMore } from "@material-ui/icons"
 
 import SidebarSectionTitle from "./SidebarSectionTitle"
 import SidebarQuickLinksItem from "./SidebarQuickLinksItem"
+import SidebarQuickLinksSubmenu from "./SidebarQuickLinksSubmenu"
 
 const SidebarQuickLinks = () => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
@@ -53,22 +54,7 @@ const SidebarQuickLinks = () => {
           isOpen={helpUsOpen}
         />
         <Collapse in={helpUsOpen}>
-          <Box p={1} bgcolor="#fafafa">
-            <List dense disablePadding>
-              <ListItem button>
-                <ListItemText primary="Adopt" />
-              </ListItem>
-              <ListItem button>
-                <ListItemText primary="Foster" />
-              </ListItem>
-              <ListItem button>
-                <ListItemText primary="Donate" />
-              </ListItem>
-              <ListItem button>
-                <ListItemText primary="Volunteer" />
-              </ListItem>
-            </List>
-          </Box>
+          <SidebarQuickLinksSubmenu />
         </Collapse>
         <SidebarQuickLinksItem
           label="Contact"
