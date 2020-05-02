@@ -107,7 +107,7 @@ const NavMenu = props => {
           justifyContent="space-between"
           width="100%"
           maxWidth={400}
-          m={isLandscapeMobile ? "auto" : 0}
+          m={isLandscapeMobile ? "10px auto" : 0}
           mb={1}
         >
           <Box display="block" width="30%" maxWidth={150} align="center">
