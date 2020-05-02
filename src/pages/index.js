@@ -51,9 +51,9 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Box m={isNotMobile ? 3 : 1}>
-        <Grid container>
+        <Grid container justifyContent="center" alignItems="center" spacing={2}>
           <Grid item xs={12} sm={3}>
-            <Box mb={2} align="center" width="100%">
+            <Box width="100%">
               <Img
                 fluid={data.logo.childImageSharp.fluid}
                 style={{
