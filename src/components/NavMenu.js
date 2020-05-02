@@ -3,13 +3,8 @@ import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
-  ButtonGroup,
-  Button,
-  makeStyles,
   useTheme,
   useMediaQuery,
-  Hidden,
-  IconButton,
   Tooltip,
   Dialog,
   Box,
@@ -20,13 +15,7 @@ import {
   Collapse,
   Slide,
 } from "@material-ui/core"
-import {
-  Close,
-  ExpandMore,
-  ExpandLess,
-  Facebook,
-  Instagram,
-} from "@material-ui/icons"
+import { Close, ExpandMore, ExpandLess } from "@material-ui/icons"
 import Img from "gatsby-image"
 
 import NavMenuSocialLinks from "./NavMenuSocialLinks"

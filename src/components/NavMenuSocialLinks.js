@@ -1,5 +1,6 @@
 import React from "react"
-import { useStyles, Box } from "@material-ui/core"
+import { makeStyles, Box } from "@material-ui/core"
+import { Facebook, Instagram } from "@material-ui/icons"
 import NavMenuSocialLinksItem from "./NavMenuSocialLinksItem"
 
 const useStyles = makeStyles(theme => ({
