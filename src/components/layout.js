@@ -136,7 +136,7 @@ const Layout = ({ children }) => {
             <Grid item xs={12} md={10} justify="center">
               {children}
             </Grid>
-            <Grid>
+            <Grid item xs={12}>
               <Container>
                 <Footer />
               </Container>
