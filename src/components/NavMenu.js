@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import {
+  ButtonGroup,
+  Button,
   makeStyles,
   useTheme,
   useMediaQuery,
@@ -111,6 +113,13 @@ const NavMenu = props => {
             <Img fluid={data.logo.childImageSharp.fluid} />
           </Box>
           <Box color="#fafafa">
+            <ButtonGroup>
+              <Button>EN</Button>
+              <Button>ES</Button>
+              <Button>DE</Button>
+              <Button>IT</Button>
+              <Button>FR</Button>
+            </ButtonGroup>
             <Tooltip title="Visit us on Facebook!">
               <IconButton color="inherit">
                 <Facebook className={classes.socialButton} />
