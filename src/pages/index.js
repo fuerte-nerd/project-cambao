@@ -53,15 +53,13 @@ const IndexPage = () => {
       <Box m={isNotMobile ? 3 : 1}>
         <Grid container justifyContent="center" alignItems="center" spacing={2}>
           <Grid item xs={12} sm={3}>
-            <Box width="100%">
-              <Img
-                fluid={data.logo.childImageSharp.fluid}
-                style={{
-                  width: "100%",
-                  maxWidth: 150,
-                }}
-              />
-            </Box>
+            <Img
+              fluid={data.logo.childImageSharp.fluid}
+              style={{
+                width: "100%",
+                maxWidth: 150,
+              }}
+            />
           </Grid>
           <Grid item xs={12} sm={9}>
             <Box align="center">
