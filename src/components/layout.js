@@ -135,7 +135,11 @@ const Layout = ({ children }) => {
             </Hidden>
             <Grid item xs={12} md={10} justify="center">
               {children}
-              <Footer />
+            </Grid>
+            <Grid>
+              <Container>
+                <Footer />
+              </Container>
             </Grid>
           </Grid>
           <Toolbar />

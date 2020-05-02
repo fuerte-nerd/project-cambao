@@ -3,7 +3,7 @@
 ## Todos
 - [x] add tooltips to Toolbar buttons
 - [x] add logo to navmenu and make menu dense on mobile
-- [ ] add grid layout for index header
+- [x] add grid layout for index header
 - [ ] position footer in new full width grid row
 - [ ] add language selector
 - [ ] change manifest colours

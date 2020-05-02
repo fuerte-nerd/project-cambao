@@ -55,6 +55,7 @@ const IndexPage = () => {
           display="flex"
           justifyContent="center"
           alignItems="center"
+          flexDirection={isNotMobile ? "row" : "column"}
           mb={2}
           width="100%"
         >
@@ -65,7 +66,7 @@ const IndexPage = () => {
               maxWidth: 150,
             }}
           />
-          <Box ml={2} align="center">
+          <Box ml={isNotMobile ? 2 : 0} align="center">
             <Typography variant="h3">We are their voice!</Typography>
             <Typography variant="subtitle1">
               Taking care of the abandoned and mistreated dogs of the La Oliva
