@@ -10,7 +10,12 @@ const NavMenuLinksItem = props => {
       divider={props.divider ? true : false}
       onClick={props.clickEvent}
     >
-      <ListItemText primary={props.title} secondary={props.subtitle} />
+      <ListItemText
+        disableTypography
+        primary={props.title}
+        secondary={props.subtitle}
+        primaryTypographyProps={{ style: { color: "#fafafa" } }}
+      />
       {props.dropdown ? props.isOpen ? <ExpandLess /> : <ExpandMore /> : null}
     </ListItem>
   )
