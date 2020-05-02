@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+
 import {
   Grid,
   Box,
@@ -11,9 +12,24 @@ import {
   Collapse,
 } from "@material-ui/core"
 
+import { ExpandLess, ExpandMore } from "@material-ui/icons"
+
 import LocationMap from "./LocationMap"
 
 const Sidebar = () => {
+  const [helpUsOpen, setHelpUsOpen] = useState(false)
+
+  const handleClick = e => {
+    const f = e.currentTarget
+
+    switch (f.id) {
+      case "help-us":
+        return setHelpUsOpen(!helpUsOpen)
+      default:
+        return
+    }
+  }
+
   return (
     <Grid item xs={0} md={2}>
       <Box py={2} bgcolor="primary.light" boxShadow={2}>
