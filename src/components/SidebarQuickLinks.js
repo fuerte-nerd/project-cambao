@@ -12,6 +12,7 @@ import {
 import { ExpandLess, ExpandMore } from "@material-ui/icons"
 
 import SidebarSectionTitle from "./SidebarSectionTitle"
+import SidebarQuickLinksItem from "./SidebarQuickLinksItem"
 
 const SidebarQuickLinks = () => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
@@ -29,12 +30,9 @@ const SidebarQuickLinks = () => {
     <>
       <SidebarSectionTitle title="Quick Links" top />
       <List disablePadding dense>
-        <ListItem disableGutters button>
-          <ListItemText primary="Home" />
-        </ListItem>
-        <ListItem disableGutters button>
-          <ListItemText primary="The Dogs" />
-        </ListItem>
+        <SidebarQuickLinksItem label="Home" />
+        <SidebarQuickLinksItem label="The Dogs" />
+        <SidebarQuickLinksItem label="Who are we?" />
         <ListItem disableGutters button>
           <ListItemText primary="Who are we?" />
         </ListItem>
