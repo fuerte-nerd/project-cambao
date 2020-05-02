@@ -1,7 +1,7 @@
 import { fdr_orange, fdr_blue } from "../../colors"
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
 
-let rawTheme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       main: fdr_blue,
@@ -18,7 +18,6 @@ let rawTheme = createMuiTheme({
   },
 })
 
-theme = responsiveFontSizes(rawTheme)
+theme = responsiveFontSizes(theme)
 
-export const rawTheme
 export default theme
