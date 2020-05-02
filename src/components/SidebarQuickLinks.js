@@ -1,15 +1,5 @@
 import React, { useState } from "react"
-import {
-  Box,
-  Typography,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  Collapse,
-} from "@material-ui/core"
-
-import { ExpandLess, ExpandMore } from "@material-ui/icons"
+import { List, Collapse } from "@material-ui/core"
 
 import SidebarSectionTitle from "./SidebarSectionTitle"
 import SidebarQuickLinksItem from "./SidebarQuickLinksItem"
