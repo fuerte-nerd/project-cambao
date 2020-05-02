@@ -1,19 +1,23 @@
 import React from "react"
-import { Box } from "@material-ui/core"
+import { useStyles, Box } from "@material-ui/core"
+import NavMenuSocialLinksItem from "./NavMenuSocialLinksItem"
+
+const useStyles = makeStyles(theme => ({
+  socialButton: {
+    fontSize: "3rem",
+  },
+}))
 
 const NavMenuSocialLinks = () => {
+  const classes = useStyles()
   return (
     <Box>
-      <Tooltip title="Visit us on Facebook!">
-        <IconButton color="inherit">
-          <Facebook className={classes.socialButton} />
-        </IconButton>
-      </Tooltip>
-      <Tooltip title="Visit us on Instagram!">
-        <IconButton edge="end" color="inherit">
-          <Instagram className={classes.socialButton} />
-        </IconButton>
-      </Tooltip>
+      <NavMenuSocialLinksItem tooltip="Visit us on Facebook!">
+        <Facebook className={classes.socialButton} />
+      </NavMenuSocialLinksItem>
+      <NavMenuSocialLinksItem end tooltip="Visit us on Instagram!">
+        <Instagram className={classes.socialButton} />
+      </NavMenuSocialLinksItem>
     </Box>
   )
 }
