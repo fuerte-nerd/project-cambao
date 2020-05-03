@@ -23,15 +23,13 @@ import NavMenu from "./NavMenu"
 import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 
-const duration = 0.2
+const duration = 0.5
 
 const variants = {
   initial: {
-    transform: "translateY(-300px)",
     opacity: 0,
   },
   enter: {
-    transform: "translateY(0)",
     opacity: 1,
     transition: {
       duration: duration,
@@ -40,7 +38,6 @@ const variants = {
     },
   },
   exit: {
-    transform: "translateY(-300px)",
     opacity: 0,
     transition: { duration: duration },
   },
