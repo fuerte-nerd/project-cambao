@@ -3,6 +3,7 @@ import React from "react"
 import { Grid, Box, Container } from "@material-ui/core"
 
 import SidebarQuickLinks from "./SidebarQuickLinks"
+import SidebarChatNow from "./SidebarChatNow"
 import SidebarDonate from "./SidebarDonate"
 import SidebarLocation from "./SidebarLocation"
 import SidebarOpeningHours from "./SidebarOpeningHours"
@@ -13,6 +14,7 @@ const Sidebar = () => {
       <Box py={2} bgcolor="primary.light" boxShadow={2}>
         <Container>
           <SidebarQuickLinks />
+          <SidebarChatNow />
           <SidebarDonate />
           <SidebarLocation />
           <SidebarOpeningHours />
