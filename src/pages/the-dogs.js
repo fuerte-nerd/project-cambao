@@ -7,7 +7,7 @@ const TheDogs = () => {
     <>
       <SEO title="The Dogs" />
       <Box height="200vh">
-        <Typography>Hello</Typography>
+        <Typography>The Dogs page</Typography>
       </Box>
     </>
   )

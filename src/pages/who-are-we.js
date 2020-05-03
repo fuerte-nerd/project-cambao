@@ -2,15 +2,15 @@ import React from "react"
 import { Box, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
 
-const TheDogs = () => {
+const WhoAreWe = () => {
   return (
     <>
-      <SEO title="The Dogs" />
+      <SEO title="Who are we?" />
       <Box height="200vh">
-        <Typography>Hello</Typography>
+        <Typography>Who are we page</Typography>
       </Box>
     </>
   )
 }
 
-export default TheDogs
+export default WhoAreWe
