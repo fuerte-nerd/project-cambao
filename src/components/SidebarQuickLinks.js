@@ -24,16 +24,19 @@ const SidebarQuickLinks = () => {
         <SidebarQuickLinksItem
           label="Home"
           id="home"
+          link="/"
           clickEvent={handleClick}
         />
         <SidebarQuickLinksItem
           label="The Dogs"
           id="the-dogs"
+          link="the-dogs"
           clickEvent={handleClick}
         />
         <SidebarQuickLinksItem
           label="Who are we?"
           id="who-are-we"
+          link="who-are-we"
           clickEvent={handleClick}
         />
         <SidebarQuickLinksItem
@@ -49,6 +52,7 @@ const SidebarQuickLinks = () => {
         <SidebarQuickLinksItem
           label="Contact"
           id="contact"
+          link="contact"
           clickEvent={handleClick}
         />
       </List>

@@ -10,7 +10,7 @@ const SidebarQuickLinksItem = props => {
       {props.isOpen ? <ExpandLess /> : <ExpandMore />}
     </ListItem>
   ) : (
-    <InternalLink to={props.to}>
+    <InternalLink to={props.link}>
       <ListItem disableGutters button id={props.id} onClick={props.clickEvent}>
         <ListItemText primary={props.label} />
       </ListItem>

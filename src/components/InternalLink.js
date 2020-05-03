@@ -5,7 +5,7 @@ const InternalLink = props => {
   return (
     <AniLink
       to={props.to}
-      fade
+      swipe
       style={{ textDecoration: "none", color: "inherit" }}
     >
       {props.children}
