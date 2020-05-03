@@ -17,7 +17,12 @@ module.exports = {
     `gatsby-plugin-react-leaflet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-transition-link`,
+    {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+        layout: require.resolve(`./src/components/layout.js`),
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

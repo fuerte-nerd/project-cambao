@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
-
+import { setNav } from "../redux/actions"
 import {
   Box,
   Divider,
@@ -25,7 +25,7 @@ const NavMenuLinks = props => {
       case "help-us":
         return setHelpUsOpen(!helpUsOpen)
       default:
-        return
+        return props.dispatch(setNav(false))
     }
   }
   useEffect(() => {
@@ -38,7 +38,7 @@ const NavMenuLinks = props => {
       <Divider />
       <List disablePadding dense={isLargeScreen ? false : true}>
         <NavMenuLinksItem
-          link="home"
+          link="/"
           title="Home"
           subtitle="Latest news and articles"
           clickEvent={handleClick}
