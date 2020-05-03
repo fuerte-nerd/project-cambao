@@ -20,6 +20,7 @@ import {
   Instagram,
   Share,
 } from "@material-ui/icons"
+import Messenger from "../images/messenger.svg"
 import Img from "gatsby-image"
 
 const Navbar = props => {
@@ -86,7 +87,7 @@ const Navbar = props => {
         </Hidden>
         <Tooltip title="Contact us on Messenger!">
           <IconButton onClick={handleClick} id="messenger" color="inherit">
-            <Icon className="fab fa-facebook-messenger" />
+            <Messenger />
           </IconButton>
         </Tooltip>
         <Tooltip title="Show me the menu!">
