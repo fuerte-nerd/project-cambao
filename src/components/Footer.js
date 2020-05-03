@@ -23,43 +23,45 @@ const Footer = () => {
       boxShadow={6}
     >
       <Box p={2}>
-        <Grid container>
-          <Grid item xs={12}>
-            <Box pb={2}>
-              <Typography variant="h4" paragraph>
-                Where are we?
-              </Typography>
-              <LocationMap />
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Typography variant="h4" paragraph>
-              Opening Hours
-            </Typography>
-            <List disablePadding dense>
-              <ListItem disablePadding>
-                <ListItemText
-                  primary="Thursdays"
-                  secondary="8:00 - 9:30"
-                  primaryTypographyProps={{ style: { textAlign: "center" } }}
-                  secondaryTypographyProps={{ style: { textAlign: "center" } }}
-                />
-                <ListItemText
-                  primary="Weekends"
-                  secondary="9:00 - 10:30"
-                  primaryTypographyProps={{ style: { textAlign: "center" } }}
-                  secondaryTypographyProps={{ style: { textAlign: "center" } }}
-                />
-                <ListItemText
-                  primary="Holidays"
-                  secondary="9:00 - 10:30"
-                  primaryTypographyProps={{ style: { textAlign: "center" } }}
-                  secondaryTypographyProps={{ style: { textAlign: "center" } }}
-                />
-              </ListItem>
-            </List>
-          </Grid>
-        </Grid>
+        <Box pb={2}>
+          <Typography variant="h4" paragraph>
+            Where are we?
+          </Typography>
+          <LocationMap />
+        </Box>
+        <Box pb={2}>
+          <Typography variant="h4" paragraph>
+            Opening Hours
+          </Typography>
+          <List disablePadding dense>
+            <ListItem disablePadding>
+              <ListItemText
+                primary="Thursdays"
+                secondary="8:00 - 9:30"
+                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                secondaryTypographyProps={{
+                  style: { textAlign: "center" },
+                }}
+              />
+              <ListItemText
+                primary="Weekends"
+                secondary="9:00 - 10:30"
+                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                secondaryTypographyProps={{
+                  style: { textAlign: "center" },
+                }}
+              />
+              <ListItemText
+                primary="Holidays"
+                secondary="9:00 - 10:30"
+                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                secondaryTypographyProps={{
+                  style: { textAlign: "center" },
+                }}
+              />
+            </ListItem>
+          </List>
+        </Box>
         <Typography display="block" variant="caption">
           Registered Charity in the Canary Islands since April 2013
           (G1/S1/19399-13/F)
