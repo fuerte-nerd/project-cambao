@@ -6,7 +6,8 @@ const InternalLink = props => {
   return (
     <AniLink
       to={props.to}
-      cover
+      swipe
+      entryOffset={90}
       direction="down"
       duration={5}
       bg={colors.fdr_blue}
