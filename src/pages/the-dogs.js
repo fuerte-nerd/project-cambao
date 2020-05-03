@@ -3,7 +3,11 @@ import { Typography } from "@material-ui/core"
 import Layout from "../components/layout"
 
 const TheDogs = () => {
-  return <Typography>Hello</Typography>
+  return (
+    <Layout>
+      <Typography>Hello</Typography>
+    </Layout>
+  )
 }
 
 export default TheDogs
