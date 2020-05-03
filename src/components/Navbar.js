@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
+import InternalLink from "./InternalLink"
 import {
   Tooltip,
   Hidden,
@@ -45,11 +46,13 @@ const Navbar = props => {
   return (
     <AppBar>
       <Toolbar>
-        <Tooltip title="Return home!">
-          <Box display="flex" style={{ cursor: "pointer" }}>
-            <Img fixed={data.file.childImageSharp.fixed} />
-          </Box>
-        </Tooltip>
+        <InternalLink to="/">
+          <Tooltip title="Return home!">
+            <Box display="flex" style={{ cursor: "pointer" }}>
+              <Img fixed={data.file.childImageSharp.fixed} />
+            </Box>
+          </Tooltip>
+        </InternalLink>
         <Hidden xsDown>
           <Box ml={2}>
             <Typography variant="h6" variantMapping={{ h6: "h1" }}>
