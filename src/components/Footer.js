@@ -1,6 +1,9 @@
 import React from "react"
 import {
   Divider,
+  List,
+  ListItem,
+  ListItemText,
   Grid,
   Box,
   Typography,
@@ -33,11 +36,29 @@ const Footer = () => {
             <Typography variant="h4" paragraph>
               Opening Hours
             </Typography>
+            <List>
+              <ListItem>
+                <ListItemText primary="Thursdays" secondary="8:00 - 9:30" />
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText></ListItemText>
+              </ListItem>
+            </List>
             <Typography display="block" variant="subtitle1">
               Thursdays
             </Typography>
             <Typography display="block" variant="subtitle2" paragraph>
               8:00 - 9:30
+            </Typography>
+            <Divider />
+            <Typography display="block" variant="subtitle1">
+              Weekends
+            </Typography>
+            <Typography display="block" variant="subtitle2" paragraph>
+              9:00 - 10:30
             </Typography>
             <Divider />
           </Grid>
