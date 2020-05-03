@@ -55,25 +55,25 @@ const Navbar = props => {
             </Box>
           </Tooltip>
         </InternalLink>
-        <Hidden xsDown>
+        <Hidden smDown>
           <Box ml={2}>
             <Typography variant="h6" variantMapping={{ h6: "h1" }}>
               {props.siteTitle}
             </Typography>
           </Box>
+          <Box style={{ flex: 1 }} />
+          <Tooltip title="Donate to the FDR dogs!">
+            <IconButton color="inherit">
+              <EuroSymbol />
+            </IconButton>
+          </Tooltip>
         </Hidden>
-        <Box style={{ flex: 1 }} />
-        <Tooltip title="Donate to the FDR dogs!">
-          <IconButton color="inherit">
-            <EuroSymbol />
-          </IconButton>
-        </Tooltip>
         <Tooltip title="Share this page!">
           <IconButton color="inherit">
             <Share />
           </IconButton>
         </Tooltip>
-        <Hidden xsDown>
+        <Hidden smDown>
           <Tooltip title="Visit us on Facebook!">
             <IconButton color="inherit">
               <Facebook />
@@ -84,12 +84,12 @@ const Navbar = props => {
               <Instagram />
             </IconButton>
           </Tooltip>
+          <Tooltip title="Contact us on Messenger!">
+            <IconButton onClick={handleClick} id="messenger" color="inherit">
+              <FacebookMessenger />
+            </IconButton>
+          </Tooltip>
         </Hidden>
-        <Tooltip title="Contact us on Messenger!">
-          <IconButton onClick={handleClick} id="messenger" color="inherit">
-            <FacebookMessenger />
-          </IconButton>
-        </Tooltip>
         <Tooltip title="Show me the menu!">
           <IconButton
             onClick={handleClick}
