@@ -23,18 +23,18 @@ const Footer = () => {
       boxShadow={6}
     >
       <Box p={2}>
-        <Box pb={2}>
+        <Box pb={4}>
           <Typography variant="h4" paragraph>
             Where are we?
           </Typography>
           <LocationMap />
         </Box>
-        <Box pb={2}>
+        <Box pb={4}>
           <Typography variant="h4" paragraph>
             Opening Hours
           </Typography>
-          <List disablePadding dense>
-            <ListItem disablePadding>
+          <Grid container>
+            <Grid item xs={12} sm={4}>
               <ListItemText
                 primary="Thursdays"
                 secondary="8:00 - 9:30"
@@ -43,6 +43,8 @@ const Footer = () => {
                   style: { textAlign: "center" },
                 }}
               />
+            </Grid>
+            <Grid item xs={12} sm={4}>
               <ListItemText
                 primary="Weekends"
                 secondary="9:00 - 10:30"
@@ -51,6 +53,8 @@ const Footer = () => {
                   style: { textAlign: "center" },
                 }}
               />
+            </Grid>
+            <Grid item xs={12} sm={4}>
               <ListItemText
                 primary="Holidays"
                 secondary="9:00 - 10:30"
@@ -59,8 +63,8 @@ const Footer = () => {
                   style: { textAlign: "center" },
                 }}
               />
-            </ListItem>
-          </List>
+            </Grid>
+          </Grid>
         </Box>
         <Typography display="block" variant="caption">
           Registered Charity in the Canary Islands since April 2013
