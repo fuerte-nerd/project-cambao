@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <Box
       mt={2}
-      pt={2}
-      bgcolor="primary.dark"
+      py={4}
+      bgcolor="secondary.main"
       color="#fafafa"
       align="center"
       boxShadow={6}
