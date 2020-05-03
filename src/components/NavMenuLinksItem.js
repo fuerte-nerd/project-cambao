@@ -1,11 +1,11 @@
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import InternalLink from "./InternalLink"
 import { ListItem, ListItemText } from "@material-ui/core"
 import { ExpandLess, ExpandMore } from "@material-ui/icons"
 
 const NavMenuLinksItem = props => {
   return (
-    <AniLink fade to="the-dogs">
+    <InternalLink to="the-dogs">
       <ListItem
         button
         id={props.id}
@@ -19,7 +19,7 @@ const NavMenuLinksItem = props => {
         />
         {props.dropdown ? props.isOpen ? <ExpandLess /> : <ExpandMore /> : null}
       </ListItem>
-    </AniLink>
+    </InternalLink>
   )
 }
 
