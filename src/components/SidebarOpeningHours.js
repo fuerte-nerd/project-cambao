@@ -16,17 +16,21 @@ const SidebarOpeningHours = () => {
     <Box>
       <SidebarSectionTitle title="Opening hours" />
       <Typography display="block" variant="caption">
-        Thu
+        Thursdays
       </Typography>
-      <Typography display="block">8-9:30</Typography>
+      <Typography display="block" paragraph>
+        8 - 9:30
+      </Typography>
       <Typography display="block" variant="caption">
-        Sat & Sun
+        Weekends
       </Typography>
-      <Typography display="block">9-10:30</Typography>
+      <Typography display="block" paragraph>
+        9 - 10:30
+      </Typography>
       <Typography display="block" variant="caption">
         Holidays
       </Typography>
-      <Typography display="block">9-10:30</Typography>
+      <Typography display="block">9 - 10:30</Typography>
     </Box>
   )
 }
