@@ -1,5 +1,6 @@
+import React from "react"
 import wrapWithProvider from "./wrap-with-provider"
-import Layout from "./src/components/Layout"
+import Layout from "./src/components/layout"
 
 export const wrapRootElement = wrapWithProvider
 export const onClientEntry = () => {
