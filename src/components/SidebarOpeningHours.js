@@ -15,24 +15,18 @@ const SidebarOpeningHours = () => {
   return (
     <Box>
       <SidebarSectionTitle title="Opening hours" />
-      <TableContainer component={Paper}>
-        <Table size="small">
-          <TableBody>
-            <TableRow>
-              <TableCell>Thu</TableCell>
-              <TableCell>8:00 - 9:30</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Sat & Sun</TableCell>
-              <TableCell>9:00 - 10:30</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Holidays</TableCell>
-              <TableCell>9:00 - 10:30</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <Typography display="block" variant="caption">
+        Thu
+      </Typography>
+      <Typography display="block">8-9:30</Typography>
+      <Typography display="block" variant="caption">
+        Sat & Sun
+      </Typography>
+      <Typography display="block">9-10:30</Typography>
+      <Typography display="block" variant="caption">
+        Holidays
+      </Typography>
+      <Typography display="block">9-10:30</Typography>
     </Box>
   )
 }
