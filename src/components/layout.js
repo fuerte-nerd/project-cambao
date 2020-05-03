@@ -51,7 +51,6 @@ const Layout = ({ children }) => {
           width="100%"
           minHeight="100vh"
           component="main"
-          pb={2}
         >
           <Toolbar />
           <Grid container>
