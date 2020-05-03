@@ -37,30 +37,16 @@ const Footer = () => {
               Opening Hours
             </Typography>
             <List>
-              <ListItem>
+              <ListItem alignItems="center">
                 <ListItemText primary="Thursdays" secondary="8:00 - 9:30" />
               </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
+              <ListItem alignItems="center">
+                <ListItemText primary="Weekends" secondary="9:00 - 10:30" />
               </ListItem>
-              <ListItem>
-                <ListItemText></ListItemText>
+              <ListItem alignItems="center">
+                <ListItemText primary="Holidays" secondary="9:00 - 10:30" />
               </ListItem>
             </List>
-            <Typography display="block" variant="subtitle1">
-              Thursdays
-            </Typography>
-            <Typography display="block" variant="subtitle2" paragraph>
-              8:00 - 9:30
-            </Typography>
-            <Divider />
-            <Typography display="block" variant="subtitle1">
-              Weekends
-            </Typography>
-            <Typography display="block" variant="subtitle2" paragraph>
-              9:00 - 10:30
-            </Typography>
-            <Divider />
           </Grid>
         </Grid>
         <Typography display="block" variant="caption">
