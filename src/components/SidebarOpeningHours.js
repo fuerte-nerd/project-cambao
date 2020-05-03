@@ -19,18 +19,18 @@ const SidebarOpeningHours = () => {
         Thursdays
       </Typography>
       <Typography display="block" paragraph>
-        8 - 9:30
+        8:00 - 9:30
       </Typography>
       <Typography display="block" variant="caption">
         Weekends
       </Typography>
       <Typography display="block" paragraph>
-        9 - 10:30
+        9:00 - 10:30
       </Typography>
       <Typography display="block" variant="caption">
         Holidays
       </Typography>
-      <Typography display="block">9 - 10:30</Typography>
+      <Typography display="block">9:00 - 10:30</Typography>
     </Box>
   )
 }
