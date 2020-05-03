@@ -1,19 +1,12 @@
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { Link } from "gatsby"
 import colors from "../../colors"
 
 const InternalLink = props => {
   return (
-    <AniLink
-      to={props.to}
-      entry={{ delay: 5 }}
-      exit={{ delay: 50 }}
-      delay={1}
-      fade
-      style={{ textDecoration: "none", color: "inherit" }}
-    >
+    <Link to={props.to} style={{ textDecoration: "none", color: "inherit" }}>
       {props.children}
-    </AniLink>
+    </Link>
   )
 }
 

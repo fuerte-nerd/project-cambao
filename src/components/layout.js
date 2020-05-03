@@ -23,7 +23,7 @@ import NavMenu from "./NavMenu"
 import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 
-const duration = 0.5
+const duration = 0.2
 
 const variants = {
   initial: {
@@ -89,7 +89,7 @@ const Layout = props => {
                     exit="exit"
                   >
                     {props.children}
-                  </motion>
+                  </motion.main>
                 </AnimatePresence>
               </Box>
             </Grid>
