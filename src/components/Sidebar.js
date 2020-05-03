@@ -13,6 +13,7 @@ const Sidebar = () => {
         <Container>
           <SidebarQuickLinks />
           <SidebarLocation />
+          <SidebarOpeningHours />
         </Container>
       </Box>
     </Grid>

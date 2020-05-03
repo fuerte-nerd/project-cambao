@@ -6,7 +6,9 @@ const SidebarOpeningHours = () => {
   return (
     <Box>
       <SidebarSectionTitle title="Opening hours" />
-      <Typography></Typography>
+      <Typography display="block">Thu 8-9:30</Typography>
+      <Typography display="block">Sat 9-10:30</Typography>
+      <Typography display="block">Sun 9-10:30</Typography>
     </Box>
   )
 }
