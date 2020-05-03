@@ -6,10 +6,14 @@ const NavMenuHelpUsSubmenu = () => {
   return (
     <Box bgcolor="#fafafa">
       <List dense disablePadding>
-        <NavMenuHelpUsSubmenuItem title="Adopt" id="adopt" />
-        <NavMenuHelpUsSubmenuItem title="Foster" id="foster" />
-        <NavMenuHelpUsSubmenuItem title="Donate" id="donate" />
-        <NavMenuHelpUsSubmenuItem title="Volunteer" id="volunteer" />
+        <NavMenuHelpUsSubmenuItem title="Adopt" id="adopt" link="adopt" />
+        <NavMenuHelpUsSubmenuItem title="Foster" id="foster" link="foster" />
+        <NavMenuHelpUsSubmenuItem title="Donate" id="donate" link="donate" />
+        <NavMenuHelpUsSubmenuItem
+          title="Volunteer"
+          id="volunteer"
+          link="volunteer"
+        />
       </List>
     </Box>
   )
