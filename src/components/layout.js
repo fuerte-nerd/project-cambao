@@ -63,6 +63,10 @@ const Layout = props => {
           href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap"
           rel="stylesheet"
         />
+        <script
+          src="https://kit.fontawesome.com/e6cbd84bc2.js"
+          crossorigin="anonymous"
+        ></script>
       </Helmet>
       <CssBaseline>
         <Navbar siteTitle={data.siteTitle.siteMetadata.title} />
