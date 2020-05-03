@@ -6,11 +6,9 @@ const InternalLink = props => {
   return (
     <AniLink
       to={props.to}
-      swipe
-      entryOffset={90}
-      direction="down"
+      delay={1}
+      fade
       duration={5}
-      bg={colors.fdr_blue}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       {props.children}
