@@ -80,18 +80,17 @@ const Layout = props => {
             </Hidden>
             <Grid item xs={12} md={10} justify="center">
               <Box m={isNotMobile ? 3 : 1}>
-                {/*                <AnimatePresence>
+                <AnimatePresence>
                   <motion.main
                     key={props.location.pathname}
                     variants={variants}
                     initial="initial"
                     animate="enter"
                     exit="exit"
-                  >*/}
-                {props.children}
-                {/*</motion.main>
+                  >
+                    {props.children}
+                  </motion.main>
                 </AnimatePresence>
-                  */}
               </Box>
             </Grid>
             <Grid item xs={12}>

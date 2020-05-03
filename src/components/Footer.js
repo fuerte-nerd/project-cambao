@@ -44,9 +44,9 @@ const Footer = () => {
                   primaryTypographyProps={{ style: { textAlign: "center" } }}
                   secondaryTypographyProps={{ style: { textAlign: "center" } }}
                 />
-                <Divider variant="middle" />
               </ListItem>
-              <ListItem disablePadding divider>
+              <Divider variant="middle" />
+              <ListItem disablePadding>
                 <ListItemText
                   primary="Weekends"
                   secondary="9:00 - 10:30"
@@ -54,6 +54,7 @@ const Footer = () => {
                   secondaryTypographyProps={{ style: { textAlign: "center" } }}
                 />
               </ListItem>
+              <Divider variant="middle" />
               <ListItem disablePadding>
                 <ListItemText
                   primary="Holidays"
@@ -62,6 +63,7 @@ const Footer = () => {
                   secondaryTypographyProps={{ style: { textAlign: "center" } }}
                 />
               </ListItem>
+              <Divider variant="middle" />
             </List>
           </Grid>
         </Grid>
