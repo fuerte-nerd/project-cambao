@@ -61,19 +61,19 @@ const Navbar = props => {
               {props.siteTitle}
             </Typography>
           </Box>
-          <Box style={{ flex: 1 }} />
-          <Tooltip title="Donate to the FDR dogs!">
-            <IconButton color="inherit">
-              <EuroSymbol />
-            </IconButton>
-          </Tooltip>
         </Hidden>
+        <Box style={{ flex: 1 }} />
         <Tooltip title="Share this page!">
           <IconButton color="inherit">
             <Share />
           </IconButton>
         </Tooltip>
         <Hidden smDown>
+          <Tooltip title="Donate to the FDR dogs!">
+            <IconButton color="inherit">
+              <EuroSymbol />
+            </IconButton>
+          </Tooltip>
           <Tooltip title="Visit us on Facebook!">
             <IconButton color="inherit">
               <Facebook />
