@@ -34,7 +34,6 @@ const variants = {
     transition: {
       duration: duration,
       delay: duration,
-      when: "beforeChildren",
     },
   },
   exit: {
