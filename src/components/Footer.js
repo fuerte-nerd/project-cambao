@@ -38,7 +38,11 @@ const Footer = () => {
             </Typography>
             <List>
               <ListItem alignItems="center">
-                <ListItemText primary="Thursdays" secondary="8:00 - 9:30" />
+                <ListItemText
+                  primary="Thursdays"
+                  secondary="8:00 - 9:30"
+                  primaryTypographyProps={{ style: { textAlign: "center" } }}
+                />
               </ListItem>
               <ListItem alignItems="center">
                 <ListItemText primary="Weekends" secondary="9:00 - 10:30" />
