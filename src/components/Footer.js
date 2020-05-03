@@ -36,19 +36,30 @@ const Footer = () => {
             <Typography variant="h4" paragraph>
               Opening Hours
             </Typography>
-            <List>
-              <ListItem alignItems="center">
+            <List disablePadding>
+              <ListItem disablePadding>
                 <ListItemText
                   primary="Thursdays"
                   secondary="8:00 - 9:30"
                   primaryTypographyProps={{ style: { textAlign: "center" } }}
+                  secondaryTypographyProps={{ style: { textAlign: "center" } }}
                 />
               </ListItem>
-              <ListItem alignItems="center">
-                <ListItemText primary="Weekends" secondary="9:00 - 10:30" />
+              <ListItem disablePadding>
+                <ListItemText
+                  primary="Weekends"
+                  secondary="9:00 - 10:30"
+                  primaryTypographyProps={{ style: { textAlign: "center" } }}
+                  secondaryTypographyProps={{ style: { textAlign: "center" } }}
+                />
               </ListItem>
-              <ListItem alignItems="center">
-                <ListItemText primary="Holidays" secondary="9:00 - 10:30" />
+              <ListItem disablePadding>
+                <ListItemText
+                  primary="Holidays"
+                  secondary="9:00 - 10:30"
+                  primaryTypographyProps={{ style: { textAlign: "center" } }}
+                  secondaryTypographyProps={{ style: { textAlign: "center" } }}
+                />
               </ListItem>
             </List>
           </Grid>
