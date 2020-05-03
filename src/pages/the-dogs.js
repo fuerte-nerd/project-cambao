@@ -1,12 +1,15 @@
 import React from "react"
 import { Box, Typography } from "@material-ui/core"
-import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const TheDogs = () => {
   return (
-    <Box height="200vh">
-      <Typography>Hello</Typography>
-    </Box>
+    <>
+      <SEO title="The Dogs" />
+      <Box height="200vh">
+        <Typography>Hello</Typography>
+      </Box>
+    </>
   )
 }
 
