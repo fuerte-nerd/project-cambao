@@ -14,12 +14,25 @@ const Footer = () => {
     >
       <Box p={2}>
         <Grid container>
-          <Box pb={2}>
+          <Grid item xs={12}>
+            <Box pb={2}>
+              <Typography variant="h4" paragraph>
+                Where are we?
+              </Typography>
+              <LocationMap />
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
             <Typography variant="h4" paragraph>
-              Where are we?
+              Opening Hours
             </Typography>
-            <LocationMap />
-          </Box>
+            <Typography display="block" variant="subtitle2">
+              Thursdays
+            </Typography>
+            <Typography display="block" variant="subtitle1">
+              8:00 - 9:30
+            </Typography>
+          </Grid>
           <Typography display="block" variant="caption">
             Registered Charity in the Canary Islands since April 2013
             (G1/S1/19399-13/F)
