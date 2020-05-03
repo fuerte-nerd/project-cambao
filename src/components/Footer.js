@@ -1,9 +1,13 @@
 import React from "react"
-import { Box, Typography } from "@material-ui/core"
+import { Box, Typography, Hidden } from "@material-ui/core"
+import LocationMap from "./LocationMap"
 
 const Footer = () => {
   return (
     <Box mt={2} align="center">
+      <Box mb={2}>
+        <LocationMap />
+      </Box>
       <Typography display="block" variant="caption">
         Registered Charity in the Canary Islands since April 2013
         (G1/S1/19399-13/F)
