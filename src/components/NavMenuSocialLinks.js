@@ -6,7 +6,7 @@ import NavMenuSocialLinksItem from "./NavMenuSocialLinksItem"
 
 const useStyles = makeStyles(theme => ({
   socialButton: {
-    fontSize: "3rem",
+    fontSize: "2.4rem",
   },
 }))
 
