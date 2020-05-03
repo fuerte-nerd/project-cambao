@@ -11,7 +11,7 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core"
-import { Menu, Facebook, Instagram, Share } from "@material-ui/icons"
+import { Menu, Facebook, Instagram, Share, Euro } from "@material-ui/icons"
 import Img from "gatsby-image"
 
 const Navbar = props => {
@@ -52,6 +52,11 @@ const Navbar = props => {
           </Box>
         </Hidden>
         <Box style={{ flex: 1 }} />
+        <Tooltip title="Donate to the FDR dogs!">
+          <IconButton color="inherit">
+            <Euro />
+          </IconButton>
+        </Tooltip>
         <Tooltip title="Share this page!">
           <IconButton color="inherit">
             <Share />
