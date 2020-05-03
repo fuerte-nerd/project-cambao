@@ -8,7 +8,7 @@ const SidebarDonate = () => {
     <Box>
       <SidebarSectionTitle title="Donate" />
       <Box pb={2}>
-        <Typography variant="caption">
+        <Typography variant="caption" align="justify">
           We are a volunteer organization and appreciate anything you can
           give...
         </Typography>

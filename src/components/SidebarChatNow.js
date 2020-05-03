@@ -13,7 +13,7 @@ const SidebarChatNow = () => {
         <Button startIcon={<FacebookMessenger />}>Messenger</Button>
         <Button startIcon={<Email />}>Email</Button>
       </Box>
-      <Typography variant="caption">
+      <Typography variant="caption" align="justify">
         If you want to report an abandoned or lost dog, please{" "}
         <Link href="#" color="inherit" variant="body2">
           click here
