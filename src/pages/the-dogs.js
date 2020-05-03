@@ -1,9 +1,13 @@
 import React from "react"
-import { Typography } from "@material-ui/core"
+import { Box, Typography } from "@material-ui/core"
 import Layout from "../components/layout"
 
 const TheDogs = () => {
-  return <Typography>Hello</Typography>
+  return (
+    <Box height="200vh">
+      <Typography>Hello</Typography>
+    </Box>
+  )
 }
 
 export default TheDogs
