@@ -36,8 +36,8 @@ const Footer = () => {
             <Typography variant="h4" paragraph>
               Opening Hours
             </Typography>
-            <List disablePadding>
-              <ListItem disablePadding>
+            <List disablePadding dense>
+              <ListItem disablePadding divider>
                 <ListItemText
                   primary="Thursdays"
                   secondary="8:00 - 9:30"
@@ -45,7 +45,7 @@ const Footer = () => {
                   secondaryTypographyProps={{ style: { textAlign: "center" } }}
                 />
               </ListItem>
-              <ListItem disablePadding>
+              <ListItem disablePadding divider>
                 <ListItemText
                   primary="Weekends"
                   secondary="9:00 - 10:30"
