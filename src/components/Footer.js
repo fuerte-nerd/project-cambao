@@ -1,11 +1,14 @@
 import React from "react"
-import { Box, Typography, Hidden } from "@material-ui/core"
+import { Box, Typography, Container, Hidden } from "@material-ui/core"
 import LocationMap from "./LocationMap"
 
 const Footer = () => {
   return (
-    <Box mt={2} align="center">
+    <Box m={2} pt={2} width="100%" align="center" boxShadow={3}>
       <Box mb={2}>
+        <Typography variant="h4" paragraph>
+          Where are we?
+        </Typography>
         <LocationMap />
       </Box>
       <Typography display="block" variant="caption">

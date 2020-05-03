@@ -62,9 +62,7 @@ const Layout = ({ children }) => {
               <Box m={isNotMobile ? 3 : 1}>{children}</Box>
             </Grid>
             <Grid item xs={12}>
-              <Container>
-                <Footer />
-              </Container>
+              <Footer />
             </Grid>
           </Grid>
         </Box>
