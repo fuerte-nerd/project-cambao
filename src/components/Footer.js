@@ -37,13 +37,14 @@ const Footer = () => {
               Opening Hours
             </Typography>
             <List disablePadding dense>
-              <ListItem disablePadding divider>
+              <ListItem disablePadding>
                 <ListItemText
                   primary="Thursdays"
                   secondary="8:00 - 9:30"
                   primaryTypographyProps={{ style: { textAlign: "center" } }}
                   secondaryTypographyProps={{ style: { textAlign: "center" } }}
                 />
+                <Divider variant="middle" />
               </ListItem>
               <ListItem disablePadding divider>
                 <ListItemText
