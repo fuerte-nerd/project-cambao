@@ -1,5 +1,5 @@
 import React from "react"
-import { AniLink } from "gatsby-plugin-transition-link"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { ListItem, ListItemText } from "@material-ui/core"
 import { ExpandLess, ExpandMore } from "@material-ui/icons"
 
