@@ -2,6 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { motion, AnimatePresence } from "framer-motion"
 
 import {
   Container,
@@ -22,7 +23,27 @@ import NavMenu from "./NavMenu"
 import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 
-const Layout = ({ children }) => {
+const duration = 0.5
+
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: duration,
+      delay: duration,
+      when: "beforeChildren",
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: duration },
+  },
+}
+
+const Layout = props => {
   const theme = useTheme()
   const isNotMobile = useMediaQuery(theme.breakpoints.up("sm"))
   const data = useStaticQuery(graphql`
@@ -58,7 +79,19 @@ const Layout = ({ children }) => {
               <Sidebar />
             </Hidden>
             <Grid item xs={12} md={10} justify="center">
-              <Box m={isNotMobile ? 3 : 1}>{children}</Box>
+              <Box m={isNotMobile ? 3 : 1}>
+                <AnimatePresence>
+                  <motion.main
+                    key={props.location.pathname}
+                    variants={variants}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                  >
+                    {props.children}
+                  </motion>
+                </AnimatePresence>
+              </Box>
             </Grid>
             <Grid item xs={12}>
               <Footer />
