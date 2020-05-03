@@ -12,14 +12,16 @@ const SidebarDonate = () => {
           We are a volunteer organization and appreciate anything you can
           spare...
         </Typography>
-        <Button
-          variant="contained"
-          fullWidth
-          color="secondary"
-          startIcon={<EuroSymbol />}
-        >
-          Make a donation
-        </Button>
+        <Box mt={2}>
+          <Button
+            variant="contained"
+            fullWidth
+            color="secondary"
+            startIcon={<EuroSymbol />}
+          >
+            Make a donation
+          </Button>
+        </Box>
       </Box>
     </Box>
   )
