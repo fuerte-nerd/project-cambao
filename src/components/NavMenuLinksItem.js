@@ -5,7 +5,7 @@ import { ExpandLess, ExpandMore } from "@material-ui/icons"
 
 const NavMenuLinksItem = props => {
   return (
-    <InternalLink to="the-dogs">
+    <InternalLink to={props.link}>
       <ListItem
         button
         id={props.id}
