@@ -4,6 +4,7 @@ import { Grid, Box, Container } from "@material-ui/core"
 
 import SidebarQuickLinks from "./SidebarQuickLinks"
 import SidebarLocation from "./SidebarLocation"
+import SidebarOpeningHours from "./SidebarOpeningHours"
 
 const Sidebar = () => {
   return (
