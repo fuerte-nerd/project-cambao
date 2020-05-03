@@ -19,6 +19,8 @@ import {
   Instagram,
   Share,
 } from "@material-ui/icons"
+import { mdiFacebookMessenger } from "@mdi/js"
+import Icon from "@mdi/react"
 import Img from "gatsby-image"
 
 const Navbar = props => {
@@ -83,6 +85,16 @@ const Navbar = props => {
             </IconButton>
           </Tooltip>
         </Hidden>
+        <Tooltip title="Show me the menu!">
+          <IconButton
+            onClick={handleClick}
+            id="open-menu"
+            color="inherit"
+            edge="end"
+          >
+            <Icon path={mdiFacebookMessenger} />
+          </IconButton>
+        </Tooltip>
         <Tooltip title="Show me the menu!">
           <IconButton
             onClick={handleClick}
