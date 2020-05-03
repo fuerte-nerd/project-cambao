@@ -33,7 +33,7 @@ const Footer = () => {
           <Typography variant="h4" paragraph>
             Opening Hours
           </Typography>
-          <Grid container>
+          <Grid container justify="space-between">
             <Grid item xs={12} sm={4}>
               <ListItemText
                 primary="Thursdays"
