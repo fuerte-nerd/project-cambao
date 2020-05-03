@@ -10,7 +10,7 @@ const SidebarDonate = () => {
       <Box pb={2}>
         <Typography variant="caption">
           We are a volunteer organization and appreciate anything you can
-          spare...
+          give...
         </Typography>
         <Box mt={2}>
           <Button
