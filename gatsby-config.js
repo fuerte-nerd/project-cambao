@@ -1,4 +1,4 @@
-const colors = require("./colors")
+import colors from "./colors"
 
 module.exports = {
   siteMetadata: {
@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-plugin-react-leaflet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

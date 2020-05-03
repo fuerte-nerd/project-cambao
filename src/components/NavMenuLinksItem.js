@@ -1,4 +1,5 @@
 import React from "react"
+import { AniLink } from "gatsby-plugin-transition-link"
 import { ListItem, ListItemText } from "@material-ui/core"
 import { ExpandLess, ExpandMore } from "@material-ui/icons"
 
@@ -10,11 +11,13 @@ const NavMenuLinksItem = props => {
       divider={props.divider ? true : false}
       onClick={props.clickEvent}
     >
-      <ListItemText
-        primary={props.title}
-        secondary={props.subtitle}
-        primaryTypographyProps={{ style: { color: "#fafafa" } }}
-      />
+      <AniLink fade to="the-dogs">
+        <ListItemText
+          primary={props.title}
+          secondary={props.subtitle}
+          primaryTypographyProps={{ style: { color: "#fafafa" } }}
+        />
+      </AniLink>
       {props.dropdown ? props.isOpen ? <ExpandLess /> : <ExpandMore /> : null}
     </ListItem>
   )
