@@ -4,9 +4,16 @@ import LocationMap from "./LocationMap"
 
 const Footer = () => {
   return (
-    <Box mt={2} pt={2} bgcolor="primary.dark" align="center" boxShadow={3}>
-      <Box m={2} pt={2}>
-        <Box mb={2}>
+    <Box
+      mt={2}
+      pt={2}
+      bgcolor="primary.dark"
+      color="#fafafa"
+      align="center"
+      boxShadow={6}
+    >
+      <Box p={2} pt={2}>
+        <Box pb={2}>
           <Typography variant="h4" paragraph>
             Where are we?
           </Typography>
