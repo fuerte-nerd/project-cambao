@@ -38,21 +38,21 @@ const NavMenuLinks = props => {
       <Divider />
       <List disablePadding dense={isLargeScreen ? false : true}>
         <NavMenuLinksItem
-          id="home"
+          link="home"
           title="Home"
           subtitle="Latest news and articles"
           clickEvent={handleClick}
           divider
         />
         <NavMenuLinksItem
-          id="the-dogs"
+          link="the-dogs"
           title="The Dogs"
           subtitle="Meet our current guests"
           clickEvent={handleClick}
           divider
         />
         <NavMenuLinksItem
-          id="who-are-we"
+          link="who-are-we"
           title="Who are we?"
           subtitle="Get to know us"
           clickEvent={handleClick}
@@ -60,6 +60,7 @@ const NavMenuLinks = props => {
         />
         <NavMenuLinksItem
           id="help-us"
+          link="#"
           title="Help us"
           subtitle="Find out how you can help"
           clickEvent={handleClick}
@@ -71,7 +72,7 @@ const NavMenuLinks = props => {
           <NavMenuHelpUsSubmenu />
         </Collapse>
         <NavMenuLinksItem
-          id="contact"
+          link="contact"
           title="Contact"
           subtitle="Get in touch with us"
           clickEvent={handleClick}
