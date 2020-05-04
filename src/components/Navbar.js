@@ -25,9 +25,9 @@ import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
 import NavbarToolsIcon from "./NavbarToolsIcon"
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   navToolsButton: {
-    fontSize: ".8rem",
+    fontSize: "1.2rem",
   },
 }))
 
