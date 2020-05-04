@@ -26,7 +26,7 @@ const TheDogs = () => {
       <Box>
         <Card>
           <CardActionArea>
-            <CardMedia image={tempImage} />
+            <CardMedia image={tempImage} style={{ height: 150 }} />
             <CardContent>
               <CardHeader>Buddy</CardHeader>
             </CardContent>
