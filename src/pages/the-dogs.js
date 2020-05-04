@@ -1,5 +1,8 @@
 import React from "react"
 import {
+  makeStyles,
+  useMediaQuery,
+  useTheme,
   Box,
   Typography,
   Card,
@@ -14,7 +17,25 @@ import SEO from "../components/seo"
 
 import tempImage from "../images/test.jpg"
 
+const theme = useTheme()
+const useStyles = makeStyles(() => ({
+  cardImage: {
+    [theme.breakpoints.down("sm")]: {
+      height: "2.4rem",
+    },
+  },
+}))
+
 const TheDogs = () => {
+  const cardMediaHeight = {
+    xs: 175,
+    sm: 200,
+    md: 300,
+    lg: 400,
+  }
+
+  const imageHeight = () => {}
+
   return (
     <>
       <SEO title="The Dogs" />
