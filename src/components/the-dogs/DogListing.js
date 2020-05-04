@@ -6,6 +6,7 @@ import {
   CardMedia,
   CardContent,
   CardHeader,
+  Typography,
 } from "@material-ui/core"
 import tempImage from "../../images/test.jpg"
 
@@ -15,7 +16,7 @@ const useStyles = makeStyles(theme => ({
       height: 300,
     },
     [theme.breakpoints.up("sm")]: {
-      height: 400,
+      height: 500,
     },
   },
 }))
@@ -26,7 +27,7 @@ const DogListing = () => {
       <CardActionArea>
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
-          <CardHeader>Buddy</CardHeader>
+          <Typography variant="h3">Buddy</Typography>
         </CardContent>
       </CardActionArea>
     </Card>
