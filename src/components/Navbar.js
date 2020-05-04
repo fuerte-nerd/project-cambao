@@ -90,6 +90,7 @@ const Navbar = props => {
             </IconButton>
           </Tooltip>
         </Hidden>
+        <Box style={{ flex: 1 }} />
         <Tooltip title="Show me the menu!">
           <IconButton
             onClick={handleClick}
