@@ -3,6 +3,7 @@ import {
   makeStyles,
   useMediaQuery,
   useTheme,
+  withStyles,
   Box,
   Typography,
   Card,
@@ -17,20 +18,19 @@ import SEO from "../components/seo"
 
 import tempImage from "../images/test.jpg"
 
-const theme = useTheme()
-const useStyles = makeStyles(() => ({
-  cardImage: {
-    [theme.breakpoints.down("sm")]: {
-      height: 200,
-    },
-    [theme.breakpoints.up("md")]: {
-      height: 400,
-    },
-  },
-}))
-
 const TheDogs = () => {
-  const classes = useStyles()
+  const theme = useTheme()
+  const DogImage = withStyles({
+    cardImage: {
+      [theme.breakpoints.down("sm")]: {
+        height: 200,
+      },
+      [theme.breakpoints.up("md")]: {
+        height: 400,
+      },
+    },
+  })(CardMedia)
+
   const cardMediaHeight = {
     xs: 175,
     sm: 200,
@@ -51,7 +51,7 @@ const TheDogs = () => {
       <Box>
         <Card>
           <CardActionArea>
-            <CardMedia image={tempImage} className={classes.cardImage} />
+            <DogImage image={tempImage} />
             <CardContent>
               <CardHeader>Buddy</CardHeader>
             </CardContent>
