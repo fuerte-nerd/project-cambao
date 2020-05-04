@@ -10,6 +10,13 @@ import {
   ListItem,
   ListItemText,
   Button,
+  Table,
+  TableHead,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+  Paper,
 } from "@material-ui/core"
 import tempImage from "../../images/test.jpg"
 
@@ -34,6 +41,24 @@ const DogListing = () => {
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
           <Typography variant="h3">Buddy</Typography>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Age</TableCell>
+                  <TableCell>Breed</TableCell>
+                  <TableCell>Sex</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>6 months</TableCell>
+                  <TableCell>German Shepherd</TableCell>
+                  <TableCell>Male</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
           <List dense>
             <ListItem>
               <ListItemText primary="Age" secondary="6 months" />
