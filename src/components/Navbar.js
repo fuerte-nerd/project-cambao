@@ -72,11 +72,6 @@ const Navbar = props => {
           </Box>
         </Hidden>
         <Box style={{ flex: 1 }} />
-        <Tooltip title="Share this page!">
-          <IconButton color="inherit">
-            <Share />
-          </IconButton>
-        </Tooltip>
         <Hidden smDown>
           <NavbarToolsIcon tooltip="Donate to the FDR dogs!">
             <EuroSymbol className={classes.navToolsButton} />
@@ -92,6 +87,11 @@ const Navbar = props => {
           </NavbarToolsIcon>
         </Hidden>
         <Box style={{ flex: 1 }} />
+        <Tooltip title="Share this page!">
+          <IconButton color="inherit">
+            <Share />
+          </IconButton>
+        </Tooltip>
         <Tooltip title="Show me the menu!">
           <IconButton
             onClick={handleClick}
