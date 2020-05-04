@@ -42,7 +42,7 @@ const DogListing = () => {
         <CardContent>
           <Typography variant="h3">Buddy</Typography>
           <TableContainer>
-            <Table>
+            <Table size="small">
               <TableHead>
                 <TableRow>
                   <TableCell>Age</TableCell>
