@@ -5,8 +5,11 @@ import {
   CardActionArea,
   CardMedia,
   CardContent,
-  CardHeader,
   Typography,
+  List,
+  ListItem,
+  ListItemText,
+  Button,
 } from "@material-ui/core"
 import tempImage from "../../images/test.jpg"
 
@@ -31,6 +34,17 @@ const DogListing = () => {
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
           <Typography variant="h3">Buddy</Typography>
+          <List dense>
+            <ListItem>
+              <ListItemText primary="Age" secondary="6 months" />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Breed" secondary="Bardino" />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Sex" secondary="Male" />
+            </ListItem>
+          </List>
         </CardContent>
       </CardActionArea>
     </Card>
