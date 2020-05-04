@@ -1,10 +1,16 @@
 import React from "react"
-import { Tooltip, IconButton } from "@material-ui/core"
+import { withStyles, Tooltip, IconButton } from "@material-ui/core"
 
 const NavbarToolsIcon = props => {
+
+  const test = withStyles({
+    root: {
+      fontSize=".6rem"
+    }
+  })
   return (
     <Tooltip title={props.tooltip}>
-      <IconButton color="inherit" style={{ fontSize: ".7rem" }}>
+      <IconButton color="inherit" classes={{root: {fontSize: ".6rem"}}  style={{ fontSize: ".7rem" }}>
         {props.children}
       </IconButton>
     </Tooltip>
