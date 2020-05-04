@@ -12,6 +12,7 @@ import {
   IconButton,
   Typography,
   Icon,
+  makeStyles,
 } from "@material-ui/core"
 import {
   Menu,
@@ -24,7 +25,14 @@ import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
 import NavbarToolsIcon from "./NavbarToolsIcon"
 
+const useStyles = makeStyles(theme => ({
+  navToolsButton: {
+    fontSize: ".8rem",
+  },
+}))
+
 const Navbar = props => {
+  const classes = useStyles()
   const handleClick = e => {
     const f = e.currentTarget
     switch (f.id) {
@@ -71,16 +79,16 @@ const Navbar = props => {
         </Tooltip>
         <Hidden smDown>
           <NavbarToolsIcon tooltip="Donate to the FDR dogs!">
-            <EuroSymbol />
+            <EuroSymbol className={classes.navToolsButton} />
           </NavbarToolsIcon>
           <NavbarToolsIcon tooltip="Visit us on Facebook!">
-            <Facebook />
+            <Facebook className={classes.navToolsButton} />
           </NavbarToolsIcon>
           <NavbarToolsIcon tooltip="Visit us on Instagram!">
-            <Instagram />
+            <Instagram className={classes.navToolsButton} />
           </NavbarToolsIcon>
           <NavbarToolsIcon tooltip="Contact us on Messenger!">
-            <FacebookMessenger />
+            <FacebookMessenger className={classes.navToolsButton} />
           </NavbarToolsIcon>
         </Hidden>
         <Box style={{ flex: 1 }} />
