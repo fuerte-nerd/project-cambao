@@ -22,6 +22,7 @@ import {
 } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
+import NavbarToolsIcon from "./NavbarToolsIcon"
 
 const Navbar = props => {
   const handleClick = e => {
@@ -69,11 +70,9 @@ const Navbar = props => {
           </IconButton>
         </Tooltip>
         <Hidden smDown>
-          <Tooltip title="Donate to the FDR dogs!">
-            <IconButton color="inherit">
-              <EuroSymbol />
-            </IconButton>
-          </Tooltip>
+          <NavbarToolsIcon tooltip="Donate to the FDR dogs!">
+            <EuroSymbol />
+          </NavbarToolsIcon>
           <Tooltip title="Visit us on Facebook!">
             <IconButton color="inherit">
               <Facebook />
