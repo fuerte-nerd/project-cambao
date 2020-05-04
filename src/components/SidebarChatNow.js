@@ -9,8 +9,10 @@ const SidebarChatNow = () => {
     <Box>
       <SidebarSectionTitle title="Send a message" />
       <Typography variant="caption">Contact us now via...</Typography>
-      <Box>
+      <Box display="block">
         <Button startIcon={<FacebookMessenger />}>Messenger</Button>
+      </Box>
+      <Box display="block">
         <Button startIcon={<Email />}>Email</Button>
       </Box>
       <Typography variant="caption" align="justify">
