@@ -4,7 +4,9 @@ import { Tooltip, IconButton } from "@material-ui/core"
 const NavbarToolsIcon = props => {
   return (
     <Tooltip title={props.tooltip}>
-      <IconButton color="inherit">{props.children}</IconButton>
+      <IconButton color="inherit" style={{ fontSize: ".7rem" }}>
+        {props.children}
+      </IconButton>
     </Tooltip>
   )
 }

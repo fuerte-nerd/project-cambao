@@ -73,21 +73,15 @@ const Navbar = props => {
           <NavbarToolsIcon tooltip="Donate to the FDR dogs!">
             <EuroSymbol />
           </NavbarToolsIcon>
-          <Tooltip title="Visit us on Facebook!">
-            <IconButton color="inherit">
-              <Facebook />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Visit us on Instagram!">
-            <IconButton color="inherit">
-              <Instagram />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Contact us on Messenger!">
-            <IconButton onClick={handleClick} id="messenger" color="inherit">
-              <FacebookMessenger />
-            </IconButton>
-          </Tooltip>
+          <NavbarToolsIcon tooltip="Visit us on Facebook!">
+            <Facebook />
+          </NavbarToolsIcon>
+          <NavbarToolsIcon tooltip="Visit us on Instagram!">
+            <Instagram />
+          </NavbarToolsIcon>
+          <NavbarToolsIcon tooltip="Contact us on Messenger!">
+            <FacebookMessenger />
+          </NavbarToolsIcon>
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Tooltip title="Show me the menu!">
