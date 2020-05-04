@@ -21,12 +21,16 @@ const theme = useTheme()
 const useStyles = makeStyles(() => ({
   cardImage: {
     [theme.breakpoints.down("sm")]: {
-      height: "2.4rem",
+      height: 200,
+    },
+    [theme.breakpoints.up("md")]: {
+      height: 400,
     },
   },
 }))
 
 const TheDogs = () => {
+  const classes = useStyles()
   const cardMediaHeight = {
     xs: 175,
     sm: 200,
@@ -47,7 +51,7 @@ const TheDogs = () => {
       <Box>
         <Card>
           <CardActionArea>
-            <CardMedia image={tempImage} style={{ height: 150 }} />
+            <CardMedia image={tempImage} className={classes.cardImage} />
             <CardContent>
               <CardHeader>Buddy</CardHeader>
             </CardContent>
