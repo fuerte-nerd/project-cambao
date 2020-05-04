@@ -1,9 +1,6 @@
 import React from "react"
 import {
   makeStyles,
-  useMediaQuery,
-  useTheme,
-  withStyles,
   Box,
   Typography,
   Card,
@@ -18,25 +15,19 @@ import SEO from "../components/seo"
 
 import tempImage from "../images/test.jpg"
 
-const TheDogs = () => {
-  const theme = useTheme()
-  const DogImage = withStyles({
-    cardImage: {
-      [theme.breakpoints.down("sm")]: {
-        height: 200,
-      },
-      [theme.breakpoints.up("md")]: {
-        height: 400,
-      },
+const useStyles = makeStyles(theme => ({
+  cardImage: {
+    [theme.breakpoints.down("xs")]: {
+      height: 300,
     },
-  })(CardMedia)
+    [theme.breakpoints.up("md")]: {
+      height: 400,
+    },
+  },
+}))
 
-  const cardMediaHeight = {
-    xs: 175,
-    sm: 200,
-    md: 300,
-    lg: 400,
-  }
+const TheDogs = () => {
+  const classes = useStyles()
 
   const imageHeight = () => {}
 
@@ -51,7 +42,7 @@ const TheDogs = () => {
       <Box>
         <Card>
           <CardActionArea>
-            <DogImage image={tempImage} />
+            <CardMedia image={tempImage} className={classes.cardImage} />
             <CardContent>
               <CardHeader>Buddy</CardHeader>
             </CardContent>
