@@ -59,17 +59,6 @@ const DogListing = () => {
               </TableBody>
             </Table>
           </TableContainer>
-          <List dense>
-            <ListItem>
-              <ListItemText primary="Age" secondary="6 months" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Breed" secondary="Bardino" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Sex" secondary="Male" />
-            </ListItem>
-          </List>
         </CardContent>
       </CardActionArea>
     </Card>
