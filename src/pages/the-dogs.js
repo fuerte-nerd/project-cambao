@@ -1,36 +1,10 @@
 import React from "react"
-import {
-  makeStyles,
-  Box,
-  Typography,
-  Card,
-  CardMedia,
-  CardHeader,
-  CardActions,
-  CardContent,
-  CardActionArea,
-  Button,
-} from "@material-ui/core"
+import { Grid, Box, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
 
-import tempImage from "../images/test.jpg"
-
-const useStyles = makeStyles(theme => ({
-  cardImage: {
-    [theme.breakpoints.down("xs")]: {
-      height: 300,
-    },
-    [theme.breakpoints.up("md")]: {
-      height: 400,
-    },
-  },
-}))
+import DogListing from "../components/the-dogs/DogListing"
 
 const TheDogs = () => {
-  const classes = useStyles()
-
-  const imageHeight = () => {}
-
   return (
     <>
       <SEO title="The Dogs" />
@@ -40,14 +14,23 @@ const TheDogs = () => {
         They can't wait to meet you!
       </Typography>
       <Box>
-        <Card>
-          <CardActionArea>
-            <CardMedia image={tempImage} className={classes.cardImage} />
-            <CardContent>
-              <CardHeader>Buddy</CardHeader>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+        <Grid container>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+            <DogListing />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+            <DogListing />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+            <DogListing />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+            <DogListing />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+            <DogListing />
+          </Grid>
+        </Grid>
       </Box>
     </>
   )
