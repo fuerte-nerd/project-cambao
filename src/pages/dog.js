@@ -27,16 +27,20 @@ const Dog = () => {
               <Grid item xs={12}>
                 <Typography variant="h2">Buddy</Typography>
               </Grid>
-              <DogProfileRow label="Age" info="11 months" />
-              <DogProfileRow label="Breed" info="German Shepherd" />
-              <DogProfileRow label="Sex" info="Female" />
-              <DogProfileRow label="Licence required" info="Yes" />
-              <DogProfileRow label="Location" info="Shelter" />
-              <DogProfileRow label="Time in care" info="3 months" />
-              <DogProfileRow label="Dog-friendly" info="Yes" />
-              <DogProfileRow label="Cat-friendly" info="Yes" />
-              <DogProfileRow label="Family-friendly" info="Yes" />
-              <DogProfileRow label="Sterilized" info="Yes" />
+              <Box maxWidth={300} m="auto">
+                <Grid container spacing={2} alignItems="center">
+                  <DogProfileRow label="Age" info="11 months" />
+                  <DogProfileRow label="Breed" info="German Shepherd" />
+                  <DogProfileRow label="Sex" info="Female" />
+                  <DogProfileRow label="Licence required" info="Yes" />
+                  <DogProfileRow label="Location" info="Shelter" />
+                  <DogProfileRow label="Time in care" info="3 months" />
+                  <DogProfileRow label="Dog-friendly" info="Yes" />
+                  <DogProfileRow label="Cat-friendly" info="Yes" />
+                  <DogProfileRow label="Family-friendly" info="Yes" />
+                  <DogProfileRow label="Sterilized" info="Yes" />
+                </Grid>
+              </Box>
             </Grid>
           </Box>
         </Grid>
@@ -47,11 +51,11 @@ const Dog = () => {
 
 const DogProfileRow = props => (
   <>
-    <Grid item xs={4}>
+    <Grid item xs={6}>
       <Typography color="textSecondary">{props.label}</Typography>
     </Grid>
-    <Grid item xs={8}>
-      <Typography>{props.info}</Typography>
+    <Grid item xs={6}>
+      <Typography align="right">{props.info}</Typography>
     </Grid>
   </>
 )
