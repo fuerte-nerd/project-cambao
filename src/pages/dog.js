@@ -35,10 +35,12 @@ const Dog = () => {
           <Box p={2} bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2} alignItems="center">
               <Grid item xs={12}>
-                <Typography variant="h2">Buddy</Typography>
+                <Box bgcolor="secondary.main">
+                  <Typography variant="h2">Buddy</Typography>
+                </Box>
               </Grid>
               <Box m={2} width="100%">
-                <Grid container spacing={smUp ? 2 : 0} alignItems="center">
+                <Grid container spacing={smUp ? 2 : 0} alignItems="flex-start">
                   <Grid item xs={12} sm={6}>
                     <DogProfileRow label="Age" info="11 months" />
                     <DogProfileRow label="Breed" info="German Shepherd" />
