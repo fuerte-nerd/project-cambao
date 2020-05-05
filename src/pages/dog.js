@@ -28,6 +28,9 @@ const Dog = () => {
   return (
     <Box>
       <Grid container spacing={1}>
+        <Grid item xs={12} md={4}>
+          <Img fluid={data.dog1.childImageSharp.fluid} />
+        </Grid>
         <Grid item xs={12} md={8}>
           <Box p={2} bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2} alignItems="center">
@@ -57,7 +60,7 @@ const Dog = () => {
                 <Divider />
                 <Grid item>
                   <Box my={2}>
-                    <Typography>
+                    <Typography variant="body1">
                       Lorem a dolor possimus minus magnam? Magnam modi at alias
                       exercitationem temporibus? Accusamus laudantium nihil
                       dolores blanditiis numquam Optio corporis neque tenetur
@@ -79,9 +82,6 @@ const Dog = () => {
             </Grid>
           </Box>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Img fluid={data.dog1.childImageSharp.fluid} />
-        </Grid>
       </Grid>
     </Box>
   )
@@ -91,15 +91,17 @@ const DogProfileRow = props => {
   const theme = useTheme()
 
   return (
-    <Grid container>
+    <Grid container alignItems="center">
       <Grid item xs={6}>
-        <Box pb={1} color={theme.palette.primary.main}>
+        <Box pb={1} borderBottom={1} color={theme.palette.primary.dark}>
           <Typography variant="overline">{props.label}</Typography>
         </Box>
       </Grid>
       <Grid item xs={6}>
-        <Box pb={1}>
-          <Typography align="right">{props.info}</Typography>
+        <Box pb={1} borderBottom={1}>
+          <Typography variant="body2" align="right">
+            {props.info}
+          </Typography>
         </Box>
       </Grid>
     </Grid>
