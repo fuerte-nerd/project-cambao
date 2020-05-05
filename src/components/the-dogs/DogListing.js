@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  useTheme,
   Box,
   Grid,
   makeStyles,
@@ -69,6 +70,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 const DogListing = () => {
+  const theme = useTheme()
   const classes = useStyles()
   return (
     <Card>
@@ -113,12 +115,18 @@ const DogListing = () => {
           </Grid>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Box align="end" fullWidth display="flex" alignItems="center">
+      <CardActions style={{ background: theme.palette.secondary.main }}>
+        <Box
+          align="end"
+          width="100%"
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+        >
           <IconButton>
             <Share />
           </IconButton>
-          <Button>More info</Button>
+          <Button color="secondary">More info</Button>
         </Box>
       </CardActions>
     </Card>
