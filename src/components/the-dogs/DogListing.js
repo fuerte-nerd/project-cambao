@@ -71,7 +71,7 @@ const DogListing = () => {
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
           <Typography variant="h3">Buddy</Typography>
-          <Box height={300} alignItems="center">
+          <Box minHeight={100} display="flex" alignItems="center">
             <TableContainer>
               <Table size="small">
                 <TableHead>
