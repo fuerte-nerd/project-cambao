@@ -34,11 +34,12 @@ const Dog = () => {
         <Grid item xs={12} md={8}>
           <Box p={2} bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2} alignItems="center">
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={6}>
                 <Box color="primary.dark">
                   <Typography variant="h2">Buddy</Typography>
                 </Box>
               </Grid>
+
               <Box mx={2} width="100%">
                 <Grid container spacing={smUp ? 8 : 0} alignItems="flex-start">
                   <Grid item xs={12} sm={6}>
@@ -93,17 +94,13 @@ const DogProfileRow = props => {
   return (
     <Grid container alignItems="flex-end">
       <Grid item xs={6}>
-        <Box pb={1} borderBottom={1} borderTop={props.first ? 1 : 0}>
+        <Box pb={1} borderBottom={1}>
           <Typography variant="overline">{props.label}</Typography>
         </Box>
       </Grid>
       <Grid item xs={6}>
-        <Box pb={1} borderBottom={1} borderTop={props.first ? 1 : 0}>
-          <Typography
-            style={{ lineHeight: props.first ? 2.66 : "auto", margin: 0 }}
-            variant="body2"
-            align="right"
-          >
+        <Box pb={1} borderBottom={1}>
+          <Typography variant="body2" align="right">
             {props.info}
           </Typography>
         </Box>
