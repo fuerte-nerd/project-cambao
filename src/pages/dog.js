@@ -17,15 +17,24 @@ const Dog = () => {
   `)
   return (
     <Box>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h2">Buddy</Typography>
         </Grid>
-        <Grid item>
+        <Grid item xs={12} md={6}>
           <Img fluid={data.dog1.childImageSharp.fluid} />
         </Grid>
-        <Grid item>
-          <Grid container></Grid>
+        <Grid item xs={12} md={6}>
+          <Box p={2} bgcolor="#fafafa">
+            <Grid container>
+              <Grid item xs={6}>
+                <Typography>Age</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography>11 months</Typography>
+              </Grid>
+            </Grid>
+          </Box>
         </Grid>
       </Grid>
     </Box>
