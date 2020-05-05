@@ -3,11 +3,14 @@ import { graphql, useStaticQuery } from "gatsby"
 import {
   useTheme,
   useMediaQuery,
+  IconButton,
   Divider,
   Box,
   Typography,
   Grid,
 } from "@material-ui/core"
+import { Share } from "@material-ui/icons"
+import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
 
 const Dog = () => {
@@ -37,6 +40,16 @@ const Dog = () => {
               <Grid item xs={12} sm={6}>
                 <Box color="primary.dark">
                   <Typography variant="h2">Buddy</Typography>
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Box>
+                  <IconButton>
+                    <Share />
+                  </IconButton>
+                  <IconButton>
+                    <FacebookMessenger />
+                  </IconButton>
                 </Box>
               </Grid>
 
