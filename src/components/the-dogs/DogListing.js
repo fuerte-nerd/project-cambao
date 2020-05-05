@@ -71,7 +71,7 @@ const DogListing = () => {
       <CardActionArea>
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
-          <Typography variant="h3">Buddy</Typography>
+          <Typography align="center" variant="h3">Buddy</Typography>
 
           <Grid container justify="space-between">
             <Grid item xs={12} sm={3}>
@@ -88,7 +88,7 @@ const DogListing = () => {
               <ListItemText
                 primary="Breed"
                 secondary="German Shepherd"
-                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                primaryTypographyProps={{ style: { textAlign: "center", fontWeight= } }}
                 secondaryTypographyProps={{
                   style: { textAlign: "center" },
                 }}
