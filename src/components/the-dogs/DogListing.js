@@ -89,13 +89,13 @@ const DogListing = () => {
                 primaryTypographyProps={{
                   style: {
                     textAlign: "center",
-                    color: theme.palette.primary.dark,
+                    color: theme.palette.secondary.dark,
                   },
                 }}
                 secondaryTypographyProps={{
                   style: {
                     textAlign: "center",
-                    color: theme.palette.primary.main,
+                    color: theme.palette.primary.dark,
                   },
                 }}
               />
@@ -104,9 +104,17 @@ const DogListing = () => {
               <ListItemText
                 primary="Sex"
                 secondary="Female"
-                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                primaryTypographyProps={{
+                  style: {
+                    textAlign: "center",
+                    color: theme.palette.secondary.dark,
+                  },
+                }}
                 secondaryTypographyProps={{
-                  style: { textAlign: "center" },
+                  style: {
+                    textAlign: "center",
+                    color: theme.palette.primary.dark,
+                  },
                 }}
               />
             </Grid>
@@ -114,9 +122,17 @@ const DogListing = () => {
               <ListItemText
                 primary="Breed"
                 secondary="German Shepherd"
-                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                primaryTypographyProps={{
+                  style: {
+                    textAlign: "center",
+                    color: theme.palette.secondary.dark,
+                  },
+                }}
                 secondaryTypographyProps={{
-                  style: { textAlign: "center" },
+                  style: {
+                    textAlign: "center",
+                    color: theme.palette.primary.dark,
+                  },
                 }}
               />
             </Grid>
