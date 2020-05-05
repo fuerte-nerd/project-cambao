@@ -56,6 +56,11 @@ const useStyles = makeStyles(theme => ({
       width: "15%",
     },
   },
+  dataRow: {
+    [theme.breakpoints.down("xs")]: {
+      minHeight: 40,
+    },
+  },
 }))
 const DogListing = () => {
   const classes = useStyles()
@@ -81,7 +86,7 @@ const DogListing = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                <TableRow>
+                <TableRow className={classes.dataRow}>
                   <TableCell>
                     <Typography variant="caption">6 months</Typography>
                   </TableCell>
