@@ -4,7 +4,7 @@ import { Box, Typography } from "@material-ui/core"
 const Dog = () => {
   return (
     <Box>
-      <Typography>Hello</Typography>
+      <Typography variant="h2">Buddy</Typography>
     </Box>
   )
 }
