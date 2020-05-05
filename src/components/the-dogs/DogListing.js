@@ -45,18 +45,28 @@ const DogListing = () => {
             <Table size="small">
               <TableHead>
                 <TableRow>
-                  <TableCell style={{ width: "35%" }}>
+                  <TableCell style={{ width: "40%" }}>
                     <Typography variant="overline">Age</Typography>
                   </TableCell>
-                  <TableCell style={{ width: "45%" }}>Breed</TableCell>
-                  <TableCell style={{ width: "20%" }}>Sex</TableCell>
+                  <TableCell style={{ width: "40%" }}>
+                    <Typography variant="overline">Breed</Typography>
+                  </TableCell>
+                  <TableCell style={{ width: "20%" }}>
+                    <Typography variant="overline">Sex</Typography>
+                  </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 <TableRow>
-                  <TableCell>6 months</TableCell>
-                  <TableCell>German Shepherd</TableCell>
-                  <TableCell>Female</TableCell>
+                  <TableCell>
+                    <Typography variant="caption">6 months</Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="caption">German Shepherd</Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="caption">Female</Typography>
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
