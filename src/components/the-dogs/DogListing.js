@@ -45,16 +45,16 @@ const DogListing = () => {
             <Table size="small">
               <TableHead>
                 <TableRow>
-                  <TableCell style={{ width: "20%" }}>Age</TableCell>
-                  <TableCell style={{ width: "60%" }}>Breed</TableCell>
-                  <TableCell style={{ width: "20%" }}>Sex</TableCell>
+                  <TableCell style={{ width: "35%" }}>Age</TableCell>
+                  <TableCell style={{ width: "55%" }}>Breed</TableCell>
+                  <TableCell style={{ width: "10%" }}>Sex</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 <TableRow>
                   <TableCell>6 months</TableCell>
                   <TableCell>German Shepherd</TableCell>
-                  <TableCell>Male</TableCell>
+                  <TableCell>Female</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
