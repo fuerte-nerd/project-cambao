@@ -22,7 +22,7 @@ const Dog = () => {
           <Img fluid={data.dog1.childImageSharp.fluid} />
         </Grid>
         <Grid item xs={12} md={8}>
-          <Box p={2} bgcolor="#fafafa">
+          <Box p={2} bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2} alignItems="center">
               <Grid item xs={12}>
                 <Typography variant="h2">Buddy</Typography>
@@ -31,7 +31,12 @@ const Dog = () => {
               <DogProfileRow label="Breed" info="German Shepherd" />
               <DogProfileRow label="Sex" info="Female" />
               <DogProfileRow label="Licence required" info="Yes" />
-              <DogProfileRow label="Age" info="11 months" />
+              <DogProfileRow label="Location" info="Shelter" />
+              <DogProfileRow label="Time in care" info="3 months" />
+              <DogProfileRow label="Dog-friendly" info="Yes" />
+              <DogProfileRow label="Cat-friendly" info="Yes" />
+              <DogProfileRow label="Family-friendly" info="Yes" />
+              <DogProfileRow label="Sterilized" info="Yes" />
             </Grid>
           </Box>
         </Grid>
