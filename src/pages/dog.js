@@ -11,6 +11,7 @@ import {
 import Img from "gatsby-image"
 
 const Dog = () => {
+  const theme = useTheme()
   const data = useStaticQuery(graphql`
     {
       dog1: file(name: { eq: "test" }) {
@@ -22,7 +23,6 @@ const Dog = () => {
       }
     }
   `)
-  const theme = useTheme()
   const smUp = useMediaQuery(theme.breakpoints.up("sm"))
 
   return (
@@ -87,21 +87,23 @@ const Dog = () => {
   )
 }
 
-const DogProfileRow = props => (
-  <Grid container>
-    <Grid item xs={6}>
-      <Box pb={1}>
-        <Typography color={theme.palette.primary.main}>
-          {props.label}
-        </Typography>
-      </Box>
+const DogProfileRow = props => {
+  const theme = useTheme()
+
+  return (
+    <Grid container>
+      <Grid item xs={6}>
+        <Box pb={1} color={theme.palette.primary.main}>
+          <Typography variant="overline">{props.label}</Typography>
+        </Box>
+      </Grid>
+      <Grid item xs={6}>
+        <Box pb={1}>
+          <Typography align="right">{props.info}</Typography>
+        </Box>
+      </Grid>
     </Grid>
-    <Grid item xs={6}>
-      <Box pb={1}>
-        <Typography align="right">{props.info}</Typography>
-      </Box>
-    </Grid>
-  </Grid>
-)
+  )
+}
 
 export default Dog
