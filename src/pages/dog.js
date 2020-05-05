@@ -17,16 +17,16 @@ const Dog = () => {
   `)
   return (
     <Box>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Typography variant="h2">Buddy</Typography>
-        </Grid>
-        <Grid item xs={12} md={6}>
+      <Grid container>
+        <Grid item xs={12} md={4}>
           <Img fluid={data.dog1.childImageSharp.fluid} />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={8}>
           <Box p={2} bgcolor="#fafafa">
             <Grid container spacing={2} alignItems="center">
+              <Grid item xs={12}>
+                <Typography variant="h2">Buddy</Typography>
+              </Grid>
               <DogProfileRow label="Age" info="11 months" />
               <DogProfileRow label="Breed" info="German Shepherd" />
               <DogProfileRow label="Sex" info="Female" />
