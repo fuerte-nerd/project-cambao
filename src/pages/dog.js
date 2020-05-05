@@ -38,26 +38,28 @@ const Dog = () => {
                 <Box color="primary.dark">
                   <Typography variant="h2">Buddy</Typography>
                 </Box>
-                <Divider />
               </Grid>
               <Box mx={2} width="100%">
                 <Grid container spacing={smUp ? 8 : 0} alignItems="flex-start">
                   <Grid item xs={12} sm={6}>
-                    <DogProfileRow label="Age" info="11 months" />
+                    <DogProfileRow label="Age" info="11 months" first />
                     <DogProfileRow label="Breed" info="German Shepherd" />
                     <DogProfileRow label="Sex" info="Female" />
                     <DogProfileRow label="Licence required" info="Yes" />
                     <DogProfileRow label="Location" info="Shelter" />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <DogProfileRow label="Time in care" info="3 months" />
+                    <DogProfileRow
+                      label="Time in care"
+                      info="3 months"
+                      first={smUp ? true : false}
+                    />
                     <DogProfileRow label="Dog-friendly" info="Yes" />
                     <DogProfileRow label="Cat-friendly" info="Yes" />
                     <DogProfileRow label="Family-friendly" info="Yes" />
                     <DogProfileRow label="Sterilized" info="Yes" />
                   </Grid>
                 </Grid>
-                <Divider />
                 <Grid item>
                   <Box my={2}>
                     <Typography variant="body1">
@@ -88,17 +90,15 @@ const Dog = () => {
 }
 
 const DogProfileRow = props => {
-  const theme = useTheme()
-
   return (
-    <Grid container alignItems="center">
+    <Grid container alignItems="flex-end">
       <Grid item xs={6}>
-        <Box pb={1} borderBottom={1} color={theme.palette.primary.dark}>
+        <Box pb={1} borderBottom={1} borderTop={props.first ? 1 : 0}>
           <Typography variant="overline">{props.label}</Typography>
         </Box>
       </Grid>
       <Grid item xs={6}>
-        <Box pb={1} borderBottom={1}>
+        <Box pb={1} borderBottom={1} borderTop={props.first ? 1 : 0}>
           <Typography variant="body2" align="right">
             {props.info}
           </Typography>
