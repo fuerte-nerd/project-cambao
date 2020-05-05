@@ -27,18 +27,22 @@ const Dog = () => {
               <Grid item xs={12}>
                 <Typography variant="h2">Buddy</Typography>
               </Grid>
-              <Box maxWidth={300} m="auto">
+              <Box width="100%" m="auto">
                 <Grid container spacing={2} alignItems="center">
-                  <DogProfileRow label="Age" info="11 months" />
-                  <DogProfileRow label="Breed" info="German Shepherd" />
-                  <DogProfileRow label="Sex" info="Female" />
-                  <DogProfileRow label="Licence required" info="Yes" />
-                  <DogProfileRow label="Location" info="Shelter" />
-                  <DogProfileRow label="Time in care" info="3 months" />
-                  <DogProfileRow label="Dog-friendly" info="Yes" />
-                  <DogProfileRow label="Cat-friendly" info="Yes" />
-                  <DogProfileRow label="Family-friendly" info="Yes" />
-                  <DogProfileRow label="Sterilized" info="Yes" />
+                  <Grid item xs={12} sm={6}>
+                    <DogProfileRow label="Age" info="11 months" />
+                    <DogProfileRow label="Breed" info="German Shepherd" />
+                    <DogProfileRow label="Sex" info="Female" />
+                    <DogProfileRow label="Licence required" info="Yes" />
+                    <DogProfileRow label="Location" info="Shelter" />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <DogProfileRow label="Time in care" info="3 months" />
+                    <DogProfileRow label="Dog-friendly" info="Yes" />
+                    <DogProfileRow label="Cat-friendly" info="Yes" />
+                    <DogProfileRow label="Family-friendly" info="Yes" />
+                    <DogProfileRow label="Sterilized" info="Yes" />
+                  </Grid>
                 </Grid>
               </Box>
             </Grid>
@@ -50,14 +54,14 @@ const Dog = () => {
 }
 
 const DogProfileRow = props => (
-  <>
+  <Grid container spacing={1}>
     <Grid item xs={6}>
       <Typography color="textSecondary">{props.label}</Typography>
     </Grid>
     <Grid item xs={6}>
       <Typography align="right">{props.info}</Typography>
     </Grid>
-  </>
+  </Grid>
 )
 
 export default Dog
