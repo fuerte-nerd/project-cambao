@@ -9,7 +9,7 @@ import {
   Typography,
   Grid,
 } from "@material-ui/core"
-import { Share } from "@material-ui/icons"
+import { Share, Comment } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
 
@@ -46,11 +46,14 @@ const Dog = () => {
                     <Typography variant="h2">Buddy</Typography>
                   </Box>
                   <Box>
-                    <IconButton>
+                    <IconButton edge="start">
                       <Share />
                     </IconButton>
                     <IconButton>
                       <FacebookMessenger />
+                    </IconButton>
+                    <IconButton edge="end">
+                      <Comment />
                     </IconButton>
                   </Box>
                 </Box>
