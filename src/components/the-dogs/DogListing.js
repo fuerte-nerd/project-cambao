@@ -72,8 +72,9 @@ const DogListing = () => {
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
           <Typography variant="h3">Buddy</Typography>
+
           <Grid container justify="space-between">
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={3}>
               <ListItemText
                 primary="Age"
                 secondary="11 months"
@@ -82,26 +83,26 @@ const DogListing = () => {
                   style: { textAlign: "center" },
                 }}
               />
-              <Grid item xs={12} sm={4}>
-                <ListItemText
-                  primary="Breed"
-                  secondary="German Shepherd"
-                  primaryTypographyProps={{ style: { textAlign: "center" } }}
-                  secondaryTypographyProps={{
-                    style: { textAlign: "center" },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <ListItemText
-                  primary="Sex"
-                  secondary="Female"
-                  primaryTypographyProps={{ style: { textAlign: "center" } }}
-                  secondaryTypographyProps={{
-                    style: { textAlign: "center" },
-                  }}
-                />
-              </Grid>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <ListItemText
+                primary="Breed"
+                secondary="German Shepherd"
+                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                secondaryTypographyProps={{
+                  style: { textAlign: "center" },
+                }}
+              />
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <ListItemText
+                primary="Sex"
+                secondary="Female"
+                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                secondaryTypographyProps={{
+                  style: { textAlign: "center" },
+                }}
+              />
             </Grid>
           </Grid>
         </CardContent>
