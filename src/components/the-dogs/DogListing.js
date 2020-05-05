@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Box,
   makeStyles,
   Card,
   CardActionArea,
@@ -70,36 +71,38 @@ const DogListing = () => {
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
           <Typography variant="h3">Buddy</Typography>
-          <TableContainer>
-            <Table size="small">
-              <TableHead>
-                <TableRow>
-                  <TableCell className={classes.ageWidth}>
-                    <Typography variant="overline">Age</Typography>
-                  </TableCell>
-                  <TableCell className={classes.breedWidth}>
-                    <Typography variant="overline">Breed</Typography>
-                  </TableCell>
-                  <TableCell className={classes.sexWidth}>
-                    <Typography variant="overline">Sex</Typography>
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow className={classes.dataRow}>
-                  <TableCell>
-                    <Typography variant="caption">6 months</Typography>
-                  </TableCell>
-                  <TableCell>
-                    <Typography variant="caption">German Shepherd</Typography>
-                  </TableCell>
-                  <TableCell>
-                    <Typography variant="caption">Female</Typography>
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </TableContainer>
+          <Box height={300} alignItems="center">
+            <TableContainer>
+              <Table size="small">
+                <TableHead>
+                  <TableRow>
+                    <TableCell className={classes.ageWidth}>
+                      <Typography variant="overline">Age</Typography>
+                    </TableCell>
+                    <TableCell className={classes.breedWidth}>
+                      <Typography variant="overline">Breed</Typography>
+                    </TableCell>
+                    <TableCell className={classes.sexWidth}>
+                      <Typography variant="overline">Sex</Typography>
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  <TableRow className={classes.dataRow}>
+                    <TableCell>
+                      <Typography variant="caption">6 months</Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography variant="caption">German Shepherd</Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography variant="caption">Female</Typography>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Box>
         </CardContent>
       </CardActionArea>
     </Card>
