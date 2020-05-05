@@ -27,8 +27,8 @@ const Dog = () => {
               <Grid item xs={12}>
                 <Typography variant="h2">Buddy</Typography>
               </Grid>
-              <Box width="100%" m="auto">
-                <Grid container spacing={2} alignItems="center">
+              <Box m={2} width="100%">
+                <Grid container alignItems="center">
                   <Grid item xs={12} sm={6}>
                     <DogProfileRow label="Age" info="11 months" />
                     <DogProfileRow label="Breed" info="German Shepherd" />
@@ -54,7 +54,7 @@ const Dog = () => {
 }
 
 const DogProfileRow = props => (
-  <Grid container spacing={1}>
+  <Grid container>
     <Grid item xs={6}>
       <Typography color="textSecondary">{props.label}</Typography>
     </Grid>
