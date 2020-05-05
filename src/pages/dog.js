@@ -56,10 +56,14 @@ const Dog = () => {
 const DogProfileRow = props => (
   <Grid container>
     <Grid item xs={6}>
-      <Typography color="textSecondary">{props.label}</Typography>
+      <Box pb={1}>
+        <Typography color="textSecondary">{props.label}</Typography>
+      </Box>
     </Grid>
     <Grid item xs={6}>
-      <Typography align="right">{props.info}</Typography>
+      <Box pb={1}>
+        <Typography align="right">{props.info}</Typography>
+      </Box>
     </Grid>
   </Grid>
 )
