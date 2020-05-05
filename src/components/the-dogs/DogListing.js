@@ -32,6 +32,30 @@ const useStyles = makeStyles(theme => ({
       height: 400,
     },
   },
+  ageWidth: {
+    [theme.breakpoints.down("xs")]: {
+      width: "40%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "30%",
+    },
+  },
+  breedWidth: {
+    [theme.breakpoints.down("xs")]: {
+      width: "40%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "55%",
+    },
+  },
+  sexWidth: {
+    [theme.breakpoints.down("xs")]: {
+      width: "20%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "15%",
+    },
+  },
 }))
 const DogListing = () => {
   const classes = useStyles()
@@ -45,13 +69,13 @@ const DogListing = () => {
             <Table size="small">
               <TableHead>
                 <TableRow>
-                  <TableCell style={{ width: "40%" }}>
+                  <TableCell className={classes.ageWidth}>
                     <Typography variant="overline">Age</Typography>
                   </TableCell>
-                  <TableCell style={{ width: "40%" }}>
+                  <TableCell className={classes.breedWidth}>
                     <Typography variant="overline">Breed</Typography>
                   </TableCell>
-                  <TableCell style={{ width: "20%" }}>
+                  <TableCell className={classes.sexWidth}>
                     <Typography variant="overline">Sex</Typography>
                   </TableCell>
                 </TableRow>
