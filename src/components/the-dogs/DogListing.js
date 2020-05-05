@@ -1,6 +1,7 @@
 import React from "react"
 import {
   Box,
+  Grid,
   makeStyles,
   Card,
   CardActionArea,
@@ -71,38 +72,38 @@ const DogListing = () => {
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
           <Typography variant="h3">Buddy</Typography>
-          <Box minHeight={100} display="flex" alignItems="center">
-            <TableContainer>
-              <Table size="small">
-                <TableHead>
-                  <TableRow>
-                    <TableCell className={classes.ageWidth}>
-                      <Typography variant="overline">Age</Typography>
-                    </TableCell>
-                    <TableCell className={classes.breedWidth}>
-                      <Typography variant="overline">Breed</Typography>
-                    </TableCell>
-                    <TableCell className={classes.sexWidth}>
-                      <Typography variant="overline">Sex</Typography>
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  <TableRow className={classes.dataRow}>
-                    <TableCell>
-                      <Typography variant="caption">6 months</Typography>
-                    </TableCell>
-                    <TableCell>
-                      <Typography variant="caption">German Shepherd</Typography>
-                    </TableCell>
-                    <TableCell>
-                      <Typography variant="caption">Female</Typography>
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Box>
+          <Grid container>
+            <Grid item xs={12} sm={3}>
+              <ListItemText
+                primary="Age"
+                secondary="11 months"
+                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                secondaryTypographyProps={{
+                  style: { textAlign: "center" },
+                }}
+              />
+              <Grid item xs={12} sm={3}>
+                <ListItemText
+                  primary="Breed"
+                  secondary="German Shepherd"
+                  primaryTypographyProps={{ style: { textAlign: "center" } }}
+                  secondaryTypographyProps={{
+                    style: { textAlign: "center" },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} sm={3}>
+                <ListItemText
+                  primary="Sex"
+                  secondary="Female"
+                  primaryTypographyProps={{ style: { textAlign: "center" } }}
+                  secondaryTypographyProps={{
+                    style: { textAlign: "center" },
+                  }}
+                />
+              </Grid>
+            </Grid>
+          </Grid>
         </CardContent>
       </CardActionArea>
     </Card>
