@@ -72,8 +72,8 @@ const DogListing = () => {
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
           <Typography variant="h3">Buddy</Typography>
-          <Grid container>
-            <Grid item xs={12} sm={3}>
+          <Grid container justify="space-between">
+            <Grid item xs={12} sm={4}>
               <ListItemText
                 primary="Age"
                 secondary="11 months"
@@ -82,7 +82,7 @@ const DogListing = () => {
                   style: { textAlign: "center" },
                 }}
               />
-              <Grid item xs={12} sm={3}>
+              <Grid item xs={12} sm={4}>
                 <ListItemText
                   primary="Breed"
                   secondary="German Shepherd"
@@ -92,7 +92,7 @@ const DogListing = () => {
                   }}
                 />
               </Grid>
-              <Grid item xs={12} sm={3}>
+              <Grid item xs={12} sm={4}>
                 <ListItemText
                   primary="Sex"
                   secondary="Female"
