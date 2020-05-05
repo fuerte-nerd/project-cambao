@@ -4,6 +4,7 @@ import {
   Grid,
   makeStyles,
   Card,
+  CardActions,
   CardActionArea,
   CardMedia,
   CardContent,
@@ -14,12 +15,15 @@ import {
   Button,
   Table,
   TableHead,
+  IconButton,
   TableBody,
   TableCell,
   TableContainer,
   TableRow,
+  Tooltip,
   Paper,
 } from "@material-ui/core"
+import { Share } from "@material-ui/icons"
 import tempImage from "../../images/test.jpg"
 
 const useStyles = makeStyles(theme => ({
@@ -109,6 +113,14 @@ const DogListing = () => {
           </Grid>
         </CardContent>
       </CardActionArea>
+      <CardActions>
+        <Box align="end" fullWidth display="flex" alignItems="center">
+          <IconButton>
+            <Share />
+          </IconButton>
+          <Button>More info</Button>
+        </Box>
+      </CardActions>
     </Card>
   )
 }
