@@ -8,11 +8,13 @@ const TheDogs = () => {
   return (
     <>
       <SEO title="The Dogs" />
-      <Typography variant="h2">The Dogs</Typography>
-      <Typography variant="subtitle1">
-        We have lots of dogs waiting for their forever home. Come and meet them!
-        They can't wait to meet you!
-      </Typography>
+      <Box mb={2}>
+        <Typography variant="h2">The Dogs</Typography>
+        <Typography variant="subtitle1">
+          We have lots of dogs waiting for their forever home. Come and meet
+          them! They can't wait to meet you!
+        </Typography>
+      </Box>
       <Box>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>

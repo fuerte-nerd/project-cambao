@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Hidden,
   useTheme,
   Box,
   Grid,
@@ -118,24 +119,26 @@ const DogListing = () => {
                 }}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <ListItemText
-                primary="Breed"
-                secondary="German Shepherd"
-                primaryTypographyProps={{
-                  style: {
-                    textAlign: "center",
-                    color: theme.palette.secondary.dark,
-                  },
-                }}
-                secondaryTypographyProps={{
-                  style: {
-                    textAlign: "center",
-                    color: theme.palette.primary.dark,
-                  },
-                }}
-              />
-            </Grid>
+            <Hidden xsDown>
+              <Grid item xs={12} sm={6}>
+                <ListItemText
+                  primary="Breed"
+                  secondary="German Shepherd"
+                  primaryTypographyProps={{
+                    style: {
+                      textAlign: "center",
+                      color: theme.palette.secondary.dark,
+                    },
+                  }}
+                  secondaryTypographyProps={{
+                    style: {
+                      textAlign: "center",
+                      color: theme.palette.primary.dark,
+                    },
+                  }}
+                />
+              </Grid>
+            </Hidden>
           </Grid>
         </CardContent>
       </CardActionArea>
