@@ -79,10 +79,10 @@ const DogListing = () => {
       <CardActionArea>
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
-          <Typography align="center" variant="h3" paragraph>
+          <Typography align="center" variant="h3">
             Buddy
           </Typography>
-          <Divider />
+
           <Grid container justify="space-between">
             <Grid item xs={6} sm={3}>
               <ListItemText
