@@ -86,9 +86,17 @@ const DogListing = () => {
               <ListItemText
                 primary="Age"
                 secondary="11 months"
-                primaryTypographyProps={{ style: { textAlign: "center" } }}
+                primaryTypographyProps={{
+                  style: {
+                    textAlign: "center",
+                    color: theme.palette.primary.dark,
+                  },
+                }}
                 secondaryTypographyProps={{
-                  style: { textAlign: "center" },
+                  style: {
+                    textAlign: "center",
+                    color: theme.palette.primary.main,
+                  },
                 }}
               />
             </Grid>
@@ -115,7 +123,9 @@ const DogListing = () => {
           </Grid>
         </CardContent>
       </CardActionArea>
-      <CardActions style={{ background: theme.palette.secondary.main }}>
+      <CardActions
+        style={{ background: theme.palette.secondary.main, color: "#fafafa" }}
+      >
         <Box
           align="end"
           width="100%"
@@ -123,10 +133,10 @@ const DogListing = () => {
           alignItems="center"
           justifyContent="space-between"
         >
-          <IconButton>
+          <IconButton color="inherit">
             <Share />
           </IconButton>
-          <Button color="secondary">More info</Button>
+          <Button color="inherit">More info</Button>
         </Box>
       </CardActions>
     </Card>
