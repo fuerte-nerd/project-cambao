@@ -26,7 +26,7 @@ const Dog = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Box p={2} bgcolor="#fafafa">
-            <Grid container spacing={3}>
+            <Grid container spacing={2} alignItems="center">
               <DogProfileRow label="Age" info="11 months" />
               <DogProfileRow label="Breed" info="German Shepherd" />
               <DogProfileRow label="Sex" info="Female" />
