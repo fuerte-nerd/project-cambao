@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Divider,
   Hidden,
   useTheme,
   Box,
@@ -25,7 +26,7 @@ import {
   Tooltip,
   Paper,
 } from "@material-ui/core"
-import { Share } from "@material-ui/icons"
+import { Share, Info } from "@material-ui/icons"
 import tempImage from "../../images/test.jpg"
 
 const useStyles = makeStyles(theme => ({
@@ -78,10 +79,10 @@ const DogListing = () => {
       <CardActionArea>
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
-          <Typography align="center" variant="h3">
+          <Typography align="center" variant="h3" paragraph>
             Buddy
           </Typography>
-
+          <Divider />
           <Grid container justify="space-between">
             <Grid item xs={6} sm={3}>
               <ListItemText
@@ -155,7 +156,9 @@ const DogListing = () => {
           <IconButton color="inherit">
             <Share />
           </IconButton>
-          <Button color="inherit">More info</Button>
+          <IconButton color="inherit">
+            <Info />
+          </IconButton>
         </Box>
       </CardActions>
     </Card>
