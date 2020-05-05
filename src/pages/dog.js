@@ -94,14 +94,16 @@ const DogProfileRow = props => {
     <Grid container alignItems="flex-end">
       <Grid item xs={6}>
         <Box pb={1} borderBottom={1} borderTop={props.first ? 1 : 0}>
-          <Typography style={{ lineHeight: "auto" }} variant="overline">
-            {props.label}
-          </Typography>
+          <Typography variant="overline">{props.label}</Typography>
         </Box>
       </Grid>
       <Grid item xs={6}>
         <Box pb={1} borderBottom={1} borderTop={props.first ? 1 : 0}>
-          <Typography variant="body2" align="right">
+          <Typography
+            style={{ lineHeight: props.first ? 2.66 : "auto", margin: 0 }}
+            variant="body2"
+            align="right"
+          >
             {props.info}
           </Typography>
         </Box>
