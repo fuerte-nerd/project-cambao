@@ -1,6 +1,13 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Divider, Box, Typography, Grid } from "@material-ui/core"
+import {
+  useTheme,
+  useMediaQuery,
+  Divider,
+  Box,
+  Typography,
+  Grid,
+} from "@material-ui/core"
 import Img from "gatsby-image"
 
 const Dog = () => {
@@ -15,6 +22,9 @@ const Dog = () => {
       }
     }
   `)
+  const theme = useTheme()
+  const smUp = useMediaQuery(theme.breakpoints.up("sm"))
+
   return (
     <Box>
       <Grid container>
@@ -28,7 +38,7 @@ const Dog = () => {
                 <Typography variant="h2">Buddy</Typography>
               </Grid>
               <Box m={2} width="100%">
-                <Grid container alignItems="center">
+                <Grid container spacing={smUp ? 2 : 0} alignItems="center">
                   <Grid item xs={12} sm={6}>
                     <DogProfileRow label="Age" info="11 months" />
                     <DogProfileRow label="Breed" info="German Shepherd" />
