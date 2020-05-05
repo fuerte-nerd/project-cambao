@@ -37,22 +37,25 @@ const Dog = () => {
         <Grid item xs={12} md={8}>
           <Box p={2} bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2} alignItems="center">
-              <Grid item xs={12} sm={6}>
-                <Box color="primary.dark">
-                  <Typography variant="h2">Buddy</Typography>
-                </Box>
+              <Grid item xs={12}>
+                <Grid container justify="space-between">
+                  <Grid item xs={12} sm={6}>
+                    <Box color="primary.dark">
+                      <Typography variant="h2">Buddy</Typography>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Box>
+                      <IconButton>
+                        <Share />
+                      </IconButton>
+                      <IconButton>
+                        <FacebookMessenger />
+                      </IconButton>
+                    </Box>
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <Box>
-                  <IconButton>
-                    <Share />
-                  </IconButton>
-                  <IconButton>
-                    <FacebookMessenger />
-                  </IconButton>
-                </Box>
-              </Grid>
-
               <Box mx={2} width="100%">
                 <Grid container spacing={smUp ? 8 : 0} alignItems="flex-start">
                   <Grid item xs={12} sm={6}>
