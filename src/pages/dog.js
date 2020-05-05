@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Box, Typography, Grid } from "@material-ui/core"
+import { Divider, Box, Typography, Grid } from "@material-ui/core"
 import Img from "gatsby-image"
 
 const Dog = () => {
@@ -26,7 +26,11 @@ const Dog = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Box p={2} bgcolor="#fafafa">
-            <Grid container>
+            <Grid container spacing={3}>
+              <DogProfileRow label="Age" info="11 months" />
+              <DogProfileRow label="Breed" info="German Shepherd" />
+              <DogProfileRow label="Sex" info="Female" />
+              <DogProfileRow label="Licence required" info="Yes" />
               <DogProfileRow label="Age" info="11 months" />
             </Grid>
           </Box>
