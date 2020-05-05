@@ -27,12 +27,7 @@ const Dog = () => {
         <Grid item xs={12} md={6}>
           <Box p={2} bgcolor="#fafafa">
             <Grid container>
-              <Grid item xs={6}>
-                <Typography>Age</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography>11 months</Typography>
-              </Grid>
+              <DogProfileRow label="Age" info="11 months" />
             </Grid>
           </Box>
         </Grid>
@@ -40,5 +35,16 @@ const Dog = () => {
     </Box>
   )
 }
+
+const DogProfileRow = props => (
+  <>
+    <Grid item xs={4}>
+      <Typography color="textSecondary">{props.label}</Typography>
+    </Grid>
+    <Grid item xs={8}>
+      <Typography>{props.info}</Typography>
+    </Grid>
+  </>
+)
 
 export default Dog
