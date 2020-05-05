@@ -30,7 +30,7 @@ const Dog = () => {
 
   return (
     <Box>
-      <Grid container spacing={1}>
+      <Grid container spacing={smUp ? 1 : 0}>
         <Grid item xs={12} md={4}>
           <Img fluid={data.dog1.childImageSharp.fluid} />
         </Grid>
@@ -38,23 +38,22 @@ const Dog = () => {
           <Box p={2} bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2} alignItems="center">
               <Grid item xs={12}>
-                <Grid container justify="space-between">
-                  <Grid item xs={12} sm={6}>
-                    <Box color="primary.dark">
-                      <Typography variant="h2">Buddy</Typography>
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Box>
-                      <IconButton>
-                        <Share />
-                      </IconButton>
-                      <IconButton>
-                        <FacebookMessenger />
-                      </IconButton>
-                    </Box>
-                  </Grid>
-                </Grid>
+                <Box
+                  display={smUp ? "flex" : "block"}
+                  justifyContent="space-between"
+                >
+                  <Box color="primary.dark">
+                    <Typography variant="h2">Buddy</Typography>
+                  </Box>
+                  <Box>
+                    <IconButton>
+                      <Share />
+                    </IconButton>
+                    <IconButton>
+                      <FacebookMessenger />
+                    </IconButton>
+                  </Box>
+                </Box>
               </Grid>
               <Box mx={2} width="100%">
                 <Grid container spacing={smUp ? 8 : 0} alignItems="flex-start">
