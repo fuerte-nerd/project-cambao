@@ -137,6 +137,9 @@ const Dog = () => {
                 <ExpansionPanel
                   square
                   defaultExpanded
+                  style={{
+                    border: `1px solid ${theme.palette.text.secondary}`,
+                  }}
                   classes={{ root: { border: "3px solid black" } }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
