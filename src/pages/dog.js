@@ -10,8 +10,11 @@ import {
   Box,
   Typography,
   Grid,
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  ExpansionPanelDetails,
 } from "@material-ui/core"
-import { Share, Comment } from "@material-ui/icons"
+import { Share, Comment, ExpandMore } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
 
@@ -91,32 +94,39 @@ const Dog = () => {
                 <Typography variant="h5">Gallery</Typography>
               </Box>
             </Hidden>
-            <Grid container spacing={smUp ? 1 : 0}>
-              <Grid item xs={3} sm={2} md={3} lg={2}>
-                <Img fluid={data.thumb.childImageSharp.fluid} />
-              </Grid>
-              <Grid item xs={3} sm={2} md={3} lg={2}>
-                <Img fluid={data.thumb.childImageSharp.fluid} />
-              </Grid>
-              <Grid item xs={3} sm={2} md={3} lg={2}>
-                <Img fluid={data.thumb.childImageSharp.fluid} />
-              </Grid>
-              <Grid item xs={3} sm={2} md={3} lg={2}>
-                <Img fluid={data.thumb.childImageSharp.fluid} />
-              </Grid>
-              <Grid item xs={3} sm={2} md={3} lg={2}>
-                <Img fluid={data.thumb.childImageSharp.fluid} />
-              </Grid>
-              <Grid item xs={3} sm={2} md={3} lg={2}>
-                <Img fluid={data.thumb.childImageSharp.fluid} />
-              </Grid>
-              <Grid item xs={3} sm={2} md={3} lg={2}>
-                <Img fluid={data.thumb.childImageSharp.fluid} />
-              </Grid>
-              <Grid item xs={3} sm={2} md={3} lg={2}>
-                <Img fluid={data.thumb.childImageSharp.fluid} />
-              </Grid>
-            </Grid>
+            <ExpansionPanel>
+              <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                <Typography>Gallery</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <Grid container spacing={smUp ? 1 : 0}>
+                  <Grid item xs={3} sm={2} md={3} lg={2}>
+                    <Img fluid={data.thumb.childImageSharp.fluid} />
+                  </Grid>
+                  <Grid item xs={3} sm={2} md={3} lg={2}>
+                    <Img fluid={data.thumb.childImageSharp.fluid} />
+                  </Grid>
+                  <Grid item xs={3} sm={2} md={3} lg={2}>
+                    <Img fluid={data.thumb.childImageSharp.fluid} />
+                  </Grid>
+                  <Grid item xs={3} sm={2} md={3} lg={2}>
+                    <Img fluid={data.thumb.childImageSharp.fluid} />
+                  </Grid>
+                  <Grid item xs={3} sm={2} md={3} lg={2}>
+                    <Img fluid={data.thumb.childImageSharp.fluid} />
+                  </Grid>
+                  <Grid item xs={3} sm={2} md={3} lg={2}>
+                    <Img fluid={data.thumb.childImageSharp.fluid} />
+                  </Grid>
+                  <Grid item xs={3} sm={2} md={3} lg={2}>
+                    <Img fluid={data.thumb.childImageSharp.fluid} />
+                  </Grid>
+                  <Grid item xs={3} sm={2} md={3} lg={2}>
+                    <Img fluid={data.thumb.childImageSharp.fluid} />
+                  </Grid>
+                </Grid>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
           </Box>
         </Grid>
         <Grid item xs={12} md={8}>
