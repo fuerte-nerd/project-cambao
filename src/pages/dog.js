@@ -43,28 +43,28 @@ const Dog = () => {
           <Img fluid={data.dog1.childImageSharp.fluid} />
           <Box>
             <Grid container>
-              <Grid item xs={6} sm={4} lg={3}>
+              <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={6} sm={4} lg={3}>
+              <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={6} sm={4} lg={3}>
+              <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={6} sm={4} lg={3}>
+              <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={6} sm={4} lg={3}>
+              <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={6} sm={4} lg={3}>
+              <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={6} sm={4} lg={3}>
+              <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={6} sm={4} lg={3}>
+              <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
             </Grid>
