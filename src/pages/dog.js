@@ -169,6 +169,7 @@ const Dog = () => {
                     style={{ paddingBottom: "56.25%", position: "relative" }}
                   >
                     <iframe
+                      title="Video of dog"
                       width="560"
                       height="315"
                       src="https://www.youtube.com/embed/DgAw6jFo6Mw"

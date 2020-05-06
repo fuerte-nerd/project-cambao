@@ -12,19 +12,8 @@ import {
   CardMedia,
   CardContent,
   Typography,
-  List,
-  ListItem,
   ListItemText,
-  Button,
-  Table,
-  TableHead,
   IconButton,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
-  Tooltip,
-  Paper,
 } from "@material-ui/core"
 import { Share, Info } from "@material-ui/icons"
 import tempImage from "../../images/test.jpg"
