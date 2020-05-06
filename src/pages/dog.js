@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import {
   useTheme,
   useMediaQuery,
-  Divider,
   Hidden,
   IconButton,
   Box,
@@ -77,7 +76,6 @@ const Dog = () => {
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <Typography variant="body2">More photos</Typography>
               </ExpansionPanelSummary>
-              <Divider />
               <ExpansionPanelDetails>
                 <Grid container spacing={smUp ? 1 : 0}>
                   <Grid item xs={3} sm={2} md={3} lg={2}>
@@ -110,7 +108,7 @@ const Dog = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={8}>
-          <Box p={mdUp ? 2 : 0}>
+          <Box px={mdUp ? 2 : 0}>
             <Grid container spacing={0} alignItems="center">
               <Hidden smDown>
                 <Grid item xs={12}>
@@ -145,7 +143,7 @@ const Dog = () => {
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Summary</Typography>
                   </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
+                  <ExpansionPanelDetails style={{ background: "#fafafa" }}>
                     <Grid
                       container
                       spacing={smUp ? 8 : 0}
