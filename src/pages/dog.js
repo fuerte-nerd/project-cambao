@@ -124,8 +124,8 @@ const Dog = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={8}>
-          <Box p={mdUp ? 2 : 0} bgcolor="#fafafa" boxShadow={2}>
-            <Grid container spacing={2} alignItems="center">
+          <Box p={mdUp ? 2 : 0}>
+            <Grid container spacing={mdUp ? 2 : 0} alignItems="center">
               <Hidden smDown>
                 <Grid item xs={12}>
                   <Box
@@ -133,7 +133,7 @@ const Dog = () => {
                     justifyContent="space-between"
                     alignItems="center"
                   >
-                    <Box color="primary.dark">
+                    <Box color="white">
                       <Typography variant="h2">Buddy</Typography>
                     </Box>
                     <Box>
