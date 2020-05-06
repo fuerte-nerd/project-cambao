@@ -41,9 +41,13 @@ const Dog = () => {
       <Grid container spacing={mdUp ? 1 : 0}>
         <Grid item xs={12} md={4}>
           <Img fluid={data.dog1.childImageSharp.fluid} />
-          <Box p={1} bgcolor="#fafafa">
+          <Box
+            p={1}
+            bgcolor={mdUp ? "transparent" : "#fafafa"}
+            color={mdUp ? "#fafafa" : "inherit"}
+          >
             <Box>
-              <Typography variant="h5">Photos</Typography>
+              <Typography variant="h5">Gallery</Typography>
             </Box>
             <Grid container spacing={1}>
               <Grid item xs={3} sm={2} md={3} lg={2}>
