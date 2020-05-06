@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import {
   useTheme,
-  makeStyles,
   useMediaQuery,
   Hidden,
   IconButton,
@@ -13,8 +12,7 @@ import {
   ExpansionPanelSummary,
   ExpansionPanelDetails,
 } from "@material-ui/core"
-import { Share, Comment, ExpandMore, MoreVert } from "@material-ui/icons"
-import { FacebookMessenger } from "mdi-material-ui"
+import { Share, ExpandMore, MoreVert } from "@material-ui/icons"
 import Img from "gatsby-image"
 
 const Dog = () => {
@@ -56,10 +54,7 @@ const Dog = () => {
                 <Typography variant="h2">Timanfaya</Typography>
               </Box>
               <Box>
-                <IconButton>
-                  <Share />
-                </IconButton>
-                <IconButton>
+                <IconButton edge="end">
                   <MoreVert />
                 </IconButton>
               </Box>
