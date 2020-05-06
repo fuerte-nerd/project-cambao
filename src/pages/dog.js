@@ -47,6 +47,7 @@ const Dog = () => {
               justifyContent="space-between"
               alignItems="center"
               color="#fafafa"
+              mb={1}
             >
               <Box>
                 <Typography variant="h2">Buddy</Typography>
