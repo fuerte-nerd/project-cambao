@@ -42,7 +42,7 @@ const Dog = () => {
         <Grid item xs={12} md={4}>
           <Img fluid={data.dog1.childImageSharp.fluid} />
           <Box>
-            <Grid container>
+            <Grid container spacing={0.5}>
               <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
