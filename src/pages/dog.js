@@ -19,7 +19,7 @@ const Dog = () => {
     {
       dog1: file(name: { eq: "test" }) {
         childImageSharp {
-          fluid(maxWidth: 400, maxHeight: 500, quality: 35) {
+          fluid(maxWidth: 400, maxHeight: 450, quality: 35) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -41,8 +41,11 @@ const Dog = () => {
       <Grid container spacing={mdUp ? 1 : 0}>
         <Grid item xs={12} md={4}>
           <Img fluid={data.dog1.childImageSharp.fluid} />
-          <Box>
-            <Grid container spacing={0.5}>
+          <Box p={1} bgcolor="#fafafa">
+            <Box>
+              <Typography variant="h5">Photos</Typography>
+            </Box>
+            <Grid container spacing={1}>
               <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
