@@ -82,7 +82,7 @@ const Dog = () => {
                 </Grid>
                 <Grid item>
                   <Box my={2}>
-                    <Typography variant="body1" align="justify">
+                    <Typography variant="subtitle1" align="justify">
                       Lorem a dolor possimus minus magnam? Magnam modi at alias
                       exercitationem temporibus? Accusamus laudantium nihil
                       dolores blanditiis numquam Optio corporis neque tenetur
@@ -113,12 +113,12 @@ const DogProfileRow = props => {
   return (
     <Grid container alignItems="flex-end">
       <Grid item xs={6}>
-        <Box py={0.75} borderBottom={1}>
+        <Box py={0.5} borderBottom={1}>
           <Typography variant="overline">{props.label}</Typography>
         </Box>
       </Grid>
       <Grid item xs={6}>
-        <Box py={0.75} borderBottom={1}>
+        <Box py={0.5} borderBottom={1}>
           <Typography variant="body2" align="right">
             {props.info}
           </Typography>
