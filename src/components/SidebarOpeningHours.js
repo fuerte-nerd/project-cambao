@@ -1,14 +1,5 @@
 import React from "react"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
-  Paper,
-  Typography,
-  Box,
-} from "@material-ui/core"
+import { Typography, Box } from "@material-ui/core"
 import SidebarSectionTitle from "./SidebarSectionTitle"
 
 const SidebarOpeningHours = () => {

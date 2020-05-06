@@ -1,15 +1,5 @@
 import React from "react"
-import {
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  Grid,
-  Box,
-  Typography,
-  Container,
-  Hidden,
-} from "@material-ui/core"
+import { ListItemText, Grid, Box, Typography } from "@material-ui/core"
 import LocationMap from "./LocationMap"
 
 const Footer = () => {
