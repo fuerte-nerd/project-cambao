@@ -151,23 +151,34 @@ const Dog = () => {
                 </Grid>
               </Hidden>
               <Grid item xs={12}>
-                <Box pb="56.25%" height={0} style={{ position: "relative" }}>
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/DgAw6jFo6Mw"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  ></iframe>
-                </Box>
+                <ExpansionPanel>
+                  <ExpansionPanelSummary>
+                    <Typography>Video</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <Box
+                      pb="56.25%"
+                      height={0}
+                      style={{ position: "relative" }}
+                    >
+                      <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/DgAw6jFo6Mw"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      ></iframe>
+                    </Box>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
               </Grid>
               <Box mx={2} width="100%">
                 <Grid container spacing={smUp ? 8 : 0} alignItems="flex-start">
