@@ -134,7 +134,7 @@ const Dog = () => {
                 </Grid>
               </Hidden>
               <Grid item xs={12}>
-                <Divider />
+                <Divider style={{ margin: 0 }} />
                 <ExpansionPanel square defaultExpanded>
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Summary</Typography>
