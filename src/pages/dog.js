@@ -156,14 +156,23 @@ const Dog = () => {
                     <Typography>Video</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
-                    <iframe
-                      width="100%"
-                      height="315"
-                      src="https://www.youtube.com/embed/DgAw6jFo6Mw"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
+                    <Box pb="56.25%">
+                      <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/DgAw6jFo6Mw"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      ></iframe>
+                    </Box>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
               </Grid>
