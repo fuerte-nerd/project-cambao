@@ -216,7 +216,7 @@ const Dog = () => {
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
               </Grid>
-              <Grid item>
+              <Grid item xs={12}>
                 <ExpansionPanel
                   square
                   defaultExpanded={mdUp ? "true" : "false"}
@@ -230,6 +230,25 @@ const Dog = () => {
                     <Typography variant="subtitle1" align="justify">
                       Fantastic! You can find further information about the
                       adoption process <InternalLink>here</InternalLink>.
+                    </Typography>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+              </Grid>
+              <Grid item xs={12}>
+                <ExpansionPanel
+                  square
+                  defaultExpanded={mdUp ? "true" : "false"}
+                >
+                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Typography variant="h6">
+                      "I'm interested in fostering Timanfaya..."
+                    </Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <Typography variant="subtitle1" align="justify">
+                      Fantastic! You can find further information about the
+                      fostering process{" "}
+                      <InternalLink to="/foster">here</InternalLink>.
                     </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
