@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
   headerButtonsIcons: {
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1rem",
+      fontSize: "1.25rem",
     },
   },
 }))
@@ -64,17 +64,17 @@ const Dog = () => {
               bgcolor="#fafafa"
               p={1}
             >
-              <Box>
+              <Box color="primary.dark">
                 <Typography variant="h2">Buddy</Typography>
               </Box>
               <Box>
-                <IconButton className={classes.headerButtons} color="inherit">
+                <IconButton className={classes.headerButtons}>
                   <Share className={classes.headerButtonsIcons} />
                 </IconButton>
-                <IconButton className={classes.headerButtons} color="inherit">
+                <IconButton className={classes.headerButtons}>
                   <FacebookMessenger className={classes.headerButtonsIcons} />
                 </IconButton>
-                <IconButton className={classes.headerButtons} color="inherit">
+                <IconButton className={classes.headerButtons}>
                   <Comment className={classes.headerButtonsIcons} />
                 </IconButton>
               </Box>
