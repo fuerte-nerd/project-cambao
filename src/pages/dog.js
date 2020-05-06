@@ -41,6 +41,29 @@ const Dog = () => {
     <Box>
       <Grid container spacing={mdUp ? 1 : 0}>
         <Grid item xs={12} md={4}>
+          <Hidden mdUp>
+            <Box
+              display={smUp ? "flex" : "block"}
+              justifyContent="space-between"
+              alignItems="center"
+              color="#fafafa"
+            >
+              <Box>
+                <Typography variant="h2">Buddy</Typography>
+              </Box>
+              <Box>
+                <IconButton color="inherit" edge="start">
+                  <Share />
+                </IconButton>
+                <IconButton color="inherit">
+                  <FacebookMessenger />
+                </IconButton>
+                <IconButton color="inherit" edge="end">
+                  <Comment />
+                </IconButton>
+              </Box>
+            </Box>
+          </Hidden>
           <Img fluid={data.dog1.childImageSharp.fluid} />
           <Box
             p={1}
@@ -83,28 +106,30 @@ const Dog = () => {
         <Grid item xs={12} md={8}>
           <Box p={2} bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2} alignItems="center">
-              <Grid item xs={12}>
-                <Box
-                  display={smUp ? "flex" : "block"}
-                  justifyContent="space-between"
-                  alignItems="center"
-                >
-                  <Box color="primary.dark">
-                    <Typography variant="h2">Buddy</Typography>
+              <Hidden smDown>
+                <Grid item xs={12}>
+                  <Box
+                    display={smUp ? "flex" : "block"}
+                    justifyContent="space-between"
+                    alignItems="center"
+                  >
+                    <Box color="primary.dark">
+                      <Typography variant="h2">Buddy</Typography>
+                    </Box>
+                    <Box>
+                      <IconButton edge="start">
+                        <Share />
+                      </IconButton>
+                      <IconButton>
+                        <FacebookMessenger />
+                      </IconButton>
+                      <IconButton edge="end">
+                        <Comment />
+                      </IconButton>
+                    </Box>
                   </Box>
-                  <Box>
-                    <IconButton edge="start">
-                      <Share />
-                    </IconButton>
-                    <IconButton>
-                      <FacebookMessenger />
-                    </IconButton>
-                    <IconButton edge="end">
-                      <Comment />
-                    </IconButton>
-                  </Box>
-                </Box>
-              </Grid>
+                </Grid>
+              </Hidden>
               <Grid item xs={12}>
                 <Box pb="56.25%" height={0} style={{ position: "relative" }}>
                   <iframe
