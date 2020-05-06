@@ -1,10 +1,9 @@
 import React from "react"
 import {
-  Hidden,
+  Button,
   Divider,
   useTheme,
   Box,
-  Grid,
   makeStyles,
   Card,
   CardActions,
@@ -12,8 +11,6 @@ import {
   CardMedia,
   CardContent,
   Typography,
-  ListItemText,
-  IconButton,
 } from "@material-ui/core"
 import { Share, Info } from "@material-ui/icons"
 import tempImage from "../../images/test.jpg"
@@ -80,15 +77,12 @@ const DogListing = () => {
         style={{ background: theme.palette.secondary.main, color: "#fafafa" }}
       >
         <Box width="100%" display="flex" alignItems="center">
-          <Button color="inherit" startIcon={<Share />}>
+          <Button variant="outlined" color="inherit" startIcon={<Info />}>
+            More info
+          </Button>
+          <Button variant="outlined" color="inherit" startIcon={<Share />}>
             Share
           </Button>
-          <IconButton color="inherit">
-            <Share />
-          </IconButton>
-          <IconButton color="inherit">
-            <Info />
-          </IconButton>
         </Box>
       </CardActions>
     </Card>
