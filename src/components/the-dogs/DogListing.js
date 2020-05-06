@@ -76,14 +76,12 @@ const DogListing = () => {
       <CardActions
         style={{ background: theme.palette.secondary.main, color: "#fafafa" }}
       >
-        <Box width="100%" display="flex" alignItems="center">
-          <Button variant="outlined" color="inherit" startIcon={<Info />}>
-            More info
-          </Button>
-          <Button variant="outlined" color="inherit" startIcon={<Share />}>
-            Share
-          </Button>
-        </Box>
+        <Button color="inherit" startIcon={<Info />}>
+          More info
+        </Button>
+        <Button color="inherit" startIcon={<Share />}>
+          Share
+        </Button>
       </CardActions>
     </Card>
   )

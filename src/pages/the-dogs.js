@@ -8,9 +8,9 @@ const TheDogs = () => {
   return (
     <>
       <SEO title="The Dogs" />
-      <Box mb={2}>
+      <Box mb={2} color="white">
         <Typography variant="h2">The Dogs</Typography>
-        <Typography variant="subtitle1">
+        <Typography variant="subtitle2">
           We have lots of dogs waiting for their forever home. Come and meet
           them! They can't wait to meet you!
         </Typography>
