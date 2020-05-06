@@ -17,12 +17,12 @@ import Img from "gatsby-image"
 
 const useStyles = makeStyles(theme => ({
   headerButtons: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       padding: "6px",
     },
   },
   headerButtonsIcons: {
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       fontSize: "1rem",
     },
   },
@@ -55,14 +55,14 @@ const Dog = () => {
   return (
     <Box>
       <Grid container spacing={mdUp ? 1 : 0}>
-        {/*<Grid item xs={12} md={4}>
+        <Grid item xs={12} md={4}>
           <Hidden mdUp>
             <Box
               display="flex"
               justifyContent="space-between"
               alignItems="center"
-              color="#fafafa"
-              mb={1}
+              bgcolor="#fafafa"
+              p={1}
             >
               <Box>
                 <Typography variant="h2">Buddy</Typography>
@@ -74,11 +74,7 @@ const Dog = () => {
                 <IconButton className={classes.headerButtons} color="inherit">
                   <FacebookMessenger className={classes.headerButtonsIcons} />
                 </IconButton>
-                <IconButton
-                  className={classes.headerButtons}
-                  color="inherit"
-                  edge="end"
-                >
+                <IconButton className={classes.headerButtons} color="inherit">
                   <Comment className={classes.headerButtonsIcons} />
                 </IconButton>
               </Box>
@@ -122,8 +118,8 @@ const Dog = () => {
               </Grid>
             </Grid>
           </Box>
-            </Grid>*/}
-        {/*<Grid item xs={12} md={8}>
+        </Grid>
+        <Grid item xs={12} md={8}>
           <Box p={2} bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2} alignItems="center">
               <Hidden smDown>
@@ -213,7 +209,7 @@ const Dog = () => {
               </Box>
             </Grid>
           </Box>
-            </Grid>*/}
+        </Grid>
       </Grid>
     </Box>
   )
