@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import {
   useTheme,
   useMediaQuery,
+  Hidden,
   IconButton,
   Divider,
   Box,
@@ -46,10 +47,12 @@ const Dog = () => {
             bgcolor={mdUp ? "transparent" : "#fafafa"}
             color={mdUp ? "#fafafa" : "inherit"}
           >
-            <Box>
-              <Typography variant="h5">Gallery</Typography>
-            </Box>
-            <Grid container spacing={1}>
+            <Hidden xsDown>
+              <Box>
+                <Typography variant="h5">Gallery</Typography>
+              </Box>
+            </Hidden>
+            <Grid container spacing={smUp ? 1 : 0}>
               <Grid item xs={3} sm={2} md={3} lg={2}>
                 <Img fluid={data.thumb.childImageSharp.fluid} />
               </Grid>
