@@ -139,8 +139,8 @@ const Dog = () => {
                   defaultExpanded
                   style={{
                     border: `1px solid ${theme.palette.text.secondary}`,
+                    borderBottom: 0,
                   }}
-                  classes={{ root: { border: "3px solid black" } }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Summary</Typography>
@@ -179,7 +179,10 @@ const Dog = () => {
                   defaultExpanded={
                     window.innerWidth > expandedThreshold ? true : false
                   }
-                  classes={{ root: { border: "1px solid" } }}
+                  style={{
+                    border: `1px solid ${theme.palette.text.secondary}`,
+                    borderBottom: 0,
+                  }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Video</Typography>
@@ -210,7 +213,10 @@ const Dog = () => {
                 <ExpansionPanel
                   square
                   defaultExpanded
-                  classes={{ root: { border: "1px solid" } }}
+                  style={{
+                    border: `1px solid ${theme.palette.text.secondary}`,
+                    borderBottom: 0,
+                  }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Description</Typography>
@@ -241,7 +247,10 @@ const Dog = () => {
                   defaultExpanded={
                     window.innerWidth > expandedThreshold ? true : false
                   }
-                  classes={{ root: { border: "1px solid" } }}
+                  style={{
+                    border: `1px solid ${theme.palette.text.secondary}`,
+                    borderBottom: 0,
+                  }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">
@@ -263,7 +272,10 @@ const Dog = () => {
                   defaultExpanded={
                     window.innerWidth > expandedThreshold ? true : false
                   }
-                  classes={{ root: { border: "1px solid" } }}
+                  style={{
+                    border: `1px solid ${theme.palette.text.secondary}`,
+                    borderBottom: 0,
+                  }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">
@@ -285,7 +297,9 @@ const Dog = () => {
                   defaultExpanded={
                     window.innerWidth > expandedThreshold ? true : false
                   }
-                  classes={{ root: { border: "1px solid" } }}
+                  style={{
+                    border: `1px solid ${theme.palette.text.secondary}`,
+                  }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">
