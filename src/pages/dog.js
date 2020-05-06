@@ -42,6 +42,7 @@ const Dog = () => {
                 <Box
                   display={smUp ? "flex" : "block"}
                   justifyContent="space-between"
+                  alignItems="center"
                 >
                   <Box color="primary.dark">
                     <Typography variant="h2">Buddy</Typography>
