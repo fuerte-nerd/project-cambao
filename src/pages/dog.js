@@ -53,14 +53,14 @@ const Dog = () => {
               p={1}
             >
               <Box color="primary.dark">
-                <Typography variant="h2">Buddy</Typography>
+                <Typography variant="h2">Timanfaya</Typography>
               </Box>
               <Box>
-                <IconButton className={classes.headerButtons}>
-                  <Share className={classes.headerButtonsIcons} />
+                <IconButton>
+                  <Share />
                 </IconButton>
-                <IconButton className={classes.headerButtons}>
-                  <MoreVert className={classes.headerButtonsIcons} />
+                <IconButton>
+                  <MoreVert />
                 </IconButton>
               </Box>
             </Box>
@@ -116,14 +116,11 @@ const Dog = () => {
                     alignItems="center"
                   >
                     <Box color="white">
-                      <Typography variant="h2">Buddy</Typography>
+                      <Typography variant="h2">Timanfaya</Typography>
                     </Box>
                     <Box>
                       <IconButton edge="start">
                         <Share />
-                      </IconButton>
-                      <IconButton>
-                        <FacebookMessenger />
                       </IconButton>
                       <IconButton edge="end">
                         <MoreVert />
