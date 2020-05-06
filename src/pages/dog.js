@@ -151,8 +151,8 @@ const Dog = () => {
                 </Grid>
               </Hidden>
               <Grid item xs={12}>
-                <ExpansionPanel>
-                  <ExpansionPanelSummary square expandIcon={<ExpandMore />}>
+                <ExpansionPanel square>
+                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography>Video</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails
