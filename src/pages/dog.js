@@ -6,7 +6,6 @@ import {
   useMediaQuery,
   Hidden,
   IconButton,
-  Divider,
   Box,
   Typography,
   Grid,
@@ -14,7 +13,7 @@ import {
   ExpansionPanelSummary,
   ExpansionPanelDetails,
 } from "@material-ui/core"
-import { Share, Comment, ExpandMore } from "@material-ui/icons"
+import { Share, Comment, ExpandMore, MoreVertical } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
 
@@ -71,6 +70,9 @@ const Dog = () => {
                 <Typography variant="h2">Buddy</Typography>
               </Box>
               <Box>
+                <IconButton>
+                  <MoreVertical />
+                </IconButton>
                 <IconButton className={classes.headerButtons}>
                   <Share className={classes.headerButtonsIcons} />
                 </IconButton>
