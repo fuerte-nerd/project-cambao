@@ -124,7 +124,7 @@ const Dog = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={8}>
-          <Box p={2} bgcolor="#fafafa" boxShadow={2}>
+          <Box p={mdUp ? 2 : 0} bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2} alignItems="center">
               <Hidden smDown>
                 <Grid item xs={12}>
@@ -152,27 +152,27 @@ const Dog = () => {
               </Hidden>
               <Grid item xs={12}>
                 <ExpansionPanel>
-                  <ExpansionPanelSummary>
+                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography>Video</Typography>
                   </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
-                    <Box pb="56.25%">
-                      <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/DgAw6jFo6Mw"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                        style={{
-                          position: "absolute",
-                          top: "4rem",
-                          left: 0,
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      ></iframe>
-                    </Box>
+                  <ExpansionPanelDetails
+                    style={{ paddingBottom: "56.25%", position: "relative" }}
+                  >
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/DgAw6jFo6Mw"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    ></iframe>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
               </Grid>
