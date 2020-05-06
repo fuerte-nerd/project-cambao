@@ -18,7 +18,12 @@ import Img from "gatsby-image"
 const useStyles = makeStyles(theme => ({
   headerButtons: {
     [theme.breakpoints.down("sm")]: {
-      fontSize: ".8rem",
+      padding: "6px",
+    },
+  },
+  headerButtonsIcons: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1rem",
     },
   },
 }))
@@ -53,7 +58,7 @@ const Dog = () => {
         <Grid item xs={12} md={4}>
           <Hidden mdUp>
             <Box
-              display={smUp ? "flex" : "block"}
+              display="flex"
               justifyContent="space-between"
               alignItems="center"
               color="#fafafa"
@@ -63,14 +68,18 @@ const Dog = () => {
                 <Typography variant="h2">Buddy</Typography>
               </Box>
               <Box>
-                <IconButton color="inherit" edge="start">
-                  <Share className={classes.headerButtons} />
+                <IconButton className={classes.headerButtons} color="inherit">
+                  <Share className={classes.headerButtonsIcons} />
                 </IconButton>
-                <IconButton color="inherit">
-                  <FacebookMessenger className={classes.headerButtons} />
+                <IconButton className={classes.headerButtons} color="inherit">
+                  <FacebookMessenger className={classes.headerButtonsIcons} />
                 </IconButton>
-                <IconButton color="inherit" edge="end">
-                  <Comment className={classes.headerButtons} />
+                <IconButton
+                  className={classes.headerButtons}
+                  color="inherit"
+                  edge="end"
+                >
+                  <Comment className={classes.headerButtonsIcons} />
                 </IconButton>
               </Box>
             </Box>
