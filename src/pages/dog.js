@@ -153,32 +153,6 @@ const Dog = () => {
               <Grid item xs={12}>
                 <ExpansionPanel square>
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <Typography>Video</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails
-                    style={{ paddingBottom: "56.25%", position: "relative" }}
-                  >
-                    <iframe
-                      width="560"
-                      height="315"
-                      src="https://www.youtube.com/embed/DgAw6jFo6Mw"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                      }}
-                    ></iframe>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-              </Grid>
-              <Grid item xs={12}>
-                <ExpansionPanel square>
-                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography>Summary</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
@@ -209,24 +183,56 @@ const Dog = () => {
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
               </Grid>
+              <Grid item xs={12}>
+                <ExpansionPanel square>
+                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Typography>Video</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails
+                    style={{ paddingBottom: "56.25%", position: "relative" }}
+                  >
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/DgAw6jFo6Mw"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    ></iframe>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+              </Grid>
               <Grid item>
-                <Box my={2}>
-                  <Typography variant="subtitle1" align="justify">
-                    Lorem a dolor possimus minus magnam? Magnam modi at alias
-                    exercitationem temporibus? Accusamus laudantium nihil
-                    dolores blanditiis numquam Optio corporis neque tenetur quam
-                    animi a Assumenda atque quisquam asperiores quae deleniti.
-                    Repellat dolor voluptate iure tempore laborum Ex quasi
-                    consectetur cupiditate illum nihil eius Voluptate laborum
-                    ipsum minus dolorem dolore.\n\n Adipisicing ad nobis debitis
-                    eius velit Cum expedita nostrum quidem delectus quo id Id
-                    tempora beatae id soluta error? Odio in et expedita aperiam
-                    quas velit Vitae facere reiciendis accusamus consequatur eos
-                    distinctio! Officia sunt debitis voluptate accusantium
-                    recusandae Quisquam ratione accusamus placeat animi ex fuga?
-                    Veritatis velit earum nulla!
-                  </Typography>
-                </Box>
+                <ExpansionPanel square>
+                  <ExpansionPanelSummary>
+                    <Typography>Description</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <Typography variant="subtitle1" align="justify">
+                      Lorem a dolor possimus minus magnam? Magnam modi at alias
+                      exercitationem temporibus? Accusamus laudantium nihil
+                      dolores blanditiis numquam Optio corporis neque tenetur
+                      quam animi a Assumenda atque quisquam asperiores quae
+                      deleniti. Repellat dolor voluptate iure tempore laborum Ex
+                      quasi consectetur cupiditate illum nihil eius Voluptate
+                      laborum ipsum minus dolorem dolore.\n\n Adipisicing ad
+                      nobis debitis eius velit Cum expedita nostrum quidem
+                      delectus quo id Id tempora beatae id soluta error? Odio in
+                      et expedita aperiam quas velit Vitae facere reiciendis
+                      accusamus consequatur eos distinctio! Officia sunt debitis
+                      voluptate accusantium recusandae Quisquam ratione
+                      accusamus placeat animi ex fuga? Veritatis velit earum
+                      nulla!
+                    </Typography>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
               </Grid>
             </Grid>
           </Box>
