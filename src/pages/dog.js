@@ -14,6 +14,7 @@ import {
 } from "@material-ui/core"
 import { Share, ExpandMore, MoreVert } from "@material-ui/icons"
 import Img from "gatsby-image"
+import InternalLink from "../components/InternalLink"
 
 const Dog = () => {
   const data = useStaticQuery(graphql`
@@ -211,6 +212,24 @@ const Dog = () => {
                       voluptate accusantium recusandae Quisquam ratione
                       accusamus placeat animi ex fuga? Veritatis velit earum
                       nulla!
+                    </Typography>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+              </Grid>
+              <Grid item>
+                <ExpansionPanel
+                  square
+                  defaultExpanded={mdUp ? "true" : "false"}
+                >
+                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Typography variant="h6">
+                      "I'm interested in adopting Timanfaya..."
+                    </Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <Typography variant="subtitle1" align="justify">
+                      Fantastic! You can find further information about the
+                      adoption process <InternalLink>here</InternalLink>.
                     </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
