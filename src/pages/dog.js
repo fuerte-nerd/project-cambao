@@ -90,7 +90,7 @@ const Dog = () => {
           >
             <ExpansionPanel square defaultExpanded={mdUp ? true : false}>
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                <Typography>Gallery</Typography>
+                <Typography variant="h6">Gallery</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Grid container spacing={smUp ? 1 : 0}>
@@ -153,7 +153,7 @@ const Dog = () => {
               <Grid item xs={12}>
                 <ExpansionPanel square>
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <Typography>Summary</Typography>
+                    <Typography variant="h6">Summary</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
                     <Grid
@@ -186,7 +186,7 @@ const Dog = () => {
               <Grid item xs={12}>
                 <ExpansionPanel square>
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <Typography>Video</Typography>
+                    <Typography variant="h6">Video</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails
                     style={{ paddingBottom: "56.25%", position: "relative" }}
@@ -211,8 +211,8 @@ const Dog = () => {
               </Grid>
               <Grid item>
                 <ExpansionPanel square>
-                  <ExpansionPanelSummary>
-                    <Typography>Description</Typography>
+                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Typography variant="h6">Description</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
                     <Typography variant="subtitle1" align="justify">
