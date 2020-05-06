@@ -166,7 +166,7 @@ const Dog = () => {
                         allowfullscreen
                         style={{
                           position: "absolute",
-                          top: 0,
+                          top: "4rem",
                           left: 0,
                           width: "100%",
                           height: "100%",
