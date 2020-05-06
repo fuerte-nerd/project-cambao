@@ -229,7 +229,8 @@ const Dog = () => {
                   <ExpansionPanelDetails>
                     <Typography variant="subtitle1" align="justify">
                       Fantastic! You can find further information about the
-                      adoption process <InternalLink>here</InternalLink>.
+                      adoption process{" "}
+                      <InternalLink to="/adopt">here</InternalLink>.
                     </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -249,6 +250,25 @@ const Dog = () => {
                       Fantastic! You can find further information about the
                       fostering process{" "}
                       <InternalLink to="/foster">here</InternalLink>.
+                    </Typography>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+              </Grid>
+              <Grid item xs={12}>
+                <ExpansionPanel
+                  square
+                  defaultExpanded={mdUp ? "true" : "false"}
+                >
+                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Typography variant="h6">
+                      "I'd like to help with Timanfaya's costs..."
+                    </Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <Typography variant="subtitle1" align="justify">
+                      That's very kind! Thank you. You can find further
+                      information about donating
+                      <InternalLink to="/donate">here</InternalLink>.
                     </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
