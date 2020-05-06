@@ -184,7 +184,10 @@ const Dog = () => {
                 </ExpansionPanel>
               </Grid>
               <Grid item xs={12}>
-                <ExpansionPanel square defaultExpanded={mdUp ? true : false}>
+                <ExpansionPanel
+                  square
+                  defaultExpanded={mdUp ? "true" : "false"}
+                >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Video</Typography>
                   </ExpansionPanelSummary>
@@ -210,7 +213,10 @@ const Dog = () => {
                 </ExpansionPanel>
               </Grid>
               <Grid item>
-                <ExpansionPanel square defaultExpanded={mdUp ? true : false}>
+                <ExpansionPanel
+                  square
+                  defaultExpanded={mdUp ? "true" : "false"}
+                >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Description</Typography>
                   </ExpansionPanelSummary>
