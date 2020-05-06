@@ -19,7 +19,14 @@ const Dog = () => {
     {
       dog1: file(name: { eq: "test" }) {
         childImageSharp {
-          fluid(maxWidth: 400, maxHeight: 500, quality: 15) {
+          fluid(maxWidth: 400, maxHeight: 500, quality: 35) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      thumb: file(name: { eq: "test" }) {
+        childImageSharp {
+          fluid(maxWidth: 100, maxHeight: 100, quality: 15) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -34,6 +41,34 @@ const Dog = () => {
       <Grid container spacing={mdUp ? 1 : 0}>
         <Grid item xs={12} md={4}>
           <Img fluid={data.dog1.childImageSharp.fluid} />
+          <Box>
+            <Grid container>
+              <Grid item xs={6} sm={4} lg={3}>
+                <Img fluid={data.thumb.childImageSharp.fluid} />
+              </Grid>
+              <Grid item xs={6} sm={4} lg={3}>
+                <Img fluid={data.thumb.childImageSharp.fluid} />
+              </Grid>
+              <Grid item xs={6} sm={4} lg={3}>
+                <Img fluid={data.thumb.childImageSharp.fluid} />
+              </Grid>
+              <Grid item xs={6} sm={4} lg={3}>
+                <Img fluid={data.thumb.childImageSharp.fluid} />
+              </Grid>
+              <Grid item xs={6} sm={4} lg={3}>
+                <Img fluid={data.thumb.childImageSharp.fluid} />
+              </Grid>
+              <Grid item xs={6} sm={4} lg={3}>
+                <Img fluid={data.thumb.childImageSharp.fluid} />
+              </Grid>
+              <Grid item xs={6} sm={4} lg={3}>
+                <Img fluid={data.thumb.childImageSharp.fluid} />
+              </Grid>
+              <Grid item xs={6} sm={4} lg={3}>
+                <Img fluid={data.thumb.childImageSharp.fluid} />
+              </Grid>
+            </Grid>
+          </Box>
         </Grid>
         <Grid item xs={12} md={8}>
           <Box p={2} bgcolor="#fafafa" boxShadow={2}>
