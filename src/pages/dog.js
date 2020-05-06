@@ -88,7 +88,7 @@ const Dog = () => {
             bgcolor={mdUp ? "transparent" : "#fafafa"}
             color={mdUp ? "#fafafa" : "inherit"}
           >
-            <ExpansionPanel defaultExpanded={mdUp ? true : false}>
+            <ExpansionPanel square defaultExpanded={mdUp ? true : false}>
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <Typography>Gallery</Typography>
               </ExpansionPanelSummary>
@@ -152,7 +152,7 @@ const Dog = () => {
               </Hidden>
               <Grid item xs={12}>
                 <ExpansionPanel>
-                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                  <ExpansionPanelSummary square expandIcon={<ExpandMore />}>
                     <Typography>Video</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails
