@@ -111,7 +111,7 @@ const Dog = () => {
         </Grid>
         <Grid item xs={12} md={8}>
           <Box p={mdUp ? 2 : 0}>
-            <Grid container spacing={mdUp ? 2 : 0} alignItems="center">
+            <Grid container spacing={0} alignItems="center">
               <Hidden smDown>
                 <Grid item xs={12}>
                   <Box
@@ -137,7 +137,7 @@ const Dog = () => {
                 <ExpansionPanel
                   square
                   defaultExpanded
-                  classes={{ root: { border: "1px solid" } }}
+                  classes={{ root: { border: "3px solid black" } }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Summary</Typography>
@@ -282,6 +282,7 @@ const Dog = () => {
                   defaultExpanded={
                     window.innerWidth > expandedThreshold ? true : false
                   }
+                  classes={{ root: { border: "1px solid" } }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">
