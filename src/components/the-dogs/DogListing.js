@@ -70,65 +70,6 @@ const DogListing = () => {
           <Typography align="center" variant="h3">
             Buddy
           </Typography>
-
-          <Grid container justify="space-between">
-            <Grid item xs={6} sm={3}>
-              <ListItemText
-                primary="Age"
-                secondary="11 months"
-                primaryTypographyProps={{
-                  style: {
-                    textAlign: "center",
-                    color: theme.palette.secondary.dark,
-                  },
-                }}
-                secondaryTypographyProps={{
-                  style: {
-                    textAlign: "center",
-                    color: theme.palette.primary.dark,
-                  },
-                }}
-              />
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <ListItemText
-                primary="Sex"
-                secondary="Female"
-                primaryTypographyProps={{
-                  style: {
-                    textAlign: "center",
-                    color: theme.palette.secondary.dark,
-                  },
-                }}
-                secondaryTypographyProps={{
-                  style: {
-                    textAlign: "center",
-                    color: theme.palette.primary.dark,
-                  },
-                }}
-              />
-            </Grid>
-            <Hidden xsDown>
-              <Grid item xs={12} sm={6}>
-                <ListItemText
-                  primary="Breed"
-                  secondary="German Shepherd"
-                  primaryTypographyProps={{
-                    style: {
-                      textAlign: "center",
-                      color: theme.palette.secondary.dark,
-                    },
-                  }}
-                  secondaryTypographyProps={{
-                    style: {
-                      textAlign: "center",
-                      color: theme.palette.primary.dark,
-                    },
-                  }}
-                />
-              </Grid>
-            </Hidden>
-          </Grid>
         </CardContent>
       </CardActionArea>
       <CardActions
