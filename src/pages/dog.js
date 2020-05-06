@@ -66,7 +66,7 @@ const Dog = () => {
             bgcolor={mdUp ? "transparent" : "#fafafa"}
             color={mdUp ? "#fafafa" : "inherit"}
           >
-            <ExpansionPanel square defaultExpanded={mdUp ? "true" : "false"}>
+            <ExpansionPanel square defaultExpanded={mdUp ? true : false}>
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <Typography variant="body2">More photos</Typography>
               </ExpansionPanelSummary>
