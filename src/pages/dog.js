@@ -13,26 +13,11 @@ import {
   ExpansionPanelSummary,
   ExpansionPanelDetails,
 } from "@material-ui/core"
-import { Share, Comment, ExpandMore, MoreVertical } from "@material-ui/icons"
+import { Share, Comment, ExpandMore, MoreVert } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
 
-const useStyles = makeStyles(theme => ({
-  headerButtons: {
-    [theme.breakpoints.down("xs")]: {
-      padding: "6px",
-    },
-  },
-  headerButtonsIcons: {
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "1.25rem",
-    },
-  },
-}))
-
 const Dog = () => {
-  const classes = useStyles()
-  const theme = useTheme()
   const data = useStaticQuery(graphql`
     {
       dog1: file(name: { eq: "test" }) {
@@ -51,6 +36,7 @@ const Dog = () => {
       }
     }
   `)
+  const theme = useTheme()
   const smUp = useMediaQuery(theme.breakpoints.up("sm"))
   const mdUp = useMediaQuery(theme.breakpoints.up("md"))
 
@@ -70,17 +56,11 @@ const Dog = () => {
                 <Typography variant="h2">Buddy</Typography>
               </Box>
               <Box>
-                <IconButton>
-                  <MoreVertical />
-                </IconButton>
                 <IconButton className={classes.headerButtons}>
                   <Share className={classes.headerButtonsIcons} />
                 </IconButton>
                 <IconButton className={classes.headerButtons}>
-                  <FacebookMessenger className={classes.headerButtonsIcons} />
-                </IconButton>
-                <IconButton className={classes.headerButtons}>
-                  <Comment className={classes.headerButtonsIcons} />
+                  <MoreVert className={classes.headerButtonsIcons} />
                 </IconButton>
               </Box>
             </Box>
@@ -146,7 +126,7 @@ const Dog = () => {
                         <FacebookMessenger />
                       </IconButton>
                       <IconButton edge="end">
-                        <Comment />
+                        <MoreVert />
                       </IconButton>
                     </Box>
                   </Box>
