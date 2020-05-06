@@ -38,7 +38,7 @@ const Dog = () => {
     {
       dog1: file(name: { eq: "test" }) {
         childImageSharp {
-          fluid(maxWidth: 400, maxHeight: 450, quality: 35) {
+          fluid(maxWidth: 400, maxHeight: 425, quality: 35) {
             ...GatsbyImageSharpFluid
           }
         }
