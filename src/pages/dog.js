@@ -134,8 +134,11 @@ const Dog = () => {
                 </Grid>
               </Hidden>
               <Grid item xs={12}>
-                <Divider style={{ margin: 0 }} />
-                <ExpansionPanel square defaultExpanded>
+                <ExpansionPanel
+                  square
+                  defaultExpanded
+                  classes={{ root: { border: "1px solid" } }}
+                >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Summary</Typography>
                   </ExpansionPanelSummary>
@@ -173,6 +176,7 @@ const Dog = () => {
                   defaultExpanded={
                     window.innerWidth > expandedThreshold ? true : false
                   }
+                  classes={{ root: { border: "1px solid" } }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Video</Typography>
@@ -200,7 +204,11 @@ const Dog = () => {
                 </ExpansionPanel>
               </Grid>
               <Grid item>
-                <ExpansionPanel square defaultExpanded>
+                <ExpansionPanel
+                  square
+                  defaultExpanded
+                  classes={{ root: { border: "1px solid" } }}
+                >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Description</Typography>
                   </ExpansionPanelSummary>
@@ -230,6 +238,7 @@ const Dog = () => {
                   defaultExpanded={
                     window.innerWidth > expandedThreshold ? true : false
                   }
+                  classes={{ root: { border: "1px solid" } }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">
@@ -251,6 +260,7 @@ const Dog = () => {
                   defaultExpanded={
                     window.innerWidth > expandedThreshold ? true : false
                   }
+                  classes={{ root: { border: "1px solid" } }}
                 >
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">
