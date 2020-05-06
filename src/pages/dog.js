@@ -113,12 +113,12 @@ const DogProfileRow = props => {
   return (
     <Grid container alignItems="flex-end">
       <Grid item xs={6}>
-        <Box pb={1} borderBottom={1}>
+        <Box py={0.75} borderBottom={1}>
           <Typography variant="overline">{props.label}</Typography>
         </Box>
       </Grid>
       <Grid item xs={6}>
-        <Box pb={1} borderBottom={1}>
+        <Box py={0.75} borderBottom={1}>
           <Typography variant="body2" align="right">
             {props.info}
           </Typography>
