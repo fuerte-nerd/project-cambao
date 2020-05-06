@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import {
   useTheme,
+  makeStyles,
   useMediaQuery,
   Hidden,
   IconButton,
@@ -14,7 +15,16 @@ import { Share, Comment } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
 
+const useStyles = makeStyles(theme => ({
+  headerButtons: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: ".8rem",
+    },
+  },
+}))
+
 const Dog = () => {
+  const classes = useStyles()
   const theme = useTheme()
   const data = useStaticQuery(graphql`
     {
@@ -54,13 +64,13 @@ const Dog = () => {
               </Box>
               <Box>
                 <IconButton color="inherit" edge="start">
-                  <Share />
+                  <Share className={classes.headerButtons} />
                 </IconButton>
                 <IconButton color="inherit">
-                  <FacebookMessenger />
+                  <FacebookMessenger className={classes.headerButtons} />
                 </IconButton>
                 <IconButton color="inherit" edge="end">
-                  <Comment />
+                  <Comment className={classes.headerButtons} />
                 </IconButton>
               </Box>
             </Box>
