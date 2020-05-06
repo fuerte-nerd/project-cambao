@@ -1,6 +1,7 @@
 import React from "react"
 import {
   Hidden,
+  Divider,
   useTheme,
   Box,
   Grid,
@@ -67,8 +68,11 @@ const DogListing = () => {
       <CardActionArea>
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
-          <Typography align="center" variant="h3">
-            Buddy
+          <Typography variant="h3">Buddy</Typography>
+          <Divider />
+          <Typography variant="body2">
+            A beautiful bardino boy. Everyone here at the shelter loves him!
+            He's very affectionate and super friendly!
           </Typography>
         </CardContent>
       </CardActionArea>
