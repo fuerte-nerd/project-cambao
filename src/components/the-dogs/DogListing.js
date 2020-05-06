@@ -69,7 +69,7 @@ const DogListing = () => {
         <CardMedia image={tempImage} className={classes.cardImage} />
         <CardContent>
           <Typography variant="h3">Buddy</Typography>
-          <Divider />
+          <Divider style={{ margin: ".5rem 0" }} />
           <Typography variant="body2">
             A beautiful bardino boy. Everyone here at the shelter loves him!
             He's very affectionate and super friendly!
@@ -79,13 +79,10 @@ const DogListing = () => {
       <CardActions
         style={{ background: theme.palette.secondary.main, color: "#fafafa" }}
       >
-        <Box
-          align="end"
-          width="100%"
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-        >
+        <Box width="100%" display="flex" alignItems="center">
+          <Button color="inherit" startIcon={<Share />}>
+            Share
+          </Button>
           <IconButton color="inherit">
             <Share />
           </IconButton>
