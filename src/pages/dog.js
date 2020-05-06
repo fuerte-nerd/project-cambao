@@ -85,16 +85,10 @@ const Dog = () => {
           </Hidden>
           <Img fluid={data.dog1.childImageSharp.fluid} />
           <Box
-            p={1}
             bgcolor={mdUp ? "transparent" : "#fafafa"}
             color={mdUp ? "#fafafa" : "inherit"}
           >
-            <Hidden xsDown>
-              <Box>
-                <Typography variant="h5">Gallery</Typography>
-              </Box>
-            </Hidden>
-            <ExpansionPanel>
+            <ExpansionPanel defaultExpanded={mdUp ? true : false}>
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <Typography>Gallery</Typography>
               </ExpansionPanelSummary>
