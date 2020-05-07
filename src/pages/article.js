@@ -25,17 +25,23 @@ const Article = () => {
   return (
     <Box>
       <Grid container spacing={2} alignItems="flex-end">
-        <Grid item xs={12} md={5}>
-          <Img fluid={data.dog1.childImageSharp.fluid} />
-        </Grid>
-        <Grid item xs={12} md={7}>
-          <Box color="white">
-            <Typography variant="h2">This is the article heading</Typography>
-          </Box>
-          <Box bgcolor="white">
-            <Typography variant="subtitle1">12 April 2020</Typography>
-            <Typography variant="subtitle2">Posted by FDR</Typography>
-          </Box>
+        <Grid item xs={12}>
+          <Grid container>
+            <Grid item xs={12} md={5}>
+              <Img fluid={data.dog1.childImageSharp.fluid} />
+            </Grid>
+            <Grid item xs={12} md={7}>
+              <Box color="white">
+                <Typography variant="h2">
+                  This is the article heading
+                </Typography>
+              </Box>
+              <Box bgcolor="white">
+                <Typography variant="subtitle1">12 April 2020</Typography>
+                <Typography variant="subtitle2">Posted by FDR</Typography>
+              </Box>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid item xs={12}>
           <Box color="#fafafa">
