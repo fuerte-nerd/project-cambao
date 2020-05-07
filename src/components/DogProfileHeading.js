@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Typography, IconButton } from "@material-ui/core"
-import { MoreVert } from "@material-ui/icons"
+import { MoreVert, Share } from "@material-ui/icons"
 
 const DogProfileHeading = props => {
   return props.mobile ? (
@@ -20,7 +20,21 @@ const DogProfileHeading = props => {
         </IconButton>
       </Box>
     </Box>
-  ) : null
+  ) : (
+    <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box color="white">
+        <Typography variant="h2">Timanfaya</Typography>
+      </Box>
+      <Box>
+        <IconButton edge="start">
+          <Share />
+        </IconButton>
+        <IconButton edge="end">
+          <MoreVert />
+        </IconButton>
+      </Box>
+    </Box>
+  )
 }
 
 export default DogProfileHeading

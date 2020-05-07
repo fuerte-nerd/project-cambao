@@ -15,6 +15,7 @@ import DogProfileSummary from "../components/DogProfileSummary"
 import DogProfileVideo from "../components/DogProfileVideo"
 import DogProfileDescription from "../components/DogProfileDescription"
 import DogProfileFAQs from "../components/DogProfileFAQs"
+import DogProfileHeading from "../components/DogProfileHeading"
 
 const Dog = () => {
   const theme = useTheme()
@@ -26,22 +27,7 @@ const Dog = () => {
       <Grid container spacing={mdUp ? 1 : 0}>
         <Grid item xs={12} md={4}>
           <Hidden mdUp>
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              bgcolor="white"
-              p={1}
-            >
-              <Box color="primary.dark">
-                <Typography variant="h2">Timanfaya</Typography>
-              </Box>
-              <Box>
-                <IconButton edge="end">
-                  <MoreVert />
-                </IconButton>
-              </Box>
-            </Box>
+            <DogProfileHeading mobile />
           </Hidden>
           <DogProfilePhotoGallery />
         </Grid>
@@ -50,23 +36,7 @@ const Dog = () => {
             <Grid container spacing={0} alignItems="center">
               <Hidden smDown>
                 <Grid item xs={12}>
-                  <Box
-                    display={smUp ? "flex" : "block"}
-                    justifyContent="space-between"
-                    alignItems="center"
-                  >
-                    <Box color="white">
-                      <Typography variant="h2">Timanfaya</Typography>
-                    </Box>
-                    <Box>
-                      <IconButton edge="start">
-                        <Share />
-                      </IconButton>
-                      <IconButton edge="end">
-                        <MoreVert />
-                      </IconButton>
-                    </Box>
-                  </Box>
+                  <DogProfileHeading />
                 </Grid>
               </Hidden>
               <Grid item xs={12}>
