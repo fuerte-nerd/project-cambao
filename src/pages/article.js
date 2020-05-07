@@ -1,5 +1,5 @@
 import React from "react"
-import { Grid, Box, Typography, Divider } from "@material-ui/core"
+import { Container, Grid, Box, Typography, Divider } from "@material-ui/core"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
@@ -26,7 +26,7 @@ const Article = () => {
     <Box>
       <Grid container spacing={2} alignItems="flex-end">
         <Grid item xs={12}>
-          <Box bgcolor="#fafafa">
+          <Box bgcolor="#fafafa" boxShadow={2}>
             <Grid container spacing={2}>
               <Grid
                 item
@@ -36,7 +36,7 @@ const Article = () => {
               >
                 <Img fluid={data.dog1.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={12} md={7}>
+              <Grid item xs={12} md={7} style={{ padding: "1rem" }}>
                 <Box>
                   <Typography variant="h2">
                     This is the article heading
@@ -52,28 +52,31 @@ const Article = () => {
         </Grid>
         <Grid item xs={12}>
           <Box color="#fafafa">
-            <Typography>
-              Consectetur aperiam fuga quod quo ea? Ab unde quos fuga corrupti
-              qui recusandae vero soluta recusandae. Ipsum minima quibusdam
-              placeat repellendus eaque Aliquam ullam velit sint vel ipsam
-              Aperiam neque laborum ad consectetur eius Iste nam eius nesciunt
-              ut consectetur! Quibusdam iusto laboriosam eos nulla eos. Unde
-              vero aspernatur beatae?
-            </Typography>
-            <Box py={2} maxWidth={400} margin="auto">
-              <Img fluid={data.dog2.childImageSharp.fluid} />
-            </Box>
-            <Typography>
-              Lorem ut unde laborum similique nisi laboriosam facilis nisi
-              provident Totam amet molestias veniam laudantium modi Culpa
-              eligendi ea dicta illum iure Numquam unde blanditiis fugit facere
-              perferendis? Dolore possimus pariatur fugit laborum aliquid totam.
-              Eius possimus sint vero numquam repellendus Officia voluptas magni
-              labore architecto dolore in Aliquid deleniti voluptatem blanditiis
-              officia eaque maxime architecto recusandae Beatae recusandae
-              aliquid a molestias doloremque non? Labore aliquam saepe nihil
-              voluptas consequatur Maiores veniam ipsa itaque voluptatem
-            </Typography>
+            <Container>
+              <Typography>
+                Consectetur aperiam fuga quod quo ea? Ab unde quos fuga corrupti
+                qui recusandae vero soluta recusandae. Ipsum minima quibusdam
+                placeat repellendus eaque Aliquam ullam velit sint vel ipsam
+                Aperiam neque laborum ad consectetur eius Iste nam eius nesciunt
+                ut consectetur! Quibusdam iusto laboriosam eos nulla eos. Unde
+                vero aspernatur beatae?
+              </Typography>
+              <Box py={2} maxWidth={400} margin="auto">
+                <Img fluid={data.dog2.childImageSharp.fluid} />
+              </Box>
+              <Typography>
+                Lorem ut unde laborum similique nisi laboriosam facilis nisi
+                provident Totam amet molestias veniam laudantium modi Culpa
+                eligendi ea dicta illum iure Numquam unde blanditiis fugit
+                facere perferendis? Dolore possimus pariatur fugit laborum
+                aliquid totam. Eius possimus sint vero numquam repellendus
+                Officia voluptas magni labore architecto dolore in Aliquid
+                deleniti voluptatem blanditiis officia eaque maxime architecto
+                recusandae Beatae recusandae aliquid a molestias doloremque non?
+                Labore aliquam saepe nihil voluptas consequatur Maiores veniam
+                ipsa itaque voluptatem
+              </Typography>
+            </Container>
           </Box>
         </Grid>
       </Grid>
