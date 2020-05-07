@@ -53,11 +53,11 @@ const Article = () => {
                     <Typography variant="subtitle1">12 April 2020</Typography>
                     <Typography variant="subtitle2">Posted by FDR</Typography>
                   </Box>
-                </Box>
-                <Box>
-                  <IconButton>
-                    <Facebook />
-                  </IconButton>
+                  <Box>
+                    <IconButton>
+                      <Facebook />
+                    </IconButton>
+                  </Box>
                 </Box>
               </Grid>
             </Grid>
