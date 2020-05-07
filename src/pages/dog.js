@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import {
   useTheme,
   useMediaQuery,
@@ -13,7 +12,6 @@ import {
   ExpansionPanelDetails,
 } from "@material-ui/core"
 import { Share, ExpandMore, MoreVert } from "@material-ui/icons"
-import Img from "gatsby-image"
 import InternalLink from "../components/InternalLink"
 
 import DogProfileExpansionPanel from "../components/DogProfileExpansionPanel"
@@ -25,17 +23,6 @@ const Dog = () => {
   const smUp = useMediaQuery(theme.breakpoints.up("sm"))
   const mdUp = useMediaQuery(theme.breakpoints.up("md"))
   const expandedThreshold = 800
-  const data = useStaticQuery(graphql`
-    {
-      dog1: file(name: { eq: "test" }) {
-        childImageSharp {
-          fluid(maxWidth: 400, maxHeight: 425, quality: 35) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <Box>
@@ -59,7 +46,6 @@ const Dog = () => {
               </Box>
             </Box>
           </Hidden>
-          <Img fluid={data.dog1.childImageSharp.fluid} />
           <Box
             bgcolor={mdUp ? "transparent" : "#fafafa"}
             color={mdUp ? "#fafafa" : "inherit"}
