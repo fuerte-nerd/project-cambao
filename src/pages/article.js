@@ -1,5 +1,13 @@
 import React from "react"
-import { Container, Grid, Box, Typography, Divider } from "@material-ui/core"
+import {
+  Container,
+  Grid,
+  Box,
+  IconButton,
+  Typography,
+  Divider,
+} from "@material-ui/core"
+import { Facebook, WhatsApp, Email } from "@material-ui/icons"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
@@ -37,14 +45,19 @@ const Article = () => {
                 <Img fluid={data.dog1.childImageSharp.fluid} />
               </Grid>
               <Grid item xs={12} md={7} style={{ padding: "1rem" }}>
-                <Box>
-                  <Typography variant="h2">
-                    This is the article heading
-                  </Typography>
+                <Box display="flex" justifyContent="space-between">
+                  <Box>
+                    <Typography variant="h2">
+                      This is the article heading
+                    </Typography>
+                    <Typography variant="subtitle1">12 April 2020</Typography>
+                    <Typography variant="subtitle2">Posted by FDR</Typography>
+                  </Box>
                 </Box>
                 <Box>
-                  <Typography variant="subtitle1">12 April 2020</Typography>
-                  <Typography variant="subtitle2">Posted by FDR</Typography>
+                  <IconButton>
+                    <Facebook />
+                  </IconButton>
                 </Box>
               </Grid>
             </Grid>
