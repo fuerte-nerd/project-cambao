@@ -35,7 +35,7 @@ const Article = () => {
       <Grid container spacing={2} alignItems="flex-end">
         <Grid item xs={12}>
           <Box bgcolor="#fafafa" boxShadow={2}>
-            <Grid container spacing={2}>
+            <Grid container>
               <Grid
                 item
                 xs={12}
@@ -44,8 +44,9 @@ const Article = () => {
               >
                 <Img fluid={data.dog1.childImageSharp.fluid} />
               </Grid>
-              <Grid item xs={12} md={7} style={{ padding: "1rem" }}>
+              <Grid item xs={12} md={7}>
                 <Box
+                  p={3}
                   height="100%"
                   display="flex"
                   flexDirection="column"
@@ -56,7 +57,7 @@ const Article = () => {
                       This is the article heading
                     </Typography>
                   </Box>
-                  <Box>
+                  <Box align="right">
                     <Typography variant="subtitle1">12 April 2020</Typography>
                     <Typography variant="subtitle2">Posted by FDR</Typography>
                     <IconButton edge="start" color="secondary">
