@@ -55,11 +55,11 @@ const Article = () => {
                     <Typography variant="h2">
                       This is the article heading
                     </Typography>
-                    <Typography variant="subtitle1">12 April 2020</Typography>
-                    <Typography variant="subtitle2">Posted by FDR</Typography>
                   </Box>
                   <Box>
-                    <IconButton color="secondary">
+                    <Typography variant="subtitle1">12 April 2020</Typography>
+                    <Typography variant="subtitle2">Posted by FDR</Typography>
+                    <IconButton edge="start" color="secondary">
                       <Facebook />
                     </IconButton>
                     <IconButton color="secondary">
