@@ -15,9 +15,16 @@ import {
 import { Share, ExpandMore, MoreVert } from "@material-ui/icons"
 import Img from "gatsby-image"
 import InternalLink from "../components/InternalLink"
+
 import DogProfileExpansionPanel from "../components/DogProfileExpansionPanel"
 
+import DogProfilePhotoGallery from "../components/DogProfilePhotoGallery"
+
 const Dog = () => {
+  const theme = useTheme()
+  const smUp = useMediaQuery(theme.breakpoints.up("sm"))
+  const mdUp = useMediaQuery(theme.breakpoints.up("md"))
+  const expandedThreshold = 800
   const data = useStaticQuery(graphql`
     {
       dog1: file(name: { eq: "test" }) {
@@ -27,19 +34,8 @@ const Dog = () => {
           }
         }
       }
-      thumb: file(name: { eq: "test" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, maxHeight: 100, quality: 15) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
   `)
-  const theme = useTheme()
-  const smUp = useMediaQuery(theme.breakpoints.up("sm"))
-  const mdUp = useMediaQuery(theme.breakpoints.up("md"))
-  const expandedThreshold = 800
 
   return (
     <Box>
@@ -73,32 +69,7 @@ const Dog = () => {
               headingVariant="body2"
               expanded
             >
-              <Grid container spacing={smUp ? 1 : 0}>
-                <Grid item xs={3} sm={2} md={3} lg={2}>
-                  <Img fluid={data.thumb.childImageSharp.fluid} />
-                </Grid>
-                <Grid item xs={3} sm={2} md={3} lg={2}>
-                  <Img fluid={data.thumb.childImageSharp.fluid} />
-                </Grid>
-                <Grid item xs={3} sm={2} md={3} lg={2}>
-                  <Img fluid={data.thumb.childImageSharp.fluid} />
-                </Grid>
-                <Grid item xs={3} sm={2} md={3} lg={2}>
-                  <Img fluid={data.thumb.childImageSharp.fluid} />
-                </Grid>
-                <Grid item xs={3} sm={2} md={3} lg={2}>
-                  <Img fluid={data.thumb.childImageSharp.fluid} />
-                </Grid>
-                <Grid item xs={3} sm={2} md={3} lg={2}>
-                  <Img fluid={data.thumb.childImageSharp.fluid} />
-                </Grid>
-                <Grid item xs={3} sm={2} md={3} lg={2}>
-                  <Img fluid={data.thumb.childImageSharp.fluid} />
-                </Grid>
-                <Grid item xs={3} sm={2} md={3} lg={2}>
-                  <Img fluid={data.thumb.childImageSharp.fluid} />
-                </Grid>
-              </Grid>
+              <DogProfilePhotoGallery />
             </DogProfileExpansionPanel>
           </Box>
         </Grid>
