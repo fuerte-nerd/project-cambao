@@ -20,6 +20,7 @@ import DogProfilePhotoGallery from "../components/DogProfilePhotoGallery"
 import DogProfileSummary from "../components/DogProfileSummary"
 import DogProfileVideo from "../components/DogProfileVideo"
 import DogProfileDescription from "../components/DogProfileDescription"
+import DogProfileFAQs from "../components/DogProfileFAQs"
 
 const Dog = () => {
   const theme = useTheme()
@@ -89,78 +90,7 @@ const Dog = () => {
                 <DogProfileDescription />
               </Grid>
               <Grid item xs={12}>
-                <ExpansionPanel
-                  square
-                  defaultExpanded={
-                    window.innerWidth > expandedThreshold ? true : false
-                  }
-                  style={{
-                    border: `1px solid ${theme.palette.text.secondary}`,
-                    borderBottom: 0,
-                  }}
-                >
-                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <Typography variant="h6">
-                      "I'm interested in adopting Timanfaya..."
-                    </Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
-                    <Typography variant="subtitle1" align="justify">
-                      Fantastic! You can find further information about the
-                      adoption process{" "}
-                      <InternalLink to="/adopt">here</InternalLink>.
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-              </Grid>
-              <Grid item xs={12}>
-                <ExpansionPanel
-                  square
-                  defaultExpanded={
-                    window.innerWidth > expandedThreshold ? true : false
-                  }
-                  style={{
-                    border: `1px solid ${theme.palette.text.secondary}`,
-                    borderBottom: 0,
-                  }}
-                >
-                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <Typography variant="h6">
-                      "I'm interested in fostering Timanfaya..."
-                    </Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
-                    <Typography variant="subtitle1" align="justify">
-                      Fantastic! You can find further information about the
-                      fostering process{" "}
-                      <InternalLink to="/foster">here</InternalLink>.
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-              </Grid>
-              <Grid item xs={12}>
-                <ExpansionPanel
-                  square
-                  defaultExpanded={
-                    window.innerWidth > expandedThreshold ? true : false
-                  }
-                  style={{
-                    border: `1px solid ${theme.palette.text.secondary}`,
-                  }}
-                >
-                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <Typography variant="h6">
-                      "I'd like to help with Timanfaya's costs..."
-                    </Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
-                    <Typography variant="subtitle1" align="justify">
-                      That's very kind! Thank you. You can find further
-                      information about donating
-                      <InternalLink to="/donate">here</InternalLink>.
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
+                <DogProfileFAQs />
               </Grid>
             </Grid>
           </Box>
