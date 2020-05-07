@@ -18,6 +18,7 @@ import DogProfileExpansionPanel from "../components/DogProfileExpansionPanel"
 
 import DogProfilePhotoGallery from "../components/DogProfilePhotoGallery"
 import DogProfileSummary from "../components/DogProfileSummary"
+import DogProfileVideo from "../components/DogProfileVideo"
 
 const Dog = () => {
   const theme = useTheme()
@@ -81,40 +82,7 @@ const Dog = () => {
                 <DogProfileSummary />
               </Grid>
               <Grid item xs={12}>
-                <ExpansionPanel
-                  square
-                  defaultExpanded={
-                    window.innerWidth > expandedThreshold ? true : false
-                  }
-                  style={{
-                    border: `1px solid ${theme.palette.text.secondary}`,
-                    borderBottom: 0,
-                  }}
-                >
-                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <Typography variant="h6">Video</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails
-                    style={{ paddingBottom: "56.25%", position: "relative" }}
-                  >
-                    <iframe
-                      title="Video of dog"
-                      width="560"
-                      height="315"
-                      src="https://www.youtube.com/embed/DgAw6jFo6Mw"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                      }}
-                    ></iframe>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
+                <DogProfileVideo />
               </Grid>
               <Grid item>
                 <ExpansionPanel

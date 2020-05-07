@@ -21,11 +21,12 @@ const DogProfileExpansionPanel = props => {
             : false
           : false
       }
-      style={{ margin: 0 }}
       style={{
         margin: 0,
         border: `1px solid ${theme.palette.text.secondary}`,
         borderBottom: props.last ? 0 : 1,
+        paddingBottom: props.youtube ? "56.25%" : 16,
+        position: props.youtube ? "relative" : "inherit",
       }}
     >
       <ExpansionPanelSummary expandIcon={<ExpandMore />}>
