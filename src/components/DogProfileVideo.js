@@ -3,12 +3,7 @@ import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 
 const DogProfileVideo = props => {
   return (
-    <DogProfileExpansionPanel
-      title="Video"
-      headingVariant="h6"
-      expanded
-      youtube
-    >
+    <DogProfileExpansionPanel title="Video" headingVariant="h6" youtube>
       <iframe
         title="Video of dog"
         width="560"

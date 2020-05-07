@@ -7,14 +7,8 @@ import {
   Box,
   Typography,
   Grid,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
 } from "@material-ui/core"
-import { Share, ExpandMore, MoreVert } from "@material-ui/icons"
-import InternalLink from "../components/InternalLink"
-
-import DogProfileExpansionPanel from "../components/DogProfileExpansionPanel"
+import { Share, MoreVert } from "@material-ui/icons"
 
 import DogProfilePhotoGallery from "../components/DogProfilePhotoGallery"
 import DogProfileSummary from "../components/DogProfileSummary"
@@ -26,7 +20,6 @@ const Dog = () => {
   const theme = useTheme()
   const smUp = useMediaQuery(theme.breakpoints.up("sm"))
   const mdUp = useMediaQuery(theme.breakpoints.up("md"))
-  const expandedThreshold = 800
 
   return (
     <Box>
@@ -37,7 +30,7 @@ const Dog = () => {
               display="flex"
               justifyContent="space-between"
               alignItems="center"
-              bgcolor="#fafafa"
+              bgcolor="white"
               p={1}
             >
               <Box color="primary.dark">
@@ -51,10 +44,6 @@ const Dog = () => {
             </Box>
           </Hidden>
           <DogProfilePhotoGallery />
-          <Box
-            bgcolor={mdUp ? "transparent" : "#fafafa"}
-            color={mdUp ? "#fafafa" : "inherit"}
-          ></Box>
         </Grid>
         <Grid item xs={12} md={8}>
           <Box px={mdUp ? 2 : 0}>
