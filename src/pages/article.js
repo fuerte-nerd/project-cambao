@@ -84,7 +84,7 @@ const Article = () => {
         <Grid item xs={12}>
           <Box color="#fafafa">
             <Container>
-              <Typography>
+              <Typography paragraph>
                 Consectetur aperiam fuga quod quo ea? Ab unde quos fuga corrupti
                 qui recusandae vero soluta recusandae. Ipsum minima quibusdam
                 placeat repellendus eaque Aliquam ullam velit sint vel ipsam
@@ -95,7 +95,7 @@ const Article = () => {
               <Box py={2} maxWidth={400} margin="auto">
                 <Img fluid={data.dog2.childImageSharp.fluid} />
               </Box>
-              <Typography>
+              <Typography paragraph>
                 Lorem ut unde laborum similique nisi laboriosam facilis nisi
                 provident Totam amet molestias veniam laudantium modi Culpa
                 eligendi ea dicta illum iure Numquam unde blanditiis fugit
@@ -106,6 +106,33 @@ const Article = () => {
                 recusandae Beatae recusandae aliquid a molestias doloremque non?
                 Labore aliquam saepe nihil voluptas consequatur Maiores veniam
                 ipsa itaque voluptatem
+              </Typography>
+              <Typography paragraph>
+                Dolor inventore iure placeat nemo ipsa! Quaerat id neque
+                voluptates unde ipsum iste? Voluptate aliquid voluptatum itaque
+                fugiat nobis. Reiciendis quaerat ratione soluta reprehenderit
+                maiores? Iure sed maiores possimus praesentium similique Laborum
+                aliquam impedit aliquid quos omnis Qui eos corrupti nobis
+                eligendi natus Aperiam incidunt earum assumenda ab ad Modi iusto
+                neque dolore aliquam ducimus Repellendus iure impedit vero
+                expedita non Cum culpa reiciendis minus temporibus tempora sed
+                dignissimos mollitia Quae vero aliquam dolor perferendis
+                recusandae fugiat quibusdam. Labore vero fuga voluptates aliquam
+                dolores Soluta dolore odit ad voluptas voluptas Vero perferendis
+                vitae nesciunt laudantium distinctio temporibus! Ipsum ab quo
+                nulla obcaecati assumenda odit expedita quas? Nobis voluptatum
+                animi tenetur delectus nihil? Eligendi dicta fugit consequatur
+                animi animi ab. Magni soluta qui iste doloribus praesentium?
+                Libero ab harum doloremque pariatur exercitationem Ut tenetur
+                laboriosam vel tenetur ratione harum Quod provident architecto
+                ducimus nam rem amet Veniam quo porro laborum quod blanditiis
+                Harum laudantium corporis illum necessitatibus et? Doloribus
+                tenetur cumque aspernatur provident hic voluptas Hic dolores
+                laborum numquam voluptatibus ut, ex Quibusdam tenetur nam fugiat
+                dignissimos maxime! Ratione provident nesciunt quisquam labore
+                expedita Harum explicabo inventore sint corrupti labore
+                Molestiae tempore consequuntur nemo labore ipsa fugiat. Nam non
+                ex eligendi.
               </Typography>
             </Container>
           </Box>
