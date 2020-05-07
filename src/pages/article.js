@@ -45,7 +45,12 @@ const Article = () => {
                 <Img fluid={data.dog1.childImageSharp.fluid} />
               </Grid>
               <Grid item xs={12} md={7} style={{ padding: "1rem" }}>
-                <Box display="flex" justifyContent="space-between">
+                <Box
+                  height="100%"
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
+                >
                   <Box>
                     <Typography variant="h2">
                       This is the article heading
@@ -54,8 +59,14 @@ const Article = () => {
                     <Typography variant="subtitle2">Posted by FDR</Typography>
                   </Box>
                   <Box>
-                    <IconButton>
+                    <IconButton color="secondary">
                       <Facebook />
+                    </IconButton>
+                    <IconButton color="secondary">
+                      <WhatsApp />
+                    </IconButton>
+                    <IconButton color="secondary">
+                      <Email />
                     </IconButton>
                   </Box>
                 </Box>
