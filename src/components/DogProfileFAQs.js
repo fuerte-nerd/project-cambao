@@ -33,7 +33,7 @@ const DogProfileFAQs = props => {
 
 const Question = props => (
   <Box pb={props.last ? 0 : 2}>
-    <Typography variant="h6">{props.question}</Typography>
+    <Typography variant="h6">"{props.question}"</Typography>
     <Typography variant="subtitle1" align="justify" paragraph>
       {props.answer}
     </Typography>
