@@ -16,13 +16,15 @@ const Article = () => {
     }
   `)
   return (
-    <Box bgcolor="white">
-      <Grid container spacing={2}>
+    <Box>
+      <Grid container spacing={2} alignItems="end" justify="flex-end">
         <Grid item xs={12} md={5}>
           <Img fluid={data.dog1.childImageSharp.fluid} />
         </Grid>
         <Grid item xs={12} md={7}>
-          <Typography variant="h2">This is the article heading</Typography>
+          <Box color="white">
+            <Typography variant="h2">This is the article heading</Typography>
+          </Box>
         </Grid>
       </Grid>
     </Box>
