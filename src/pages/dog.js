@@ -46,18 +46,11 @@ const Dog = () => {
               </Box>
             </Box>
           </Hidden>
+          <DogProfilePhotoGallery />
           <Box
             bgcolor={mdUp ? "transparent" : "#fafafa"}
             color={mdUp ? "#fafafa" : "inherit"}
-          >
-            <DogProfileExpansionPanel
-              title="Photo Gallery"
-              headingVariant="body2"
-              expanded
-            >
-              <DogProfilePhotoGallery />
-            </DogProfileExpansionPanel>
-          </Box>
+          ></Box>
         </Grid>
         <Grid item xs={12} md={8}>
           <Box px={mdUp ? 2 : 0}>

@@ -16,13 +16,6 @@ const DogProfilePhotoGallery = () => {
           }
         }
       }
-      thumb: file(name: { eq: "test" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, maxHeight: 100, quality: 15) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
   `)
   return (
@@ -32,6 +25,7 @@ const DogProfilePhotoGallery = () => {
         title="Photo Gallery"
         headingVariant="body2"
         expanded
+        style={{ margin: 0 }}
       >
         <DogProfilePhotoGalleryThumbs />
       </DogProfileExpansionPanel>
