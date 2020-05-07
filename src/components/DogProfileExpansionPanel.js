@@ -18,6 +18,8 @@ const DogProfileExpansionPanel = props => {
         props.expanded
           ? window.innerWidth > expandedThreshold
             ? true
+            : props.expandOnMobile
+            ? true
             : false
           : false
       }

@@ -12,7 +12,12 @@ const DogProfileSummary = () => {
   const theme = useTheme()
   const smUp = useMediaQuery(theme.breakpoints.up("sm"))
   return (
-    <DogProfileExpansionPanel title="Summary" headingVariant="h6" expanded>
+    <DogProfileExpansionPanel
+      title="Summary"
+      headingVariant="h6"
+      expanded
+      expandOnMobile
+    >
       <Grid container spacing={smUp ? 8 : 0} alignItems="flex-start">
         <Grid item xs={12} sm={6}>
           <DogProfileRow label="Age" info="11 months" first />

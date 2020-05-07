@@ -5,7 +5,12 @@ import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 
 const DogProfileDescription = () => {
   return (
-    <DogProfileExpansionPanel title="Description" headingVariant="h6" expanded>
+    <DogProfileExpansionPanel
+      title="Description"
+      headingVariant="h6"
+      expanded
+      expandOnMobile
+    >
       <Typography variant="subtitle1" align="justify">
         Lorem a dolor possimus minus magnam? Magnam modi at alias exercitationem
         temporibus? Accusamus laudantium nihil dolores blanditiis numquam Optio
