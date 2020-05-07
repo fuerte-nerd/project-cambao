@@ -19,6 +19,7 @@ import DogProfileExpansionPanel from "../components/DogProfileExpansionPanel"
 import DogProfilePhotoGallery from "../components/DogProfilePhotoGallery"
 import DogProfileSummary from "../components/DogProfileSummary"
 import DogProfileVideo from "../components/DogProfileVideo"
+import DogProfileDescription from "../components/DogProfileDescription"
 
 const Dog = () => {
   const theme = useTheme()
@@ -85,36 +86,7 @@ const Dog = () => {
                 <DogProfileVideo />
               </Grid>
               <Grid item>
-                <ExpansionPanel
-                  square
-                  defaultExpanded
-                  style={{
-                    border: `1px solid ${theme.palette.text.secondary}`,
-                    borderBottom: 0,
-                  }}
-                >
-                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <Typography variant="h6">Description</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
-                    <Typography variant="subtitle1" align="justify">
-                      Lorem a dolor possimus minus magnam? Magnam modi at alias
-                      exercitationem temporibus? Accusamus laudantium nihil
-                      dolores blanditiis numquam Optio corporis neque tenetur
-                      quam animi a Assumenda atque quisquam asperiores quae
-                      deleniti. Repellat dolor voluptate iure tempore laborum Ex
-                      quasi consectetur cupiditate illum nihil eius Voluptate
-                      laborum ipsum minus dolorem dolore.\n\n Adipisicing ad
-                      nobis debitis eius velit Cum expedita nostrum quidem
-                      delectus quo id Id tempora beatae id soluta error? Odio in
-                      et expedita aperiam quas velit Vitae facere reiciendis
-                      accusamus consequatur eos distinctio! Officia sunt debitis
-                      voluptate accusantium recusandae Quisquam ratione
-                      accusamus placeat animi ex fuga? Veritatis velit earum
-                      nulla!
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
+                <DogProfileDescription />
               </Grid>
               <Grid item xs={12}>
                 <ExpansionPanel
