@@ -26,7 +26,7 @@ const Dog = () => {
       <Grid container spacing={mdUp ? 1 : 0}>
         <Grid item xs={12} md={4}>
           <Hidden mdUp>
-            <DogProfileHeading />
+            <DogProfileHeading mobile />
           </Hidden>
           <DogProfilePhotoGallery />
         </Grid>
