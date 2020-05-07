@@ -17,6 +17,7 @@ import InternalLink from "../components/InternalLink"
 import DogProfileExpansionPanel from "../components/DogProfileExpansionPanel"
 
 import DogProfilePhotoGallery from "../components/DogProfilePhotoGallery"
+import DogProfileSummary from "../components/DogProfileSummary"
 
 const Dog = () => {
   const theme = useTheme()
@@ -77,6 +78,8 @@ const Dog = () => {
                 </Grid>
               </Hidden>
               <Grid item xs={12}>
+                <DogProfileSummary />
+
                 <ExpansionPanel
                   square
                   defaultExpanded
@@ -88,32 +91,9 @@ const Dog = () => {
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography variant="h6">Summary</Typography>
                   </ExpansionPanelSummary>
-                  <ExpansionPanelDetails style={{ background: "#fafafa" }}>
-                    <Grid
-                      container
-                      spacing={smUp ? 8 : 0}
-                      alignItems="flex-start"
-                    >
-                      <Grid item xs={12} sm={6}>
-                        <DogProfileRow label="Age" info="11 months" first />
-                        <DogProfileRow label="Breed" info="German Shepherd" />
-                        <DogProfileRow label="Sex" info="Female" />
-                        <DogProfileRow label="Licence required" info="Yes" />
-                        <DogProfileRow label="Location" info="Shelter" />
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <DogProfileRow
-                          label="Time in care"
-                          info="3 months"
-                          first={smUp ? true : false}
-                        />
-                        <DogProfileRow label="Dog-friendly" info="Yes" />
-                        <DogProfileRow label="Cat-friendly" info="Yes" />
-                        <DogProfileRow label="Family-friendly" info="Yes" />
-                        <DogProfileRow label="Sterilized" info="Yes" />
-                      </Grid>
-                    </Grid>
-                  </ExpansionPanelDetails>
+                  <ExpansionPanelDetails
+                    style={{ background: "#fafafa" }}
+                  ></ExpansionPanelDetails>
                 </ExpansionPanel>
               </Grid>
               <Grid item xs={12}>
@@ -263,25 +243,6 @@ const Dog = () => {
         </Grid>
       </Grid>
     </Box>
-  )
-}
-
-const DogProfileRow = props => {
-  return (
-    <Grid container alignItems="flex-end">
-      <Grid item xs={6}>
-        <Box py={0.5} borderBottom={1}>
-          <Typography variant="overline">{props.label}</Typography>
-        </Box>
-      </Grid>
-      <Grid item xs={6}>
-        <Box py={0.5} borderBottom={1}>
-          <Typography variant="body2" align="right">
-            {props.info}
-          </Typography>
-        </Box>
-      </Grid>
-    </Grid>
   )
 }
 
