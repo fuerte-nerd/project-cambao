@@ -1,42 +1,12 @@
 import React from "react"
 
-const DogProfileExpansionPanel = () => {
+const DogProfileExpansionPanel = props => {
   return (
-    <ExpansionPanel
-      square
-      defaultExpanded={window.innerWidth > expandedThreshold ? true : false}
-    >
+    <ExpansionPanel square defaultExpanded={props.expanded ? true : false}>
       <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-        <Typography variant="body2">More photos</Typography>
+        <Typography variant={props.headingVariant}>{props.title}</Typography>
       </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
-        <Grid container spacing={smUp ? 1 : 0}>
-          <Grid item xs={3} sm={2} md={3} lg={2}>
-            <Img fluid={data.thumb.childImageSharp.fluid} />
-          </Grid>
-          <Grid item xs={3} sm={2} md={3} lg={2}>
-            <Img fluid={data.thumb.childImageSharp.fluid} />
-          </Grid>
-          <Grid item xs={3} sm={2} md={3} lg={2}>
-            <Img fluid={data.thumb.childImageSharp.fluid} />
-          </Grid>
-          <Grid item xs={3} sm={2} md={3} lg={2}>
-            <Img fluid={data.thumb.childImageSharp.fluid} />
-          </Grid>
-          <Grid item xs={3} sm={2} md={3} lg={2}>
-            <Img fluid={data.thumb.childImageSharp.fluid} />
-          </Grid>
-          <Grid item xs={3} sm={2} md={3} lg={2}>
-            <Img fluid={data.thumb.childImageSharp.fluid} />
-          </Grid>
-          <Grid item xs={3} sm={2} md={3} lg={2}>
-            <Img fluid={data.thumb.childImageSharp.fluid} />
-          </Grid>
-          <Grid item xs={3} sm={2} md={3} lg={2}>
-            <Img fluid={data.thumb.childImageSharp.fluid} />
-          </Grid>
-        </Grid>
-      </ExpansionPanelDetails>
+      <ExpansionPanelDetails>{props.children}</ExpansionPanelDetails>
     </ExpansionPanel>
   )
 }
