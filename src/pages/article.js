@@ -22,7 +22,7 @@ const Article = () => {
           <Img fluid={data.dog1.childImageSharp.fluid} />
         </Grid>
         <Grid item xs={12} md={7}>
-          <Box bgcolor="secondary.main" color="white">
+          <Box color="white">
             <Typography variant="h2">This is the article heading</Typography>
           </Box>
           <Box bgcolor="white">
