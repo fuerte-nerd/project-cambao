@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  useTheme,
   ExpansionPanel,
   ExpansionPanelSummary,
   Typography,
@@ -8,6 +9,7 @@ import {
 import { ExpandMore } from "@material-ui/icons"
 
 const DogProfileExpansionPanel = props => {
+  const theme = useTheme()
   const expandedThreshold = 824
   return (
     <ExpansionPanel
@@ -20,6 +22,11 @@ const DogProfileExpansionPanel = props => {
           : false
       }
       style={{ margin: 0 }}
+      style={{
+        margin: 0,
+        border: `1px solid ${theme.palette.text.secondary}`,
+        borderBottom: props.last ? 0 : 1,
+      }}
     >
       <ExpansionPanelSummary expandIcon={<ExpandMore />}>
         <Typography variant={props.headingVariant}>{props.title}</Typography>

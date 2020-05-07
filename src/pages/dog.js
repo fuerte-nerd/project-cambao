@@ -79,22 +79,6 @@ const Dog = () => {
               </Hidden>
               <Grid item xs={12}>
                 <DogProfileSummary />
-
-                <ExpansionPanel
-                  square
-                  defaultExpanded
-                  style={{
-                    border: `1px solid ${theme.palette.text.secondary}`,
-                    borderBottom: 0,
-                  }}
-                >
-                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <Typography variant="h6">Summary</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails
-                    style={{ background: "#fafafa" }}
-                  ></ExpansionPanelDetails>
-                </ExpansionPanel>
               </Grid>
               <Grid item xs={12}>
                 <ExpansionPanel
