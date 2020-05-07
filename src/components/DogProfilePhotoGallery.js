@@ -1,12 +1,12 @@
 import React from "react"
-import { useTheme, useMediaQuery, Grid } from "@material-ui/core"
 import Img from "gatsby-image"
+
+import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
+import DogProfilePhotoGalleryThumbs from "./DogProfilePhotoGalleryThumbs"
 
 import { graphql, useStaticQuery } from "gatsby"
 
 const DogProfilePhotoGallery = () => {
-  const theme = useTheme()
-  const smUp = useMediaQuery(theme.breakpoints.up("sm"))
   const data = useStaticQuery(graphql`
     {
       dog1: file(name: { eq: "test" }) {
@@ -28,32 +28,13 @@ const DogProfilePhotoGallery = () => {
   return (
     <>
       <Img fluid={data.dog1.childImageSharp.fluid} />
-      <Grid container spacing={smUp ? 1 : 0}>
-        <Grid item xs={3} sm={2} md={3} lg={2}>
-          <Img fluid={data.thumb.childImageSharp.fluid} />
-        </Grid>
-        <Grid item xs={3} sm={2} md={3} lg={2}>
-          <Img fluid={data.thumb.childImageSharp.fluid} />
-        </Grid>
-        <Grid item xs={3} sm={2} md={3} lg={2}>
-          <Img fluid={data.thumb.childImageSharp.fluid} />
-        </Grid>
-        <Grid item xs={3} sm={2} md={3} lg={2}>
-          <Img fluid={data.thumb.childImageSharp.fluid} />
-        </Grid>
-        <Grid item xs={3} sm={2} md={3} lg={2}>
-          <Img fluid={data.thumb.childImageSharp.fluid} />
-        </Grid>
-        <Grid item xs={3} sm={2} md={3} lg={2}>
-          <Img fluid={data.thumb.childImageSharp.fluid} />
-        </Grid>
-        <Grid item xs={3} sm={2} md={3} lg={2}>
-          <Img fluid={data.thumb.childImageSharp.fluid} />
-        </Grid>
-        <Grid item xs={3} sm={2} md={3} lg={2}>
-          <Img fluid={data.thumb.childImageSharp.fluid} />
-        </Grid>
-      </Grid>
+      <DogProfileExpansionPanel
+        title="Photo Gallery"
+        headingVariant="body2"
+        expanded
+      >
+        <DogProfilePhotoGalleryThumbs />
+      </DogProfileExpansionPanel>
     </>
   )
 }
