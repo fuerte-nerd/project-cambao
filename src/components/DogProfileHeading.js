@@ -10,7 +10,7 @@ const DogProfileHeading = props => {
       </Box>
       <Box>
         {props.mobile ? (
-          <IconButton edge="start">
+          <IconButton edge="end">
             <Share />
           </IconButton>
         ) : (
@@ -21,7 +21,7 @@ const DogProfileHeading = props => {
             <IconButton>
               <WhatsApp />
             </IconButton>
-            <IconButton>
+            <IconButton edge="end">
               <Email />
             </IconButton>
           </>

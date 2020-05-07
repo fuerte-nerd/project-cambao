@@ -3,7 +3,12 @@ import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 
 const DogProfileVideo = props => {
   return (
-    <DogProfileExpansionPanel title="Video" headingVariant="h6" youtube>
+    <DogProfileExpansionPanel
+      title="Video"
+      headingVariant="h6"
+      expanded
+      youtube
+    >
       <iframe
         title="Video of dog"
         width="560"
@@ -11,7 +16,9 @@ const DogProfileVideo = props => {
         src="https://www.youtube.com/embed/DgAw6jFo6Mw"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
         style={{
           position: "absolute",
           top: 0,
