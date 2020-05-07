@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Typography, Button } from "@material-ui/core"
+import { Box, Typography, Button, Divider } from "@material-ui/core"
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 import InternalLink from "./InternalLink"
 
@@ -42,6 +42,11 @@ const Question = props => (
         {props.linkLabel}
       </Button>
     </InternalLink>
+    {props.last ? null : (
+      <Box mt={2}>
+        <Divider />
+      </Box>
+    )}
   </Box>
 )
 

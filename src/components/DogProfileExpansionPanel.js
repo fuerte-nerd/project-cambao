@@ -27,7 +27,10 @@ const DogProfileExpansionPanel = props => {
         borderBottom: props.last ? 0 : 1,
       }}
     >
-      <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+      <ExpansionPanelSummary
+        expandIcon={<ExpandMore />}
+        style={{ background: theme.palette.secondary.main }}
+      >
         <Typography variant={props.headingVariant}>{props.title}</Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails
