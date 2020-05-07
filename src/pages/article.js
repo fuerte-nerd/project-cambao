@@ -64,8 +64,10 @@ const Article = () => {
                     </Typography>
                   </Box>
                   <Box align="right">
-                    <Typography variant="subtitle1">12 April 2020</Typography>
-                    <Typography variant="subtitle2">Posted by FDR</Typography>
+                    <Typography variant="overline">12 April 2020</Typography>
+                    <Typography variant="caption" display="block">
+                      Posted by FDR
+                    </Typography>
                     <IconButton color="secondary">
                       <Facebook />
                     </IconButton>
@@ -92,7 +94,7 @@ const Article = () => {
                 ut consectetur! Quibusdam iusto laboriosam eos nulla eos. Unde
                 vero aspernatur beatae?
               </Typography>
-              <Box py={2} maxWidth={400} margin="auto">
+              <Box pt={2} pb={4} maxWidth={400} margin="auto">
                 <Img fluid={data.dog2.childImageSharp.fluid} />
               </Box>
               <Typography paragraph>
