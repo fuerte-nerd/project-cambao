@@ -33,7 +33,12 @@ const Heading = () => {
           maxWidth: 150,
         }}
       />
-      <Box ml={isNotMobile ? 2 : 0} mt={isNotMobile ? 0 : 1} align="center">
+      <Box
+        ml={isNotMobile ? 2 : 0}
+        mt={isNotMobile ? 0 : 1}
+        align="center"
+        color="white"
+      >
         <Typography variant="h3">We are their voice!</Typography>
         <Typography variant="subtitle1">
           Taking care of the abandoned and mistreated dogs of the La Oliva area
