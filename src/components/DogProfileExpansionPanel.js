@@ -1,8 +1,25 @@
 import React from "react"
+import {
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  Typography,
+  ExpansionPanelDetails,
+} from "@material-ui/core"
+import { ExpandMore } from "@material-ui/icons"
 
 const DogProfileExpansionPanel = props => {
+  const expandedThreshold = 824
   return (
-    <ExpansionPanel square defaultExpanded={props.expanded ? true : false}>
+    <ExpansionPanel
+      square
+      defaultExpanded={
+        props.expanded
+          ? window.innerWidth > expandedThreshold
+            ? true
+            : false
+          : false
+      }
+    >
       <ExpansionPanelSummary expandIcon={<ExpandMore />}>
         <Typography variant={props.headingVariant}>{props.title}</Typography>
       </ExpansionPanelSummary>

@@ -100,18 +100,6 @@ const Dog = () => {
                 </Grid>
               </Grid>
             </DogProfileExpansionPanel>
-
-            <ExpansionPanel
-              square
-              defaultExpanded={
-                window.innerWidth > expandedThreshold ? true : false
-              }
-            >
-              <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                <Typography variant="body2">More photos</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails></ExpansionPanelDetails>
-            </ExpansionPanel>
           </Box>
         </Grid>
         <Grid item xs={12} md={8}>
