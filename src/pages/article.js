@@ -13,6 +13,13 @@ const Article = () => {
           }
         }
       }
+      dog2: file(name: { eq: "test" }) {
+        childImageSharp {
+          fluid(maxWidth: 400, maxHeight: 450, quality: 15) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   return (
@@ -28,6 +35,32 @@ const Article = () => {
           <Box bgcolor="white">
             <Typography variant="subtitle1">12 April 2020</Typography>
             <Typography variant="subtitle2">Posted by FDR</Typography>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Box color="#fafafa">
+            <Typography>
+              Consectetur aperiam fuga quod quo ea? Ab unde quos fuga corrupti
+              qui recusandae vero soluta recusandae. Ipsum minima quibusdam
+              placeat repellendus eaque Aliquam ullam velit sint vel ipsam
+              Aperiam neque laborum ad consectetur eius Iste nam eius nesciunt
+              ut consectetur! Quibusdam iusto laboriosam eos nulla eos. Unde
+              vero aspernatur beatae?
+            </Typography>
+            <Box py={2} maxWidth={400} margin="auto">
+              <Img fluid={data.dog2.childImageSharp.fluid} />
+            </Box>
+            <Typography>
+              Lorem ut unde laborum similique nisi laboriosam facilis nisi
+              provident Totam amet molestias veniam laudantium modi Culpa
+              eligendi ea dicta illum iure Numquam unde blanditiis fugit facere
+              perferendis? Dolore possimus pariatur fugit laborum aliquid totam.
+              Eius possimus sint vero numquam repellendus Officia voluptas magni
+              labore architecto dolore in Aliquid deleniti voluptatem blanditiis
+              officia eaque maxime architecto recusandae Beatae recusandae
+              aliquid a molestias doloremque non? Labore aliquam saepe nihil
+              voluptas consequatur Maiores veniam ipsa itaque voluptatem
+            </Typography>
           </Box>
         </Grid>
       </Grid>
