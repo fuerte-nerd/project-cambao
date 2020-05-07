@@ -1,5 +1,7 @@
 import React from "react"
 import {
+  useTheme,
+  useMediaQuery,
   Container,
   Grid,
   Box,
@@ -12,6 +14,9 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 const Article = () => {
+  const theme = useTheme()
+  const xsDown = theme.breakpoints.down("xs")
+
   const data = useStaticQuery(graphql`
     {
       dog1: file(name: { eq: "test" }) {
@@ -46,13 +51,14 @@ const Article = () => {
               </Grid>
               <Grid item xs={12} md={7}>
                 <Box
-                  p={3}
+                  pt={3}
+                  px={3}
                   height="100%"
                   display="flex"
                   flexDirection="column"
                   justifyContent="space-between"
                 >
-                  <Box>
+                  <Box mb={xsDown ? 3 : 0}>
                     <Typography variant="h2">
                       This is the article heading
                     </Typography>
@@ -60,13 +66,13 @@ const Article = () => {
                   <Box align="right">
                     <Typography variant="subtitle1">12 April 2020</Typography>
                     <Typography variant="subtitle2">Posted by FDR</Typography>
-                    <IconButton edge="start" color="secondary">
+                    <IconButton color="secondary">
                       <Facebook />
                     </IconButton>
                     <IconButton color="secondary">
                       <WhatsApp />
                     </IconButton>
-                    <IconButton color="secondary">
+                    <IconButton edge="end" color="secondary">
                       <Email />
                     </IconButton>
                   </Box>

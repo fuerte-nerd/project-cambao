@@ -78,7 +78,7 @@ const Layout = props => {
               <Sidebar />
             </Hidden>
             <Grid item xs={12} md={10} justify="center">
-              <Box mx={isNotMobile ? 3 : 1} my={3}>
+              <Box mx={isNotMobile ? 3 : 1} my={isNotMobile ? 3 : 2}>
                 <AnimatePresence>
                   <motion.main
                     key={props.location.pathname}
