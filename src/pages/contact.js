@@ -1,14 +1,17 @@
 import React from "react"
-import { Box, Typography } from "@material-ui/core"
+import { Grid, TextField, Box, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
 
 const Contact = () => {
   return (
     <>
       <SEO title="Contact" />
-      <Box height="200vh">
-        <Typography>This is the contact page</Typography>
+      <Box color="white">
+        <Typography variant="h2">Contact us</Typography>
       </Box>
+      <Grid container>
+        <Grid item></Grid>
+      </Grid>
     </>
   )
 }
