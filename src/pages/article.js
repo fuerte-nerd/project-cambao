@@ -59,7 +59,7 @@ const Article = () => {
                   justifyContent="space-between"
                 >
                   <Box mb={xsDown ? 3 : 0}>
-                    <Typography variant="h2">
+                    <Typography variant="h3" variantMapping={{ h3: "h2" }}>
                       This is the article heading
                     </Typography>
                   </Box>
@@ -70,6 +70,9 @@ const Article = () => {
                     </Typography>
                     <IconButton color="secondary">
                       <Facebook />
+                    </IconButton>
+                    <IconButton color="secondary">
+                      <Twitter />
                     </IconButton>
                     <IconButton color="secondary">
                       <WhatsApp />
