@@ -1,4 +1,4 @@
 module.exports = {
   fdr_orange: "#f89117",
-  fdr_blue: "#3ba39c",
+  fdr_blue: "#05afa5",
 }
