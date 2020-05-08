@@ -1,5 +1,6 @@
 import React from "react"
 import { Grid, Button, TextField, Box, Typography } from "@material-ui/core"
+import { Email } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import SEO from "../components/seo"
 
@@ -25,8 +26,23 @@ const Contact = () => {
           Contact us on Messenger
         </Button>
       </Box>
-      <Box color="white">
+      <Box mt={3} color="white">
         <Typography variant="h3">"I don't use Messenger..."</Typography>
+      </Box>
+      <Box>
+        <Typography paragraph>
+          No problem! You can also contact us by email...
+        </Typography>
+      </Box>
+      <Box>
+        <Button
+          size="large"
+          variant="contained"
+          color="secondary"
+          startIcon={<Email />}
+        >
+          Send us an email
+        </Button>
       </Box>
       <Grid container>
         <Grid item></Grid>
