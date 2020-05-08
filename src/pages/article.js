@@ -9,7 +9,7 @@ import {
   Typography,
   Divider,
 } from "@material-ui/core"
-import { Facebook, WhatsApp, Email } from "@material-ui/icons"
+import { Facebook, Twitter, WhatsApp, Email } from "@material-ui/icons"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
