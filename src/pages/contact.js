@@ -44,8 +44,25 @@ const Contact = () => {
           Send us an email
         </Button>
       </Box>
+      <Box mt={3}>
+        <Typography>
+          If you prefer, you can send us an email directly from this page by
+          completing and submitting the form below...
+        </Typography>
+      </Box>
       <Grid container>
-        <Grid item></Grid>
+        <Grid item xs={12} md={4}>
+          <TextField label="Name" name="name" fullWidth required />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <TextField
+            label="Email"
+            name="email"
+            fullWidth
+            required
+            type="email"
+          />
+        </Grid>
       </Grid>
     </>
   )
