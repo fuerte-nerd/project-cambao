@@ -18,7 +18,15 @@ const Footer = () => {
             Where are we?
           </Typography>
           <LocationMap />
+          <Box mt={2}>
+            <Typography display="block">Fuerteventura Dog Rescue</Typography>
+            <Typography display="block">Ayuntamiento de La Oliva</Typography>
+            <Typography display="block">La Oliva</Typography>
+            <Typography display="block">Fuerteventura</Typography>
+            <Typography display="block">Spain</Typography>
+          </Box>
         </Box>
+
         <Box pb={4}>
           <Typography variant="h4" paragraph>
             Opening Hours
