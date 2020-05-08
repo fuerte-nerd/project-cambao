@@ -50,7 +50,7 @@ const Contact = () => {
           completing and submitting the form below...
         </Typography>
       </Box>
-      <Grid container>
+      <Grid container alignItems="center" justify="center" spacing={2}>
         <Grid item xs={12} md={4}>
           <TextField label="Name" name="name" fullWidth required />
         </Grid>
@@ -62,6 +62,21 @@ const Contact = () => {
             required
             type="email"
           />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <TextField label="Phone" name="phone" fullWidth />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            label="Message"
+            name="message"
+            fullWidth
+            multiline
+            required
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Button>Send</Button>
         </Grid>
       </Grid>
     </>
