@@ -2,6 +2,7 @@ import React from "react"
 import {
   useTheme,
   useMediaQuery,
+  Container,
   Hidden,
   IconButton,
   Box,
@@ -23,37 +24,39 @@ const Dog = () => {
 
   return (
     <Box>
-      <Grid container spacing={mdUp ? 1 : 0}>
-        <Grid item xs={12} md={4}>
-          <Hidden mdUp>
-            <DogProfileHeading mobile />
-          </Hidden>
-          <DogProfilePhotoGallery />
-        </Grid>
-        <Grid item xs={12} md={8}>
-          <Box px={mdUp ? 2 : 0}>
-            <Grid container spacing={0} alignItems="center">
-              <Hidden smDown>
+      <Container>
+        <Grid container spacing={mdUp ? 1 : 0}>
+          <Grid item xs={12} md={4}>
+            <Hidden mdUp>
+              <DogProfileHeading mobile />
+            </Hidden>
+            <DogProfilePhotoGallery />
+          </Grid>
+          <Grid item xs={12} md={8}>
+            <Box px={mdUp ? 2 : 0}>
+              <Grid container spacing={0} alignItems="center">
+                <Hidden smDown>
+                  <Grid item xs={12}>
+                    <DogProfileHeading />
+                  </Grid>
+                </Hidden>
                 <Grid item xs={12}>
-                  <DogProfileHeading />
+                  <DogProfileSummary />
                 </Grid>
-              </Hidden>
-              <Grid item xs={12}>
-                <DogProfileSummary />
+                <Grid item xs={12}>
+                  <DogProfileVideo />
+                </Grid>
+                <Grid item>
+                  <DogProfileDescription />
+                </Grid>
+                <Grid item xs={12}>
+                  <DogProfileFAQs />
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <DogProfileVideo />
-              </Grid>
-              <Grid item>
-                <DogProfileDescription />
-              </Grid>
-              <Grid item xs={12}>
-                <DogProfileFAQs />
-              </Grid>
-            </Grid>
-          </Box>
+            </Box>
+          </Grid>
         </Grid>
-      </Grid>
+      </Container>
     </Box>
   )
 }

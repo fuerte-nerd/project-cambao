@@ -8,12 +8,12 @@ const TheDogs = () => {
   return (
     <>
       <SEO title="The Dogs" />
-      <Box color="white">
-        <Typography variant="h2">The Dogs</Typography>
-      </Box>
       <Container>
+        <Box color="white">
+          <Typography variant="h2">The Dogs</Typography>
+        </Box>
         <Box mb={2}>
-          <Typography variant="subtitle2">
+          <Typography variant="subtitle1">
             We have lots of dogs waiting for their forever home. Come and meet
             them! They can't wait to meet you!
           </Typography>

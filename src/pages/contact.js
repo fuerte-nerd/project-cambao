@@ -16,10 +16,10 @@ const Contact = () => {
   return (
     <>
       <SEO title="Contact" />
-      <Box color="white">
-        <Typography variant="h2">Contact us</Typography>
-      </Box>
       <Container>
+        <Box color="white">
+          <Typography variant="h2">Contact us</Typography>
+        </Box>
         <Box py={2}>
           <Typography paragraph>
             The most efficient method to get in touch with us is via
