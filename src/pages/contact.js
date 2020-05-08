@@ -1,6 +1,6 @@
 import React from "react"
 import { Grid, Button, TextField, Box, Typography } from "@material-ui/core"
-import { Email } from "@material-ui/icons"
+import { Send, Email } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import SEO from "../components/seo"
 
@@ -50,7 +50,7 @@ const Contact = () => {
           completing and submitting the form below...
         </Typography>
       </Box>
-      <Grid container alignItems="center" justify="center" spacing={2}>
+      <Grid container align="center" spacing={2}>
         <Grid item xs={12} md={4}>
           <TextField label="Name" name="name" fullWidth required />
         </Grid>
@@ -76,7 +76,9 @@ const Contact = () => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button>Send</Button>
+          <Button variant="contained" color="secondary" endIcon={<Send />}>
+            Send
+          </Button>
         </Grid>
       </Grid>
     </>
