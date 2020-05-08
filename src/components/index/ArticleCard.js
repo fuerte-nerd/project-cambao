@@ -47,7 +47,7 @@ const ArticleCard = () => {
                   accusantium temporibus animi! Facilis molestias ab
                   necessitatibus similique itaque Exercitationem assumenda nemo.
                 </Typography>
-                <Box align="end">
+                <Box align="right" width="100%">
                   <Button variant="contained" color="secondary">
                     Read more
                   </Button>

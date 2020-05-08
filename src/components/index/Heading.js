@@ -16,7 +16,7 @@ const Heading = () => {
     {
       logo: file(name: { eq: "logo" }) {
         childImageSharp {
-          fluid(maxWidth: 205, maxHeight: 205) {
+          fluid(maxWidth: 205, maxHeight: 205, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
