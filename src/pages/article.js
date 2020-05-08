@@ -37,58 +37,58 @@ const Article = () => {
   `)
   return (
     <Box>
-      <Grid container spacing={2} alignItems="flex-end">
-        <Grid item xs={12}>
-          <Box bgcolor="#fafafa" boxShadow={2}>
-            <Grid container>
-              <Grid
-                item
-                xs={12}
-                md={5}
-                style={{ paddingTop: 0, paddingBottom: 0 }}
-              >
-                <Img fluid={data.dog1.childImageSharp.fluid} />
-              </Grid>
-              <Grid item xs={12} md={7}>
-                <Box
-                  pt={3}
-                  px={3}
-                  height="100%"
-                  display="flex"
-                  flexDirection="column"
-                  justifyContent="space-between"
+      <Container>
+        <Grid container spacing={2} alignItems="flex-end">
+          <Grid item xs={12}>
+            <Box bgcolor="#fafafa" boxShadow={2}>
+              <Grid container>
+                <Grid
+                  item
+                  xs={12}
+                  md={5}
+                  style={{ paddingTop: 0, paddingBottom: 0 }}
                 >
-                  <Box mb={xsDown ? 3 : 0} color="primary.dark">
-                    <Typography variant="h2">
-                      This is the article heading
-                    </Typography>
+                  <Img fluid={data.dog1.childImageSharp.fluid} />
+                </Grid>
+                <Grid item xs={12} md={7}>
+                  <Box
+                    pt={3}
+                    px={3}
+                    height="100%"
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="space-between"
+                  >
+                    <Box mb={xsDown ? 3 : 0} color="primary.dark">
+                      <Typography variant="h2">
+                        This is the article heading
+                      </Typography>
+                    </Box>
+                    <Box align="right">
+                      <Typography variant="overline">12 April 2020</Typography>
+                      <Typography variant="caption" display="block">
+                        Posted by FDR
+                      </Typography>
+                      <IconButton color="secondary">
+                        <Facebook />
+                      </IconButton>
+                      <IconButton color="secondary">
+                        <Twitter />
+                      </IconButton>
+                      <IconButton color="secondary">
+                        <WhatsApp />
+                      </IconButton>
+                      <IconButton edge="end" color="secondary">
+                        <Email />
+                      </IconButton>
+                    </Box>
                   </Box>
-                  <Box align="right">
-                    <Typography variant="overline">12 April 2020</Typography>
-                    <Typography variant="caption" display="block">
-                      Posted by FDR
-                    </Typography>
-                    <IconButton color="secondary">
-                      <Facebook />
-                    </IconButton>
-                    <IconButton color="secondary">
-                      <Twitter />
-                    </IconButton>
-                    <IconButton color="secondary">
-                      <WhatsApp />
-                    </IconButton>
-                    <IconButton edge="end" color="secondary">
-                      <Email />
-                    </IconButton>
-                  </Box>
-                </Box>
+                </Grid>
               </Grid>
-            </Grid>
-          </Box>
-        </Grid>
-        <Grid item xs={12}>
-          <Box color="#fafafa">
-            <Container>
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Box color="#fafafa">
               <Typography paragraph>
                 Consectetur aperiam fuga quod quo ea? Ab unde quos fuga corrupti
                 qui recusandae vero soluta recusandae. Ipsum minima quibusdam
@@ -139,10 +139,10 @@ const Article = () => {
                 Molestiae tempore consequuntur nemo labore ipsa fugiat. Nam non
                 ex eligendi.
               </Typography>
-            </Container>
-          </Box>
+            </Box>
+          </Grid>
         </Grid>
-      </Grid>
+      </Container>
     </Box>
   )
 }
