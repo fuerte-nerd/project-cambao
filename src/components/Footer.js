@@ -21,6 +21,7 @@ const Footer = () => {
           <Box mt={2}>
             <Typography display="block">Fuerteventura Dog Rescue</Typography>
             <Typography display="block">Ayuntamiento de La Oliva</Typography>
+            <Typography display="block">Calle Juan Cabrera Méndez</Typography>
             <Typography display="block">La Oliva</Typography>
             <Typography display="block">Fuerteventura</Typography>
             <Typography display="block">Spain</Typography>
