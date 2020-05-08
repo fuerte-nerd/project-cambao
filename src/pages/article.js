@@ -58,8 +58,8 @@ const Article = () => {
                   flexDirection="column"
                   justifyContent="space-between"
                 >
-                  <Box mb={xsDown ? 3 : 0}>
-                    <Typography variant="h3" variantMapping={{ h3: "h2" }}>
+                  <Box mb={xsDown ? 3 : 0} color="primary.dark">
+                    <Typography variant="h2">
                       This is the article heading
                     </Typography>
                   </Box>
