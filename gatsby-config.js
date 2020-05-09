@@ -10,10 +10,18 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `articles`,
+        path: `${__dirname}/articles`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-react-leaflet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
