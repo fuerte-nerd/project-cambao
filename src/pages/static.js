@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Grid, Typography } from "@material-ui/core"
+import { Container, Box, Grid, Typography } from "@material-ui/core"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -16,15 +16,15 @@ const Static = () => {
     }
   `)
   return (
-    <Box>
-      <Box>
+    <Container>
+      <Box mb={2} color="white">
         <Typography variant="h2">Page Title</Typography>
       </Box>
-      <Grid container>
-        <Grid item>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6} lg={5}>
           <Img fluid={data.dog1.childImageSharp.fluid} />
         </Grid>
-        <Grid item>
+        <Grid item xs={12} md={6} lg={7}>
           Consectetur ducimus laudantium assumenda doloremque est! Laboriosam
           iste voluptas earum distinctio sint? Repellendus eligendi non repellat
           praesentium dignissimos? At repellendus impedit aliquam aspernatur
@@ -38,7 +38,7 @@ const Static = () => {
       <Box>
         <Typography></Typography>
       </Box>
-    </Box>
+    </Container>
   )
 }
 
