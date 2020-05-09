@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import InternalLink from "./InternalLink"
 import {
   Tooltip,
+  Button,
   Hidden,
   Box,
   AppBar,
@@ -87,12 +88,9 @@ const Navbar = props => {
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Tooltip title="Share this page!">
-          <Box display="flex" flexDirection="column" alignItems="center">
-            <IconButton color="inherit">
-              <Share />
-            </IconButton>
-            <Typography variant="caption">Share</Typography>
-          </Box>
+          <Button color="inherit" endIcon={<Share />}>
+            Share
+          </Button>
         </Tooltip>
         <Tooltip title="Show me the menu!">
           <IconButton
@@ -100,6 +98,7 @@ const Navbar = props => {
             id="open-menu"
             color="inherit"
             edge="end"
+            size="small"
           >
             <Menu />
           </IconButton>
