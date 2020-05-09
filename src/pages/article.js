@@ -44,40 +44,41 @@ const Article = () => {
     <Container>
       <Box mb={2}>
         <Card>
-          <CardActionArea>
-            <Grid container>
-              <Grid item xs={12} md={6} lg={5}>
-                <CardMedia
-                  image={data.dog1.childImageSharp.fluid.src}
-                  style={{ width: "100%", height: 400 }}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} lg={5}>
-                <CardContent>
-                  <Typography variant="h2">
-                    This is the article heading
-                  </Typography>
-                  <Typography variant="overline">12 April 2020</Typography>
-                </CardContent>
-              </Grid>
+          <Grid container>
+            <Grid item xs={12} md={6} lg={5}>
+              <CardMedia
+                image={data.dog1.childImageSharp.fluid.src}
+                style={{ width: "100%", height: 400 }}
+              />
             </Grid>
-          </CardActionArea>
-          <CardActions
-            style={{ background: theme.palette.secondary.main, color: "white" }}
-          >
-            <IconButton color="inherit">
-              <Facebook />
-            </IconButton>
-            <IconButton color="inherit">
-              <Twitter />
-            </IconButton>
-            <IconButton color="inherit">
-              <WhatsApp />
-            </IconButton>
-            <IconButton color="inherit">
-              <Email />
-            </IconButton>
-          </CardActions>
+            <Grid item xs={12} md={6} lg={7}>
+              <CardContent>
+                <Typography variant="h2">
+                  This is the article heading
+                </Typography>
+                <Typography variant="overline">12 April 2020</Typography>
+              </CardContent>
+              <CardActions
+                style={{
+                  background: theme.palette.secondary.main,
+                  color: "white",
+                }}
+              >
+                <IconButton color="inherit">
+                  <Facebook />
+                </IconButton>
+                <IconButton color="inherit">
+                  <Twitter />
+                </IconButton>
+                <IconButton color="inherit">
+                  <WhatsApp />
+                </IconButton>
+                <IconButton color="inherit">
+                  <Email />
+                </IconButton>
+              </CardActions>
+            </Grid>
+          </Grid>
         </Card>
       </Box>
       <Box>
