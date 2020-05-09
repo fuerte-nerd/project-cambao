@@ -4,6 +4,11 @@ import {
   useMediaQuery,
   Container,
   Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  CardActionArea,
   Box,
   IconButton,
   Typography,
@@ -38,6 +43,40 @@ const Article = () => {
   return (
     <Box>
       <Container>
+        <Card>
+          <CardActionArea>
+            <Grid container>
+              <Grid item xs={12} md={6} lg={5}>
+                <CardMedia
+                  image={data.dog1.childImageSharp.fluid.src}
+                  style={{ width: "100%", height: 400 }}
+                />
+              </Grid>
+              <Grid item xs={12} md={6} lg={5}>
+                <CardContent>
+                  <Typography></Typography>
+                  <Typography></Typography>
+                  <Typography></Typography>
+                </CardContent>
+              </Grid>
+            </Grid>
+          </CardActionArea>
+          <CardActions>
+            <IconButton>
+              <Facebook />
+            </IconButton>
+            <IconButton>
+              <Twitter />
+            </IconButton>
+            <IconButton>
+              <WhatsApp />
+            </IconButton>
+            <IconButton>
+              <Email />
+            </IconButton>
+          </CardActions>
+        </Card>
+
         <Grid container spacing={2} alignItems="flex-end">
           <Grid item xs={12}>
             <Box bgcolor="#fafafa" boxShadow={2}>
