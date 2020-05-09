@@ -22,8 +22,7 @@ const Contact = () => {
         </Box>
         <Box py={2}>
           <Typography paragraph>
-            The most efficient method to get in touch with us is via
-            Messenger...
+            The most efficient way to get in touch with us is via Messenger...
           </Typography>
           <Button
             size="large"
@@ -88,10 +87,11 @@ const Contact = () => {
                     />
                   </Grid>
                   <Grid item xs={12}>
-                    <Box p={4}>
+                    <Box py={2}>
                       <Button
                         variant="contained"
                         color="secondary"
+                        fullWidth
                         endIcon={<Send />}
                       >
                         Send

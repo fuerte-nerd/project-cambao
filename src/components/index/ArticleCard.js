@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import {
   Box,
   Card,
+  CardMedia,
   CardActionArea,
   CardContent,
   Grid,
@@ -28,6 +29,7 @@ const ArticleCard = () => {
     <Box mb={1}>
       <Card>
         <CardActionArea>
+          <CardMedia image={data.dog1.childImageSharp.fluid} />
           <CardContent>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={5} md={4} lg={3}>
