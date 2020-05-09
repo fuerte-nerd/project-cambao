@@ -52,31 +52,38 @@ const Article = () => {
               />
             </Grid>
             <Grid item xs={12} md={6} lg={7}>
-              <CardContent>
-                <Typography variant="h2">
-                  This is the article heading
-                </Typography>
-                <Typography variant="overline">12 April 2020</Typography>
-              </CardContent>
-              <CardActions
-                style={{
-                  background: theme.palette.secondary.main,
-                  color: "white",
-                }}
+              <Box
+                height="100%"
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
               >
-                <IconButton color="inherit">
-                  <Facebook />
-                </IconButton>
-                <IconButton color="inherit">
-                  <Twitter />
-                </IconButton>
-                <IconButton color="inherit">
-                  <WhatsApp />
-                </IconButton>
-                <IconButton color="inherit">
-                  <Email />
-                </IconButton>
-              </CardActions>
+                <CardContent>
+                  <Typography variant="h2">
+                    This is the article heading
+                  </Typography>
+                  <Typography variant="overline">12 April 2020</Typography>
+                </CardContent>
+                <CardActions
+                  style={{
+                    background: theme.palette.secondary.main,
+                    color: "white",
+                  }}
+                >
+                  <IconButton color="inherit">
+                    <Facebook />
+                  </IconButton>
+                  <IconButton color="inherit">
+                    <Twitter />
+                  </IconButton>
+                  <IconButton color="inherit">
+                    <WhatsApp />
+                  </IconButton>
+                  <IconButton color="inherit">
+                    <Email />
+                  </IconButton>
+                </CardActions>
+              </Box>
             </Grid>
           </Grid>
         </Card>
