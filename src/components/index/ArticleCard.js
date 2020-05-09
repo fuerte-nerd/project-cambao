@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import {
+  useTheme,
+  useMediaQuery,
   Box,
   Card,
   CardMedia,
@@ -14,6 +16,8 @@ import {
 import Img from "gatsby-image"
 
 const ArticleCard = () => {
+  const theme = useTheme()
+  const mdUp = theme.breakpoints.up("md")
   const data = useStaticQuery(graphql`
     {
       dog1: file(name: { eq: "test" }) {
@@ -29,7 +33,7 @@ const ArticleCard = () => {
     <Box mb={1}>
       <Card>
         <CardActionArea>
-          <Box display="flex">
+          <Box display="flex" flexDirection={mdUp ? "row" : "column"}>
             <CardMedia
               style={{ width: "100%" }}
               image={data.dog1.childImageSharp.fluid.src}
