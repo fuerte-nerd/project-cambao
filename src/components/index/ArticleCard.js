@@ -14,6 +14,7 @@ import {
   Button,
   Divider,
 } from "@material-ui/core"
+import { LocalLibrary } from "@material-ui/icons"
 import Img from "gatsby-image"
 
 const ArticleCard = () => {
@@ -64,7 +65,9 @@ const ArticleCard = () => {
         <CardActions
           style={{ background: theme.palette.secondary.main, color: "white" }}
         >
-          <Button color="inherit">Read more</Button>
+          <Button color="inherit" startIcon={<LocalLibrary />}>
+            Read more
+          </Button>
         </CardActions>
       </Card>
     </Box>
