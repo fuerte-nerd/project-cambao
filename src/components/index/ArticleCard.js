@@ -33,32 +33,36 @@ const ArticleCard = () => {
     <Box mb={1}>
       <Card>
         <CardActionArea>
-          <Box display="flex" flexDirection={mdUp ? "row" : "column"}>
-            <CardMedia
-              style={{ width: 400, height: 400 }}
-              image={data.dog1.childImageSharp.fluid.src}
-            />
-            <CardContent>
-              <Typography variant="h3">Post title</Typography>
-              <Typography variant="overline">27 April 2020</Typography>
-              <Box mb={2}>
-                <Divider />
-              </Box>
+          <Grid container>
+            <Grid item xs={12} md={6} lg={5}>
+              <CardMedia
+                style={{ width: "100%", height: 400 }}
+                image={data.dog1.childImageSharp.fluid.src}
+              />
+            </Grid>
+            <Grid item xs={12} md={6} lg={7}>
+              <CardContent>
+                <Typography variant="h3">Post title</Typography>
+                <Typography variant="overline">27 April 2020</Typography>
+                <Box mb={2}>
+                  <Divider />
+                </Box>
 
-              <Typography align="justify" paragraph>
-                Lorem possimus non perspiciatis quibusdam iste. Numquam
-                veritatis consequatur velit ea ad quia? Deleniti autem dolorum
-                consequatur labore natus. Obcaecati assumenda debitis quas
-                accusantium temporibus animi! Facilis molestias ab
-                necessitatibus similique itaque Exercitationem assumenda nemo.
-              </Typography>
-              <Box align="right" width="100%">
-                <Button variant="contained" color="secondary">
-                  Read more
-                </Button>
-              </Box>
-            </CardContent>
-          </Box>
+                <Typography align="justify" paragraph>
+                  Lorem possimus non perspiciatis quibusdam iste. Numquam
+                  veritatis consequatur velit ea ad quia? Deleniti autem dolorum
+                  consequatur labore natus. Obcaecati assumenda debitis quas
+                  accusantium temporibus animi! Facilis molestias ab
+                  necessitatibus similique itaque Exercitationem assumenda nemo.
+                </Typography>
+                <Box align="right" width="100%">
+                  <Button variant="contained" color="secondary">
+                    Read more
+                  </Button>
+                </Box>
+              </CardContent>
+            </Grid>
+          </Grid>
         </CardActionArea>
       </Card>
     </Box>
