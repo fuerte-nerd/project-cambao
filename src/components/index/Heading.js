@@ -24,35 +24,37 @@ const Heading = () => {
     }
   `)
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      flexDirection={isNotMobile ? "row" : "column"}
-      mb={2}
-      width="100%"
-    >
-      <Img
-        fluid={data.logo.childImageSharp.fluid}
-        style={{
-          width: "100%",
-          maxWidth: 150,
-        }}
-      />
-      <Box ml={isNotMobile ? 2 : 0} mt={isNotMobile ? 0 : 1} align="center">
-        <Box color="white">
-          <Typography variant="h3">We are their voice!</Typography>
-        </Box>
-        <Container>
+    <Container>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="space-between"
+        flexDirection={isNotMobile ? "row" : "column"}
+        mb={2}
+        width="100%"
+      >
+        <Img
+          fluid={data.logo.childImageSharp.fluid}
+          style={{
+            width: "100%",
+            maxWidth: 150,
+          }}
+        />
+        <Box ml={isNotMobile ? 2 : 0} mt={isNotMobile ? 0 : 1} align="center">
+          <Box color="white">
+            <Typography variant="h1" variantMapping={{ h1: "h2" }}>
+              We are their voice!
+            </Typography>
+          </Box>
           <Box>
             <Typography variant="subtitle1">
               Taking care of the abandoned and mistreated dogs of the La Oliva
               area in Fuerteventura since 2013
             </Typography>
           </Box>
-        </Container>
+        </Box>
       </Box>
-    </Box>
+    </Container>
   )
 }
 
