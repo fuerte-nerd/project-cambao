@@ -88,7 +88,7 @@ const Navbar = props => {
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Tooltip title="Share this page!">
-          <Button color="inherit" endIcon={<Share />}>
+          <Button variant="outlined" color="inherit" endIcon={<Share />}>
             Share
           </Button>
         </Tooltip>
