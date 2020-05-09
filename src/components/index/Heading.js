@@ -28,7 +28,7 @@ const Heading = () => {
       <Box
         display="flex"
         justifyContent="space-between"
-        alignItems="space-between"
+        alignItems="center"
         flexDirection={isNotMobile ? "row" : "column"}
         mb={2}
         width="100%"
@@ -40,9 +40,9 @@ const Heading = () => {
             maxWidth: 150,
           }}
         />
-        <Box ml={isNotMobile ? 2 : 0} mt={isNotMobile ? 0 : 1} align="center">
+        <Box mt={isNotMobile ? 0 : 1} align={isNotMobile ? "right" : "center"}>
           <Box color="white">
-            <Typography variant="h1" variantMapping={{ h1: "h2" }}>
+            <Typography variant="h2" variantMapping={{ h1: "h2" }}>
               We are their voice!
             </Typography>
           </Box>
