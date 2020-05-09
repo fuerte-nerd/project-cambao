@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Typography } from "@material-ui/core"
+import { Box, Grid, Typography } from "@material-ui/core"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
