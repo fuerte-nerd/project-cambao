@@ -7,6 +7,7 @@ import {
   Card,
   CardMedia,
   CardActionArea,
+  CardActions,
   CardContent,
   Grid,
   Typography,
@@ -55,15 +56,16 @@ const ArticleCard = () => {
                   accusantium temporibus animi! Facilis molestias ab
                   necessitatibus similique itaque Exercitationem assumenda nemo.
                 </Typography>
-                <Box align="right" width="100%">
-                  <Button variant="contained" color="secondary">
-                    Read more
-                  </Button>
-                </Box>
+                <Box align="right" width="100%"></Box>
               </CardContent>
             </Grid>
           </Grid>
         </CardActionArea>
+        <CardActions
+          style={{ background: theme.palette.secondary.main, color: "white" }}
+        >
+          <Button color="inherit">Read more</Button>
+        </CardActions>
       </Card>
     </Box>
   )
