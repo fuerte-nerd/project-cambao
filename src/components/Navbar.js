@@ -99,7 +99,7 @@ const Navbar = props => {
             </Button>
           </Tooltip>
         </Box>
-        <Box color="primary.main">
+        <Box color="primary.dark">
           <Tooltip title="Show me the menu!">
             <Button
               variant="contained"
