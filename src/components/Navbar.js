@@ -87,28 +87,32 @@ const Navbar = props => {
           </NavbarToolsIcon>
         </Hidden>
         <Box style={{ flex: 1 }} />
-        <Tooltip title="Share this page!">
-          <Button
-            size="small"
-            variant="outlined"
-            color="inherit"
-            endIcon={<Share />}
-          >
-            Share
-          </Button>
-        </Tooltip>
-        <Tooltip title="Show me the menu!">
-          <Button
-            variant="outlined"
-            onClick={handleClick}
-            id="open-menu"
-            color="inherit"
-            edge="end"
-            endIcon={<Menu />}
-          >
-            Menu
-          </Button>
-        </Tooltip>
+        <Box mr={2}>
+          <Tooltip title="Share this page!">
+            <Button
+              size="small"
+              variant="outlined"
+              color="inherit"
+              endIcon={<Share />}
+            >
+              Share
+            </Button>
+          </Tooltip>
+        </Box>
+        <Box color="primary.main">
+          <Tooltip title="Show me the menu!">
+            <Button
+              variant="contained"
+              onClick={handleClick}
+              id="open-menu"
+              color="inherit"
+              edge="end"
+              endIcon={<Menu />}
+            >
+              Menu
+            </Button>
+          </Tooltip>
+        </Box>
       </Toolbar>
     </AppBar>
   )
