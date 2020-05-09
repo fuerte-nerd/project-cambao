@@ -93,15 +93,16 @@ const Navbar = props => {
           </Button>
         </Tooltip>
         <Tooltip title="Show me the menu!">
-          <IconButton
+          <Button
+            variant="outlined"
             onClick={handleClick}
             id="open-menu"
             color="inherit"
             edge="end"
-            size="small"
+            endIcon={<Menu />}
           >
-            <Menu />
-          </IconButton>
+            Menu
+          </Button>
         </Tooltip>
       </Toolbar>
     </AppBar>
