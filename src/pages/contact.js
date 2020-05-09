@@ -58,45 +58,49 @@ const Contact = () => {
             completing and submitting the form below...
           </Typography>
         </Box>
-        <form method="POST" action="/thanks">
+        <Box mt={2}>
           <Paper>
-            <Grid container align="center" spacing={2}>
-              <Grid item xs={12} md={4}>
-                <TextField label="Name" name="name" fullWidth required />
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <TextField
-                  label="Email"
-                  name="email"
-                  fullWidth
-                  required
-                  type="email"
-                />
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <TextField label="Phone" name="phone" fullWidth />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  label="Message"
-                  name="message"
-                  fullWidth
-                  multiline
-                  required
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  endIcon={<Send />}
-                >
-                  Send
-                </Button>
-              </Grid>
-            </Grid>
+            <Box p={1}>
+              <form method="POST" action="/thanks">
+                <Grid container align="center" spacing={2}>
+                  <Grid item xs={12} md={4}>
+                    <TextField label="Name" name="name" fullWidth required />
+                  </Grid>
+                  <Grid item xs={12} md={4}>
+                    <TextField
+                      label="Email"
+                      name="email"
+                      fullWidth
+                      required
+                      type="email"
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={4}>
+                    <TextField label="Phone" name="phone" fullWidth />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      label="Message"
+                      name="message"
+                      fullWidth
+                      multiline
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      endIcon={<Send />}
+                    >
+                      Send
+                    </Button>
+                  </Grid>
+                </Grid>
+              </form>
+            </Box>
           </Paper>
-        </form>
+        </Box>
       </Container>
     </>
   )
