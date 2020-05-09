@@ -25,8 +25,8 @@ export default function LocationMap() {
           icon={
             new Icon({
               iconUrl: logoPin,
-              iconSize: [40, 79],
-              iconAnchor: [20, 79],
+              iconSize: [40, 80],
+              iconAnchor: [20, 80],
             })
           }
         />
