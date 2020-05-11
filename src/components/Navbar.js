@@ -69,6 +69,10 @@ const Navbar = props => {
         en: "Share this page!",
         es: "¡Comparte esta página!",
       },
+      menu: {
+        en: "Show me the menu!",
+        es: "¡Muéstrame el menú!",
+      },
     },
   }
 
@@ -118,7 +122,7 @@ const Navbar = props => {
           </Tooltip>
         </Box>
         <Box color="primary.dark">
-          <Tooltip title="Show me the menu!">
+          <Tooltip title={text.tooltips.menu[props.lang]}>
             <Button
               variant="contained"
               onClick={handleClick}
