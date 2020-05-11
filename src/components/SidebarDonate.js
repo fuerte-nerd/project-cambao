@@ -1,16 +1,32 @@
 import React from "react"
+import { connect } from "react-redux"
 import { Box, Typography, Button } from "@material-ui/core"
 import { EuroSymbol } from "@material-ui/icons"
 import SidebarSectionTitle from "./SidebarSectionTitle"
 
-const SidebarDonate = () => {
+const SidebarDonate = props => {
+  const text = {
+    heading: {
+      en: "Donate now",
+      es: "Dona ahora",
+    },
+    subheading: {
+      en:
+        "We are a volunteer organization and appreciate anything you can give...",
+      es:
+        "Somos una organización de voluntarios y apreciamos cualquier cosa que pueda dar...",
+    },
+    button: {
+      en: "I want to donate",
+      es: "Quiero donar",
+    },
+  }
   return (
     <Box>
-      <SidebarSectionTitle title="Donate" />
+      <SidebarSectionTitle title={text.heading[props.lang]} />
       <Box pb={2}>
         <Typography variant="caption" align="justify">
-          We are a volunteer organization and appreciate anything you can
-          give...
+          {text.subheading[props.lang]}
         </Typography>
         <Box mt={2}>
           <Button
@@ -19,7 +35,7 @@ const SidebarDonate = () => {
             color="secondary"
             startIcon={<EuroSymbol />}
           >
-            Make a donation
+            "{text.button[props.lang]}"
           </Button>
         </Box>
       </Box>
@@ -27,4 +43,8 @@ const SidebarDonate = () => {
   )
 }
 
-export default SidebarDonate
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(SidebarDonate)
