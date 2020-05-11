@@ -1,11 +1,13 @@
 import React, { useState } from "react"
+import { connect } from "react-redux"
+import { useStaticQuery, graphql } from "gatsby"
 import { List, Collapse } from "@material-ui/core"
 
 import SidebarSectionTitle from "./SidebarSectionTitle"
 import SidebarQuickLinksItem from "./SidebarQuickLinksItem"
 import SidebarQuickLinksSubmenu from "./SidebarQuickLinksSubmenu"
 
-const SidebarQuickLinks = () => {
+const SidebarQuickLinks = props => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const handleClick = e => {
     const f = e.currentTarget
@@ -17,30 +19,71 @@ const SidebarQuickLinks = () => {
         return
     }
   }
+  const data = useStaticQuery(graphql`
+    {
+      file(
+        sourceInstanceName: { eq: "static_content" }
+        name: { eq: "menus" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            quick_navigation {
+              en
+              es
+            }
+            the_dogs {
+              en
+              es
+            }
+            contact {
+              en
+              es
+            }
+            help_us {
+              en
+              es
+            }
+            home {
+              en
+              es
+            }
+            who_are_we {
+              en
+              es
+            }
+          }
+        }
+      }
+    }
+  `)
+  const { frontmatter } = data.file.childMarkdownRemark
   return (
     <>
-      <SidebarSectionTitle title="Quick Links" top />
+      <SidebarSectionTitle
+        title={frontmatter.quick_navigation[props.lang]}
+        top
+      />
       <List disablePadding dense>
         <SidebarQuickLinksItem
-          label="Home"
+          label={frontmatter.home[props.lang]}
           id="home"
           link="/"
           clickEvent={handleClick}
         />
         <SidebarQuickLinksItem
-          label="The Dogs"
+          label={frontmatter.the_dogs[props.lang]}
           id="the-dogs"
           link="the-dogs"
           clickEvent={handleClick}
         />
         <SidebarQuickLinksItem
-          label="Who are we?"
+          label={frontmatter.who_are_we[props.lang]}
           id="who-are-we"
           link="who-are-we"
           clickEvent={handleClick}
         />
         <SidebarQuickLinksItem
-          label="Help us"
+          label={frontmatter.help_us[props.lang]}
           id="help-us"
           clickEvent={handleClick}
           dropdown
@@ -50,7 +93,7 @@ const SidebarQuickLinks = () => {
           <SidebarQuickLinksSubmenu />
         </Collapse>
         <SidebarQuickLinksItem
-          label="Contact"
+          label={frontmatter.contact[props.lang]}
           id="contact"
           link="contact"
           clickEvent={handleClick}
@@ -60,4 +103,8 @@ const SidebarQuickLinks = () => {
   )
 }
 
-export default SidebarQuickLinks
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(SidebarQuickLinks)
