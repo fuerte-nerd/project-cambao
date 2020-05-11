@@ -42,7 +42,6 @@ const IndexPage = () => {
     <>
       <SEO title="Home" />
       <Heading />
-      Spanish
       <Container>
         {articles.allFile.edges.map(i => (
           <ArticleCard
