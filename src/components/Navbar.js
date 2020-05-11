@@ -60,6 +60,16 @@ const Navbar = props => {
       en: "Menu",
       es: "Menú",
     },
+    share: {
+      en: "Share",
+      es: "Compartir",
+    },
+    tooltips: {
+      share: {
+        en: "Share this page!",
+        es: "¡Comparte esta página!",
+      },
+    },
   }
 
   return (
@@ -96,14 +106,14 @@ const Navbar = props => {
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Box mr={2}>
-          <Tooltip title="Share this page!">
+          <Tooltip title={text.tooltips.share[props.lang]}>
             <Button
               size="small"
               variant="outlined"
               color="inherit"
               endIcon={<Share />}
             >
-              Share
+              {text.share[props.lang]}
             </Button>
           </Tooltip>
         </Box>
