@@ -6,50 +6,30 @@ import Heading from "../components/index/Heading"
 import ArticleCard from "../components/index/ArticleCard"
 
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
+  const articles = useStaticQuery(graphql`
     {
-      articles_images: allFile(
-        filter: { sourceInstanceName: { eq: "articles_images" } }
+      allFile(
+        filter: {
+          sourceInstanceName: { eq: "articles" }
+          extension: { eq: "md" }
+        }
       ) {
         edges {
           node {
-            childImageSharp {
-              fluid(maxWidth: 845) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-      articles: allFile(filter: { sourceInstanceName: { eq: "articles" } }) {
-        edges {
-          node {
+            atime
             childMarkdownRemark {
               frontmatter {
-                date
-                content_de {
-                  body_de
-                  title_de
-                }
                 content_en {
                   title_en
                   body_en
                 }
-                content_es {
-                  body_es
-                  title_es
+                featured_image {
+                  childImageSharp {
+                    fixed(width: 845) {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
                 }
-                content_fr {
-                  body_fr
-                  title_fr
-                }
-                content_it {
-                  title_it
-                  body_it
-                }
-                featured_image
-                tags
-                title
               }
             }
           }
@@ -57,16 +37,23 @@ const IndexPage = () => {
       }
     }
   `)
+  console.log(articles)
   return (
     <>
       <SEO title="Home" />
       <Heading />
       <Container>
-        <ArticleCard />
-        <ArticleCard />
-        <ArticleCard />
-        <ArticleCard />
-        <ArticleCard />
+        {articles.allFile.edges.map(i => (
+          <ArticleCard
+            title={i.node.childMarkdownRemark.frontmatter.content_en.title_en}
+            body={i.node.childMarkdownRemark.frontmatter.content_en.body_en}
+            image={
+              i.node.childMarkdownRemark.frontmatter.featured_image
+                .childImageSharp.fixed.src
+            }
+            date={i.node.atime}
+          />
+        ))}
       </Container>
     </>
   )

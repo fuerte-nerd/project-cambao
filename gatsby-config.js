@@ -10,13 +10,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `articles_images`,
-        path: `${__dirname}/assets/articles`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `articles`,
         path: `${__dirname}/articles`,
       },
@@ -26,6 +19,15 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: "en",
+        langKeyForNull: "en",
+        prefixDefault: false,
+        useLangKeyLayout: false,
       },
     },
     `gatsby-transformer-remark`,

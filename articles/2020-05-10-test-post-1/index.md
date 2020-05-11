@@ -1,13 +1,13 @@
 ---
 title: Test Post
-featured_image: assets/articles/test.jpg
+featured_image: ./test.jpg
 date: 2020-05-09T17:01:53.256Z
 tags:
   - article
   - teela
   - bardino
 content_en:
-  title_en: Test Post
+  title_en: First Test Post
   body_en: >-
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
