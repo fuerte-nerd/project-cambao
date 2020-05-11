@@ -22,25 +22,39 @@ const SidebarOpeningHours = props => {
       }
     }
   `)
-  const text = data.file.childMarkdownRemark.frontmatter
+  const { frontmatter } = data.file.childMarkdownRemark
 
+  const text = {
+    thurs: {
+      en: "Thursdays",
+      es: "Jueves",
+    },
+    weekends: {
+      en: "Weekends",
+      es: "Fines de semana",
+    },
+    holidays: {
+      en: "Pubic holidays",
+      es: "Días festivos",
+    },
+  }
   return (
     <Box>
-      <SidebarSectionTitle title={text.opening_hours[props.lang]} />
+      <SidebarSectionTitle title={frontmatter.opening_hours[props.lang]} />
       <Typography display="block" variant="caption">
-        Thursdays
+        {text.thurs[props.lang]}
       </Typography>
       <Typography display="block" paragraph>
         8:00 - 9:30
       </Typography>
       <Typography display="block" variant="caption">
-        Weekends
+        {text.weekends[props.lang]}
       </Typography>
       <Typography display="block" paragraph>
         9:00 - 10:30
       </Typography>
       <Typography display="block" variant="caption">
-        Holidays
+        {text.holidays[props.lang]}
       </Typography>
       <Typography display="block">9:00 - 10:30</Typography>
     </Box>
