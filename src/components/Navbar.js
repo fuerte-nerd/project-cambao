@@ -54,6 +54,14 @@ const Navbar = props => {
       }
     }
   `)
+
+  const text = {
+    menu: {
+      en: "Menu",
+      es: "Menú",
+    },
+  }
+
   return (
     <AppBar>
       <Toolbar>
@@ -109,7 +117,7 @@ const Navbar = props => {
               edge="end"
               endIcon={<Menu />}
             >
-              Menu
+              {text.menu[props.lang]}
             </Button>
           </Tooltip>
         </Box>
@@ -118,4 +126,8 @@ const Navbar = props => {
   )
 }
 
-export default connect()(Navbar)
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(Navbar)
