@@ -22,9 +22,11 @@ const SidebarOpeningHours = props => {
       }
     }
   `)
+  const text = data.file.childMarkdownRemark.frontmatter
+
   return (
     <Box>
-      <SidebarSectionTitle title="Opening hours" />
+      <SidebarSectionTitle title={text.opening_hours[props.lang]} />
       <Typography display="block" variant="caption">
         Thursdays
       </Typography>
@@ -44,5 +46,9 @@ const SidebarOpeningHours = props => {
     </Box>
   )
 }
+
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
 
 export default connect(mapStateToProps)(SidebarOpeningHours)
