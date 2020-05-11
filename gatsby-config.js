@@ -26,7 +26,7 @@ module.exports = {
       options: {
         langKeyDefault: "en",
         langKeyForNull: "en",
-        prefixDefault: false,
+        prefixDefault: true,
         useLangKeyLayout: false,
       },
     },
