@@ -8,7 +8,7 @@ import ArticleCard from "../components/index/ArticleCard"
 const IndexPage = () => {
   const articles = useStaticQuery(graphql`
     {
-      allFile(
+      articles: allFile(
         filter: {
           sourceInstanceName: { eq: "articles" }
           extension: { eq: "md" }
@@ -31,6 +31,21 @@ const IndexPage = () => {
                   }
                 }
               }
+            }
+          }
+        }
+      }
+      site_content: file(
+        sourceInstanceName: { eq: "static_content" }
+        name: { eq: "home" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            heading {
+              en
+            }
+            subheading {
+              en
             }
           }
         }
