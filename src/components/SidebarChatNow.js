@@ -1,10 +1,21 @@
 import React from "react"
+import { connect } from "react-redux"
 import { Box, Typography, Button, Link } from "@material-ui/core"
 import { FacebookMessenger } from "mdi-material-ui"
 import { Email } from "@material-ui/icons"
 import SidebarSectionTitle from "./SidebarSectionTitle"
 
-const SidebarChatNow = () => {
+const SidebarChatNow = props => {
+  const text = {
+    heading: {
+      en: "Send us a message",
+      es: "Envíenos un mensaje",
+    },
+    subheading: {
+      en: "Contact us now via...",
+      es: "Contáctenos ahora por...",
+    },
+  }
   return (
     <Box>
       <SidebarSectionTitle title="Send a message" />
@@ -26,4 +37,8 @@ const SidebarChatNow = () => {
   )
 }
 
-export default SidebarChatNow
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(SidebarChatNow)
