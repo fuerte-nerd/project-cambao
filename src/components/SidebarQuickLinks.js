@@ -27,10 +27,6 @@ const SidebarQuickLinks = props => {
       ) {
         childMarkdownRemark {
           frontmatter {
-            quick_navigation {
-              en
-              es
-            }
             the_dogs {
               en
               es
@@ -57,12 +53,15 @@ const SidebarQuickLinks = props => {
     }
   `)
   const { frontmatter } = data.file.childMarkdownRemark
+  const text = {
+    quick_navigation: {
+      en: "Quick Navigation",
+      es: "Navegación rápida",
+    },
+  }
   return (
     <>
-      <SidebarSectionTitle
-        title={frontmatter.quick_navigation[props.lang]}
-        top
-      />
+      <SidebarSectionTitle title={text.quick_navigation[props.lang]} top />
       <List disablePadding dense>
         <SidebarQuickLinksItem
           label={frontmatter.home[props.lang]}

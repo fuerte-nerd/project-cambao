@@ -26,8 +26,5 @@ volunteer:
 contact:
   en: Contact us
   es: Contáctanos
-quick_navigation:
-  en: Quick Navigation
-  es: Navegación rápida
 
 ---
