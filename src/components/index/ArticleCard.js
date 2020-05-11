@@ -1,4 +1,5 @@
 import React from "react"
+import { connect } from "react-redux"
 import {
   useTheme,
   Box,
@@ -14,11 +15,12 @@ import {
 } from "@material-ui/core"
 import { LocalLibrary } from "@material-ui/icons"
 import moment from "moment"
+import "moment/locale/es"
 
 const ArticleCard = props => {
   const theme = useTheme()
-
   const excerpt = props.body.split(" ", 50).join(" ")
+  moment.locale(props.lang)
   return (
     <Box mb={1}>
       <Card>
@@ -60,4 +62,8 @@ const ArticleCard = props => {
   )
 }
 
-export default ArticleCard
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(ArticleCard)
