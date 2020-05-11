@@ -74,6 +74,24 @@ const Navbar = props => {
         es: "¡Muéstrame el menú!",
       },
     },
+    toolbuttons: {
+      donate: {
+        en: "Donate to the FDR dogs",
+        es: "Done a los perros FDR",
+      },
+      facebook: {
+        en: "Visit us on Facebook",
+        es: "Visítanos en Facebook",
+      },
+      instagram: {
+        en: "Visit us on Instagram",
+        es: "Visítanos en Instagram",
+      },
+      messenger: {
+        en: "Contact us on Messenger",
+        es: "Contáctenos en el Messenger",
+      },
+    },
   }
 
   return (
@@ -95,16 +113,16 @@ const Navbar = props => {
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Hidden smDown>
-          <NavbarToolsIcon tooltip="Donate to the FDR dogs!">
+          <NavbarToolsIcon tooltip={text.toolbuttons.donate[props.lang]}>
             <EuroSymbol className={classes.navToolsButton} />
           </NavbarToolsIcon>
-          <NavbarToolsIcon tooltip="Visit us on Facebook!">
+          <NavbarToolsIcon tooltip={text.toolbuttons.facebook[props.lang]}>
             <Facebook className={classes.navToolsButton} />
           </NavbarToolsIcon>
-          <NavbarToolsIcon tooltip="Visit us on Instagram!">
+          <NavbarToolsIcon tooltip={text.toolbuttons.instagram[props.lang]}>
             <Instagram className={classes.navToolsButton} />
           </NavbarToolsIcon>
-          <NavbarToolsIcon tooltip="Contact us on Messenger!">
+          <NavbarToolsIcon tooltip={text.toolbuttons.messenger[props.lang]}>
             <FacebookMessenger className={classes.navToolsButton} />
           </NavbarToolsIcon>
         </Hidden>
