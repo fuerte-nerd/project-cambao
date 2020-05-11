@@ -19,9 +19,9 @@ const IndexPage = () => {
             atime
             childMarkdownRemark {
               frontmatter {
-                content_en {
-                  title_en
-                  body_en
+                content_es {
+                  title_es
+                  body_es
                 }
                 featured_image {
                   childImageSharp {
@@ -42,10 +42,10 @@ const IndexPage = () => {
         childMarkdownRemark {
           frontmatter {
             heading {
-              en
+              es
             }
             subheading {
-              en
+              es
             }
           }
         }
@@ -56,16 +56,16 @@ const IndexPage = () => {
     <>
       <SEO title="Home" />
       <Heading
-        heading={data.site_content.childMarkdownRemark.frontmatter.heading.en}
+        heading={data.site_content.childMarkdownRemark.frontmatter.heading.es}
         subheading={
-          data.site_content.childMarkdownRemark.frontmatter.subheading.en
+          data.site_content.childMarkdownRemark.frontmatter.subheading.es
         }
       />
       <Container>
         {data.articles.edges.map(i => (
           <ArticleCard
-            title={i.node.childMarkdownRemark.frontmatter.content_en.title_en}
-            body={i.node.childMarkdownRemark.frontmatter.content_en.body_en}
+            title={i.node.childMarkdownRemark.frontmatter.content_es.title_es}
+            body={i.node.childMarkdownRemark.frontmatter.content_es.body_es}
             image={
               i.node.childMarkdownRemark.frontmatter.featured_image
                 .childImageSharp.fixed.src
