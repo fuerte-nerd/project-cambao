@@ -37,7 +37,8 @@ const SidebarChatNow = props => {
       </Box>
       <Typography variant="caption" align="justify">
         {text.lost[props.lang]}
-        <InternalLink>{text.click[props.lang]}</InternalLink>
+        {` `}
+        <InternalLink>{text.click[props.lang]}</InternalLink>.
       </Typography>
     </Box>
   )
