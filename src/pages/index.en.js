@@ -1,11 +1,18 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { connect } from "react-redux"
+import { setLanguage } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import { Container } from "@material-ui/core"
 import SEO from "../components/seo"
 import Heading from "../components/index/Heading"
 import ArticleCard from "../components/index/ArticleCard"
 
-const IndexPage = () => {
+const IndexPage = props => {
+  useEffect(() => {
+    if (props.siteLang !== "en") {
+      props.dispatch(setLanguage("en"))
+    }
+  }, [])
   const data = useStaticQuery(graphql`
     {
       articles: allFile(
@@ -77,4 +84,9 @@ const IndexPage = () => {
     </>
   )
 }
-export default IndexPage
+
+const mapStateToProps = state => ({
+  siteLang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(IndexPage)
