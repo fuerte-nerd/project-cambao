@@ -21,6 +21,12 @@ const ArticleCard = props => {
   const theme = useTheme()
   const excerpt = props.body.split(" ", 50).join(" ")
   moment.locale(props.lang)
+  const text = {
+    more: {
+      en: "Read more",
+      es: "leer más",
+    },
+  }
   return (
     <Box mb={1}>
       <Card>
@@ -54,7 +60,7 @@ const ArticleCard = props => {
           style={{ background: theme.palette.secondary.main, color: "white" }}
         >
           <Button color="inherit" startIcon={<LocalLibrary />}>
-            Read more
+            {text.more[props.lang]}
           </Button>
         </CardActions>
       </Card>
