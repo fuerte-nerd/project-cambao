@@ -1,8 +1,27 @@
 import React from "react"
+import { connect } from "react-redux"
+import { useStaticQuery, graphql } from "gatsby"
 import { Typography, Box } from "@material-ui/core"
 import SidebarSectionTitle from "./SidebarSectionTitle"
 
-const SidebarOpeningHours = () => {
+const SidebarOpeningHours = props => {
+  const data = useStaticQuery(graphql`
+    {
+      file(
+        sourceInstanceName: { eq: "static_content" }
+        name: { eq: "sidebar" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            opening_hours {
+              en
+              es
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
     <Box>
       <SidebarSectionTitle title="Opening hours" />
@@ -26,4 +45,4 @@ const SidebarOpeningHours = () => {
   )
 }
 
-export default SidebarOpeningHours
+export default connect(mapStateToProps)(SidebarOpeningHours)
