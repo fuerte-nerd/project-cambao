@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core"
 import Img from "gatsby-image"
 
-const Heading = () => {
+const Heading = props => {
   const theme = useTheme()
   const isNotMobile = useMediaQuery(theme.breakpoints.up("sm"))
   const data = useStaticQuery(graphql`
@@ -43,14 +43,11 @@ const Heading = () => {
         <Box mt={isNotMobile ? 0 : 1} align={isNotMobile ? "right" : "center"}>
           <Box color="white">
             <Typography variant="h2" variantMapping={{ h1: "h2" }}>
-              We are their voice!
+              {props.heading}
             </Typography>
           </Box>
           <Box>
-            <Typography variant="subtitle1">
-              Taking care of the abandoned and mistreated dogs of the La Oliva
-              area in Fuerteventura since 2013
-            </Typography>
+            <Typography variant="subtitle1">{props.subheading}</Typography>
           </Box>
         </Box>
       </Box>

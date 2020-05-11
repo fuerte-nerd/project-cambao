@@ -6,9 +6,9 @@ import Heading from "../components/index/Heading"
 import ArticleCard from "../components/index/ArticleCard"
 
 const IndexPage = () => {
-  const articles = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     {
-      allFile(
+      articles: allFile(
         filter: {
           sourceInstanceName: { eq: "articles" }
           extension: { eq: "md" }
@@ -35,16 +35,34 @@ const IndexPage = () => {
           }
         }
       }
+      site_content: file(
+        sourceInstanceName: { eq: "static_content" }
+        name: { eq: "home" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            heading {
+              en
+            }
+            subheading {
+              en
+            }
+          }
+        }
+      }
     }
   `)
-  console.log(articles)
   return (
     <>
       <SEO title="Home" />
-      <Heading />
-      Spanish
+      <Heading
+        heading={data.site_content.childMarkdownRemark.frontmatter.heading.en}
+        subheading={
+          data.site_content.childMarkdownRemark.frontmatter.subheading.en
+        }
+      />
       <Container>
-        {articles.allFile.edges.map(i => (
+        {data.articles.edges.map(i => (
           <ArticleCard
             title={i.node.childMarkdownRemark.frontmatter.content_en.title_en}
             body={i.node.childMarkdownRemark.frontmatter.content_en.body_en}
