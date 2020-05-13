@@ -72,13 +72,13 @@ const SidebarQuickLinks = props => {
         <SidebarQuickLinksItem
           label={frontmatter.the_dogs[props.lang]}
           id="the-dogs"
-          link="the-dogs"
+          link="/the-dogs"
           clickEvent={handleClick}
         />
         <SidebarQuickLinksItem
           label={frontmatter.who_are_we[props.lang]}
           id="who-are-we"
-          link="who-are-we"
+          link="/who-are-we"
           clickEvent={handleClick}
         />
         <SidebarQuickLinksItem
@@ -94,7 +94,7 @@ const SidebarQuickLinks = props => {
         <SidebarQuickLinksItem
           label={frontmatter.contact[props.lang]}
           id="contact"
-          link="contact"
+          link="/contact"
           clickEvent={handleClick}
         />
       </List>

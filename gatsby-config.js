@@ -4,6 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Fuerteventura Dog Rescue`,
     description: `We take care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura`,
+    supportedLanguages: ["en", "es"],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -33,7 +34,7 @@ module.exports = {
       options: {
         langKeyDefault: "en",
         langKeyForNull: "en",
-        prefixDefault: true,
+        prefixDefault: false,
         useLangKeyLayout: false,
       },
     },

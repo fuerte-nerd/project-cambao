@@ -1,12 +1,20 @@
 import React from "react"
+import { connect } from "react-redux"
 import { Link } from "gatsby"
 
 const InternalLink = props => {
   return (
-    <Link to={props.to} style={{ textDecoration: "none", color: "inherit" }}>
+    <Link
+      to={props.lang !== "en" ? `/${props.lang + props.to}` : props.to}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
       {props.children}
     </Link>
   )
 }
 
-export default InternalLink
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(InternalLink)

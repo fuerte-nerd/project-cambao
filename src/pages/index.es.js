@@ -2,10 +2,7 @@ import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { setLanguage } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
-import { Container } from "@material-ui/core"
-import SEO from "../components/seo"
-import Heading from "../components/index/Heading"
-import ArticleCard from "../components/index/ArticleCard"
+import IndexTemplate from "../templates/index"
 
 const IndexPage = props => {
   useEffect(() => {
@@ -57,31 +54,37 @@ const IndexPage = props => {
           }
         }
       }
+      link: file(
+        sourceInstanceName: { eq: "static_content" }
+        name: { eq: "menus" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            home {
+              es
+            }
+          }
+        }
+      }
     }
   `)
+  const static_content = data.site_content.childMarkdownRemark.frontmatter
+  const articles = data.articles.edges.map(i => {
+    const article = i.node.childMarkdownRemark.frontmatter
+    return {
+      title: article.content_es.title_es,
+      body: article.content_es.body_es,
+      image: article.featured_image.childImageSharp.fixed.src,
+      date: i.node.atime,
+    }
+  })
   return (
-    <>
-      <SEO title="Home" />
-      <Heading
-        heading={data.site_content.childMarkdownRemark.frontmatter.heading.es}
-        subheading={
-          data.site_content.childMarkdownRemark.frontmatter.subheading.es
-        }
-      />
-      <Container>
-        {data.articles.edges.map(i => (
-          <ArticleCard
-            title={i.node.childMarkdownRemark.frontmatter.content_es.title_es}
-            body={i.node.childMarkdownRemark.frontmatter.content_es.body_es}
-            image={
-              i.node.childMarkdownRemark.frontmatter.featured_image
-                .childImageSharp.fixed.src
-            }
-            date={i.node.atime}
-          />
-        ))}
-      </Container>
-    </>
+    <IndexTemplate
+      seo_title={data.link.childMarkdownRemark.frontmatter.home.es}
+      heading={static_content.heading.es}
+      subheading={static_content.subheading.es}
+      articles={articles}
+    />
   )
 }
 

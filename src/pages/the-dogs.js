@@ -1,10 +1,15 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { connect } from "react-redux"
+import { setLanguage } from "../redux/actions"
 import { Container, Grid, Box, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
 
 import DogListing from "../components/the-dogs/DogListing"
 
-const TheDogs = () => {
+const TheDogs = props => {
+  useEffect(() => {
+    props.dispatch(setLanguage(props.pageContext.lang))
+  }, [])
   return (
     <>
       <SEO title="The Dogs" />
@@ -42,4 +47,7 @@ const TheDogs = () => {
   )
 }
 
-export default TheDogs
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+export default connect(mapStateToProps)(TheDogs)

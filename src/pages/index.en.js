@@ -1,7 +1,8 @@
 import React, { useEffect } from "react"
+import { getUserLocales } from "get-user-locale"
 import { connect } from "react-redux"
 import { setLanguage } from "../redux/actions"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, navigate } from "gatsby"
 import { Container } from "@material-ui/core"
 import SEO from "../components/seo"
 import Heading from "../components/index/Heading"
@@ -9,12 +10,29 @@ import ArticleCard from "../components/index/ArticleCard"
 
 const IndexPage = props => {
   useEffect(() => {
+    const locales = getUserLocales()
+    for (let locale in locales) {
+      locale = locale.substr(0, 2)
+      if (locale !== "en") {
+        data.languages.siteMetadata.supportedLanguages.filter(lang => {
+          if (lang === locale) {
+            navigate(`/${lang}/`)
+          }
+        })
+      }
+    }
+
     if (props.siteLang !== "en") {
       props.dispatch(setLanguage("en"))
     }
   }, [])
   const data = useStaticQuery(graphql`
     {
+      languages: site {
+        siteMetadata {
+          supportedLanguages
+        }
+      }
       articles: allFile(
         filter: {
           sourceInstanceName: { eq: "articles" }

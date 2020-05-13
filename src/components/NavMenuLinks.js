@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import {
@@ -13,6 +14,61 @@ import NavMenuLinksItem from "./NavMenuLinksItem"
 import NavMenuHelpUsSubmenu from "./NavMenuHelpUsSubmenu"
 
 const NavMenuLinks = props => {
+  const data = useStaticQuery(graphql`
+    {
+      file(
+        sourceInstanceName: { eq: "static_content" }
+        name: { eq: "menus" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            home {
+              en
+              es
+            }
+            subtitle_home {
+              en
+              es
+            }
+            help_us {
+              en
+              es
+            }
+            subtitle_help_us {
+              en
+              es
+            }
+            contact {
+              en
+              es
+            }
+            subtitle_contact {
+              en
+              es
+            }
+            who_are_we {
+              en
+              es
+            }
+            subtitle_who_are_we {
+              en
+              es
+            }
+            the_dogs {
+              en
+              es
+            }
+            subtitle_the_dogs {
+              en
+              es
+            }
+          }
+        }
+      }
+    }
+  `)
+  const { frontmatter } = data.file.childMarkdownRemark
+
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const theme = useTheme()
   const isLandscapeMobile = useMediaQuery(
@@ -39,30 +95,30 @@ const NavMenuLinks = props => {
       <List disablePadding dense={isLargeScreen ? false : true}>
         <NavMenuLinksItem
           link="/"
-          title="Home"
-          subtitle="Latest news and articles"
+          title={frontmatter.home[props.lang]}
+          subtitle={frontmatter.subtitle_home[props.lang]}
           clickEvent={handleClick}
           divider
         />
         <NavMenuLinksItem
-          link="the-dogs"
-          title="The Dogs"
-          subtitle="Meet our current guests"
+          link="/the-dogs"
+          title={frontmatter.the_dogs[props.lang]}
+          subtitle={frontmatter.subtitle_the_dogs[props.lang]}
           clickEvent={handleClick}
           divider
         />
         <NavMenuLinksItem
-          link="who-are-we"
-          title="Who are we?"
-          subtitle="Get to know us"
+          link="/who-are-we"
+          title={frontmatter.who_are_we[props.lang]}
+          subtitle={frontmatter.subtitle_who_are_we[props.lang]}
           clickEvent={handleClick}
           divider
         />
         <NavMenuLinksItem
           id="help-us"
           link="#"
-          title="Help us"
-          subtitle="Find out how you can help"
+          title={frontmatter.help_us[props.lang]}
+          subtitle={frontmatter.subtitle_help_us[props.lang]}
           clickEvent={handleClick}
           divider
           dropdown
@@ -72,9 +128,9 @@ const NavMenuLinks = props => {
           <NavMenuHelpUsSubmenu />
         </Collapse>
         <NavMenuLinksItem
-          link="contact"
-          title="Contact"
-          subtitle="Get in touch with us"
+          link="/contact"
+          title={frontmatter.contact[props.lang]}
+          subtitle={frontmatter.subtitle_contact[props.lang]}
           clickEvent={handleClick}
           divider
         />
@@ -85,6 +141,7 @@ const NavMenuLinks = props => {
 
 const mapStateToProps = state => ({
   isOpen: state.navOpen,
+  lang: state.siteLang,
 })
 
 export default connect(mapStateToProps)(NavMenuLinks)

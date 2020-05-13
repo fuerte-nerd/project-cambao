@@ -1,18 +1,8 @@
-import React, { useEffect } from "react"
-import { connect } from "react-redux"
-import { setLanguage } from "../redux/actions"
-import { graphql, useStaticQuery } from "gatsby"
-import { Container } from "@material-ui/core"
-import SEO from "../components/seo"
-import Heading from "../components/index/Heading"
-import ArticleCard from "../components/index/ArticleCard"
+import React from "react"
+import { graphql, useStaticQuery, navigate } from "gatsby"
+import IndexTemplate from "../templates/index"
 
-const IndexPage = props => {
-  useEffect(() => {
-    if (props.siteLang !== "en") {
-      props.dispatch(setLanguage("en"))
-    }
-  }, [])
+const IndexPage = () => {
   const data = useStaticQuery(graphql`
     {
       articles: allFile(
@@ -59,34 +49,24 @@ const IndexPage = props => {
       }
     }
   `)
+  const static_content = data.site_content.childMarkdownRemark.frontmatter
+  const articles = data.articles.edges.map(i => {
+    const article = i.node.childMarkdownRemark.frontmatter
+    return {
+      title: article.content_en.title_en,
+      body: article.content_en.body_en,
+      image: article.featured_image.childImageSharp.fixed.src,
+      date: i.node.atime,
+    }
+  })
   return (
-    <>
-      <SEO title="Home" />
-      <Heading
-        heading={data.site_content.childMarkdownRemark.frontmatter.heading.en}
-        subheading={
-          data.site_content.childMarkdownRemark.frontmatter.subheading.en
-        }
-      />
-      <Container>
-        {data.articles.edges.map(i => (
-          <ArticleCard
-            title={i.node.childMarkdownRemark.frontmatter.content_en.title_en}
-            body={i.node.childMarkdownRemark.frontmatter.content_en.body_en}
-            image={
-              i.node.childMarkdownRemark.frontmatter.featured_image
-                .childImageSharp.fixed.src
-            }
-            date={i.node.atime}
-          />
-        ))}
-      </Container>
-    </>
+    <IndexTemplate
+      seo_title="Home"
+      heading={static_content.heading.en}
+      subheading={static_content.subheading.en}
+      articles={articles}
+    />
   )
 }
 
-const mapStateToProps = state => ({
-  siteLang: state.siteLang,
-})
-
-export default connect(mapStateToProps)(IndexPage)
+export default IndexPage
