@@ -1,16 +1,60 @@
 import React from "react"
+import { connect } from "react-redux"
+import { useStaticQuery, graphql } from "gatsby"
 import { Box, List } from "@material-ui/core"
 import NavMenuHelpUsSubmenuItem from "./NavMenuHelpUsSubmenuItem"
 
-const NavMenuHelpUsSubmenu = () => {
+const NavMenuHelpUsSubmenu = props => {
+  const data = useStaticQuery(graphql`
+    {
+      file(
+        sourceInstanceName: { eq: "static_content" }
+        name: { eq: "menus" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            adopt {
+              en
+              es
+            }
+            foster {
+              en
+              es
+            }
+            donate {
+              en
+              es
+            }
+            volunteer {
+              en
+              es
+            }
+          }
+        }
+      }
+    }
+  `)
+  const { frontmatter } = data.file.childMarkdownRemark
   return (
     <Box bgcolor="#fafafa">
       <List dense disablePadding>
-        <NavMenuHelpUsSubmenuItem title="Adopt" id="adopt" link="adopt" />
-        <NavMenuHelpUsSubmenuItem title="Foster" id="foster" link="foster" />
-        <NavMenuHelpUsSubmenuItem title="Donate" id="donate" link="donate" />
         <NavMenuHelpUsSubmenuItem
-          title="Volunteer"
+          title={frontmatter.adopt[props.lang]}
+          id="adopt"
+          link="adopt"
+        />
+        <NavMenuHelpUsSubmenuItem
+          title={frontmatter.foster[props.lang]}
+          id="foster"
+          link="foster"
+        />
+        <NavMenuHelpUsSubmenuItem
+          title={frontmatter.donate[props.lang]}
+          id="donate"
+          link="donate"
+        />
+        <NavMenuHelpUsSubmenuItem
+          title={frontmatter.volunteer[props.lang]}
           id="volunteer"
           link="volunteer"
         />
@@ -19,4 +63,8 @@ const NavMenuHelpUsSubmenu = () => {
   )
 }
 
-export default NavMenuHelpUsSubmenu
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(NavMenuHelpUsSubmenu)

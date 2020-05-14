@@ -15,10 +15,15 @@ const IndexPage = () => {
           node {
             atime
             childMarkdownRemark {
+              fields {
+                slug
+              }
               frontmatter {
-                content_en {
-                  title_en
-                  body_en
+                post_title {
+                  en
+                }
+                post_body {
+                  en
                 }
                 featured_image {
                   childImageSharp {
@@ -53,10 +58,11 @@ const IndexPage = () => {
   const articles = data.articles.edges.map(i => {
     const article = i.node.childMarkdownRemark.frontmatter
     return {
-      title: article.content_en.title_en,
-      body: article.content_en.body_en,
+      title: article.post_title.en,
+      body: article.post_body.en,
       image: article.featured_image.childImageSharp.fixed.src,
       date: i.node.atime,
+      slug: i.node.childMarkdownRemark.fields.slug,
     }
   })
   return (

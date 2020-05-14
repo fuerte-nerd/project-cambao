@@ -22,10 +22,15 @@ const IndexPage = props => {
           node {
             atime
             childMarkdownRemark {
+              fields {
+                slug
+              }
               frontmatter {
-                content_es {
-                  title_es
-                  body_es
+                post_title {
+                  es
+                }
+                post_body {
+                  es
                 }
                 featured_image {
                   childImageSharp {
@@ -72,10 +77,11 @@ const IndexPage = props => {
   const articles = data.articles.edges.map(i => {
     const article = i.node.childMarkdownRemark.frontmatter
     return {
-      title: article.content_es.title_es,
-      body: article.content_es.body_es,
+      title: article.post_title.es,
+      body: article.post_body.es,
       image: article.featured_image.childImageSharp.fixed.src,
       date: i.node.atime,
+      slug: i.node.childMarkdownRemark.fields.slug,
     }
   })
   return (

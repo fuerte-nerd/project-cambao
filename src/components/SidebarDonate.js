@@ -17,8 +17,8 @@ const SidebarDonate = props => {
         "Somos una organización de voluntarios y apreciamos cualquier cosa que pueda dar...",
     },
     button: {
-      en: "I want to donate",
-      es: "Quiero donar",
+      en: "Donate",
+      es: "Donar",
     },
   }
   return (
@@ -35,7 +35,7 @@ const SidebarDonate = props => {
             color="secondary"
             startIcon={<EuroSymbol />}
           >
-            "{text.button[props.lang]}"
+            {text.button[props.lang]}
           </Button>
         </Box>
       </Box>

@@ -1,4 +1,5 @@
 const path = require("path")
+const config = require("./gatsby-config")
 const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.onCreateNode = async ({ node, actions, getNode }) => {
@@ -14,7 +15,7 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
   }
 }
 
-exports.createPages = async ({ page, graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const articleTemplate = path.resolve("src/templates/article.js")
   const result = await graphql(`
@@ -27,6 +28,7 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
       ) {
         edges {
           node {
+            id
             childMarkdownRemark {
               fields {
                 slug
@@ -43,9 +45,20 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
     return
   }
   result.data.allFile.edges.forEach(({ node }) => {
-    createPage({
-      path: `/articles${node.childMarkdownRemark.fields.slug}`,
-      component: articleTemplate,
+    config.siteMetadata.supportedLanguages.map(language => {
+      if (language !== "en") {
+        createPage({
+          path: `/${language}/articles${node.childMarkdownRemark.fields.slug}`,
+          component: articleTemplate,
+          context: { id: node.id, lang: language },
+        })
+      } else {
+        createPage({
+          path: `/articles${node.childMarkdownRemark.fields.slug}`,
+          component: articleTemplate,
+          context: { id: node.id, lang: language },
+        })
+      }
     })
   })
 }

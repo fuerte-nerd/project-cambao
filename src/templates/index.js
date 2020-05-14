@@ -16,6 +16,7 @@ const Index = props => {
             body={i.body}
             image={i.image}
             date={i.date}
+            slug={i.slug}
           />
         ))}
       </Container>

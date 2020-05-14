@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import { navigate } from "gatsby"
 import {
   useTheme,
   Box,
@@ -27,10 +28,18 @@ const ArticleCard = props => {
       es: "leer más",
     },
   }
+
+  const handleClick = () => {
+    if (props.lang !== "en") {
+      navigate(`/${props.lang}/articles${props.slug}`)
+    } else {
+      navigate(`/articles${props.slug}`)
+    }
+  }
   return (
     <Box mb={1}>
       <Card>
-        <CardActionArea>
+        <CardActionArea onClick={handleClick}>
           <Grid container>
             <Grid item xs={12} md={6} lg={5}>
               <CardMedia
@@ -59,7 +68,11 @@ const ArticleCard = props => {
         <CardActions
           style={{ background: theme.palette.secondary.main, color: "white" }}
         >
-          <Button color="inherit" startIcon={<LocalLibrary />}>
+          <Button
+            onClick={handleClick}
+            color="inherit"
+            startIcon={<LocalLibrary />}
+          >
             {text.more[props.lang]}
           </Button>
         </CardActions>
