@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { navigate } from "gatsby"
 import { connect } from "react-redux"
 import { Hidden, Tooltip, Button, ButtonGroup } from "@material-ui/core"
@@ -9,6 +9,10 @@ const LanguageSelector = props => {
     localStorage.setItem("fdr_lang_pref", f.id)
     return navigate(`/${f.id + props.redirectUrl}`)
   }
+
+  useEffect(() => {
+    console.log(props.lang)
+  }, [props.lang])
   return (
     <>
       <Hidden smUp>
