@@ -5,7 +5,9 @@ import { graphql, useStaticQuery } from "gatsby"
 import IndexTemplate from "../templates/index"
 
 const IndexPage = props => {
-  props.dispatch(setLanguage("es"))
+  useEffect(() => {
+    props.dispatch(setLanguage("es"))
+  }, [])
   const data = useStaticQuery(graphql`
     {
       articles: allFile(
