@@ -65,7 +65,7 @@ const DogListing = props => {
   const handleClick = e => {
     switch (e.currentTarget.id) {
       default:
-        navigate(`/dogs/${props.lang + props.slug}`)
+        navigate(`${props.lang}/dogs/${props.slug}`)
     }
   }
 

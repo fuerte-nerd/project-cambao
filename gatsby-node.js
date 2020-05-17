@@ -18,7 +18,7 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const articleTemplate = path.resolve("src/templates/article.js")
-  const result = await graphql(`
+  const articlesQuery = await graphql(`
     {
       allFile(
         filter: {
@@ -40,15 +40,46 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
 
-  if (result.errors) {
+  if (articlesQuery.errors) {
     reporter.panicOnBuild("Error while running article query")
     return
   }
-  result.data.allFile.edges.forEach(({ node }) => {
+  articlesQuery.data.allFile.edges.forEach(({ node }) => {
     config.siteMetadata.supportedLanguages.map(language => {
       createPage({
         path: `/${language}/articles${node.childMarkdownRemark.fields.slug}`,
         component: articleTemplate,
+        context: { id: node.childMarkdownRemark.id, lang: language },
+      })
+    })
+  })
+  const dogTemplate = path.resolve("src/templates/dog.js")
+  const dogsQuery = await graphql(`
+    {
+      allFile(
+        filter: { sourceInstanceName: { eq: "dogs" }, extension: { eq: "md" } }
+      ) {
+        edges {
+          node {
+            childMarkdownRemark {
+              id
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  if (dogsQuery.errors) {
+    reporter.panicOnBuild("Error while running dogs query")
+  }
+  dogsQuery.data.allFile.edges.forEach(({ node }) => {
+    config.siteMetadata.supportedLanguages.map(language => {
+      createPage({
+        path: `/${language}/dogs${node.childMarkdownRemark.fields.slug}`,
+        component: dogTemplate,
         context: { id: node.childMarkdownRemark.id, lang: language },
       })
     })
