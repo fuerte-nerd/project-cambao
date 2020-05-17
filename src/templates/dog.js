@@ -22,22 +22,26 @@ const Dog = props => {
   const theme = useTheme()
   const mdUp = useMediaQuery(theme.breakpoints.up("md"))
   console.log(props.data)
+  const { frontmatter } = props.data.markdownRemark
   return (
     <Box>
       <Container>
         <Grid container spacing={mdUp ? 1 : 0}>
           <Grid item xs={12} md={4}>
             <Hidden mdUp>
-              <DogProfileHeading mobile />
+              <DogProfileHeading name={frontmatter.name} mobile />
             </Hidden>
-            <DogProfilePhotoGallery />
+            <DogProfilePhotoGallery
+              mainImage={frontmatter.main_image}
+              images={frontmatter.images}
+            />
           </Grid>
           <Grid item xs={12} md={8}>
             <Box px={mdUp ? 2 : 0}>
               <Grid container spacing={0} alignItems="center">
                 <Hidden smDown>
                   <Grid item xs={12}>
-                    <DogProfileHeading />
+                    <DogProfileHeading name={frontmatter.name} />
                   </Grid>
                 </Hidden>
                 <Grid item xs={12}>
@@ -94,6 +98,10 @@ export const pageQuery = graphql`
         breed
         family_friendly
         dog_friendly
+        summary {
+          en
+          es
+        }
       }
     }
   }
