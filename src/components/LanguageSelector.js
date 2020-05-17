@@ -7,15 +7,12 @@ import { Hidden, Tooltip, Button, ButtonGroup } from "@material-ui/core"
 const LanguageSelector = props => {
   const handleClick = e => {
     const f = e.currentTarget
-    console.log(f)
+    console.log(f.id)
     localStorage.setItem("fdr_lang_pref", f.id)
     navigate(`/${f.id + props.redirectUrl}`)
     props.dispatch(setLanguage(f.id))
   }
 
-  useEffect(() => {
-    console.log(props.lang)
-  }, [props.lang])
   return (
     <>
       <Hidden smUp>
