@@ -1,4 +1,5 @@
 import React from "react"
+import { connect } from "react-redux"
 import {
   useTheme,
   useMediaQuery,
@@ -61,10 +62,12 @@ const Dog = props => {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <DogProfileVideo />
+                  <DogProfileVideo url={frontmatter.youtube} />
                 </Grid>
                 <Grid item>
-                  <DogProfileDescription />
+                  <DogProfileDescription
+                    description={frontmatter.description[props.lang]}
+                  />
                 </Grid>
                 <Grid item xs={12}>
                   <DogProfileFAQs />
@@ -89,6 +92,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        youtube
         sterilised
         sex
         ppp
@@ -116,4 +120,7 @@ export const pageQuery = graphql`
   }
 `
 
-export default Dog
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+export default connect(mapStateToProps)(Dog)
