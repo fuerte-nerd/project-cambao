@@ -18,10 +18,10 @@ import DogProfileDescription from "../components/DogProfileDescription"
 import DogProfileFAQs from "../components/DogProfileFAQs"
 import DogProfileHeading from "../components/DogProfileHeading"
 
-const Dog = () => {
+const Dog = props => {
   const theme = useTheme()
   const mdUp = useMediaQuery(theme.breakpoints.up("md"))
-
+  console.log(props.data)
   return (
     <Box>
       <Container>
