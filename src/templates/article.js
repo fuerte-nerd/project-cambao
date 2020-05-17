@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { setRedirect, setLanguage } from "../redux/actions"
 import {
@@ -22,8 +22,11 @@ const Article = props => {
   const theme = useTheme()
   const article = props.data.markdownRemark
   moment.locale(props.lang)
-  props.dispatch(setRedirect("/"))
-  props.dispatch(setLanguage(props.pageContext.lang))
+
+  useEffect(() => {
+    props.dispatch(setRedirect("/"))
+    props.dispatch(setLanguage(props.pageContext.lang))
+  }, [])
   return (
     <Container>
       <Box mb={2}>
