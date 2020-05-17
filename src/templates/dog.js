@@ -45,7 +45,20 @@ const Dog = props => {
                   </Grid>
                 </Hidden>
                 <Grid item xs={12}>
-                  <DogProfileSummary />
+                  <DogProfileSummary
+                    data={{
+                      sterilised: frontmatter.sterilised,
+                      sex: frontmatter.sex,
+                      ppp: frontmatter.ppp,
+                      location: frontmatter.location,
+                      date_of_birth: frontmatter.date_of_birth,
+                      date_entered: frontmatter.date_entered,
+                      family_friendly: frontmatter.family_friendly,
+                      dog_friendly: frontmatter.dog_friendly,
+                      cat_friendly: frontmatter.cat_friendly,
+                      breed: frontmatter.breed,
+                    }}
+                  />
                 </Grid>
                 <Grid item xs={12}>
                   <DogProfileVideo />
@@ -98,10 +111,6 @@ export const pageQuery = graphql`
         breed
         family_friendly
         dog_friendly
-        summary {
-          en
-          es
-        }
       }
     }
   }
