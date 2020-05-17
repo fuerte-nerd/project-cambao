@@ -28,8 +28,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       ) {
         edges {
           node {
-            id
             childMarkdownRemark {
+              id
               fields {
                 slug
               }
@@ -46,19 +46,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   result.data.allFile.edges.forEach(({ node }) => {
     config.siteMetadata.supportedLanguages.map(language => {
-      if (language !== "en") {
-        createPage({
-          path: `/${language}/articles${node.childMarkdownRemark.fields.slug}`,
-          component: articleTemplate,
-          context: { id: node.id, lang: language },
-        })
-      } else {
-        createPage({
-          path: `/articles${node.childMarkdownRemark.fields.slug}`,
-          component: articleTemplate,
-          context: { id: node.id, lang: language },
-        })
-      }
+      createPage({
+        path: `/${language}/articles${node.childMarkdownRemark.fields.slug}`,
+        component: articleTemplate,
+        context: { id: node.childMarkdownRemark.id, lang: language },
+      })
     })
   })
 }

@@ -1,10 +1,13 @@
 import React from "react"
+import { connect } from "react-redux"
+import { setRedirect } from "../redux/actions"
 import SEO from "../components/seo"
 import Heading from "../components/index/Heading"
 import { Container } from "@material-ui/core"
 import ArticleCard from "../components/index/ArticleCard"
 
 const Index = props => {
+  props.dispatch(setRedirect("/"))
   return (
     <>
       <SEO title={props.seo_title} />
@@ -17,6 +20,7 @@ const Index = props => {
             image={i.image}
             date={i.date}
             slug={i.slug}
+            excerpt={i.excerpt}
           />
         ))}
       </Container>
@@ -24,4 +28,4 @@ const Index = props => {
   )
 }
 
-export default Index
+export default connect()(Index)

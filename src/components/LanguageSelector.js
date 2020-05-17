@@ -1,25 +1,13 @@
 import React from "react"
 import { navigate } from "gatsby"
 import { connect } from "react-redux"
-import { setLanguage } from "../redux/actions"
-import { useLocation } from "@reach/router"
 import { Hidden, Tooltip, Button, ButtonGroup } from "@material-ui/core"
 
 const LanguageSelector = props => {
-  const location = useLocation()
   const handleClick = e => {
     const f = e.currentTarget
     localStorage.setItem("fdr_lang_pref", f.id)
-    const strippedPath = location.pathname.match(/\/[^\/]*$/g)[0]
-
-    if (f.id !== props.lang) {
-      props.dispatch(setLanguage(f.id))
-      if (f.id === "en") {
-        return navigate(`${strippedPath}`)
-      } else {
-        return navigate(`/${f.id + strippedPath}`)
-      }
-    }
+    return navigate(`/${f.id + props.redirectUrl}`)
   }
   return (
     <>
@@ -57,6 +45,7 @@ const LanguageSelector = props => {
 
 const mapStateToProps = state => ({
   lang: state.siteLang,
+  redirectUrl: state.redirect,
 })
 
 export default connect(mapStateToProps)(LanguageSelector)

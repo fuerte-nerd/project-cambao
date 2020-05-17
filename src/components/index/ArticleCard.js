@@ -20,7 +20,6 @@ import "moment/locale/es"
 
 const ArticleCard = props => {
   const theme = useTheme()
-  const excerpt = props.body.split(" ", 50).join(" ")
   moment.locale(props.lang)
   const text = {
     more: {
@@ -30,11 +29,7 @@ const ArticleCard = props => {
   }
 
   const handleClick = () => {
-    if (props.lang !== "en") {
-      navigate(`/${props.lang}/articles${props.slug}`)
-    } else {
-      navigate(`/articles${props.slug}`)
-    }
+    navigate(`/${props.lang}/articles${props.slug}`)
   }
   return (
     <Box mb={1}>
@@ -57,8 +52,13 @@ const ArticleCard = props => {
                   <Divider />
                 </Box>
 
-                <Typography align="justify" paragraph>
-                  {excerpt}...
+                <Typography
+                  variant="h6"
+                  variantMapping={{ h6: "p" }}
+                  align="justify"
+                  paragraph
+                >
+                  {props.excerpt}
                 </Typography>
                 <Box align="right" width="100%"></Box>
               </CardContent>

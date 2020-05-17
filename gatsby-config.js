@@ -8,11 +8,19 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        name: `static_content`,
-        path: `${__dirname}/content`,
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 400,
+              maxHeight: 400,
+            },
+          },
+        ],
       },
     },
     {
@@ -20,6 +28,20 @@ module.exports = {
       options: {
         name: `articles`,
         path: `${__dirname}/articles`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `dogs`,
+        path: `${__dirname}/dogs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `static_content`,
+        path: `${__dirname}/content`,
       },
     },
     {
@@ -34,14 +56,12 @@ module.exports = {
       options: {
         langKeyDefault: "en",
         langKeyForNull: "en",
-        prefixDefault: false,
+        prefixDefault: true,
         useLangKeyLayout: false,
       },
     },
-    `gatsby-transformer-remark`,
     `gatsby-plugin-react-leaflet`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

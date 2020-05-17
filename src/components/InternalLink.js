@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const InternalLink = props => {
   return (
     <Link
-      to={props.lang !== "en" ? `/${props.lang + props.to}` : props.to}
+      to={`/${props.lang + props.to}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       {props.children}

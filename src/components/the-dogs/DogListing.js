@@ -1,4 +1,6 @@
 import React from "react"
+import { connect } from "react-redux"
+import { navigate } from "gatsby"
 import {
   Button,
   Divider,
@@ -13,7 +15,6 @@ import {
   Typography,
 } from "@material-ui/core"
 import { Share, Info } from "@material-ui/icons"
-import tempImage from "../../images/test.jpg"
 
 const useStyles = makeStyles(theme => ({
   cardImage: {
@@ -57,34 +58,50 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }))
-const DogListing = () => {
+const DogListing = props => {
   const theme = useTheme()
   const classes = useStyles()
+
+  const handleClick = e => {
+    switch (e.currentTarget.id) {
+      default:
+        navigate(`/dogs/${props.lang + props.slug}`)
+    }
+  }
+
+  const text = {
+    more: {
+      en: "More info",
+      es: "Más info",
+    },
+    share: { en: "Share", es: "Comparte" },
+  }
   return (
     <Card>
-      <CardActionArea>
-        <CardMedia image={tempImage} className={classes.cardImage} />
+      <CardActionArea onClick={handleClick}>
+        <CardMedia image={props.image} className={classes.cardImage} />
+
         <CardContent>
-          <Typography variant="h3">Buddy</Typography>
+          <Typography variant="h3">{props.name}</Typography>
           <Divider style={{ margin: ".5rem 0" }} />
-          <Typography variant="body2">
-            A beautiful bardino boy. Everyone here at the shelter loves him!
-            He's very affectionate and super friendly!
-          </Typography>
+          <Typography variant="body2">{props.summary}</Typography>
         </CardContent>
       </CardActionArea>
       <CardActions
         style={{ background: theme.palette.secondary.main, color: "#fafafa" }}
       >
-        <Button color="inherit" startIcon={<Info />}>
-          More info
+        <Button color="inherit" startIcon={<Info />} onClick={handleClick}>
+          {text.more[props.lang]}
         </Button>
         <Button color="inherit" startIcon={<Share />}>
-          Share
+          {text.share[props.lang]}
         </Button>
       </CardActions>
     </Card>
   )
 }
 
-export default DogListing
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+export default connect(mapStateToProps)(DogListing)

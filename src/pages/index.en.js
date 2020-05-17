@@ -1,18 +1,18 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { connect } from "react-redux"
 import { setLanguage } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import IndexTemplate from "../templates/index"
 
 const IndexPage = props => {
-  props.dispatch(setLanguage("es"))
+  props.dispatch(setLanguage("en"))
   const data = useStaticQuery(graphql`
     {
       articles: allFile(
         filter: {
           sourceInstanceName: { eq: "articles" }
           extension: { eq: "md" }
-          childMarkdownRemark: { frontmatter: { language: { eq: "es" } } }
+          childMarkdownRemark: { frontmatter: { language: { eq: "en" } } }
         }
       ) {
         edges {
@@ -24,6 +24,7 @@ const IndexPage = props => {
               }
               frontmatter {
                 title
+                language
                 featured_image {
                   childImageSharp {
                     fixed(width: 845) {
@@ -45,22 +46,10 @@ const IndexPage = props => {
         childMarkdownRemark {
           frontmatter {
             heading {
-              es
+              en
             }
             subheading {
-              es
-            }
-          }
-        }
-      }
-      link: file(
-        sourceInstanceName: { eq: "static_content" }
-        name: { eq: "menus" }
-      ) {
-        childMarkdownRemark {
-          frontmatter {
-            home {
-              es
+              en
             }
           }
         }
@@ -81,16 +70,12 @@ const IndexPage = props => {
   })
   return (
     <IndexTemplate
-      seo_title={data.link.childMarkdownRemark.frontmatter.home.es}
-      heading={static_content.heading.es}
-      subheading={static_content.subheading.es}
+      seo_title="Home"
+      heading={static_content.heading.en}
+      subheading={static_content.subheading.en}
       articles={articles}
     />
   )
 }
 
-const mapStateToProps = state => ({
-  siteLang: state.siteLang,
-})
-
-export default connect(mapStateToProps)(IndexPage)
+export default connect()(IndexPage)

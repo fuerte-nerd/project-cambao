@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { setLanguage } from "../redux/actions"
-import { getUserLocales } from "get-user-locale"
 import { useLocation } from "@reach/router"
+import { getUserLocales } from "get-user-locale"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, navigate } from "gatsby"
@@ -26,7 +26,7 @@ import NavMenu from "./NavMenu"
 import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 
-const duration = 0.5
+const duration = 0.25
 
 const variants = {
   initial: {
@@ -47,42 +47,6 @@ const variants = {
 }
 
 const Layout = props => {
-  const location = useLocation()
-  useEffect(() => {
-    const preferredLanguage = localStorage.getItem("fdr_lang_pref")
-    if (preferredLanguage && preferredLanguage !== props.lang) {
-      if (
-        data.siteTitle.siteMetadata.supportedLanguages.includes(
-          preferredLanguage
-        )
-      ) {
-        props.dispatch(setLanguage(preferredLanguage))
-        const strippedPath = location.pathname.match(/\/[^\/]*$/g)[0]
-        if (preferredLanguage !== "en") {
-          navigate(`/${preferredLanguage + strippedPath}`)
-        } else {
-          navigate(strippedPath)
-        }
-      }
-    } else {
-      const locales = getUserLocales()
-      for (let i = 0; i < locales.length; i++) {
-        if (
-          data.siteTitle.siteMetadata.supportedLanguages.includes(locales[i])
-        ) {
-          localStorage.setItem("fdr_lang_pref", locales[i])
-          props.dispatch(setLanguage(locales[i]))
-          const strippedPath = location.pathname.match(/\/[^\/]*$/g)[0]
-          if (preferredLanguage !== "en") {
-            navigate(`/${preferredLanguage + strippedPath}`)
-          } else {
-            navigate(strippedPath)
-          }
-          break
-        }
-      }
-    }
-  }, [])
   const theme = useTheme()
   const isNotMobile = useMediaQuery(theme.breakpoints.up("sm"))
   const data = useStaticQuery(graphql`
@@ -149,6 +113,7 @@ Layout.propTypes = {
 
 const mapStateToProps = state => ({
   lang: state.siteLang,
+  redirectUrl: state.redirect,
 })
 
 export default connect(mapStateToProps)(Layout)
