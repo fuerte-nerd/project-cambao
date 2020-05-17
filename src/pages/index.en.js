@@ -6,6 +6,7 @@ import IndexTemplate from "../templates/index"
 
 const IndexPage = props => {
   useEffect(() => {
+    console.log("hellooooo")
     props.dispatch(setLanguage("en"))
   }, [])
   const data = useStaticQuery(graphql`
