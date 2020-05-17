@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { navigate } from "gatsby"
 import { connect } from "react-redux"
 import { setLanguage } from "../redux/actions"
@@ -7,8 +7,6 @@ import { Hidden, Tooltip, Button, ButtonGroup } from "@material-ui/core"
 const LanguageSelector = props => {
   const handleClick = e => {
     const f = e.currentTarget
-    console.log(f.id)
-    localStorage.setItem("fdr_lang_pref", f.id)
     navigate(`/${f.id + props.redirectUrl}`)
     props.dispatch(setLanguage(f.id))
   }
