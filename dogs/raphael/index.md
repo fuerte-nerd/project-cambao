@@ -3,6 +3,7 @@ name: Raphael
 main_image: ./test.jpg
 images:
   - ./test.jpg
+youtube: https://www.youtube.com/watch?v=nIR6AAjEg5U
 breed: Bardino
 date_of_birth: 2019-07-01T14:44:22.199Z
 date_entered: 2020-02-10T15:44:22.359Z

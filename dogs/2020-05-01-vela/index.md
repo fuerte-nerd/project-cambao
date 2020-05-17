@@ -3,6 +3,7 @@ name: Vela
 main_image: ./test.jpg
 images:
   - ./test.jpg
+youtube: https://www.youtube.com/watch?v=SQaqoNZ_35o
 breed: Pitbull
 date_of_birth: 2019-07-01T14:44:22.199Z
 date_entered: 2020-02-10T15:44:22.359Z
