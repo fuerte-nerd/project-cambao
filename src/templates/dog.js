@@ -60,5 +60,43 @@ const Dog = () => {
     </Box>
   )
 }
+export const pageQuery = graphql`
+  query($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      frontmatter {
+        images {
+          childImageSharp {
+            fluid(maxWidth: 400, maxHeight: 400) {
+              src
+            }
+          }
+        }
+        sterilised
+        sex
+        ppp
+        name
+        location
+        main_image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              src
+            }
+          }
+        }
+        description {
+          en
+          es
+        }
+        date_of_birth
+        date_entered
+        cat_friendly
+        breed
+        family_friendly
+        dog_friendly
+      }
+    }
+  }
+`
 
 export default Dog
