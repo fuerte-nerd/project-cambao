@@ -3,17 +3,17 @@ name: Vela
 main_image: ./test.jpg
 images:
   - ./test.jpg
-youtube: https://www.youtube.com/watch?v=SQaqoNZ_35o
+youtube: SQaqoNZ_35o
 breed: Pitbull
 date_of_birth: 2019-07-01T14:44:22.199Z
 date_entered: 2020-02-10T15:44:22.359Z
-sex: F
+sex: '1'
 location: '0'
-dog_friendly: '0'
-cat_friendly: '0'
-family_friendly: '0'
-ppp: true
-sterilised: true
+dog_friendly: '1'
+cat_friendly: '1'
+family_friendly: '1'
+ppp: '1'
+sterilised: '1'
 summary:
   en: >-
     Vela is a beautiful dog.  A beautiful dog she is.  Is she a beautiful dog?  Yes she is.

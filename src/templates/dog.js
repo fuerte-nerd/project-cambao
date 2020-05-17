@@ -1,5 +1,7 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { graphql } from "gatsby"
 import { connect } from "react-redux"
+import { setRedirect, setLanguage } from "../redux/actions"
 import {
   useTheme,
   useMediaQuery,
@@ -20,6 +22,10 @@ import DogProfileFAQs from "../components/DogProfileFAQs"
 import DogProfileHeading from "../components/DogProfileHeading"
 
 const Dog = props => {
+  useEffect(() => {
+    props.dispatch(setLanguage(props.pageContext.lang))
+    props.dispatch(setRedirect(`/dogs${props.data.markdownRemark.fields.slug}`))
+  }, [])
   const theme = useTheme()
   const mdUp = useMediaQuery(theme.breakpoints.up("md"))
   console.log(props.data)
@@ -88,7 +94,7 @@ export const pageQuery = graphql`
         images {
           childImageSharp {
             fluid(maxWidth: 400, maxHeight: 400) {
-              src
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -100,8 +106,8 @@ export const pageQuery = graphql`
         location
         main_image {
           childImageSharp {
-            fluid(maxWidth: 800) {
-              src
+            fluid(maxWidth: 400, maxHeight: 500) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -115,6 +121,9 @@ export const pageQuery = graphql`
         breed
         family_friendly
         dog_friendly
+      }
+      fields {
+        slug
       }
     }
   }

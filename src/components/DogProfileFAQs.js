@@ -1,29 +1,72 @@
 import React from "react"
+import { connect } from "react-redux"
 import { Box, Typography, Button, Divider } from "@material-ui/core"
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 import InternalLink from "./InternalLink"
 
 const DogProfileFAQs = props => {
+  const text = {
+    title: {
+      en: "FAQs",
+      es: "Preguntas frecuentes",
+    },
+    questions: {
+      adopt: { en: "How do I adopt a dog?", es: "¿Cómo adopto un perro?" },
+      foster: {
+        en: "How can I foster a dog?",
+        es: "¿Cómo puedo acoger a un perro?",
+      },
+      donate: { en: "How do I donate?", es: "¿Cómo puedo donar?" },
+    },
+    answers: {
+      adopt: {
+        en:
+          "You can find further information about the adoption process by following the link below.",
+        es:
+          "Puede encontrar más información sobre el proceso de adopción en el siguiente enlace.",
+      },
+      foster: {
+        en:
+          "You can find further information about the fostering process by following the link below.",
+        es:
+          "Puede encontrar más información sobre el proceso de acogida en el siguiente enlace.",
+      },
+      donate: {
+        en:
+          "You can find further information about how to donate by following the link below.",
+        es:
+          "Puede encontrar más información sobre cómo donar siguiendo el siguiente enlace.",
+      },
+    },
+    buttons: {
+      adopt: { en: "Adopt a dog", es: "Adopta un perro" },
+      foster: { en: "Foster a dog", es: "Formenta un perro" },
+      donate: { en: "Donate to FDR", es: "Donar a FDR" },
+    },
+  }
   return (
-    <DogProfileExpansionPanel title="FAQs" headingVariant="h6">
+    <DogProfileExpansionPanel
+      title={text.title[props.lang]}
+      headingVariant="h6"
+    >
       <Box>
         <Question
-          question="I'm interested in adopting Timanfaya. What should I do?"
-          answer="Fantastic! You can find further information about the adoption process by following the link below."
+          question={text.questions.adopt[props.lang]}
+          answer={text.answers.adopt[props.lang]}
           link="/adopt"
-          linkLabel="Adopt a dog"
+          linkLabel={text.buttons.adopt[props.lang]}
         />
         <Question
-          question="I'm interested in fostering Timanfaya. What should I do?"
-          answer="Brilliant! You can find further information about the fostering process by following the link below."
+          question={text.questions.foster[props.lang]}
+          answer={text.answers.foster[props.lang]}
           link="/foster"
-          linkLabel="Foster a dog"
+          linkLabel={text.buttons.foster[props.lang]}
         />
         <Question
-          question="Can I make a contribution towards Timanfaya's costs?"
-          answer="That's very kind of you! Thank you.  You can find further information about how to donate by following the link below."
+          question={text.questions.donate[props.lang]}
+          answer={text.answers.donate[props.lang]}
           link="/donate"
-          linkLabel="Donate to Fuerteventura Dog Rescue"
+          linkLabel={text.buttons.donate[props.lang]}
           last
         />
       </Box>
@@ -50,4 +93,8 @@ const Question = props => (
   </Box>
 )
 
-export default DogProfileFAQs
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(DogProfileFAQs)

@@ -1,36 +1,34 @@
 import React from "react"
+import { connect } from "react-redux"
 import Img from "gatsby-image"
 
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 import DogProfilePhotoGalleryThumbs from "./DogProfilePhotoGalleryThumbs"
 
-import { graphql, useStaticQuery } from "gatsby"
-
-const DogProfilePhotoGallery = () => {
-  const data = useStaticQuery(graphql`
-    {
-      dog1: file(name: { eq: "test" }) {
-        childImageSharp {
-          fluid(maxWidth: 400, maxHeight: 425, quality: 35) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+const DogProfilePhotoGallery = props => {
+  const text = {
+    title: {
+      en: "Photo gallery",
+      es: "Galería de fotos",
+    },
+  }
   return (
     <>
-      <Img fluid={data.dog1.childImageSharp.fluid} />
+      <Img fluid={props.mainImage.childImageSharp.fluid} />
       <DogProfileExpansionPanel
-        title="Photo Gallery"
+        title={text.title[props.lang]}
         headingVariant="body2"
         expanded
         style={{ margin: 0 }}
       >
-        <DogProfilePhotoGalleryThumbs />
+        <DogProfilePhotoGalleryThumbs images={props.images} />
       </DogProfileExpansionPanel>
     </>
   )
 }
 
-export default DogProfilePhotoGallery
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(DogProfilePhotoGallery)

@@ -1,10 +1,17 @@
 import React from "react"
+import { connect } from "react-redux"
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 
 const DogProfileVideo = props => {
+  const text = {
+    title: {
+      en: "Video",
+      es: "Video",
+    },
+  }
   return (
     <DogProfileExpansionPanel
-      title="Video"
+      title={text.title[props.lang]}
       headingVariant="h6"
       expanded
       youtube
@@ -13,7 +20,7 @@ const DogProfileVideo = props => {
         title="Video of dog"
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/DgAw6jFo6Mw"
+        src={`http://youtube.com/embed/${props.url}`}
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen="true"
@@ -31,4 +38,8 @@ const DogProfileVideo = props => {
   )
 }
 
-export default DogProfileVideo
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(DogProfileVideo)

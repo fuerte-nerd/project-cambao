@@ -6,7 +6,7 @@ const DogProfileHeading = props => {
   return (
     <Box display="flex" justifyContent="space-between" alignItems="center">
       <Box color="white">
-        <Typography variant="h2">Timanfaya</Typography>
+        <Typography variant="h2">{props.name}</Typography>
       </Box>
       <Box>
         {props.mobile ? (

@@ -1,31 +1,31 @@
 import React from "react"
+import { connect } from "react-redux"
 import { Typography } from "@material-ui/core"
 
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 
-const DogProfileDescription = () => {
+const DogProfileDescription = props => {
+  const text = {
+    title: { en: "Description", es: "Descripción" },
+  }
   return (
     <DogProfileExpansionPanel
-      title="Description"
+      title={text.title[props.lang]}
       headingVariant="h6"
       expanded
       expandOnMobile
     >
-      <Typography variant="subtitle1" align="justify">
-        Lorem a dolor possimus minus magnam? Magnam modi at alias exercitationem
-        temporibus? Accusamus laudantium nihil dolores blanditiis numquam Optio
-        corporis neque tenetur quam animi a Assumenda atque quisquam asperiores
-        quae deleniti. Repellat dolor voluptate iure tempore laborum Ex quasi
-        consectetur cupiditate illum nihil eius Voluptate laborum ipsum minus
-        dolorem dolore.\n\n Adipisicing ad nobis debitis eius velit Cum expedita
-        nostrum quidem delectus quo id Id tempora beatae id soluta error? Odio
-        in et expedita aperiam quas velit Vitae facere reiciendis accusamus
-        consequatur eos distinctio! Officia sunt debitis voluptate accusantium
-        recusandae Quisquam ratione accusamus placeat animi ex fuga? Veritatis
-        velit earum nulla!
-      </Typography>
+      <Typography
+        dangerouslySetInnerHTML={{ __html: props.description }}
+        variant="subtitle1"
+        align="justify"
+      ></Typography>
     </DogProfileExpansionPanel>
   )
 }
 
-export default DogProfileDescription
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(DogProfileDescription)
