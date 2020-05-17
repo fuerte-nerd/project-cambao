@@ -16,6 +16,7 @@ const IndexPage = props => {
       }
     }
   `)
+  console.log("reached")
   const locales = getUserLocales()
   for (let i = 0; i < locales.length; i++) {
     if (data.site.siteMetadata.supportedLanguages.includes(locales[i])) {
