@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { setLanguage } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import IndexTemplate from "../templates/index"
 
 const IndexPage = props => {
-  props.dispatch(setLanguage("en"))
+  useEffect(() => {
+    props.dispatch(setLanguage("en"))
+  }, [])
   const data = useStaticQuery(graphql`
     {
       articles: allFile(
