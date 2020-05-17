@@ -16,17 +16,18 @@ const IndexPage = props => {
       }
     }
   `)
-  console.log("reached")
-  const locales = getUserLocales()
-  for (let i = 0; i < locales.length; i++) {
-    if (data.site.siteMetadata.supportedLanguages.includes(locales[i])) {
-      localStorage.setItem("fdr_lang_pref", locales[i])
-      props.dispatch(setLanguage(locales[i]))
-      return navigate(`/${locales[i]}/`)
+  useEffect(() => {
+    const locales = getUserLocales()
+    for (let i = 0; i < locales.length; i++) {
+      if (data.site.siteMetadata.supportedLanguages.includes(locales[i])) {
+        localStorage.setItem("fdr_lang_pref", locales[i])
+        props.dispatch(setLanguage(locales[i]))
+        return navigate(`/${locales[i]}/`)
+      }
     }
-  }
-  props.dispatch(setLanguage("en"))
-  navigate("/en/")
+    props.dispatch(setLanguage("en"))
+    navigate("/en/")
+  }, [])
 
   return (
     <Box
