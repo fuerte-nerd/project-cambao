@@ -3,8 +3,14 @@ const colors = require("./colors")
 module.exports = {
   siteMetadata: {
     title: `Fuerteventura Dog Rescue`,
-    description: `We take care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura`,
+    description: {
+      en:
+        "We take care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura",
+      es:
+        "Nos ocupamos de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura",
+    },
     supportedLanguages: ["en", "es"],
+    url: "https://fuerteventuradogrescue.org",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

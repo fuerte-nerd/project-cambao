@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { setRedirect, setLanguage } from "../redux/actions"
 import {
   useTheme,
+  Button,
   Container,
   Grid,
   Card,
@@ -13,82 +14,112 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core"
-import { Facebook, Twitter, WhatsApp, Email } from "@material-ui/icons"
+import {
+  ArrowLeft,
+  Facebook,
+  Twitter,
+  WhatsApp,
+  Email,
+} from "@material-ui/icons"
 import { graphql } from "gatsby"
 import moment from "moment"
 import "moment/locale/es"
 
+import Head from "../components/head"
+import InternalLink from "../components/InternalLink"
+
 const Article = props => {
   const theme = useTheme()
-  const article = props.data.markdownRemark
+  const { article } = props.data
   moment.locale(props.lang)
 
   useEffect(() => {
     props.dispatch(setRedirect("/"))
     props.dispatch(setLanguage(props.pageContext.lang))
   }, [])
+
+  const text = {
+    back: { en: "Back", es: "Volver" },
+  }
   return (
-    <Container>
-      <Box mb={2}>
-        <Card>
-          <Grid container>
-            <Grid item xs={12} md={6} lg={5}>
-              <CardMedia
-                image={
-                  article.frontmatter.featured_image.childImageSharp.fluid.src
-                }
-                style={{ width: "100%", height: 400 }}
-              />
-            </Grid>
-            <Grid item xs={12} md={6} lg={7}>
-              <Box
-                height="100%"
-                display="flex"
-                flexDirection="column"
-                justifyContent="space-between"
-              >
-                <CardContent>
-                  <Typography variant="h2">
-                    {article.frontmatter.title}
-                  </Typography>
-                  <Typography variant="overline">
-                    {moment(article.frontmatter.date).format("D MMMM YYYY")}
-                  </Typography>
-                </CardContent>
-                <CardActions
-                  style={{
-                    background: theme.palette.secondary.main,
-                    color: "white",
-                  }}
+    <>
+      <Head
+        lang={props.pageContext.lang}
+        title={article.frontmatter.title}
+        description={article.excerpt}
+        ogImage={
+          props.data.og.frontmatter.featured_image.childImageSharp.fixed.src
+        }
+      />
+      <Container>
+        <Box color="white">
+          <InternalLink to="/">
+            <Button color="inherit" startIcon={<ArrowLeft />}>
+              {text.back[props.lang]}
+            </Button>
+          </InternalLink>
+        </Box>
+        <Box mb={2}>
+          <Card>
+            <Grid container>
+              <Grid item xs={12} md={6} lg={5}>
+                <CardMedia
+                  image={
+                    article.frontmatter.featured_image.childImageSharp.fluid.src
+                  }
+                  style={{ width: "100%", height: 400 }}
+                />
+              </Grid>
+              <Grid item xs={12} md={6} lg={7}>
+                <Box
+                  height="100%"
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
                 >
-                  <IconButton color="inherit">
-                    <Facebook />
-                  </IconButton>
-                  <IconButton color="inherit">
-                    <Twitter />
-                  </IconButton>
-                  <IconButton color="inherit">
-                    <WhatsApp />
-                  </IconButton>
-                  <IconButton color="inherit">
-                    <Email />
-                  </IconButton>
-                </CardActions>
-              </Box>
+                  <CardContent>
+                    <Typography variant="h2">
+                      {article.frontmatter.title}
+                    </Typography>
+                    <Typography variant="overline">
+                      {moment(article.frontmatter.date).format("D MMMM YYYY")}
+                    </Typography>
+                  </CardContent>
+                  <CardActions
+                    style={{
+                      background: theme.palette.secondary.main,
+                      color: "white",
+                    }}
+                  >
+                    <IconButton color="inherit">
+                      <Facebook />
+                    </IconButton>
+                    <IconButton color="inherit">
+                      <Twitter />
+                    </IconButton>
+                    <IconButton color="inherit">
+                      <WhatsApp />
+                    </IconButton>
+                    <IconButton color="inherit">
+                      <Email />
+                    </IconButton>
+                  </CardActions>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </Card>
-      </Box>
-      <Box>
-        <Typography dangerouslySetInnerHTML={{ __html: article.html }} />
-      </Box>
-    </Container>
+          </Card>
+        </Box>
+        <Box>
+          <Typography dangerouslySetInnerHTML={{ __html: article.html }} />
+        </Box>
+      </Container>
+    </>
   )
 }
 
 export const pageQuery = graphql`
   query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    article: markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
         date
@@ -100,7 +131,19 @@ export const pageQuery = graphql`
           }
         }
       }
+      excerpt
       html
+    }
+    og: markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        featured_image {
+          childImageSharp {
+            fixed(width: 1200, height: 627) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
     }
   }
 `

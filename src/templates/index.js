@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { setRedirect } from "../redux/actions"
+import Head from "../components/head"
 import SEO from "../components/seo"
 import Heading from "../components/index/Heading"
 import { Container } from "@material-ui/core"
@@ -10,7 +11,11 @@ const Index = props => {
   props.dispatch(setRedirect("/"))
   return (
     <>
-      <SEO title={props.seo_title} />
+      <Head
+        title={props.seo_title}
+        description={`$props.heading - ${props.subheading}`}
+      />
+      {/*<SEO title={props.seo_title} />*/}
       <Heading heading={props.heading} subheading={props.subheading} />
       <Container>
         {props.articles.map(i => (

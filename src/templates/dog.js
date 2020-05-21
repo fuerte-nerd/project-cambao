@@ -4,15 +4,18 @@ import { connect } from "react-redux"
 import { setRedirect, setLanguage } from "../redux/actions"
 import {
   useTheme,
+  Hidden,
+  Button,
   useMediaQuery,
   Container,
-  Hidden,
   IconButton,
   Box,
   Typography,
   Grid,
 } from "@material-ui/core"
-import { Share, MoreVert } from "@material-ui/icons"
+import { ArrowLeft } from "@material-ui/icons"
+
+import InternalLink from "../components/InternalLink"
 
 import DogProfilePhotoGallery from "../components/DogProfilePhotoGallery"
 import DogProfileSummary from "../components/DogProfileSummary"
@@ -22,26 +25,45 @@ import DogProfileFAQs from "../components/DogProfileFAQs"
 import DogProfileHeading from "../components/DogProfileHeading"
 
 const Dog = props => {
+  console.log(props)
   useEffect(() => {
     props.dispatch(setLanguage(props.pageContext.lang))
-    props.dispatch(setRedirect(`/dogs${props.data.markdownRemark.fields.slug}`))
+    props.dispatch(setRedirect(`/dogs${props.data.main.fields.slug}`))
   }, [])
   const theme = useTheme()
   const mdUp = useMediaQuery(theme.breakpoints.up("md"))
-  console.log(props.data)
-  const { frontmatter } = props.data.markdownRemark
+  const { frontmatter } = props.data.main
+
+  const images = {
+    full: [
+      props.data.largeImages.frontmatter.main_image,
+      ...props.data.largeImages.frontmatter.images,
+    ],
+    thumbs: [
+      props.data.thumbnails.frontmatter.main_image,
+      ...props.data.thumbnails.frontmatter.images,
+    ],
+  }
+
+  const text = {
+    back: { en: "Back", es: "Volver" },
+  }
   return (
     <Box>
       <Container>
+        <Box color="white">
+          <InternalLink to="/the-dogs">
+            <Button color="inherit" startIcon={<ArrowLeft />}>
+              {text.back[props.lang]}
+            </Button>
+          </InternalLink>
+        </Box>
         <Grid container spacing={mdUp ? 1 : 0}>
           <Grid item xs={12} md={4}>
             <Hidden mdUp>
               <DogProfileHeading name={frontmatter.name} mobile />
             </Hidden>
-            <DogProfilePhotoGallery
-              mainImage={frontmatter.main_image}
-              images={frontmatter.images}
-            />
+            <DogProfilePhotoGallery images={images} />
           </Grid>
           <Grid item xs={12} md={8}>
             <Box px={mdUp ? 2 : 0}>
@@ -88,29 +110,15 @@ const Dog = props => {
 }
 export const pageQuery = graphql`
   query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    main: markdownRemark(id: { eq: $id }) {
       id
       frontmatter {
-        images {
-          childImageSharp {
-            fluid(maxWidth: 400, maxHeight: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         youtube
         sterilised
         sex
         ppp
         name
         location
-        main_image {
-          childImageSharp {
-            fluid(maxWidth: 400, maxHeight: 500) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         description {
           en
           es
@@ -124,6 +132,47 @@ export const pageQuery = graphql`
       }
       fields {
         slug
+      }
+    }
+    largeImages: markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        images {
+          childImageSharp {
+            id
+            fluid(maxWidth: 844, maxHeight: 1055) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        main_image {
+          childImageSharp {
+            id
+            fluid(maxWidth: 844, maxHeight: 1055) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+
+    thumbnails: markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        images {
+          childImageSharp {
+            id
+            fluid(maxWidth: 130, maxHeight: 130) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        main_image {
+          childImageSharp {
+            id
+            fluid(maxWidth: 130, maxHeight: 130) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

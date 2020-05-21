@@ -56,37 +56,17 @@ const Navbar = props => {
   `)
 
   const text = {
-    menu: {
-      en: "Menu",
-      es: "Menú",
-    },
-    share: {
-      en: "Share",
-      es: "Compartir",
-    },
+    menu: { en: "Menu", es: "Menú" },
+    share: { en: "Share", es: "Compartir" },
     tooltips: {
-      share: {
-        en: "Share this page!",
-        es: "¡Comparte esta página!",
-      },
-      menu: {
-        en: "Show me the menu!",
-        es: "¡Muéstrame el menú!",
-      },
+      home: { en: "Return home!", es: "Volver a la página de inicio" },
+      share: { en: "Share this page!", es: "¡Comparte esta página!" },
+      menu: { en: "Show me the menu!", es: "¡Muéstrame el menú!" },
     },
     toolbuttons: {
-      donate: {
-        en: "Donate to the FDR dogs",
-        es: "Done a los perros FDR",
-      },
-      facebook: {
-        en: "Visit us on Facebook",
-        es: "Visítanos en Facebook",
-      },
-      instagram: {
-        en: "Visit us on Instagram",
-        es: "Visítanos en Instagram",
-      },
+      donate: { en: "Donate to the FDR dogs", es: "Done a los perros FDR" },
+      facebook: { en: "Visit us on Facebook", es: "Visítanos en Facebook" },
+      instagram: { en: "Visit us on Instagram", es: "Visítanos en Instagram" },
       messenger: {
         en: "Contact us on Messenger",
         es: "Contáctenos en el Messenger",
@@ -98,7 +78,7 @@ const Navbar = props => {
     <AppBar>
       <Toolbar>
         <InternalLink to="/">
-          <Tooltip title="Return home!">
+          <Tooltip title={text.tooltips.home[props.lang]}>
             <Box display="flex" style={{ cursor: "pointer" }}>
               <Img fixed={data.file.childImageSharp.fixed} />
             </Box>

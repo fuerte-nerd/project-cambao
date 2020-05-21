@@ -1,4 +1,9 @@
-import { SET_REDIRECT, SET_LANGUAGE, SET_NAV } from "./types"
+import { SET_REDIRECT, SET_LANGUAGE, SET_NAV, SET_MAIN_IMAGE } from "./types"
+
+export const setMainImage = img => ({
+  type: SET_MAIN_IMAGE,
+  payload: img,
+})
 
 export const setRedirect = path => ({
   type: SET_REDIRECT,

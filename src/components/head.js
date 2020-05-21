@@ -7,11 +7,11 @@
 
 import React from "react"
 import { connect } from "react-redux"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import defaultOG from "../images/def_og.png"
 
-function SEO({ description, lang, meta, title }) {
+function Head(props) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -22,20 +22,24 @@ function SEO({ description, lang, meta, title }) {
               en
               es
             }
+            url
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription =
+    props.description || site.siteMetadata.description[props.lang]
+
+  const metaOGImage = props.ogImage || defaultOG
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: props.lang,
       }}
-      title={title}
+      title={props.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -44,48 +48,40 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: props.title,
+        },
+        {
+          property: `og:image`,
+          content: site.siteMetadata.url + metaOGImage,
         },
         {
           property: `og:description`,
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: `og:url`,
+          content: site.siteMetadata.url,
+        },
+        {
+          property: `og:site_name`,
+          content: site.siteMetadata.title,
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      ].concat(props.meta)}
     />
   )
 }
 
-SEO.defaultProps = {
+Head.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
 }
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
-
 const mapStateToProps = state => ({
   lang: state.siteLang,
 })
 
-export default connect(mapStateToProps)(SEO)
+export default connect(mapStateToProps)(Head)
