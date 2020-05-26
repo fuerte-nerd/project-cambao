@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
-import { navigate } from "gatsby"
+import { setPopup } from "../../redux/actions"
+import { navigate, useStaticQuery, graphql } from "gatsby"
 import {
   Button,
   Divider,
@@ -64,10 +65,29 @@ const DogListing = props => {
 
   const handleClick = e => {
     switch (e.currentTarget.id) {
+      case "share":
+        return props.dispatch(
+          setPopup({
+            visible: true,
+            href: `${data.site.siteMetadata.url}/${props.lang}/dogs${props.slug}`,
+            title: props.name + " | Fuerteventura Dog Rescue",
+          })
+        )
+
       default:
         navigate(`${props.lang}/dogs/${props.slug}`)
     }
   }
+
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          url
+        }
+      }
+    }
+  `)
 
   const text = {
     more: {
@@ -76,6 +96,7 @@ const DogListing = props => {
     },
     share: { en: "Share", es: "Comparte" },
   }
+
   return (
     <Card>
       <CardActionArea onClick={handleClick}>
@@ -93,7 +114,12 @@ const DogListing = props => {
         <Button color="inherit" startIcon={<Info />} onClick={handleClick}>
           {text.more[props.lang]}
         </Button>
-        <Button color="inherit" startIcon={<Share />}>
+        <Button
+          color="inherit"
+          startIcon={<Share />}
+          onClick={handleClick}
+          id="share"
+        >
           {text.share[props.lang]}
         </Button>
       </CardActions>

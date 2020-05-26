@@ -61,6 +61,7 @@ const TheDogs = props => {
   })
   return (
     <TheDogsTemplate
+      lang="es"
       seo_title="Los Perros"
       heading="Los Perros"
       subheading="Tenemos un montón de perros esperando su hogar para siempre.  ¡Vengan a conocerlos!  No pueden esperar a conocerte."

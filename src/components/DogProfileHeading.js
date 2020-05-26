@@ -1,34 +1,35 @@
 import React from "react"
+import { connect } from "react-redux"
+import { setPopup } from "../redux/actions"
 import { Box, Typography, IconButton } from "@material-ui/core"
-import { Share, Facebook, WhatsApp, Email, Face } from "@material-ui/icons"
+import { Share, Facebook, WhatsApp, Email } from "@material-ui/icons"
 
 const DogProfileHeading = props => {
+  const handleClick = e => {
+    switch (e.currentTarget.id) {
+      case "share":
+        props.dispatch(
+          setPopup({
+            visible: true,
+            href: window.location.href,
+            title: document.title,
+          })
+        )
+    }
+  }
+
   return (
     <Box display="flex" justifyContent="space-between" alignItems="center">
       <Box color="white">
         <Typography variant="h2">{props.name}</Typography>
       </Box>
       <Box>
-        {props.mobile ? (
-          <IconButton edge="end">
-            <Share />
-          </IconButton>
-        ) : (
-          <>
-            <IconButton>
-              <Facebook />
-            </IconButton>
-            <IconButton>
-              <WhatsApp />
-            </IconButton>
-            <IconButton edge="end">
-              <Email />
-            </IconButton>
-          </>
-        )}
+        <IconButton edge="end" id="share" onClick={handleClick}>
+          <Share />
+        </IconButton>
       </Box>
     </Box>
   )
 }
 
-export default DogProfileHeading
+export default connect()(DogProfileHeading)

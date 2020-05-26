@@ -1,46 +1,93 @@
 import React from "react"
 import { navigate } from "gatsby"
 import { connect } from "react-redux"
-import { setLanguage } from "../redux/actions"
-import { Hidden, Tooltip, Button, ButtonGroup } from "@material-ui/core"
+import { setLanguage, setLanguageDialog } from "../redux/actions"
+import {
+  Dialog,
+  Box,
+  List,
+  ListItem,
+  Typography,
+  Hidden,
+  Tooltip,
+  Button,
+  ButtonGroup,
+} from "@material-ui/core"
 
 const LanguageSelector = props => {
   const handleClick = e => {
     const f = e.currentTarget
     navigate(`/${f.id + props.redirectUrl}`)
+    props.dispatch(setLanguageDialog(false))
     props.dispatch(setLanguage(f.id))
+  }
+
+  const handleClose = () => {
+    props.dispatch(setLanguageDialog(false))
+  }
+
+  const text = {
+    change: { en: "Change language", es: "Cambiar de idioma" },
+    cancel: { en: "Cancel", es: "Cancelar" },
   }
 
   return (
     <>
-      <Hidden smUp>
-        <Tooltip title="Tap to change">
-          <Button size="small" color="inherit" variant="outlined">
-            Language: Eng
+      <Button
+        color="inherit"
+        onClick={() => props.dispatch(setLanguageDialog(true))}
+      >
+        {text.change[props.lang]}
+      </Button>
+      <Dialog open={props.languageDialog} onClose={handleClose}>
+        <Box p={2}>
+          <List subheader={text.change[props.lang]}>
+            <ListItem
+              button
+              id="en"
+              onClick={handleClick}
+              style={{ justifyContent: "center" }}
+            >
+              <Typography>English</Typography>
+            </ListItem>
+            <ListItem
+              button
+              id="es"
+              onClick={handleClick}
+              style={{ justifyContent: "center" }}
+            >
+              <Typography>Español</Typography>
+            </ListItem>
+            <ListItem
+              button
+              id="de"
+              onClick={handleClick}
+              style={{ justifyContent: "center" }}
+            >
+              <Typography>Deutsch</Typography>
+            </ListItem>
+            <ListItem
+              button
+              id="it"
+              onClick={handleClick}
+              style={{ justifyContent: "center" }}
+            >
+              <Typography>Italiano</Typography>
+            </ListItem>
+            <ListItem
+              button
+              id="fr"
+              onClick={handleClick}
+              style={{ justifyContent: "center" }}
+            >
+              <Typography>Français</Typography>
+            </ListItem>
+          </List>
+          <Button variant="outlined" fullWidth onClick={handleClose}>
+            {text.cancel[props.lang]}
           </Button>
-        </Tooltip>
-      </Hidden>
-      <Hidden xsDown>
-        <ButtonGroup size="small" disableElevation>
-          <Button
-            id="en"
-            onClick={handleClick}
-            variant={props.lang === "en" ? "contained" : "outlined"}
-          >
-            EN
-          </Button>
-          <Button
-            id="es"
-            onClick={handleClick}
-            variant={props.lang === "es" ? "contained" : "outlined"}
-          >
-            ES
-          </Button>
-          <Button>DE</Button>
-          <Button>IT</Button>
-          <Button>FR</Button>
-        </ButtonGroup>
-      </Hidden>
+        </Box>
+      </Dialog>
     </>
   )
 }
@@ -48,6 +95,7 @@ const LanguageSelector = props => {
 const mapStateToProps = state => ({
   lang: state.siteLang,
   redirectUrl: state.redirect,
+  languageDialog: state.languageDialogVisible,
 })
 
 export default connect(mapStateToProps)(LanguageSelector)

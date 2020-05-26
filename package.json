@@ -7,6 +7,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.54",
     "@mdi/js": "^5.1.45",
     "@mdi/react": "^1.4.0",
     "framer-motion": "^1.10.3",

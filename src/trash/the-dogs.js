@@ -5,6 +5,7 @@ import { Container, Grid, Box, Typography } from "@material-ui/core"
 import SEO from "../components/seo"
 
 import DogListing from "../components/the-dogs/DogListing"
+import SharePopup from "../components/SharePopup"
 
 const TheDogs = props => {
   useEffect(() => {
@@ -12,6 +13,7 @@ const TheDogs = props => {
   }, [])
   return (
     <>
+      <SharePopup />
       <SEO title="The Dogs" />
       <Container>
         <Box color="white">

@@ -43,7 +43,7 @@ const DogProfilePhotoGallery = props => {
               position: "absolute",
               top: "1rem",
               right: "1rem",
-              zIndex: 5000,
+              zIndex: 1000,
             }}
           >
             <ZoomIn style={{ fontSize: "4rem" }} />

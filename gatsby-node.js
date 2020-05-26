@@ -17,6 +17,56 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+  config.siteMetadata.supportedLanguages.map(async language => {
+    let paginationQuery = await graphql(`
+      {
+        allFile(
+          filter: {
+            sourceInstanceName: { eq: "articles" }
+            extension: { eq: "md" }
+            childMarkdownRemark: { frontmatter: { language: { eq: "${language}"} } }
+          }
+          sort: {
+            fields: childMarkdownRemark___frontmatter___date
+            order: DESC
+          }
+        ) {
+          edges {
+            node {
+              childMarkdownRemark {
+                fields {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      }
+    `)
+    if (paginationQuery.errors) {
+      reporter.panicOnBuild("Error while running Pagination query")
+      return
+    }
+
+    const posts = paginationQuery.data.allFile.edges
+    console.log(posts)
+    const postsPerPage = 4
+    const numPages = Math.ceil(posts.length / postsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `${language}/` : `${language}/${i + 1}`,
+        component: path.resolve("src/templates/index.js"),
+        context: {
+          language: language,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+
+          currentPage: i + 1,
+        },
+      })
+    })
+  })
   const articleTemplate = path.resolve("src/templates/article.js")
   const articlesQuery = await graphql(`
     {

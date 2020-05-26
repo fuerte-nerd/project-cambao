@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { setNav } from "../redux/actions"
+import { setNav, setPopup } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import InternalLink from "./InternalLink"
 import {
@@ -38,6 +38,14 @@ const Navbar = props => {
     switch (f.id) {
       case "open-menu":
         return props.dispatch(setNav(true))
+      case "share":
+        return props.dispatch(
+          setPopup({
+            visible: true,
+            href: window.location.href,
+            title: document.title,
+          })
+        )
       default:
         return
     }
@@ -110,6 +118,8 @@ const Navbar = props => {
         <Box mr={2}>
           <Tooltip title={text.tooltips.share[props.lang]}>
             <Button
+              onClick={handleClick}
+              id="share"
               size="small"
               variant="outlined"
               color="inherit"

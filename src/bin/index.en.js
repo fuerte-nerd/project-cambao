@@ -70,6 +70,7 @@ const IndexPage = props => {
   })
   return (
     <IndexTemplate
+      lang="en"
       seo_title="Home"
       heading={static_content.heading.en}
       subheading={static_content.subheading.en}

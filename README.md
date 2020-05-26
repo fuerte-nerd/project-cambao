@@ -1,11 +1,7 @@
 # FDR Website
 
 ## Todos
-- [x] add tooltips to Toolbar buttons
-- [x] add logo to navmenu and make menu dense on mobile
-- [x] add grid layout for index header
-- [x] position footer in new full width grid row
-- [x] add language selector
-- [ ] change manifest colours
-- [ ] modularise code
-- [ ] trial pagination layout for index page
+- [ ] look at date on article listings
+- [ ] add language selector button to sidebar
+- [ ] check the get browser language on initial load
+- [ ] add content markdown files for static pages (adopt, foster, etc) 

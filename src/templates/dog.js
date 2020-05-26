@@ -15,6 +15,7 @@ import {
 } from "@material-ui/core"
 import { ArrowLeft } from "@material-ui/icons"
 
+import Head from "../components/head"
 import InternalLink from "../components/InternalLink"
 
 import DogProfilePhotoGallery from "../components/DogProfilePhotoGallery"
@@ -49,63 +50,70 @@ const Dog = props => {
     back: { en: "Back", es: "Volver" },
   }
   return (
-    <Box>
-      <Container>
-        <Box color="white">
-          <InternalLink to="/the-dogs">
-            <Button color="inherit" startIcon={<ArrowLeft />}>
-              {text.back[props.lang]}
-            </Button>
-          </InternalLink>
-        </Box>
-        <Grid container spacing={mdUp ? 1 : 0}>
-          <Grid item xs={12} md={4}>
-            <Hidden mdUp>
-              <DogProfileHeading name={frontmatter.name} mobile />
-            </Hidden>
-            <DogProfilePhotoGallery images={images} />
-          </Grid>
-          <Grid item xs={12} md={8}>
-            <Box px={mdUp ? 2 : 0}>
-              <Grid container spacing={0} alignItems="center">
-                <Hidden smDown>
+    <>
+      <Head
+        title={frontmatter.name}
+        description={frontmatter.summary[props.lang]}
+        ogImage={props.data.og.frontmatter.main_image.childImageSharp.fixed.src}
+      />
+      <Box>
+        <Container>
+          <Box color="white">
+            <InternalLink to="/the-dogs">
+              <Button color="inherit" startIcon={<ArrowLeft />}>
+                {text.back[props.lang]}
+              </Button>
+            </InternalLink>
+          </Box>
+          <Grid container spacing={mdUp ? 1 : 0}>
+            <Grid item xs={12} md={4}>
+              <Hidden mdUp>
+                <DogProfileHeading name={frontmatter.name} mobile />
+              </Hidden>
+              <DogProfilePhotoGallery images={images} />
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Box px={mdUp ? 2 : 0}>
+                <Grid container spacing={0} alignItems="center">
+                  <Hidden smDown>
+                    <Grid item xs={12}>
+                      <DogProfileHeading name={frontmatter.name} />
+                    </Grid>
+                  </Hidden>
                   <Grid item xs={12}>
-                    <DogProfileHeading name={frontmatter.name} />
+                    <DogProfileSummary
+                      data={{
+                        sterilised: frontmatter.sterilised,
+                        sex: frontmatter.sex,
+                        ppp: frontmatter.ppp,
+                        location: frontmatter.location,
+                        date_of_birth: frontmatter.date_of_birth,
+                        date_entered: frontmatter.date_entered,
+                        family_friendly: frontmatter.family_friendly,
+                        dog_friendly: frontmatter.dog_friendly,
+                        cat_friendly: frontmatter.cat_friendly,
+                        breed: frontmatter.breed,
+                      }}
+                    />
                   </Grid>
-                </Hidden>
-                <Grid item xs={12}>
-                  <DogProfileSummary
-                    data={{
-                      sterilised: frontmatter.sterilised,
-                      sex: frontmatter.sex,
-                      ppp: frontmatter.ppp,
-                      location: frontmatter.location,
-                      date_of_birth: frontmatter.date_of_birth,
-                      date_entered: frontmatter.date_entered,
-                      family_friendly: frontmatter.family_friendly,
-                      dog_friendly: frontmatter.dog_friendly,
-                      cat_friendly: frontmatter.cat_friendly,
-                      breed: frontmatter.breed,
-                    }}
-                  />
+                  <Grid item xs={12}>
+                    <DogProfileVideo url={frontmatter.youtube} />
+                  </Grid>
+                  <Grid item>
+                    <DogProfileDescription
+                      description={frontmatter.description[props.lang]}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <DogProfileFAQs />
+                  </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                  <DogProfileVideo url={frontmatter.youtube} />
-                </Grid>
-                <Grid item>
-                  <DogProfileDescription
-                    description={frontmatter.description[props.lang]}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <DogProfileFAQs />
-                </Grid>
-              </Grid>
-            </Box>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </>
   )
 }
 export const pageQuery = graphql`
@@ -129,6 +137,10 @@ export const pageQuery = graphql`
         breed
         family_friendly
         dog_friendly
+        summary {
+          en
+          es
+        }
       }
       fields {
         slug
@@ -170,6 +182,17 @@ export const pageQuery = graphql`
             id
             fluid(maxWidth: 130, maxHeight: 130) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    og: markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        main_image {
+          childImageSharp {
+            fixed(width: 1200, height: 627) {
+              ...GatsbyImageSharpFixed
             }
           }
         }

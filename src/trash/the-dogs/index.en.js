@@ -60,6 +60,7 @@ const TheDogs = props => {
   })
   return (
     <TheDogsTemplate
+      lang="en"
       seo_title="The Dogs"
       heading="The Dogs"
       subheading="We have lots of dogs waiting for their forever home.  Come and meet them!  They can't wait to meet you!"

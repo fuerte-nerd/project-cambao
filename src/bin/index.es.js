@@ -83,6 +83,7 @@ const IndexPage = props => {
   })
   return (
     <IndexTemplate
+      lang="es"
       seo_title={data.link.childMarkdownRemark.frontmatter.home.es}
       heading={static_content.heading.es}
       subheading={static_content.subheading.es}

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { setRedirect, setLanguage } from "../redux/actions"
+import { setRedirect, setLanguage, setPopup } from "../redux/actions"
 import {
   useTheme,
   Button,
@@ -14,13 +14,7 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core"
-import {
-  ArrowLeft,
-  Facebook,
-  Twitter,
-  WhatsApp,
-  Email,
-} from "@material-ui/icons"
+import { ArrowLeft, Share } from "@material-ui/icons"
 import { graphql } from "gatsby"
 import moment from "moment"
 import "moment/locale/es"
@@ -38,9 +32,24 @@ const Article = props => {
     props.dispatch(setLanguage(props.pageContext.lang))
   }, [])
 
+  const handleClick = e => {
+    switch (e.currentTarget.id) {
+      case "share":
+        return props.dispatch(
+          setPopup({
+            visible: true,
+            href: window.location.href,
+            title: document.title,
+          })
+        )
+    }
+  }
+
   const text = {
     back: { en: "Back", es: "Volver" },
+    share: { en: "Share", es: "Comparte" },
   }
+
   return (
     <>
       <Head
@@ -91,18 +100,14 @@ const Article = props => {
                       color: "white",
                     }}
                   >
-                    <IconButton color="inherit">
-                      <Facebook />
-                    </IconButton>
-                    <IconButton color="inherit">
-                      <Twitter />
-                    </IconButton>
-                    <IconButton color="inherit">
-                      <WhatsApp />
-                    </IconButton>
-                    <IconButton color="inherit">
-                      <Email />
-                    </IconButton>
+                    <Button
+                      onClick={handleClick}
+                      id="share"
+                      color="inherit"
+                      startIcon={<Share />}
+                    >
+                      {text.share[props.lang]}
+                    </Button>
                   </CardActions>
                 </Box>
               </Grid>
