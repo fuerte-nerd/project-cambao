@@ -91,7 +91,9 @@ const Article = props => {
                       {article.frontmatter.title}
                     </Typography>
                     <Typography variant="overline">
-                      {moment(article.frontmatter.date).format("D MMMM YYYY")}
+                      {moment(article.frontmatter.date).format(
+                        "dddd D MMMM YYYY"
+                      )}
                     </Typography>
                   </CardContent>
                   <CardActions

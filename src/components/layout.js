@@ -22,6 +22,7 @@ import { ThemeProvider } from "@material-ui/core/styles"
 import siteTheme from "./theme"
 
 import SharePopup from "./SharePopup"
+import LanguageDialog from "./LanguageDialog"
 import Navbar from "./Navbar"
 import NavMenu from "./NavMenu"
 import Sidebar from "./Sidebar"
@@ -70,6 +71,7 @@ const Layout = props => {
         />
       </Helmet>
       <CssBaseline>
+        <LanguageDialog />
         <SharePopup />
         <Navbar siteTitle={data.siteTitle.siteMetadata.title} />
         <NavMenu />

@@ -27,6 +27,7 @@ const ArticleCard = props => {
       es: "leer más",
     },
   }
+  console.log(props.date)
 
   const handleClick = () => {
     navigate(`/${props.lang}/articles${props.slug}`)
@@ -52,12 +53,7 @@ const ArticleCard = props => {
                   <Divider />
                 </Box>
 
-                <Typography
-                  variant="h6"
-                  variantMapping={{ h6: "p" }}
-                  align="justify"
-                  paragraph
-                >
+                <Typography variant="body1" align="justify" paragraph>
                   {props.excerpt}
                 </Typography>
                 <Box align="right" width="100%"></Box>

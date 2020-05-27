@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 import { connect } from "react-redux"
 import { setLanguage, setRedirect } from "../redux/actions"
 import { Container, Box, Typography, Grid } from "@material-ui/core"
@@ -10,7 +10,7 @@ import DogListing from "../components/the-dogs/DogListing"
 const TheDogs = props => {
   props.dispatch(setLanguage(props.pageContext.language))
   props.dispatch(setRedirect("/the-dogs"))
-  const dogs = data.dogs.edges.map(i => {
+  const dogs = props.data.dogs.edges.map(i => {
     const dog = i.node.childMarkdownRemark.frontmatter
     return {
       name: dog.name,
@@ -67,46 +67,48 @@ const TheDogs = props => {
 const mapStateToProps = state => ({
   lang: state.siteLang,
 })
-export const data = graphql(`
-  query DogsQuery($language: String!)  {
-      heading: file(
-        sourceInstanceName: { eq: "static_content" }
-        name: { eq: "menus" }
-      ) {
-        childMarkdownRemark {
-          frontmatter {
-            the_dogs {
-             $language 
-            }
+export const data = graphql`
+  query DogsQuery {
+    heading: file(
+      sourceInstanceName: { eq: "static_content" }
+      name: { eq: "menus" }
+    ) {
+      childMarkdownRemark {
+        frontmatter {
+          the_dogs {
+            en
+            es
           }
         }
       }
-      dogs: allFile(
-        filter: { sourceInstanceName: { eq: "dogs" }, extension: { eq: "md" } }
-      ) {
-        edges {
-          node {
-            childMarkdownRemark {
-              frontmatter {
-                name
-                main_image {
-                  childImageSharp {
-                    fixed(width: 845) {
-                      ...GatsbyImageSharpFixed
-                    }
+    }
+    dogs: allFile(
+      filter: { sourceInstanceName: { eq: "dogs" }, extension: { eq: "md" } }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              name
+              main_image {
+                childImageSharp {
+                  fixed(width: 845) {
+                    ...GatsbyImageSharpFixed
                   }
                 }
-                summary {
-              $language
-                }
               }
-              fields {
-                slug
+              summary {
+                en
+                es
               }
+            }
+            fields {
+              slug
             }
           }
         }
       }
     }
-  `)
+  }
+`
 export default connect(mapStateToProps)(TheDogs)

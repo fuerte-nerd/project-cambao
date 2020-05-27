@@ -49,8 +49,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
 
     const posts = paginationQuery.data.allFile.edges
-    console.log(posts)
-    const postsPerPage = 4
+    const postsPerPage = 5
     const numPages = Math.ceil(posts.length / postsPerPage)
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
@@ -101,6 +100,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         component: articleTemplate,
         context: { id: node.childMarkdownRemark.id, lang: language },
       })
+    })
+  })
+
+  const theDogsTemplate = path.resolve("src/templates/the-dogs.js")
+  config.siteMetadata.supportedLanguages.map(language => {
+    createPage({
+      path: `/${language}/the-dogs`,
+      component: theDogsTemplate,
+      context: { language: language },
     })
   })
   const dogTemplate = path.resolve("src/templates/dog.js")

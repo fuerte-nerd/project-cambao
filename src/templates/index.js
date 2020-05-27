@@ -63,13 +63,13 @@ const Index = props => {
             excerpt={i.excerpt}
           />
         ))}
+        <Pagination
+          count={props.pageContext.numPages}
+          page={props.pageContext.currentPage}
+          onChange={handleClick}
+          style={{ display: "flex", justifyContent: "center" }}
+        />
       </Container>
-      <Pagination
-        count={props.pageContext.numPages}
-        page={props.pageContext.currentPage}
-        onChange={handleClick}
-        style={{ justifyContent: "center" }}
-      />
     </>
   )
 }
@@ -102,9 +102,10 @@ export const articleListQuery = graphql`
                   }
                 }
               }
+              date
             }
             html
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 400)
           }
         }
       }

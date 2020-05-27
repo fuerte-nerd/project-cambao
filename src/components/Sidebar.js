@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Grid, Box, Container } from "@material-ui/core"
-
+import SidebarLanguage from "./SidebarLanguage"
 import SidebarQuickLinks from "./SidebarQuickLinks"
 import SidebarChatNow from "./SidebarChatNow"
 import SidebarDonate from "./SidebarDonate"
@@ -13,6 +13,7 @@ const Sidebar = () => {
     <Grid item xs={0} md={2}>
       <Box py={2} bgcolor="primary.light" boxShadow={2}>
         <Container>
+          <SidebarLanguage />
           <SidebarQuickLinks />
           <SidebarChatNow />
           <SidebarDonate />
