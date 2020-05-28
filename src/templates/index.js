@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { setRedirect, setLanguage } from "../redux/actions"
 import Head from "../components/head"
 import Heading from "../components/index/Heading"
-import { Container, Box } from "@material-ui/core"
+import { Container } from "@material-ui/core"
 import { Pagination } from "@material-ui/lab"
 import ArticleCard from "../components/index/ArticleCard"
 
@@ -53,6 +53,16 @@ const Index = props => {
         subheading={text.subheading[props.lang]}
       />
       <Container>
+        <Pagination
+          count={props.pageContext.numPages}
+          page={props.pageContext.currentPage}
+          onChange={handleClick}
+          style={{
+            marginBottom: ".35rem",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        />
         {articles.map(i => (
           <ArticleCard
             title={i.title}

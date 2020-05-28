@@ -16,18 +16,6 @@ const IndexPage = props => {
       }
     }
   `)
-  useEffect(() => {
-    const locales = getUserLocales()
-    for (let i = 0; i < locales.length; i++) {
-      if (data.site.siteMetadata.supportedLanguages.includes(locales[i])) {
-        localStorage.setItem("fdr_lang_pref", locales[i])
-        props.dispatch(setLanguage(locales[i]))
-        return navigate(`/${locales[i]}/`)
-      }
-    }
-    props.dispatch(setLanguage("en"))
-    navigate("/en/")
-  }, [])
 
   return (
     <Box

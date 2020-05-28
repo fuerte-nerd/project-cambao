@@ -1,8 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { setLanguage } from "../redux/actions"
-import { useLocation } from "@reach/router"
-import { getUserLocales } from "get-user-locale"
+import detectBrowserLanguage from "detect-browser-language"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, navigate } from "gatsby"
@@ -53,7 +51,7 @@ const Layout = props => {
   const isNotMobile = useMediaQuery(theme.breakpoints.up("sm"))
   const data = useStaticQuery(graphql`
     {
-      siteTitle: site {
+      site {
         siteMetadata {
           title
           supportedLanguages
@@ -61,6 +59,21 @@ const Layout = props => {
       }
     }
   `)
+
+  useEffect(() => {
+    const langPref = localStorage.getItem("fdr_site_lang")
+    if (langPref) {
+      navigate(`/${langPref + props.redirectUrl}`)
+    } else {
+      const browserLang = detectBrowserLanguage().toLowerCase().substr(0, 2)
+      console.log(browserLang)
+      if (data.site.siteMetadata.supportedLanguages.includes(browserLang)) {
+        navigate(`/${browserLang + props.redirectUrl}`)
+      } else {
+        navigate(`/es${props.redirectUrl}`)
+      }
+    }
+  }, [])
 
   return (
     <ThemeProvider theme={siteTheme}>
@@ -73,7 +86,7 @@ const Layout = props => {
       <CssBaseline>
         <LanguageDialog />
         <SharePopup />
-        <Navbar siteTitle={data.siteTitle.siteMetadata.title} />
+        <Navbar siteTitle={data.site.siteMetadata.title} />
         <NavMenu />
         <Box
           bgcolor="primary.main"

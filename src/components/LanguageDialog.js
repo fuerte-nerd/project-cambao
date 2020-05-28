@@ -15,6 +15,7 @@ const LanguageDialog = props => {
   const handleClick = e => {
     const f = e.currentTarget
     navigate(`/${f.id + props.redirectUrl}`)
+    localStorage.setItem("fdr_site_lang", f.id)
     props.dispatch(setLanguageDialog(false))
     props.dispatch(setLanguage(f.id))
   }
@@ -23,13 +24,12 @@ const LanguageDialog = props => {
     props.dispatch(setLanguageDialog(false))
   }
   const text = {
-    change: { en: "Change language", es: "Cambiar de idioma" },
     cancel: { en: "Cancel", es: "Cancelar" },
   }
   return (
     <Dialog open={props.languageDialog} onClose={handleClose}>
       <Box p={2}>
-        <List subheader={text.change[props.lang]}>
+        <List>
           <ListItem
             button
             id="en"

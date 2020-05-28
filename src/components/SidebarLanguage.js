@@ -1,13 +1,23 @@
 import React from "react"
+import { connect } from "react-redux"
 import { Box } from "@material-ui/core"
+import SidebarSectionTitle from "./SidebarSectionTitle"
 import LanguageSelector from "./LanguageSelector"
 
-const SidebarLanguage = () => {
+const SidebarLanguage = props => {
+  const text = {
+    siteLang: { en: "Site language", es: "Idioma del sitio" },
+  }
   return (
-    <Box fullWidth align="center">
-      <LanguageSelector />
-    </Box>
+    <>
+      <SidebarSectionTitle title={text.siteLang[props.lang]} top />
+      <LanguageSelector fullWidth />
+    </>
   )
 }
 
-export default SidebarLanguage
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(SidebarLanguage)

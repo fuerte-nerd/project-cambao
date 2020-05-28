@@ -12,6 +12,7 @@ const LanguageSelector = props => {
     <Tooltip title={text.change[props.lang]}>
       <Button
         size="small"
+        fullWidth={props.fullWidth ? true : false}
         variant="contained"
         onClick={() => props.dispatch(setLanguageDialog(true))}
         startIcon={<Language />}

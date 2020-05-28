@@ -142,4 +142,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   })
+  const whoAreWeTemplate = path.resolve("src/templates/who-are-we.js")
+  config.siteMetadata.supportedLanguages.map(language => {
+    createPage({
+      path: `/${language}/who-are-we`,
+      component: whoAreWeTemplate,
+      context: { language: language },
+    })
+  })
 }

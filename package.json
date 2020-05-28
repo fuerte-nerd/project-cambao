@@ -10,6 +10,7 @@
     "@material-ui/lab": "^4.0.0-alpha.54",
     "@mdi/js": "^5.1.45",
     "@mdi/react": "^1.4.0",
+    "detect-browser-language": "0.0.2",
     "framer-motion": "^1.10.3",
     "gatsby": "^2.21.0",
     "gatsby-background-image": "^1.1.1",
