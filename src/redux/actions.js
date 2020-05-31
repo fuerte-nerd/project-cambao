@@ -5,7 +5,19 @@ import {
   SET_LANGUAGE,
   SET_NAV,
   SET_MAIN_IMAGE,
+  SET_NOTICE_DIALOG,
+  SET_DONATE_DIALOG,
 } from "./types"
+
+export const setDonateDialog = isOpen => ({
+  type: SET_DONATE_DIALOG,
+  payload: isOpen,
+})
+
+export const setNoticeDialog = obj => ({
+  type: SET_NOTICE_DIALOG,
+  payload: obj,
+})
 
 export const setLanguageDialog = isOpen => ({
   type: SET_LANGUAGE_DIALOG,

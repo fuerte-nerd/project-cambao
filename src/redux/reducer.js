@@ -5,6 +5,8 @@ import {
   SET_NAV,
   SET_MAIN_IMAGE,
   SET_POPUP,
+  SET_NOTICE_DIALOG,
+  SET_DONATE_DIALOG,
 } from "./types"
 
 const initialState = {
@@ -17,11 +19,28 @@ const initialState = {
     href: ``,
     title: ``,
   },
+  noticeDialog: {
+    visible: false,
+    heading: ``,
+    body: ``,
+    btnText: ``,
+  },
+  donateDialog: false,
   languageDialogVisible: false,
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SET_DONATE_DIALOG:
+      return {
+        ...state,
+        donateDialog: action.payload,
+      }
+    case SET_NOTICE_DIALOG:
+      return {
+        ...state,
+        noticeDialog: action.payload,
+      }
     case SET_LANGUAGE_DIALOG:
       return {
         ...state,

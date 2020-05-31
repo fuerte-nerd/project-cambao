@@ -31,8 +31,8 @@ const SidebarDonate = props => {
         <Box mt={2}>
           <Button
             variant="contained"
+            size="small"
             fullWidth
-            color="secondary"
             startIcon={<EuroSymbol />}
           >
             {text.button[props.lang]}

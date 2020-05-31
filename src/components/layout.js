@@ -20,7 +20,9 @@ import { ThemeProvider } from "@material-ui/core/styles"
 import siteTheme from "./theme"
 
 import SharePopup from "./SharePopup"
+import NoticeDialog from "./NoticeDialog"
 import LanguageDialog from "./LanguageDialog"
+import DonateDialog from "./DonateDialog"
 import Navbar from "./Navbar"
 import NavMenu from "./NavMenu"
 import Sidebar from "./Sidebar"
@@ -84,7 +86,9 @@ const Layout = props => {
         />
       </Helmet>
       <CssBaseline>
+        <NoticeDialog />
         <LanguageDialog />
+        <DonateDialog />
         <SharePopup />
         <Navbar siteTitle={data.site.siteMetadata.title} />
         <NavMenu />

@@ -41,22 +41,22 @@ const NavMenuHelpUsSubmenu = props => {
         <NavMenuHelpUsSubmenuItem
           title={frontmatter.adopt[props.lang]}
           id="adopt"
-          link="adopt"
+          link="/adopt"
         />
         <NavMenuHelpUsSubmenuItem
           title={frontmatter.foster[props.lang]}
           id="foster"
-          link="foster"
+          link="/foster"
         />
         <NavMenuHelpUsSubmenuItem
           title={frontmatter.donate[props.lang]}
           id="donate"
-          link="donate"
+          link="/donate"
         />
         <NavMenuHelpUsSubmenuItem
           title={frontmatter.volunteer[props.lang]}
           id="volunteer"
-          link="volunteer"
+          link="/volunteer"
         />
       </List>
     </Box>

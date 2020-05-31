@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { setNav, setPopup } from "../redux/actions"
+import { setNav, setPopup, setDonateDialog } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import InternalLink from "./InternalLink"
 import {
@@ -38,6 +38,8 @@ const Navbar = props => {
     switch (f.id) {
       case "open-menu":
         return props.dispatch(setNav(true))
+      case "donate":
+        return props.dispatch(setDonateDialog(true))
       case "share":
         return props.dispatch(
           setPopup({
@@ -53,10 +55,22 @@ const Navbar = props => {
 
   const data = useStaticQuery(graphql`
     {
-      file(name: { eq: "logo" }, sourceInstanceName: { eq: "images" }) {
+      logo: file(name: { eq: "logo" }, sourceInstanceName: { eq: "images" }) {
         childImageSharp {
           fixed(height: 40, width: 40) {
             ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      links: file(
+        name: { eq: "links" }
+        sourceInstanceName: { eq: "static_content" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            facebook
+            instagram
+            email
           }
         }
       }
@@ -88,7 +102,7 @@ const Navbar = props => {
         <InternalLink to="/">
           <Tooltip title={text.tooltips.home[props.lang]}>
             <Box display="flex" style={{ cursor: "pointer" }}>
-              <Img fixed={data.file.childImageSharp.fixed} />
+              <Img fixed={data.logo.childImageSharp.fixed} />
             </Box>
           </Tooltip>
         </InternalLink>
@@ -101,7 +115,11 @@ const Navbar = props => {
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Hidden smDown>
-          <NavbarToolsIcon tooltip={text.toolbuttons.donate[props.lang]}>
+          <NavbarToolsIcon
+            tooltip={text.toolbuttons.donate[props.lang]}
+            onClick={handleClick}
+            id="donate"
+          >
             <EuroSymbol className={classes.navToolsButton} />
           </NavbarToolsIcon>
           <NavbarToolsIcon tooltip={text.toolbuttons.facebook[props.lang]}>

@@ -29,7 +29,7 @@ const LanguageDialog = props => {
   return (
     <Dialog open={props.languageDialog} onClose={handleClose}>
       <Box p={2}>
-        <List>
+        <List disablePadding>
           <ListItem
             button
             id="en"

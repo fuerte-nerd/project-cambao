@@ -1,4 +1,6 @@
 export const SET_POPUP = "SET_POPUP"
+export const SET_DONATE_DIALOG = "SET_DONATE_DIALOG"
+export const SET_NOTICE_DIALOG = "SET_NOTICE_DIALOG"
 export const SET_LANGUAGE_DIALOG = "SET_LANGUAGE_DIALOG"
 export const SET_LANGUAGE = "SET_LANGUAGE"
 export const SET_NAV = "SET_NAV"

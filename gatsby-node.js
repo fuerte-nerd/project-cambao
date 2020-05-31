@@ -60,7 +60,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-
           currentPage: i + 1,
         },
       })
@@ -142,11 +141,113 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   })
-  const whoAreWeTemplate = path.resolve("src/templates/who-are-we.js")
+  const staticPageTemplate = path.resolve("src/templates/staticPage.js")
+  const whoAreWeQuery = await graphql(`
+    {
+      file(name: { eq: "whoarewe" }) {
+        childMarkdownRemark {
+          id
+        }
+      }
+    }
+  `)
+  const adoptQuery = await graphql(`
+    {
+      file(name: { eq: "adopt" }) {
+        childMarkdownRemark {
+          id
+        }
+      }
+    }
+  `)
+  const fosterQuery = await graphql(`
+    {
+      file(name: { eq: "foster" }) {
+        childMarkdownRemark {
+          id
+        }
+      }
+    }
+  `)
+  const donateQuery = await graphql(`
+    {
+      file(name: { eq: "donate" }) {
+        childMarkdownRemark {
+          id
+        }
+      }
+    }
+  `)
+  const volunteerQuery = await graphql(`
+    {
+      file(name: { eq: "volunteer" }) {
+        childMarkdownRemark {
+          id
+        }
+      }
+    }
+  `)
   config.siteMetadata.supportedLanguages.map(language => {
     createPage({
       path: `/${language}/who-are-we`,
-      component: whoAreWeTemplate,
+      component: staticPageTemplate,
+      context: {
+        id: whoAreWeQuery.data.file.childMarkdownRemark.id,
+        language: language,
+        redirectUrl: "/who-are-we",
+        pageName: "whoAreWe",
+      },
+    })
+    createPage({
+      path: `/${language}/adopt`,
+      component: staticPageTemplate,
+      context: {
+        id: adoptQuery.data.file.childMarkdownRemark.id,
+        language: language,
+        redirectUrl: "/adopt",
+        pageName: "adopt",
+      },
+    })
+    createPage({
+      path: `/${language}/foster`,
+      component: staticPageTemplate,
+      context: {
+        id: fosterQuery.data.file.childMarkdownRemark.id,
+        language: language,
+        redirectUrl: "/foster",
+        pageName: "foster",
+      },
+    })
+    createPage({
+      path: `/${language}/donate`,
+      component: staticPageTemplate,
+      context: {
+        id: donateQuery.data.file.childMarkdownRemark.id,
+        language: language,
+        redirectUrl: "/donate",
+        pageName: "donate",
+      },
+    })
+    createPage({
+      path: `/${language}/volunteer`,
+      component: staticPageTemplate,
+      context: {
+        id: volunteerQuery.data.file.childMarkdownRemark.id,
+        language: language,
+        redirectUrl: "/volunteer",
+        pageName: "volunteer",
+      },
+    })
+    const contactTemplate = path.resolve("src/templates/contact.js")
+    createPage({
+      path: `/${language}/contact`,
+      component: contactTemplate,
+      context: { language: language },
+    })
+    const thanksTemplate = path.resolve("src/templates/thanks.js")
+    createPage({
+      path: `/${language}/thanks`,
+      component: thanksTemplate,
       context: { language: language },
     })
   })
