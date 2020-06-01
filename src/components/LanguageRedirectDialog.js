@@ -50,7 +50,7 @@ const LanguageRedirectDialog = props => {
   return (
     <Dialog open={props.isOpen} onClose={handleClose}>
       <DialogTitle>{text.title[props.lang]}</DialogTitle>
-      <DialogContent>{text.question[props.lang]}</DialogContent>
+      <DialogContent dividers>{text.question[props.lang]}</DialogContent>
       <DialogActions>
         <Button id="yes" onClick={handleClick}>
           {text.yes[props.lang]}

@@ -5,6 +5,8 @@ import { setLanguage, setLanguageDialog } from "../redux/actions"
 import {
   Button,
   Dialog,
+  DialogContent,
+  DialogActions,
   Box,
   List,
   ListItem,
@@ -15,7 +17,6 @@ const LanguageDialog = props => {
   const handleClick = e => {
     const f = e.currentTarget
     localStorage.setItem("fdr_lang_pref", f.id)
-    //props.dispatch(setLanguage(f.id))
     props.dispatch(setLanguageDialog(false))
     navigate(`/${f.id + props.redirectUrl}`)
   }
@@ -28,7 +29,7 @@ const LanguageDialog = props => {
   }
   return (
     <Dialog open={props.languageDialog} onClose={handleClose}>
-      <Box p={2}>
+      <DialogContent dividers>
         <List disablePadding>
           <ListItem
             button
@@ -71,10 +72,10 @@ const LanguageDialog = props => {
             <Typography>Français</Typography>
           </ListItem>
         </List>
-        <Button variant="outlined" fullWidth onClick={handleClose}>
-          {text.cancel[props.lang]}
-        </Button>
-      </Box>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClose}>{text.cancel[props.lang]}</Button>
+      </DialogActions>
     </Dialog>
   )
 }

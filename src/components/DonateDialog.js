@@ -1,7 +1,15 @@
 import React from "react"
 import { connect } from "react-redux"
 import { setDonateDialog } from "../redux/actions"
-import { Dialog, DialogTitle, Typography, Button, Box } from "@material-ui/core"
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Typography,
+  Button,
+  Box,
+} from "@material-ui/core"
 
 import PaypalButton from "./PaypalButton"
 
@@ -32,7 +40,7 @@ const DonateDialog = props => {
   return (
     <Dialog open={props.isOpen} maxWidth="md" onClose={handleClose}>
       <DialogTitle>{text.heading[props.lang]}</DialogTitle>
-      <Box p={3}>
+      <DialogContent dividers>
         <Typography>{text.body[props.lang]}</Typography>
         <Box fullWidth m={3} align="center">
           <PaypalButton />
@@ -45,12 +53,10 @@ const DonateDialog = props => {
         <Box mt={3}>
           <Typography variant="caption">*{text.cash[props.lang]}</Typography>
         </Box>
-        <Box mt={3}>
-          <Button variant="outlined" fullWidth onClick={handleClose}>
-            {text.close[props.lang]}
-          </Button>
-        </Box>
-      </Box>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClose}>{text.close[props.lang]}</Button>
+      </DialogActions>
     </Dialog>
   )
 }

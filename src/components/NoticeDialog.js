@@ -1,7 +1,15 @@
 import React from "react"
 import { connect } from "react-redux"
 import { setNoticeDialog } from "../redux/actions"
-import { Dialog, DialogTitle, Typography, Button, Box } from "@material-ui/core"
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Typography,
+  Button,
+  Box,
+} from "@material-ui/core"
 
 const NoticeDialog = props => {
   const handleClose = () => {
@@ -18,14 +26,12 @@ const NoticeDialog = props => {
   return (
     <Dialog open={props.notice.visible} maxWidth="md" onClose={handleClose}>
       <DialogTitle>{props.notice.heading}</DialogTitle>
-      <Box p={3}>
+      <DialogContent dividers>
         <Typography>{props.notice.body}</Typography>
-        <Box mt={3}>
-          <Button variant="outlined" fullWidth onClick={handleClose}>
-            {props.notice.btnText}
-          </Button>
-        </Box>
-      </Box>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClose}>{props.notice.btnText}</Button>
+      </DialogActions>
     </Dialog>
   )
 }
