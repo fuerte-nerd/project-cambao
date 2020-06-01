@@ -7,14 +7,7 @@ import PaypalButton from "./PaypalButton"
 
 const DonateDialog = props => {
   const handleClose = () => {
-    props.dispatch(
-      setDonateDialog({
-        visible: false,
-        heading: ``,
-        body: ``,
-        btnText: ``,
-      })
-    )
+    props.dispatch(setDonateDialog(false))
   }
 
   const text = {
@@ -41,8 +34,16 @@ const DonateDialog = props => {
       <DialogTitle>{text.heading[props.lang]}</DialogTitle>
       <Box p={3}>
         <Typography>{text.body[props.lang]}</Typography>
-        <Box>
+        <Box fullWidth m={3} align="center">
           <PaypalButton />
+        </Box>
+        <Box mt={3} fullWidth align="center">
+          <Typography variant="subtitle2">
+            <strong>IBAN:</strong> ES34 0081 0545 5500 0141 9442
+          </Typography>
+        </Box>
+        <Box mt={3}>
+          <Typography variant="caption">*{text.cash[props.lang]}</Typography>
         </Box>
         <Box mt={3}>
           <Button variant="outlined" fullWidth onClick={handleClose}>

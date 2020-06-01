@@ -17,6 +17,7 @@ const DogProfilePhotoGallery = props => {
   }
   useEffect(() => {
     props.dispatch(setMainImage(props.images.full[0].childImageSharp.id))
+    //eslint-disable-next-line
   }, [])
 
   useEffect(() => {
@@ -25,6 +26,7 @@ const DogProfilePhotoGallery = props => {
         return setCurrentImage(props.images.full[img].childImageSharp)
       }
     }
+    //eslint-disable-next-line
   }, [props.largeImage])
 
   const handleClick = e => {

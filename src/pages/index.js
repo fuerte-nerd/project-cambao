@@ -1,22 +1,10 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { setRedirect, setLanguage } from "../redux/actions"
-import { useStaticQuery, graphql } from "gatsby"
-import { getUserLocales } from "get-user-locale"
+import { setLanguage } from "../redux/actions"
 import { Box, CircularProgress } from "@material-ui/core"
-import { navigate } from "gatsby"
 
 const IndexPage = props => {
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          supportedLanguages
-        }
-      }
-    }
-  `)
-
+  useEffect(() => {}, [])
   return (
     <Box
       height="100vh"

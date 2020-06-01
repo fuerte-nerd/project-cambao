@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import { setDonateDialog } from "../redux/actions"
 import { Box, Typography, Button } from "@material-ui/core"
 import { EuroSymbol } from "@material-ui/icons"
 import SidebarSectionTitle from "./SidebarSectionTitle"
@@ -34,6 +35,7 @@ const SidebarDonate = props => {
             size="small"
             fullWidth
             startIcon={<EuroSymbol />}
+            onClick={() => props.dispatch(setDonateDialog(true))}
           >
             {text.button[props.lang]}
           </Button>

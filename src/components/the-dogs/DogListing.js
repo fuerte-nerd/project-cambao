@@ -6,7 +6,6 @@ import {
   Button,
   Divider,
   useTheme,
-  Box,
   makeStyles,
   Card,
   CardActions,

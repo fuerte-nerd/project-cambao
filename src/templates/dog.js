@@ -8,9 +8,7 @@ import {
   Button,
   useMediaQuery,
   Container,
-  IconButton,
   Box,
-  Typography,
   Grid,
 } from "@material-ui/core"
 import { ArrowLeft } from "@material-ui/icons"
@@ -26,10 +24,10 @@ import DogProfileFAQs from "../components/DogProfileFAQs"
 import DogProfileHeading from "../components/DogProfileHeading"
 
 const Dog = props => {
-  console.log(props)
   useEffect(() => {
     props.dispatch(setLanguage(props.pageContext.lang))
     props.dispatch(setRedirect(`/dogs${props.data.main.fields.slug}`))
+    //eslint-disable-next-line
   }, [])
   const theme = useTheme()
   const mdUp = useMediaQuery(theme.breakpoints.up("md"))

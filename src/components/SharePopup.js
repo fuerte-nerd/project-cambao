@@ -64,6 +64,8 @@ const SharePopup = props => {
 
       case "close":
         return props.dispatch(setPopup({ visible: false, href: "", title: "" }))
+      default:
+        return
     }
   }
 

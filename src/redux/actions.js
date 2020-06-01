@@ -7,7 +7,13 @@ import {
   SET_MAIN_IMAGE,
   SET_NOTICE_DIALOG,
   SET_DONATE_DIALOG,
+  SET_LANGUAGE_REDIRECT_DIALOG,
 } from "./types"
+
+export const setLanguageRedirectDialog = obj => ({
+  type: SET_LANGUAGE_REDIRECT_DIALOG,
+  payload: obj,
+})
 
 export const setDonateDialog = isOpen => ({
   type: SET_DONATE_DIALOG,

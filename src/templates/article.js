@@ -11,7 +11,6 @@ import {
   CardContent,
   CardActions,
   Box,
-  IconButton,
   Typography,
 } from "@material-ui/core"
 import { ArrowLeft, Share } from "@material-ui/icons"
@@ -30,6 +29,7 @@ const Article = props => {
   useEffect(() => {
     props.dispatch(setRedirect("/"))
     props.dispatch(setLanguage(props.pageContext.lang))
+    //eslint-disable-next-line
   }, [])
 
   const handleClick = e => {
@@ -42,6 +42,8 @@ const Article = props => {
             title: document.title,
           })
         )
+      default:
+        return
     }
   }
 

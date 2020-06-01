@@ -1,12 +1,14 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
+import { setLanguageRedirectDialog } from "../redux//actions"
 import detectBrowserLanguage from "detect-browser-language"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql, navigate } from "gatsby"
+import { navigate, useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 
 import {
+  CircularProgress,
   Box,
   Grid,
   Hidden,
@@ -20,6 +22,7 @@ import { ThemeProvider } from "@material-ui/core/styles"
 import siteTheme from "./theme"
 
 import SharePopup from "./SharePopup"
+import LanguageRedirectDialog from "./LanguageRedirectDialog"
 import NoticeDialog from "./NoticeDialog"
 import LanguageDialog from "./LanguageDialog"
 import DonateDialog from "./DonateDialog"
@@ -62,20 +65,47 @@ const Layout = props => {
     }
   `)
 
+  let { lang } = props
+
   useEffect(() => {
-    const langPref = localStorage.getItem("fdr_site_lang")
-    if (langPref) {
-      navigate(`/${langPref + props.redirectUrl}`)
-    } else {
-      const browserLang = detectBrowserLanguage().toLowerCase().substr(0, 2)
-      console.log(browserLang)
-      if (data.site.siteMetadata.supportedLanguages.includes(browserLang)) {
-        navigate(`/${browserLang + props.redirectUrl}`)
+    if (lang) {
+      const langPref = localStorage.getItem("fdr_lang_pref")
+      if (langPref) {
+        console.log(langPref)
+        if (window.location.pathname === "/") {
+          navigate(`/${langPref}/`)
+        } else {
+          setTimeout(() => {
+            if (langPref !== lang) {
+              console.log(`langPref = ${langPref}`)
+              console.log(`props.lang = ${lang}`)
+              console.log("reached")
+              props.dispatch(
+                setLanguageRedirectDialog({ visible: true, lang: langPref })
+              )
+            }
+          }, 3000)
+        }
       } else {
-        navigate(`/es${props.redirectUrl}`)
+        const browserLang = detectBrowserLanguage().toLowerCase().substr(0, 2)
+        if (data.site.siteMetadata.supportedLanguages.includes(browserLang)) {
+          if (window.location.pathname === "/") {
+            navigate(`/${browserLang}/`)
+          } else {
+            setTimeout(() => {
+              if (browserLang !== lang) {
+                props.dispatch(
+                  setLanguageRedirectDialog({ visible: true, lang: langPref })
+                )
+              }
+            }, 3000)
+          }
+        }
+        localStorage.setItem("fdr_lang_pref", browserLang)
       }
     }
-  }, [])
+    //eslint-disable-next-line
+  }, [lang])
 
   return (
     <ThemeProvider theme={siteTheme}>
@@ -86,7 +116,22 @@ const Layout = props => {
         />
       </Helmet>
       <CssBaseline>
+        {window.location.pathname === "/" ? (
+          <Box
+            position="fixed"
+            top={0}
+            left={0}
+            height="100vh"
+            width="100vw"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <CircularProgress size={80} />
+          </Box>
+        ) : null}
         <NoticeDialog />
+        <LanguageRedirectDialog />
         <LanguageDialog />
         <DonateDialog />
         <SharePopup />

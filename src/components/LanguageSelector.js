@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { setLanguageDialog } from "../redux/actions"
 import { Button, Tooltip } from "@material-ui/core"
-import { Language } from "@material-ui/icons"
+import { Translate } from "@material-ui/icons"
 
 const LanguageSelector = props => {
   const text = {
@@ -15,7 +15,7 @@ const LanguageSelector = props => {
         fullWidth={props.fullWidth ? true : false}
         variant="contained"
         onClick={() => props.dispatch(setLanguageDialog(true))}
-        startIcon={<Language />}
+        startIcon={<Translate />}
       >
         {props.lang}
       </Button>

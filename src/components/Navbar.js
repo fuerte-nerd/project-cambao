@@ -10,7 +10,6 @@ import {
   Box,
   AppBar,
   Toolbar,
-  IconButton,
   Typography,
   makeStyles,
 } from "@material-ui/core"
@@ -117,18 +116,29 @@ const Navbar = props => {
         <Hidden smDown>
           <NavbarToolsIcon
             tooltip={text.toolbuttons.donate[props.lang]}
-            onClick={handleClick}
             id="donate"
           >
             <EuroSymbol className={classes.navToolsButton} />
           </NavbarToolsIcon>
-          <NavbarToolsIcon tooltip={text.toolbuttons.facebook[props.lang]}>
+          <NavbarToolsIcon
+            tooltip={text.toolbuttons.facebook[props.lang]}
+            username={data.links.childMarkdownRemark.frontmatter.facebook}
+            id="facebook"
+          >
             <Facebook className={classes.navToolsButton} />
           </NavbarToolsIcon>
-          <NavbarToolsIcon tooltip={text.toolbuttons.instagram[props.lang]}>
+          <NavbarToolsIcon
+            tooltip={text.toolbuttons.instagram[props.lang]}
+            username={data.links.childMarkdownRemark.frontmatter.instagram}
+            id="instagram"
+          >
             <Instagram className={classes.navToolsButton} />
           </NavbarToolsIcon>
-          <NavbarToolsIcon tooltip={text.toolbuttons.messenger[props.lang]}>
+          <NavbarToolsIcon
+            tooltip={text.toolbuttons.messenger[props.lang]}
+            username={data.links.childMarkdownRemark.frontmatter.facebook}
+            id="messenger"
+          >
             <FacebookMessenger className={classes.navToolsButton} />
           </NavbarToolsIcon>
         </Hidden>

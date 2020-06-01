@@ -14,10 +14,10 @@ import {
 const LanguageDialog = props => {
   const handleClick = e => {
     const f = e.currentTarget
-    navigate(`/${f.id + props.redirectUrl}`)
-    localStorage.setItem("fdr_site_lang", f.id)
+    localStorage.setItem("fdr_lang_pref", f.id)
+    //props.dispatch(setLanguage(f.id))
     props.dispatch(setLanguageDialog(false))
-    props.dispatch(setLanguage(f.id))
+    navigate(`/${f.id + props.redirectUrl}`)
   }
 
   const handleClose = () => {

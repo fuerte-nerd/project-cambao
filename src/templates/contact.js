@@ -1,7 +1,8 @@
 import React, { useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { connect } from "react-redux"
 import { setLanguage, setRedirect } from "../redux/actions"
-import { Button, Box, Typography, Paper, Container } from "@material-ui/core"
+import { Button, Box, Typography, Container } from "@material-ui/core"
 import { Email } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 
@@ -11,10 +12,39 @@ import ContactForm from "../components/ContactForm"
 const Contact = props => {
   const { language } = props.pageContext
 
+  const data = useStaticQuery(graphql`
+    {
+      file(
+        name: { eq: "links" }
+        sourceInstanceName: { eq: "static_content" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            facebook
+            email
+          }
+        }
+      }
+    }
+  `)
+  const { facebook, email } = data.file.childMarkdownRemark.frontmatter
+
   useEffect(() => {
     props.dispatch(setRedirect("/contact"))
     props.dispatch(setLanguage(language))
+    //eslint-disable-next-line
   }, [])
+
+  const handleClick = e => {
+    switch (e.currentTarget.id) {
+      case "messenger":
+        return window.open(`http://m.me/${facebook}`, "_blank")
+      case "email":
+        return window.open(`mailto:${email}`, "_blank")
+      default:
+        return
+    }
+  }
 
   const text = {
     heading: { en: "Contact us", es: "Contacta con nosotros" },
@@ -38,6 +68,10 @@ const Contact = props => {
       es:
         "Si lo prefiere, puede enviarnos un mensaje directamente desde este sitio completando y enviando el siguiente formulario.",
     },
+    open: {
+      en: "Open",
+      es: "Abra",
+    },
   }
   return (
     <>
@@ -56,8 +90,11 @@ const Contact = props => {
             color="secondary"
             style={{ color: "white" }}
             startIcon={<FacebookMessenger />}
+            id="messenger"
+            onClick={handleClick}
           >
-            Messenger
+            {text.open[language]}
+            {` `}Messenger
           </Button>
         </Box>
         <Box mt={3} color="white">
@@ -75,7 +112,11 @@ const Contact = props => {
             color="secondary"
             style={{ color: "white" }}
             startIcon={<Email />}
+            id="email"
+            onClick={handleClick}
           >
+            {text.open[language]}
+            {` `}
             {text.email[language]}
           </Button>
         </Box>

@@ -2,19 +2,21 @@ import React from "react"
 import { connect } from "react-redux"
 import { setPopup } from "../redux/actions"
 import { Box, Typography, IconButton } from "@material-ui/core"
-import { Share, Facebook, WhatsApp, Email } from "@material-ui/icons"
+import { Share } from "@material-ui/icons"
 
 const DogProfileHeading = props => {
   const handleClick = e => {
     switch (e.currentTarget.id) {
       case "share":
-        props.dispatch(
+        return props.dispatch(
           setPopup({
             visible: true,
             href: window.location.href,
             title: document.title,
           })
         )
+      default:
+        return
     }
   }
 

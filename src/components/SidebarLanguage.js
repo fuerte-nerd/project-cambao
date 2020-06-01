@@ -1,6 +1,5 @@
 import React from "react"
 import { connect } from "react-redux"
-import { Box } from "@material-ui/core"
 import SidebarSectionTitle from "./SidebarSectionTitle"
 import LanguageSelector from "./LanguageSelector"
 

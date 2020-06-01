@@ -12,6 +12,7 @@ const StaticPage = props => {
   useEffect(() => {
     props.dispatch(setLanguage(language))
     props.dispatch(setRedirect(redirectUrl))
+    // eslint-disable-next-line
   }, [])
 
   const text = {

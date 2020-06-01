@@ -7,10 +7,11 @@ import {
   SET_POPUP,
   SET_NOTICE_DIALOG,
   SET_DONATE_DIALOG,
+  SET_LANGUAGE_REDIRECT_DIALOG,
 } from "./types"
 
 const initialState = {
-  siteLang: "en",
+  siteLang: null,
   navOpen: false,
   redirect: "/",
   mainImage: null,
@@ -27,10 +28,19 @@ const initialState = {
   },
   donateDialog: false,
   languageDialogVisible: false,
+  languageRedirectDialog: {
+    visible: false,
+    lang: ``,
+  },
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SET_LANGUAGE_REDIRECT_DIALOG:
+      return {
+        ...state,
+        languageRedirectDialog: action.payload,
+      }
     case SET_DONATE_DIALOG:
       return {
         ...state,

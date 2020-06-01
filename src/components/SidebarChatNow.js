@@ -10,7 +10,7 @@ import SidebarSectionTitle from "./SidebarSectionTitle"
 const SidebarChatNow = props => {
   const data = useStaticQuery(graphql`
     {
-      file(
+      notice: file(
         name: { eq: "lostorabandoned" }
         sourceInstanceName: { eq: "static_content" }
       ) {
@@ -21,20 +21,43 @@ const SidebarChatNow = props => {
           }
         }
       }
+      links: file(
+        name: { eq: "links" }
+        sourceInstanceName: { eq: "static_content" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            facebook
+            email
+          }
+        }
+      }
     }
   `)
 
   const handleClick = e => {
     switch (e.currentTarget.id) {
       case "report":
-        props.dispatch(
+        return props.dispatch(
           setNoticeDialog({
             visible: true,
             heading: text.notice.heading[props.lang],
-            body: data.file.childMarkdownRemark.frontmatter[props.lang],
+            body: data.notice.childMarkdownRemark.frontmatter[props.lang],
             btnText: text.notice.close[props.lang],
           })
         )
+      case "messenger":
+        return window.open(
+          `http://m.me/${data.links.childMarkdownRemark.frontmatter.facebook}`,
+          "_blank"
+        )
+      case "email":
+        return window.open(
+          `mailto:${data.links.childMarkdownRemark.frontmatter.email}`,
+          "_blank"
+        )
+      default:
+        return
     }
   }
 
@@ -73,6 +96,8 @@ const SidebarChatNow = props => {
         variant="contained"
         size="small"
         startIcon={<FacebookMessenger />}
+        id="messenger"
+        onClick={handleClick}
       >
         Messenger
       </Button>
@@ -82,15 +107,19 @@ const SidebarChatNow = props => {
         size="small"
         startIcon={<Email />}
         style={{ marginTop: ".25rem" }}
+        id="email"
+        onClick={handleClick}
       >
         Email
       </Button>
       <Typography variant="caption" align="justify">
         {text.lost[props.lang]}
         {` `}
-        <strong onClick={handleClick} id="report" style={{ cursor: "pointer" }}>
-          {text.click[props.lang]}
-        </strong>
+        <Link onClick={handleClick} id="report" color="inherit">
+          <strong style={{ cursor: "pointer" }}>
+            {text.click[props.lang]}
+          </strong>
+        </Link>
         .
       </Typography>
     </Box>
