@@ -4,17 +4,12 @@ import { Box } from "@material-ui/core"
 
 import SidebarSectionTitle from "./SidebarSectionTitle"
 import LocationMap from "./LocationMap"
+import text from "./text"
 
 const SidebarLocation = props => {
-  const text = {
-    location: {
-      en: "Location",
-      es: "Ubicación",
-    },
-  }
   return (
     <Box pb={2}>
-      <SidebarSectionTitle title={text.location[props.lang]} />
+      <SidebarSectionTitle title={text.locationHeading[props.lang]} />
       <LocationMap />
     </Box>
   )

@@ -3,11 +3,9 @@ import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import { Tooltip, Fab } from "@material-ui/core"
 import { Close } from "@material-ui/icons"
+import text from "./text"
 
 const CloseMenuButton = props => {
-  const text = {
-    close: { en: "Close menu", es: "Cerrar el menú" },
-  }
   return (
     <Tooltip title={text.close[props.lang]}>
       <Fab

@@ -7,6 +7,8 @@ import SidebarSectionTitle from "./SidebarSectionTitle"
 import SidebarQuickLinksItem from "./SidebarQuickLinksItem"
 import SidebarQuickLinksSubmenu from "./SidebarQuickLinksSubmenu"
 
+import text from "./text"
+
 const SidebarQuickLinks = props => {
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const handleClick = e => {
@@ -53,15 +55,9 @@ const SidebarQuickLinks = props => {
     }
   `)
   const { frontmatter } = data.file.childMarkdownRemark
-  const text = {
-    quick_navigation: {
-      en: "Quick Navigation",
-      es: "Navegación rápida",
-    },
-  }
   return (
     <>
-      <SidebarSectionTitle title={text.quick_navigation[props.lang]} />
+      <SidebarSectionTitle title={text.quickNavigation[props.lang]} />
       <List disablePadding dense>
         <SidebarQuickLinksItem
           label={frontmatter.home[props.lang]}

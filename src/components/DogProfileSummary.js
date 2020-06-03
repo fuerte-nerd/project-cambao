@@ -10,52 +10,24 @@ import {
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 import moment from "moment"
 import "moment/locale/es"
+import text from "./text"
 
 const DogProfileSummary = props => {
   moment.locale(props.lang)
   const theme = useTheme()
   const smUp = useMediaQuery(theme.breakpoints.up("sm"))
-  const text = {
-    labels: {
-      summary: {
-        en: "Summary",
-        es: "Resumen",
-      },
-      age: {
-        en: "Age",
-        es: "Edad",
-      },
-      breed: { en: "Breed", es: "Raza" },
-      sex: { en: "Sex", es: "Sexo" },
-      ppp: { en: "Licence required", es: "Requiere licencia" },
-      location: { en: "Location", es: "Ubicación" },
-      days_in_care: { en: "Days in care", es: "Días en cuidado" },
-      dog_friendly: { en: "Dog-friendly?", es: "¿Con los perros?" },
-      cat_friendly: { en: "Cat-friendly?", es: "¿Con los gatos?" },
-      family_friendly: {
-        en: "Family-friendly?",
-        es: "¿Con los niños?",
-      },
-      sterilised: { en: "Sterilised?", es: "¿Esterilizado?" },
-    },
-    data: {
-      location: {
-        en: ["Shelter", "Foster", "Other"],
-        es: ["Perrera", "Casa de acogida", "Otra"],
-      },
-      sex: {
-        en: ["Male", "Female"],
-        es: ["Macho", "Hembra"],
-      },
-      yesNo: {
-        en: ["No", "Yes", "TBC"],
-        es: ["No", "Sí", "Por confirmar"],
-      },
-    },
+  const data = {
+    location: [
+      text.shelter[props.lang],
+      text.foster[props.lang],
+      text.other[props.lang],
+    ],
+    sex: [text.male[props.lang], text.female[props.lang]],
+    yesNo: [text.no[props.lang], text.yes[props.lang], text.tbc[props.lang]],
   }
   return (
     <DogProfileExpansionPanel
-      title={text.labels.summary[props.lang]}
+      title={text.summary[props.lang]}
       headingVariant="h6"
       expanded
       expandOnMobile
@@ -63,48 +35,48 @@ const DogProfileSummary = props => {
       <Grid container spacing={smUp ? 8 : 0} alignItems="flex-start">
         <Grid item xs={12} sm={6}>
           <DogProfileRow
-            label={text.labels.age[props.lang]}
-            info={moment(props.data.date_of_birth).toNow(true)}
+            label={text.age[props.lang]}
+            info={moment(props.dogData.date_of_birth).toNow(true)}
             first
           />
           <DogProfileRow
-            label={text.labels.breed[props.lang]}
-            info={props.data.breed}
+            label={text.breed[props.lang]}
+            info={props.dogData.breed}
           />
           <DogProfileRow
-            label={text.labels.sex[props.lang]}
-            info={text.data.sex[props.lang][props.data.sex]}
+            label={text.sex[props.lang]}
+            info={data.sex[props.dogData.sex]}
           />
           <DogProfileRow
-            label={text.labels.ppp[props.lang]}
-            info={text.data.yesNo[props.lang][props.data.ppp]}
+            label={text.ppp[props.lang]}
+            info={data.yesNo[props.dogData.ppp]}
           />
           <DogProfileRow
-            label={text.labels.location[props.lang]}
-            info={text.data.location[props.lang][props.data.location]}
+            label={text.location[props.lang]}
+            info={data.location[props.dogData.location]}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <DogProfileRow
-            label={text.labels.days_in_care[props.lang]}
-            info={moment().diff(moment(props.data.date_entered), "days")}
+            label={text.days_in_care[props.lang]}
+            info={moment().diff(moment(props.dogData.date_entered), "days")}
             first={smUp ? true : false}
           />
           <DogProfileRow
-            label={text.labels.dog_friendly[props.lang]}
-            info={text.data.yesNo[props.lang][props.data.dog_friendly]}
+            label={text.dog_friendly[props.lang]}
+            info={data.yesNo[props.dogData.dog_friendly]}
           />
           <DogProfileRow
-            label={text.labels.cat_friendly[props.lang]}
-            info={text.data.yesNo[props.lang][props.data.cat_friendly]}
+            label={text.cat_friendly[props.lang]}
+            info={data.yesNo[props.dogData.cat_friendly]}
           />
           <DogProfileRow
-            label={text.labels.family_friendly[props.lang]}
-            info={text.data.yesNo[props.lang][props.data.family_friendly]}
+            label={text.family_friendly[props.lang]}
+            info={data.yesNo[props.dogData.family_friendly]}
           />
           <DogProfileRow
-            label={text.labels.sterilised[props.lang]}
-            info={text.data.yesNo[props.lang][props.data.sterilised]}
+            label={text.sterilised[props.lang]}
+            info={data.yesNo[props.dogData.sterilised]}
           />
         </Grid>
       </Grid>

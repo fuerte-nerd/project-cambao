@@ -1,20 +1,19 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { setLanguage } from "../redux/actions"
-import { Box, CircularProgress } from "@material-ui/core"
+import Head from "../components/head"
 
 const IndexPage = props => {
-  useEffect(() => {}, [])
+  useEffect(() => {
+    props.dispatch(setLanguage("es"))
+    //eslint-disable-next-line
+  }, [])
   return (
-    <Box
-      height="100vh"
-      width="100vw"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <CircularProgress size={80} />
-    </Box>
+    <Head
+      lang="es"
+      title="El sitio web oficial"
+      description="Cuidando de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura desde 2013."
+    />
   )
 }
 

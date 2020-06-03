@@ -23,6 +23,7 @@ import {
 import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
 import NavbarToolsIcon from "./NavbarToolsIcon"
+import text from "./text"
 
 const useStyles = makeStyles(() => ({
   navToolsButton: {
@@ -76,30 +77,11 @@ const Navbar = props => {
     }
   `)
 
-  const text = {
-    menu: { en: "Menu", es: "Menú" },
-    share: { en: "Share", es: "Compartir" },
-    tooltips: {
-      home: { en: "Return home!", es: "Volver a la página de inicio" },
-      share: { en: "Share this page!", es: "¡Comparte esta página!" },
-      menu: { en: "Show me the menu!", es: "¡Muéstrame el menú!" },
-    },
-    toolbuttons: {
-      donate: { en: "Donate to the FDR dogs", es: "Done a los perros FDR" },
-      facebook: { en: "Visit us on Facebook", es: "Visítanos en Facebook" },
-      instagram: { en: "Visit us on Instagram", es: "Visítanos en Instagram" },
-      messenger: {
-        en: "Contact us on Messenger",
-        es: "Contáctenos en el Messenger",
-      },
-    },
-  }
-
   return (
     <AppBar>
       <Toolbar>
         <InternalLink to="/">
-          <Tooltip title={text.tooltips.home[props.lang]}>
+          <Tooltip title={text.homeTooltip[props.lang]}>
             <Box display="flex" style={{ cursor: "pointer" }}>
               <Img fixed={data.logo.childImageSharp.fixed} />
             </Box>
@@ -114,28 +96,25 @@ const Navbar = props => {
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Hidden smDown>
-          <NavbarToolsIcon
-            tooltip={text.toolbuttons.donate[props.lang]}
-            id="donate"
-          >
+          <NavbarToolsIcon tooltip={text.donateTooltip[props.lang]} id="donate">
             <EuroSymbol className={classes.navToolsButton} />
           </NavbarToolsIcon>
           <NavbarToolsIcon
-            tooltip={text.toolbuttons.facebook[props.lang]}
+            tooltip={text.facebookTooltip[props.lang]}
             username={data.links.childMarkdownRemark.frontmatter.facebook}
             id="facebook"
           >
             <Facebook className={classes.navToolsButton} />
           </NavbarToolsIcon>
           <NavbarToolsIcon
-            tooltip={text.toolbuttons.instagram[props.lang]}
+            tooltip={text.instagramTooltip[props.lang]}
             username={data.links.childMarkdownRemark.frontmatter.instagram}
             id="instagram"
           >
             <Instagram className={classes.navToolsButton} />
           </NavbarToolsIcon>
           <NavbarToolsIcon
-            tooltip={text.toolbuttons.messenger[props.lang]}
+            tooltip={text.messengerTooltip[props.lang]}
             username={data.links.childMarkdownRemark.frontmatter.facebook}
             id="messenger"
           >
@@ -144,7 +123,7 @@ const Navbar = props => {
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Box mr={2}>
-          <Tooltip title={text.tooltips.share[props.lang]}>
+          <Tooltip title={text.shareTooltip[props.lang]}>
             <Button
               onClick={handleClick}
               id="share"
@@ -158,7 +137,7 @@ const Navbar = props => {
           </Tooltip>
         </Box>
         <Box color="primary.dark">
-          <Tooltip title={text.tooltips.menu[props.lang]}>
+          <Tooltip title={text.menuTooltip[props.lang]}>
             <Button
               variant="contained"
               onClick={handleClick}

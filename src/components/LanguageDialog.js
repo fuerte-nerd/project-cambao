@@ -1,13 +1,12 @@
 import React from "react"
 import { navigate } from "gatsby"
 import { connect } from "react-redux"
-import { setLanguage, setLanguageDialog } from "../redux/actions"
+import { setLanguageDialog } from "../redux/actions"
 import {
   Button,
   Dialog,
   DialogContent,
   DialogActions,
-  Box,
   List,
   ListItem,
   Typography,

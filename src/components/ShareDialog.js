@@ -3,9 +3,10 @@ import { connect } from "react-redux"
 import { setPopup } from "../redux/actions"
 import {
   Hidden,
-  Box,
-  Typography,
   Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
   List,
   ListItem,
   ListItemIcon,
@@ -16,16 +17,10 @@ import {
 
 import { Facebook, Twitter, WhatsApp, Email, Link } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
+import text from "./text"
 
 const SharePopup = props => {
   const [toastIsOpen, setToastIsOpen] = useState(false)
-
-  const text = {
-    share: { en: "Share via...", es: "Comparte en..." },
-    copy: { en: "Copy URL", es: "Copiar URL" },
-    copied: { en: "Copied to clipboard", es: "Copiado al portapapeles" },
-    cancel: { en: "Cancel", es: "Cancelar" },
-  }
 
   const handleClick = e => {
     switch (e.currentTarget.id) {
@@ -86,12 +81,12 @@ const SharePopup = props => {
         message={text.copied[props.lang]}
         action={
           <Button color="secondary" onClick={handleToastClose}>
-            Close
+            {text.close[props.lang]}
           </Button>
         }
       />
-      <Box p={2}>
-        <Typography variant="h4">{text.share[props.lang]}</Typography>
+      <DialogTitle>{text.shareVia[props.lang]}</DialogTitle>
+      <DialogContent dividers>
         <List>
           <ListItem onClick={handleClick} id="facebook" button>
             <ListItemIcon>
@@ -129,13 +124,15 @@ const SharePopup = props => {
             <ListItemIcon>
               <Link />
             </ListItemIcon>
-            <ListItemText primary={text.copy[props.lang]} />
+            <ListItemText primary={text.copyUrl[props.lang]} />
           </ListItem>
         </List>
-        <Button fullWidth variant="outlined" onClick={handleClick} id="close">
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClick} id="close">
           {text.cancel[props.lang]}
         </Button>
-      </Box>
+      </DialogActions>
     </Dialog>
   )
 }

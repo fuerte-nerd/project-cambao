@@ -3,70 +3,32 @@ import { connect } from "react-redux"
 import { Box, Typography, Button, Divider } from "@material-ui/core"
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 import InternalLink from "./InternalLink"
+import text from "./text"
 
 const DogProfileFAQs = props => {
-  const text = {
-    title: {
-      en: "FAQs",
-      es: "Preguntas frecuentes",
-    },
-    questions: {
-      adopt: { en: "How do I adopt a dog?", es: "¿Cómo adopto un perro?" },
-      foster: {
-        en: "How can I foster a dog?",
-        es: "¿Cómo puedo acoger a un perro?",
-      },
-      donate: { en: "How do I donate?", es: "¿Cómo puedo donar?" },
-    },
-    answers: {
-      adopt: {
-        en:
-          "You can find further information about the adoption process by following the link below.",
-        es:
-          "Puede encontrar más información sobre el proceso de adopción en el siguiente enlace.",
-      },
-      foster: {
-        en:
-          "You can find further information about the fostering process by following the link below.",
-        es:
-          "Puede encontrar más información sobre el proceso de acogida en el siguiente enlace.",
-      },
-      donate: {
-        en:
-          "You can find further information about how to donate by following the link below.",
-        es:
-          "Puede encontrar más información sobre cómo donar siguiendo el siguiente enlace.",
-      },
-    },
-    buttons: {
-      adopt: { en: "Adopt a dog", es: "Adopta un perro" },
-      foster: { en: "Foster a dog", es: "Formenta un perro" },
-      donate: { en: "Donate to FDR", es: "Donar a FDR" },
-    },
-  }
   return (
     <DogProfileExpansionPanel
-      title={text.title[props.lang]}
+      title={text.faqTitle[props.lang]}
       headingVariant="h6"
     >
       <Box>
         <Question
-          question={text.questions.adopt[props.lang]}
-          answer={text.answers.adopt[props.lang]}
+          question={text.adoptQuestion[props.lang]}
+          answer={text.adoptAnswer[props.lang]}
           link="/adopt"
-          linkLabel={text.buttons.adopt[props.lang]}
+          linkLabel={text.adoptADog[props.lang]}
         />
         <Question
-          question={text.questions.foster[props.lang]}
-          answer={text.answers.foster[props.lang]}
+          question={text.fosterQuestion[props.lang]}
+          answer={text.fosterAnswer[props.lang]}
           link="/foster"
-          linkLabel={text.buttons.foster[props.lang]}
+          linkLabel={text.fosterADog[props.lang]}
         />
         <Question
-          question={text.questions.donate[props.lang]}
-          answer={text.answers.donate[props.lang]}
+          question={text.donateQuestion[props.lang]}
+          answer={text.donateAnswer[props.lang]}
           link="/donate"
-          linkLabel={text.buttons.donate[props.lang]}
+          linkLabel={text.donateNowHeading[props.lang]}
           last
         />
       </Box>

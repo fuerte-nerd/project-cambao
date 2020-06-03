@@ -3,10 +3,10 @@ import { graphql, navigate } from "gatsby"
 import { connect } from "react-redux"
 import { setRedirect, setLanguage } from "../redux/actions"
 import Head from "../components/head"
-import Heading from "../components/index/Heading"
+import Heading from "../components/homeHeading"
 import { Container } from "@material-ui/core"
 import { Pagination } from "@material-ui/lab"
-import ArticleCard from "../components/index/ArticleCard"
+import ArticleCard from "../components/ArticleCard"
 
 const Index = props => {
   props.dispatch(setLanguage(props.pageContext.language))
@@ -43,10 +43,11 @@ const Index = props => {
     <>
       <Head
         lang={props.pageContext.language}
-        title={text.seo_title[props.lang]}
-        description={`${text.heading[props.lang]} - ${
-          text.subheading[props.lang]
+        title={text.seo_title[props.pageContext.language]}
+        description={`${text.heading[props.pageContext.language]} - ${
+          text.subheading[props.pageContext.lang]
         }`}
+        titleOverride
       />
       <Heading
         heading={text.heading[props.lang]}

@@ -3,13 +3,11 @@ import { connect } from "react-redux"
 import { setLanguageDialog } from "../redux/actions"
 import { Button, Tooltip } from "@material-ui/core"
 import { Translate } from "@material-ui/icons"
+import text from "./text"
 
 const LanguageSelector = props => {
-  const text = {
-    change: { en: "Change language", es: "Cambiar de idioma" },
-  }
   return (
-    <Tooltip title={text.change[props.lang]}>
+    <Tooltip title={text.changeLanguage[props.lang]}>
       <Button
         size="small"
         fullWidth={props.fullWidth ? true : false}

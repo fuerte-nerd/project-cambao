@@ -17,17 +17,11 @@ import {
 import { LocalLibrary } from "@material-ui/icons"
 import moment from "moment"
 import "moment/locale/es"
+import text from "./text"
 
 const ArticleCard = props => {
   const theme = useTheme()
   moment.locale(props.lang)
-  const text = {
-    more: {
-      en: "Read more",
-      es: "leer más",
-    },
-  }
-  console.log(props.date)
 
   const handleClick = () => {
     navigate(`/${props.lang}/articles${props.slug}`)
@@ -69,7 +63,7 @@ const ArticleCard = props => {
             color="inherit"
             startIcon={<LocalLibrary />}
           >
-            {text.more[props.lang]}
+            {text.readMore[props.lang]}
           </Button>
         </CardActions>
       </Card>

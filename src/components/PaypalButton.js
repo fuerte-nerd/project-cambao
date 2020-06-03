@@ -1,6 +1,11 @@
 import React from "react"
+import { connect } from "react-redux"
+import { Button } from "@material-ui/core"
+import { InlineIcon } from "@iconify/react"
+import PayPal from "@iconify/icons-simple-icons/paypal"
+import text from "./text"
 
-const PaypalButton = () => {
+const PaypalButton = props => {
   return (
     <form
       action="https://www.paypal.com/cgi-bin/webscr"
@@ -14,23 +19,19 @@ const PaypalButton = () => {
         value="info@fuerteventuradogrescue.org"
       />
       <input type="hidden" name="currency_code" value="EUR" />
-      <input
-        type="image"
-        src="https://www.paypalobjects.com/en_US/ES/i/btn/btn_donateCC_LG.gif"
-        border="0"
-        name="submit"
-        title="PayPal - The safer, easier way to pay online!"
-        alt="Donate with PayPal button"
-      />
-      <img
-        alt=""
-        border="0"
-        src="https://www.paypal.com/en_ES/i/scr/pixel.gif"
-        width="1"
-        height="1"
-      />
+      <Button
+        variant="contained"
+        type="submit"
+        startIcon={<InlineIcon icon={PayPal} />}
+      >
+        {text.donateViaPaypal[props.lang]}
+      </Button>
     </form>
   )
 }
 
-export default PaypalButton
+const mapStateToProps = state => ({
+  lang: state.siteLang,
+})
+
+export default connect(mapStateToProps)(PaypalButton)

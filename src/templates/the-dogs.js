@@ -5,7 +5,7 @@ import { setLanguage, setRedirect } from "../redux/actions"
 import { Container, Box, Typography, Grid } from "@material-ui/core"
 
 import Head from "../components/head"
-import DogListing from "../components/the-dogs/DogListing"
+import DogListing from "../components/DogListing"
 
 const TheDogs = props => {
   props.dispatch(setLanguage(props.pageContext.language))

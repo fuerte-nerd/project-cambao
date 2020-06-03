@@ -80,7 +80,7 @@ const Dog = props => {
                   </Hidden>
                   <Grid item xs={12}>
                     <DogProfileSummary
-                      data={{
+                      dogData={{
                         sterilised: frontmatter.sterilised,
                         sex: frontmatter.sex,
                         ppp: frontmatter.ppp,

@@ -1,7 +1,7 @@
 import React from "react"
 import { navigate } from "gatsby"
 import { connect } from "react-redux"
-import { setLanguageRedirectDialog, setLanguage } from "../redux/actions"
+import { setLanguageRedirectDialog } from "../redux/actions"
 import {
   Dialog,
   DialogTitle,

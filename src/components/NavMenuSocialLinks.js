@@ -5,6 +5,7 @@ import { makeStyles, Box } from "@material-ui/core"
 import { Facebook, Instagram } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import NavMenuSocialLinksItem from "./NavMenuSocialLinksItem"
+import text from "./text"
 
 const useStyles = makeStyles(theme => ({
   socialButton: {
@@ -12,20 +13,6 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const text = {
-  facebook: {
-    en: "Visit us on Facebook",
-    es: "Visítanos en Facebook",
-  },
-  instagram: {
-    en: "Visit us on Instagram",
-    es: "Visítanos en Instagram",
-  },
-  messenger: {
-    en: "Contact us on Messenger",
-    es: "Contáctenos en el Messenger",
-  },
-}
 const NavMenuSocialLinks = props => {
   const data = useStaticQuery(graphql`
     {
@@ -47,14 +34,14 @@ const NavMenuSocialLinks = props => {
   return (
     <Box>
       <NavMenuSocialLinksItem
-        tooltip={text.messenger[props.lang]}
+        tooltip={text.messengerTooltip[props.lang]}
         id="messenger"
         username={facebook}
       >
         <FacebookMessenger className={classes.socialButton} />
       </NavMenuSocialLinksItem>
       <NavMenuSocialLinksItem
-        tooltip={text.facebook[props.lang]}
+        tooltip={text.facebookTooltip[props.lang]}
         id="facebook"
         username={facebook}
       >
@@ -62,7 +49,7 @@ const NavMenuSocialLinks = props => {
       </NavMenuSocialLinksItem>
       <NavMenuSocialLinksItem
         end
-        tooltip={text.instagram[props.lang]}
+        tooltip={text.instagramTooltip[props.lang]}
         id="instagram"
         username={instagram}
       >

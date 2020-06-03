@@ -1,17 +1,12 @@
 import React from "react"
 import { connect } from "react-redux"
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
+import text from "./text"
 
 const DogProfileVideo = props => {
-  const text = {
-    title: {
-      en: "Video",
-      es: "Video",
-    },
-  }
   return (
     <DogProfileExpansionPanel
-      title={text.title[props.lang]}
+      title={text.video[props.lang]}
       headingVariant="h6"
       expanded
       youtube

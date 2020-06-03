@@ -6,6 +6,7 @@ import { Box, Typography, Button, Link } from "@material-ui/core"
 import { FacebookMessenger } from "mdi-material-ui"
 import { Email } from "@material-ui/icons"
 import SidebarSectionTitle from "./SidebarSectionTitle"
+import text from "./text"
 
 const SidebarChatNow = props => {
   const data = useStaticQuery(graphql`
@@ -61,36 +62,10 @@ const SidebarChatNow = props => {
     }
   }
 
-  const text = {
-    heading: {
-      en: "Send us a message",
-      es: "Envíenos un mensaje",
-    },
-    subheading: {
-      en: "Contact us now via...",
-      es: "Contáctenos ahora por...",
-    },
-    lost: {
-      en: "Do you want to report a lost or abandoned dog?",
-      es: "¿Quiere reportar un perro perdido o abandonado?",
-    },
-    notice: {
-      heading: {
-        en: "Report a lost or abandoned dog",
-        es: "Reportar un perro perdido o abandonado",
-      },
-      close: { en: "Close", es: "Cerrar" },
-    },
-    click: {
-      en: "Click here",
-      es: "Haga clic aquí",
-    },
-  }
-
   return (
     <Box>
-      <SidebarSectionTitle title={text.heading[props.lang]} />
-      <Typography variant="caption">{text.subheading[props.lang]}</Typography>
+      <SidebarSectionTitle title={text.chatNowHeading[props.lang]} />
+      <Typography variant="caption">{text.chatNowIntro[props.lang]}</Typography>
       <Button
         fullWidth
         variant="contained"
@@ -110,10 +85,10 @@ const SidebarChatNow = props => {
         id="email"
         onClick={handleClick}
       >
-        Email
+        {text.email[props.lang]}
       </Button>
       <Typography variant="caption" align="justify">
-        {text.lost[props.lang]}
+        {text.reportLostQuestion[props.lang]}
         {` `}
         <Link onClick={handleClick} id="report" color="inherit">
           <strong style={{ cursor: "pointer" }}>

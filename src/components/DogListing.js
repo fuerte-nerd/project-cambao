@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { setPopup } from "../../redux/actions"
+import { setPopup } from "../redux/actions"
 import { navigate, useStaticQuery, graphql } from "gatsby"
 import {
   Button,
@@ -15,6 +15,7 @@ import {
   Typography,
 } from "@material-ui/core"
 import { Share, Info } from "@material-ui/icons"
+import text from "./text"
 
 const useStyles = makeStyles(theme => ({
   cardImage: {
@@ -88,14 +89,6 @@ const DogListing = props => {
     }
   `)
 
-  const text = {
-    more: {
-      en: "More info",
-      es: "Más info",
-    },
-    share: { en: "Share", es: "Comparte" },
-  }
-
   return (
     <Card>
       <CardActionArea onClick={handleClick}>
@@ -111,7 +104,7 @@ const DogListing = props => {
         style={{ background: theme.palette.secondary.main, color: "#fafafa" }}
       >
         <Button color="inherit" startIcon={<Info />} onClick={handleClick}>
-          {text.more[props.lang]}
+          {text.moreInfo[props.lang]}
         </Button>
         <Button
           color="inherit"

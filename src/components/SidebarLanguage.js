@@ -2,14 +2,12 @@ import React from "react"
 import { connect } from "react-redux"
 import SidebarSectionTitle from "./SidebarSectionTitle"
 import LanguageSelector from "./LanguageSelector"
+import text from "./text"
 
 const SidebarLanguage = props => {
-  const text = {
-    siteLang: { en: "Site language", es: "Idioma del sitio" },
-  }
   return (
     <>
-      <SidebarSectionTitle title={text.siteLang[props.lang]} top />
+      <SidebarSectionTitle title={text.siteLanguageHeading[props.lang]} top />
       <LanguageSelector fullWidth />
     </>
   )

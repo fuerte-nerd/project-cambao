@@ -8,7 +8,6 @@ import {
   DialogActions,
   Typography,
   Button,
-  Box,
 } from "@material-ui/core"
 
 const NoticeDialog = props => {

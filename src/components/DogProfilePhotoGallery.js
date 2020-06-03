@@ -6,15 +6,10 @@ import { Box, IconButton } from "@material-ui/core"
 import { ZoomIn } from "@material-ui/icons"
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 import DogProfilePhotoGalleryThumbs from "./DogProfilePhotoGalleryThumbs"
+import text from "./text"
 
 const DogProfilePhotoGallery = props => {
   const [currentImage, setCurrentImage] = useState(null)
-  const text = {
-    title: {
-      en: "Photo gallery",
-      es: "Galería de fotos",
-    },
-  }
   useEffect(() => {
     props.dispatch(setMainImage(props.images.full[0].childImageSharp.id))
     //eslint-disable-next-line
@@ -30,7 +25,6 @@ const DogProfilePhotoGallery = props => {
   }, [props.largeImage])
 
   const handleClick = e => {
-    console.log(currentImage)
     window.open(currentImage.fluid.src, "_blank")
   }
 
@@ -54,7 +48,7 @@ const DogProfilePhotoGallery = props => {
         </Box>
       ) : null}
       <DogProfileExpansionPanel
-        title={text.title[props.lang]}
+        title={text.gallery[props.lang]}
         headingVariant="body2"
         expanded
         style={{ margin: 0 }}

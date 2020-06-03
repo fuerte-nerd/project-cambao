@@ -39,8 +39,7 @@ function Head(props) {
       htmlAttributes={{
         lang: props.lang,
       }}
-      title={props.title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={`${props.title} | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -48,7 +47,9 @@ function Head(props) {
         },
         {
           property: `og:title`,
-          content: props.title,
+          content: props.titleOverride
+            ? site.siteMetadata.title
+            : `${props.title} | ${site.siteMetadata.title}`,
         },
         {
           property: `og:image`,

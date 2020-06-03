@@ -8,7 +8,7 @@ import { navigate, useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 
 import {
-  CircularProgress,
+  LinearProgress,
   Box,
   Grid,
   Hidden,
@@ -21,7 +21,7 @@ import {
 import { ThemeProvider } from "@material-ui/core/styles"
 import siteTheme from "./theme"
 
-import SharePopup from "./SharePopup"
+import ShareDialog from "./ShareDialog"
 import LanguageRedirectDialog from "./LanguageRedirectDialog"
 import NoticeDialog from "./NoticeDialog"
 import LanguageDialog from "./LanguageDialog"
@@ -65,21 +65,17 @@ const Layout = props => {
     }
   `)
 
-  let { lang } = props
-
   useEffect(() => {
-    if (lang) {
+    if (props.lang) {
+      console.log("reached")
       const langPref = localStorage.getItem("fdr_lang_pref")
       if (langPref) {
-        console.log(langPref)
+        console.log(window.location)
         if (window.location.pathname === "/") {
           navigate(`/${langPref}/`)
         } else {
           setTimeout(() => {
-            if (langPref !== lang) {
-              console.log(`langPref = ${langPref}`)
-              console.log(`props.lang = ${lang}`)
-              console.log("reached")
+            if (langPref !== props.lang) {
               props.dispatch(
                 setLanguageRedirectDialog({ visible: true, lang: langPref })
               )
@@ -93,7 +89,7 @@ const Layout = props => {
             navigate(`/${browserLang}/`)
           } else {
             setTimeout(() => {
-              if (browserLang !== lang) {
+              if (browserLang !== props.lang) {
                 props.dispatch(
                   setLanguageRedirectDialog({ visible: true, lang: langPref })
                 )
@@ -105,7 +101,7 @@ const Layout = props => {
       }
     }
     //eslint-disable-next-line
-  }, [lang])
+  }, [props.lang])
 
   return (
     <ThemeProvider theme={siteTheme}>
@@ -119,6 +115,8 @@ const Layout = props => {
         {window.location.pathname === "/" ? (
           <Box
             position="fixed"
+            bgcolor="primary.light"
+            zIndex={10000}
             top={0}
             left={0}
             height="100vh"
@@ -127,14 +125,16 @@ const Layout = props => {
             alignItems="center"
             justifyContent="center"
           >
-            <CircularProgress size={80} />
+            <Box width="70%" maxWidth={750}>
+              <LinearProgress color="secondary" />
+            </Box>
           </Box>
         ) : null}
         <NoticeDialog />
         <LanguageRedirectDialog />
         <LanguageDialog />
         <DonateDialog />
-        <SharePopup />
+        <ShareDialog />
         <Navbar siteTitle={data.site.siteMetadata.title} />
         <NavMenu />
         <Box

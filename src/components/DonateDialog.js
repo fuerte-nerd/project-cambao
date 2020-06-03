@@ -13,45 +13,40 @@ import {
 
 import PaypalButton from "./PaypalButton"
 
+import text from "./text"
+
 const DonateDialog = props => {
   const handleClose = () => {
     props.dispatch(setDonateDialog(false))
   }
 
-  const text = {
-    heading: { en: "Donate to FDR", es: "Donar a FDR" },
-    body: {
-      en: "You can make donations to us by cash*, PayPal or by bank transfer.",
-      es:
-        "Puede hacernos donaciones en efectivo*, PayPal o transferencia bancaria.",
-    },
-    cash: {
-      en:
-        "Please visit us during the shelter opening hours to make cash donations.  Thank you.",
-      es:
-        "Por favor, visítenos durante el horario de apertura de la perrera para hacer donaciones en efectivo.  Gracias.",
-    },
-    close: {
-      en: "Close",
-      es: "Cerrar",
-    },
-  }
-
   return (
     <Dialog open={props.isOpen} maxWidth="md" onClose={handleClose}>
-      <DialogTitle>{text.heading[props.lang]}</DialogTitle>
+      <DialogTitle>{text.donateNowHeading[props.lang]}</DialogTitle>
       <DialogContent dividers>
-        <Typography>{text.body[props.lang]}</Typography>
+        <Typography>{text.donateDialogBody[props.lang]}</Typography>
         <Box fullWidth m={3} align="center">
           <PaypalButton />
         </Box>
         <Box mt={3} fullWidth align="center">
-          <Typography variant="subtitle2">
+          <Typography display="block" variant="subtitle2">
+            <strong>{text.bank[props.lang]}:</strong> Sabadell
+          </Typography>
+          <Typography display="block" variant="subtitle2">
+            <strong>{text.accountName[props.lang]}:</strong> Asociación
+            Fuerteventura Dog Rescue
+          </Typography>
+          <Typography display="block" variant="subtitle2">
             <strong>IBAN:</strong> ES34 0081 0545 5500 0141 9442
+          </Typography>
+          <Typography display="block" variant="subtitle2">
+            <strong>SWIFT/BIC:</strong> BSAB ESBB
           </Typography>
         </Box>
         <Box mt={3}>
-          <Typography variant="caption">*{text.cash[props.lang]}</Typography>
+          <Typography variant="caption">
+            *{text.donateDialogCashClause[props.lang]}
+          </Typography>
         </Box>
       </DialogContent>
       <DialogActions>

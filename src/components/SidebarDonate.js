@@ -4,30 +4,15 @@ import { setDonateDialog } from "../redux/actions"
 import { Box, Typography, Button } from "@material-ui/core"
 import { EuroSymbol } from "@material-ui/icons"
 import SidebarSectionTitle from "./SidebarSectionTitle"
+import text from "./text"
 
 const SidebarDonate = props => {
-  const text = {
-    heading: {
-      en: "Donate now",
-      es: "Dona ahora",
-    },
-    subheading: {
-      en:
-        "We are a volunteer organization and appreciate anything you can give...",
-      es:
-        "Somos una organización de voluntarios y apreciamos cualquier cosa que pueda dar...",
-    },
-    button: {
-      en: "Donate",
-      es: "Donar",
-    },
-  }
   return (
     <Box>
-      <SidebarSectionTitle title={text.heading[props.lang]} />
+      <SidebarSectionTitle title={text.donateNowHeading[props.lang]} />
       <Box pb={2}>
         <Typography variant="caption" align="justify">
-          {text.subheading[props.lang]}
+          {text.donateNowIntro[props.lang]}
         </Typography>
         <Box mt={2}>
           <Button
@@ -37,7 +22,7 @@ const SidebarDonate = props => {
             startIcon={<EuroSymbol />}
             onClick={() => props.dispatch(setDonateDialog(true))}
           >
-            {text.button[props.lang]}
+            {text.donate[props.lang]}
           </Button>
         </Box>
       </Box>

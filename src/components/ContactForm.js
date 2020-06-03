@@ -1,16 +1,10 @@
 import React from "react"
 import { Box, Grid, TextField, Button } from "@material-ui/core"
 import { Send } from "@material-ui/icons"
+import text from "./text"
 
 const ContactForm = props => {
   const { language } = props
-  const text = {
-    name: { en: "Name", es: "Nombre" },
-    email: { en: "Email", es: "E-mail" },
-    phone: { en: "Phone", es: "Teléfono" },
-    message: { en: "Message", es: "Mensaje" },
-    send: { en: "Send", es: "Enviar" },
-  }
   return (
     <Box p={5} bgcolor="white" borderRadius="borderRadius">
       <form
