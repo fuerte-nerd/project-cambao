@@ -203,4 +203,88 @@ export default {
     en: "Photo gallery",
     es: "Galería de fotos",
   },
+  homeHeading: {
+    en: "We are their voice!",
+    es: "¡Somos su voz!",
+  },
+  homeSubheading: {
+    en:
+      "Taking care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura since 2013.",
+    es:
+      "Cuidando de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura desde 2013.",
+  },
+  back: { en: "Back", es: "Volver" },
+  thanks: { en: "Thank you!", es: "Muchas gracias..." },
+  thanksMessage: {
+    en:
+      "We have received your message and we will respond as soon as possible.",
+    es: "Hemos recibido su mensaje y responderemos lo antes posible.",
+  },
+  thanksRedirect: {
+    en:
+      "We will redirect you back to the previous page automatically but if you cannot wait",
+    es:
+      "Automáticamente te redirigiremos a la página anterior, pero si no puedes esperar",
+  },
+  contactHeading: {
+    en: "Contact us",
+    es: "Contacta con nosotros",
+  },
+  contactDescription: {
+    en: "Get in touch with Fuerteventura Dog Rescue",
+    es: "Contacte con Fuerteventura Dog Rescue",
+  },
+  contactMessenger: {
+    en: "The most efficient way to get in touch with us is via Messenger",
+    es:
+      "La forma más eficiente de ponerse en contacto con nosotros es a través de Messenger",
+  },
+  dontUseMessengerHeading: {
+    en: "I don't use Messenger",
+    es: "No uso el Messenger",
+  },
+  dontUseMessengerBody: {
+    en: "No problem! You can also contact us by email",
+    es: "No hay problema.  También puede contactarnos por correo electrónico",
+  },
+  contactFormIntro: {
+    en:
+      "If you prefer, you can send us a message directly from this site by completing and submitting the below form.",
+    es:
+      "Si lo prefiere, puede enviarnos un mensaje directamente desde este sitio completando y enviando el siguiente formulario.",
+  },
+  open: {
+    en: "Open",
+    es: "Abra",
+  },
+  theDogsHeading: {
+    en: "The Dogs",
+    es: "Los Perros",
+  },
+  theDogsSubheading: {
+    en:
+      "We have lots of dogs waiting for their forever home.  Come and meet them!  They can't wait to meet you!",
+    es:
+      "Tenemos un montón de perros esperando su hogar para siempre.  ¡Vengan a conocerlos!  No pueden esperar a conocerte.",
+  },
+  whoAreWeHeading: {
+    en: "Who are we?",
+    es: "¿Quiénes somos?",
+  },
+  adoptHeading: {
+    en: "Adopt a dog",
+    es: "Adopte un perro",
+  },
+  fosterHeading: {
+    en: "Foster a dog",
+    es: "Acojas un perro",
+  },
+  donateHeading: {
+    en: "Donate to the dogs",
+    es: "Donar a los perros",
+  },
+  volunteerHeading: {
+    en: "Volunteer your time",
+    es: "Sea voluntario",
+  },
 }

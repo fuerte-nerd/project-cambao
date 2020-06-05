@@ -8,6 +8,7 @@ import { FacebookMessenger } from "mdi-material-ui"
 
 import Head from "../components/head"
 import ContactForm from "../components/ContactForm"
+import text from "../components/text"
 
 const Contact = props => {
   const { language } = props.pageContext
@@ -46,43 +47,20 @@ const Contact = props => {
     }
   }
 
-  const text = {
-    heading: { en: "Contact us", es: "Contacta con nosotros" },
-    contact_on_messenger: {
-      en: "The most efficient way to get in touch with us is via Messenger",
-      es:
-        "La forma más eficiente de ponerse en contacto con nosotros es a través de Messenger",
-    },
-    no_messenger: { en: "I don't use Messenger", es: "No uso el Messenger" },
-    contact_by_email: {
-      en: "No problem! You can also contact us by email",
-      es: "No hay problema.  También puede contactarnos por correo electrónico",
-    },
-    email: {
-      en: "Email",
-      es: "E-mail",
-    },
-    contact_form_intro: {
-      en:
-        "If you prefer, you can send us a message directly from this site by completing and submitting the below form.",
-      es:
-        "Si lo prefiere, puede enviarnos un mensaje directamente desde este sitio completando y enviando el siguiente formulario.",
-    },
-    open: {
-      en: "Open",
-      es: "Abra",
-    },
-  }
   return (
     <>
-      <Head lang={language} title={text.heading[language]} description="temp" />
+      <Head
+        lang={language}
+        title={text.contactHeading[language]}
+        description={text.contacDescription[language]}
+      />
       <Container>
         <Box color="white">
-          <Typography variant="h2">{text.heading[language]}</Typography>
+          <Typography variant="h2">{text.contactHeading[language]}</Typography>
         </Box>
         <Box py={2}>
           <Typography paragraph>
-            {text.contact_on_messenger[language]}...
+            {text.contactMessenger[language]}...
           </Typography>
           <Button
             size="large"
@@ -98,11 +76,13 @@ const Contact = props => {
           </Button>
         </Box>
         <Box mt={3} color="white">
-          <Typography variant="h3">"{text.no_messenger[language]}"</Typography>
+          <Typography variant="h3">
+            "{text.dontUseMessengerHeading[language]}"
+          </Typography>
         </Box>
         <Box>
           <Typography paragraph>
-            {text.contact_by_email[language]}...
+            {text.dontUseMessengerBody[language]}...
           </Typography>
         </Box>
         <Box color="white">
@@ -121,7 +101,7 @@ const Contact = props => {
           </Button>
         </Box>
         <Box mt={3}>
-          <Typography>{text.contact_form_intro[language]}</Typography>
+          <Typography>{text.contactFormIntro[language]}</Typography>
         </Box>
         <Box mt={2}>
           <ContactForm language={language} />

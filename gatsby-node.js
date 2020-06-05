@@ -97,7 +97,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       createPage({
         path: `/${language}/articles${node.childMarkdownRemark.fields.slug}`,
         component: articleTemplate,
-        context: { id: node.childMarkdownRemark.id, lang: language },
+        context: { id: node.childMarkdownRemark.id, language: language },
       })
     })
   })
@@ -137,7 +137,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       createPage({
         path: `/${language}/dogs${node.childMarkdownRemark.fields.slug}`,
         component: dogTemplate,
-        context: { id: node.childMarkdownRemark.id, lang: language },
+        context: { id: node.childMarkdownRemark.id, language: language },
       })
     })
   })

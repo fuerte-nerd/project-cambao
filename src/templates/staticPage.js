@@ -5,54 +5,29 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Container, Box, Typography, Grid } from "@material-ui/core"
 import Head from "../components/head"
+import text from "../components/text"
 
 const StaticPage = props => {
   const { language, pageName, redirectUrl } = props.pageContext
-
+  const heading = `${pageName}Heading`
+  const body = props.data.markdownRemark.frontmatter[language]
   useEffect(() => {
     props.dispatch(setLanguage(language))
     props.dispatch(setRedirect(redirectUrl))
     // eslint-disable-next-line
   }, [])
 
-  const text = {
-    heading: {
-      whoAreWe: {
-        en: "Who are we?",
-        es: "¿Quiénes somos?",
-      },
-      adopt: {
-        en: "Adopt a dog",
-        es: "Adopte un perro",
-      },
-      foster: {
-        en: "Foster a dog",
-        es: "Acojas un perro",
-      },
-      donate: {
-        en: "Donate to the dogs",
-        es: "Donar a los perros",
-      },
-      volunteer: {
-        en: "Volunteer your time",
-        es: "Sea voluntario",
-      },
-    },
-  }
-
   return (
     <>
       <Head
         lang={language}
-        title={text.heading[pageName][language]}
-        description="temp"
+        title={text[heading][language]}
+        description={`${body.split(" ", 25).join(" ")}...`}
       />
 
       <Container>
         <Box color="white">
-          <Typography variant="h2">
-            {text.heading[pageName][language]}
-          </Typography>
+          <Typography variant="h2">{text[heading][language]}</Typography>
         </Box>
         <Grid container spacing={2}>
           <Grid item xs={12} md={5}>
@@ -66,7 +41,7 @@ const StaticPage = props => {
           <Grid item xs={12} md={7}>
             <Typography
               dangerouslySetInnerHTML={{
-                __html: props.data.markdownRemark.frontmatter[language],
+                __html: body,
               }}
             />
           </Grid>

@@ -20,11 +20,13 @@ import "moment/locale/es"
 
 import Head from "../components/head"
 import InternalLink from "../components/InternalLink"
+import text from "../components/text"
 
 const Article = props => {
+  const { language } = props.pageContext
   const theme = useTheme()
   const { article } = props.data
-  moment.locale(props.lang)
+  moment.locale(language)
 
   useEffect(() => {
     props.dispatch(setRedirect("/"))
@@ -47,15 +49,10 @@ const Article = props => {
     }
   }
 
-  const text = {
-    back: { en: "Back", es: "Volver" },
-    share: { en: "Share", es: "Comparte" },
-  }
-
   return (
     <>
       <Head
-        lang={props.pageContext.lang}
+        lang={language}
         title={article.frontmatter.title}
         description={article.excerpt}
         ogImage={
@@ -66,7 +63,7 @@ const Article = props => {
         <Box color="white">
           <InternalLink to="/">
             <Button color="inherit" startIcon={<ArrowLeft />}>
-              {text.back[props.lang]}
+              {text.back[language]}
             </Button>
           </InternalLink>
         </Box>
@@ -110,7 +107,7 @@ const Article = props => {
                       color="inherit"
                       startIcon={<Share />}
                     >
-                      {text.share[props.lang]}
+                      {text.share[language]}
                     </Button>
                   </CardActions>
                 </Box>

@@ -6,43 +6,36 @@ import { Container, Box, Typography, Grid } from "@material-ui/core"
 
 import Head from "../components/head"
 import DogListing from "../components/DogListing"
+import text from "../components/text"
 
 const TheDogs = props => {
-  props.dispatch(setLanguage(props.pageContext.language))
+  const { language } = props.pageContext
+  props.dispatch(setLanguage(language))
   props.dispatch(setRedirect("/the-dogs"))
   const dogs = props.data.dogs.edges.map(i => {
     const dog = i.node.childMarkdownRemark.frontmatter
     return {
       name: dog.name,
       image: dog.main_image.childImageSharp.fixed.src,
-      summary: dog.summary[props.pageContext.language],
+      summary: dog.summary[language],
       slug: i.node.childMarkdownRemark.fields.slug,
     }
   })
 
-  const text = {
-    heading: { en: "The Dogs", es: "Los Perros" },
-    subheading: {
-      en:
-        "We have lots of dogs waiting for their forever home.  Come and meet them!  They can't wait to meet you!",
-      es:
-        "Tenemos un montón de perros esperando su hogar para siempre.  ¡Vengan a conocerlos!  No pueden esperar a conocerte.",
-    },
-  }
   return (
     <>
       <Head
-        lang={props.pageContext.language}
-        title={text.heading[props.lang]}
-        description={text.subheading[props.lang]}
+        lang={language}
+        title={text.theDogsHeading[language]}
+        description={text.theDogsSubheading[language]}
       />
       <Container>
         <Box color="white">
-          <Typography variant="h2">{text.heading[props.lang]}</Typography>
+          <Typography variant="h2">{text.theDogsHeading[language]}</Typography>
         </Box>
         <Box mb={2}>
           <Typography variant="subtitle1">
-            {text.subheading[props.lang]}
+            {text.theDogsSubheading[language]}
           </Typography>
         </Box>
         <Box>

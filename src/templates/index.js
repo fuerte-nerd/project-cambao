@@ -2,16 +2,19 @@ import React from "react"
 import { graphql, navigate } from "gatsby"
 import { connect } from "react-redux"
 import { setRedirect, setLanguage } from "../redux/actions"
-import Head from "../components/head"
-import Heading from "../components/homeHeading"
 import { Container } from "@material-ui/core"
 import { Pagination } from "@material-ui/lab"
+import Head from "../components/head"
+import Heading from "../components/homeHeading"
 import ArticleCard from "../components/ArticleCard"
+import text from "../components/text"
 
 const Index = props => {
-  props.dispatch(setLanguage(props.pageContext.language))
+  const { language, currentPage, numPages } = props.pageContext
+  props.dispatch(setLanguage(language))
   props.dispatch(setRedirect("/"))
-  const articles = props.data.allFile.edges.map(i => {
+  const title = props.data.title.childMarkdownRemark.frontmatter.home[language]
+  const articles = props.data.articles.edges.map(i => {
     const article = i.node.childMarkdownRemark
     return {
       title: article.frontmatter.title,
@@ -24,39 +27,27 @@ const Index = props => {
   })
   const handleClick = (e, v) => {
     if (v === 1) {
-      navigate(`/${props.lang}`)
+      navigate(`/${language}`)
     } else {
-      navigate(`/${props.lang}/${v}`)
+      navigate(`/${language}/${v}`)
     }
-  }
-  const text = {
-    heading: { en: "We are their voice!", es: "¡Somos su voz!" },
-    subheading: {
-      en:
-        "Taking care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura since 2013.",
-      es:
-        "Cuidando de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura desde 2013.",
-    },
-    seo_title: { en: "Home", es: "Iniciar" },
   }
   return (
     <>
       <Head
-        lang={props.pageContext.language}
-        title={text.seo_title[props.pageContext.language]}
-        description={`${text.heading[props.pageContext.language]} - ${
-          text.subheading[props.pageContext.lang]
-        }`}
+        lang={language}
+        title={title}
+        description={`${text.homeHeading[language]} - ${text.homeSubheading[language]}`}
         titleOverride
       />
       <Heading
-        heading={text.heading[props.lang]}
-        subheading={text.subheading[props.lang]}
+        heading={text.homeHeading[language]}
+        subheading={text.homeSubheading[language]}
       />
       <Container>
         <Pagination
-          count={props.pageContext.numPages}
-          page={props.pageContext.currentPage}
+          count={numPages}
+          page={currentPage}
           onChange={handleClick}
           style={{
             marginBottom: ".35rem",
@@ -75,8 +66,8 @@ const Index = props => {
           />
         ))}
         <Pagination
-          count={props.pageContext.numPages}
-          page={props.pageContext.currentPage}
+          count={numPages}
+          page={currentPage}
           onChange={handleClick}
           style={{ display: "flex", justifyContent: "center" }}
         />
@@ -85,9 +76,9 @@ const Index = props => {
   )
 }
 
-export const articleListQuery = graphql`
-  query articleListQuery($skip: Int!, $limit: Int!, $language: String!) {
-    allFile(
+export const homeQuery = graphql`
+  query homeQuery($skip: Int!, $limit: Int!, $language: String!) {
+    articles: allFile(
       limit: $limit
       skip: $skip
       filter: {
@@ -117,6 +108,19 @@ export const articleListQuery = graphql`
             }
             html
             excerpt(pruneLength: 400)
+          }
+        }
+      }
+    }
+    title: file(
+      name: { eq: "menus" }
+      sourceInstanceName: { eq: "static_content" }
+    ) {
+      childMarkdownRemark {
+        frontmatter {
+          home {
+            en
+            es
           }
         }
       }

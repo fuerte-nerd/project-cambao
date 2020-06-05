@@ -22,10 +22,12 @@ import DogProfileVideo from "../components/DogProfileVideo"
 import DogProfileDescription from "../components/DogProfileDescription"
 import DogProfileFAQs from "../components/DogProfileFAQs"
 import DogProfileHeading from "../components/DogProfileHeading"
+import text from "../components/text"
 
 const Dog = props => {
+  const { language } = props.pageContext
   useEffect(() => {
-    props.dispatch(setLanguage(props.pageContext.lang))
+    props.dispatch(setLanguage(language))
     props.dispatch(setRedirect(`/dogs${props.data.main.fields.slug}`))
     //eslint-disable-next-line
   }, [])
@@ -44,14 +46,11 @@ const Dog = props => {
     ],
   }
 
-  const text = {
-    back: { en: "Back", es: "Volver" },
-  }
   return (
     <>
       <Head
         title={frontmatter.name}
-        description={frontmatter.summary[props.lang]}
+        description={frontmatter.summary[language]}
         ogImage={props.data.og.frontmatter.main_image.childImageSharp.fixed.src}
       />
       <Box>
@@ -59,7 +58,7 @@ const Dog = props => {
           <Box color="white">
             <InternalLink to="/the-dogs">
               <Button color="inherit" startIcon={<ArrowLeft />}>
-                {text.back[props.lang]}
+                {text.back[language]}
               </Button>
             </InternalLink>
           </Box>
@@ -99,7 +98,7 @@ const Dog = props => {
                   </Grid>
                   <Grid item>
                     <DogProfileDescription
-                      description={frontmatter.description[props.lang]}
+                      description={frontmatter.description[language]}
                     />
                   </Grid>
                   <Grid item xs={12}>
