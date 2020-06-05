@@ -62,19 +62,6 @@ const mapStateToProps = state => ({
 })
 export const data = graphql`
   query DogsQuery {
-    heading: file(
-      sourceInstanceName: { eq: "static_content" }
-      name: { eq: "menus" }
-    ) {
-      childMarkdownRemark {
-        frontmatter {
-          the_dogs {
-            en
-            es
-          }
-        }
-      }
-    }
     dogs: allFile(
       filter: { sourceInstanceName: { eq: "dogs" }, extension: { eq: "md" } }
     ) {

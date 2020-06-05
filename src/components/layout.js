@@ -26,6 +26,7 @@ import LanguageRedirectDialog from "./LanguageRedirectDialog"
 import NoticeDialog from "./NoticeDialog"
 import LanguageDialog from "./LanguageDialog"
 import DonateDialog from "./DonateDialog"
+import FabDonate from "./FabDonate"
 import Navbar from "./Navbar"
 import NavMenu from "./NavMenu"
 import Sidebar from "./Sidebar"
@@ -143,6 +144,7 @@ const Layout = props => {
           minHeight="100vh"
           component="main"
         >
+          <FabDonate />
           <Toolbar />
           <Grid container>
             <Hidden smDown>
