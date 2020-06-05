@@ -1,60 +1,30 @@
 import React from "react"
 import { connect } from "react-redux"
-import { useStaticQuery, graphql } from "gatsby"
 import { Box, List } from "@material-ui/core"
 import NavMenuHelpUsSubmenuItem from "./NavMenuHelpUsSubmenuItem"
+import text from "./text"
 
 const NavMenuHelpUsSubmenu = props => {
-  const data = useStaticQuery(graphql`
-    {
-      file(
-        sourceInstanceName: { eq: "static_content" }
-        name: { eq: "menus" }
-      ) {
-        childMarkdownRemark {
-          frontmatter {
-            adopt {
-              en
-              es
-            }
-            foster {
-              en
-              es
-            }
-            donate {
-              en
-              es
-            }
-            volunteer {
-              en
-              es
-            }
-          }
-        }
-      }
-    }
-  `)
-  const { frontmatter } = data.file.childMarkdownRemark
   return (
     <Box bgcolor="#fafafa">
       <List dense disablePadding>
         <NavMenuHelpUsSubmenuItem
-          title={frontmatter.adopt[props.lang]}
+          title={text.labelAdopt[props.lang]}
           id="adopt"
           link="/adopt"
         />
         <NavMenuHelpUsSubmenuItem
-          title={frontmatter.foster[props.lang]}
+          title={text.labelFoster[props.lang]}
           id="foster"
           link="/foster"
         />
         <NavMenuHelpUsSubmenuItem
-          title={frontmatter.donate[props.lang]}
+          title={text.labelDonate[props.lang]}
           id="donate"
           link="/donate"
         />
         <NavMenuHelpUsSubmenuItem
-          title={frontmatter.volunteer[props.lang]}
+          title={text.labelVolunteer[props.lang]}
           id="volunteer"
           link="/volunteer"
         />

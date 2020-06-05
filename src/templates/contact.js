@@ -52,7 +52,7 @@ const Contact = props => {
       <Head
         lang={language}
         title={text.contactHeading[language]}
-        description={text.contacDescription[language]}
+        description={text.contactDescription[language]}
       />
       <Container>
         <Box color="white">

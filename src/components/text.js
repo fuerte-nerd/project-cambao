@@ -287,4 +287,60 @@ export default {
     en: "Volunteer your time",
     es: "Sea voluntario",
   },
+  labelHome: {
+    en: "Home",
+    es: "Iniciar",
+  },
+  subtitleHome: {
+    en: "Latest news and articles",
+    es: "Las últimas noticias y artículos",
+  },
+  labelTheDogs: {
+    en: "The Dogs",
+    es: "Los Perros",
+  },
+  subtitleTheDogs: {
+    en: "Meet our current guests",
+    es: "Conoce a nuestros invitados actuales",
+  },
+  labelWhoAreWe: {
+    en: "Who are we?",
+    es: "¿Quiénes somos?",
+  },
+  subtitleWhoAreWe: {
+    en: "Get to know us",
+    es: "Conócenos",
+  },
+  labelHelpUs: {
+    en: "Help us",
+    es: "Ayúdanos",
+  },
+  subtitleHelpUs: {
+    en: "Find out how you can help",
+    es: "Averigua cómo puedes ayudarnos",
+  },
+  labelAdopt: {
+    en: "Adopt",
+    es: "Adoptar",
+  },
+  labelFoster: {
+    en: "Foster",
+    es: "Formentar",
+  },
+  labelDonate: {
+    en: "Donate",
+    es: "Donar",
+  },
+  labelVolunteer: {
+    en: "Volunteer",
+    es: "Ofrecer",
+  },
+  labelContact: {
+    en: "Contact us",
+    es: "Contáctanos",
+  },
+  subtitleContact: {
+    en: "Get in touch with us",
+    es: "Póngase en contacto con nosotros",
+  },
 }

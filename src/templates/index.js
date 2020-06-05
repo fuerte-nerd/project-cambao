@@ -13,8 +13,8 @@ const Index = props => {
   const { language, currentPage, numPages } = props.pageContext
   props.dispatch(setLanguage(language))
   props.dispatch(setRedirect("/"))
-  const title = props.data.title.childMarkdownRemark.frontmatter.home[language]
-  const articles = props.data.articles.edges.map(i => {
+  const title = text.labelHome[language]
+  const articles = props.data.allFile.edges.map(i => {
     const article = i.node.childMarkdownRemark
     return {
       title: article.frontmatter.title,
@@ -78,7 +78,7 @@ const Index = props => {
 
 export const homeQuery = graphql`
   query homeQuery($skip: Int!, $limit: Int!, $language: String!) {
-    articles: allFile(
+    allFile(
       limit: $limit
       skip: $skip
       filter: {
@@ -108,19 +108,6 @@ export const homeQuery = graphql`
             }
             html
             excerpt(pruneLength: 400)
-          }
-        }
-      }
-    }
-    title: file(
-      name: { eq: "menus" }
-      sourceInstanceName: { eq: "static_content" }
-    ) {
-      childMarkdownRemark {
-        frontmatter {
-          home {
-            en
-            es
           }
         }
       }

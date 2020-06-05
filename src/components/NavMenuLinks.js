@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { connect } from "react-redux"
 import { setNav } from "../redux/actions"
 import {
@@ -12,63 +11,9 @@ import {
 } from "@material-ui/core"
 import NavMenuLinksItem from "./NavMenuLinksItem"
 import NavMenuHelpUsSubmenu from "./NavMenuHelpUsSubmenu"
+import text from "./text"
 
 const NavMenuLinks = props => {
-  const data = useStaticQuery(graphql`
-    {
-      file(
-        sourceInstanceName: { eq: "static_content" }
-        name: { eq: "menus" }
-      ) {
-        childMarkdownRemark {
-          frontmatter {
-            home {
-              en
-              es
-            }
-            subtitle_home {
-              en
-              es
-            }
-            help_us {
-              en
-              es
-            }
-            subtitle_help_us {
-              en
-              es
-            }
-            contact {
-              en
-              es
-            }
-            subtitle_contact {
-              en
-              es
-            }
-            who_are_we {
-              en
-              es
-            }
-            subtitle_who_are_we {
-              en
-              es
-            }
-            the_dogs {
-              en
-              es
-            }
-            subtitle_the_dogs {
-              en
-              es
-            }
-          }
-        }
-      }
-    }
-  `)
-  const { frontmatter } = data.file.childMarkdownRemark
-
   const [helpUsOpen, setHelpUsOpen] = useState(false)
   const theme = useTheme()
   const isLandscapeMobile = useMediaQuery(
@@ -95,30 +40,30 @@ const NavMenuLinks = props => {
       <List disablePadding dense={isLargeScreen ? false : true}>
         <NavMenuLinksItem
           link="/"
-          title={frontmatter.home[props.lang]}
-          subtitle={frontmatter.subtitle_home[props.lang]}
+          title={text.labelHome[props.lang]}
+          subtitle={text.subtitleHome[props.lang]}
           clickEvent={handleClick}
           divider
         />
         <NavMenuLinksItem
           link="/the-dogs"
-          title={frontmatter.the_dogs[props.lang]}
-          subtitle={frontmatter.subtitle_the_dogs[props.lang]}
+          title={text.labelTheDogs[props.lang]}
+          subtitle={text.subtitleTheDogs[props.lang]}
           clickEvent={handleClick}
           divider
         />
         <NavMenuLinksItem
           link="/who-are-we"
-          title={frontmatter.who_are_we[props.lang]}
-          subtitle={frontmatter.subtitle_who_are_we[props.lang]}
+          title={text.labelWhoAreWe[props.lang]}
+          subtitle={text.subtitleWhoAreWe[props.lang]}
           clickEvent={handleClick}
           divider
         />
         <NavMenuLinksItem
           id="help-us"
           link="#"
-          title={frontmatter.help_us[props.lang]}
-          subtitle={frontmatter.subtitle_help_us[props.lang]}
+          title={text.labelHelpUs[props.lang]}
+          subtitle={text.subtitleHelpUs[props.lang]}
           clickEvent={handleClick}
           divider
           dropdown
@@ -129,8 +74,8 @@ const NavMenuLinks = props => {
         </Collapse>
         <NavMenuLinksItem
           link="/contact"
-          title={frontmatter.contact[props.lang]}
-          subtitle={frontmatter.subtitle_contact[props.lang]}
+          title={text.labelContact[props.lang]}
+          subtitle={text.subtitleContact[props.lang]}
           clickEvent={handleClick}
           divider
         />
