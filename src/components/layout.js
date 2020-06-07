@@ -68,10 +68,8 @@ const Layout = props => {
 
   useEffect(() => {
     if (props.lang) {
-      console.log("reached")
       const langPref = localStorage.getItem("fdr_lang_pref")
       if (langPref) {
-        console.log(window.location)
         if (window.location.pathname === "/") {
           navigate(`/${langPref}/`)
         } else {
@@ -157,7 +155,9 @@ const Layout = props => {
                 <AnimatePresence>
                   <motion.main
                     key={
-                      props.location.pathname ? props.location.pathname : "404"
+                      typeof props.location.pathname !== `undefined`
+                        ? props.location.pathname
+                        : "404"
                     }
                     variants={variants}
                     initial="initial"
