@@ -113,23 +113,25 @@ const Layout = props => {
         />
       </Helmet>
       <CssBaseline>
-        {window.location.pathname === "/" ? (
-          <Box
-            position="fixed"
-            bgcolor="primary.light"
-            zIndex={10000}
-            top={0}
-            left={0}
-            height="100vh"
-            width="100vw"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Box width="70%" maxWidth={750}>
-              <LinearProgress color="secondary" />
+        {typeof window !== `undefined` ? (
+          window.location.pathname === "/" ? (
+            <Box
+              position="fixed"
+              bgcolor="primary.light"
+              zIndex={10000}
+              top={0}
+              left={0}
+              height="100vh"
+              width="100vw"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Box width="70%" maxWidth={750}>
+                <LinearProgress color="secondary" />
+              </Box>
             </Box>
-          </Box>
+          ) : null
         ) : null}
         <NoticeDialog />
         <LanguageRedirectDialog />
