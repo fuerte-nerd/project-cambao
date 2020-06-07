@@ -155,8 +155,8 @@ const Layout = props => {
                 <AnimatePresence>
                   <motion.main
                     key={
-                      typeof props.location.pathname !== `undefined`
-                        ? props.location.pathname
+                      typeof window.location.pathname !== `undefined`
+                        ? window.location.pathname
                         : "404"
                     }
                     variants={variants}
