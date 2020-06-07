@@ -16,10 +16,12 @@ const DogProfileExpansionPanel = props => {
       square
       defaultExpanded={
         props.expanded
-          ? window.innerWidth > expandedThreshold
-            ? true
-            : props.expandOnMobile
-            ? true
+          ? typeof window !== `undefined`
+            ? window.innerWidth > expandedThreshold
+              ? true
+              : props.expandOnMobile
+              ? true
+              : false
             : false
           : false
       }
