@@ -49,7 +49,7 @@ const Dog = props => {
   return (
     <>
       <Head
-        title={frontmatter.name}
+        title={frontmatter.title}
         description={frontmatter.summary[language]}
         ogImage={props.data.og.frontmatter.main_image.childImageSharp.fixed.src}
       />
@@ -65,7 +65,7 @@ const Dog = props => {
           <Grid container spacing={mdUp ? 1 : 0}>
             <Grid item xs={12} md={4}>
               <Hidden mdUp>
-                <DogProfileHeading name={frontmatter.name} mobile />
+                <DogProfileHeading name={frontmatter.title} mobile />
               </Hidden>
               <DogProfilePhotoGallery images={images} />
             </Grid>
@@ -74,7 +74,7 @@ const Dog = props => {
                 <Grid container spacing={0} alignItems="center">
                   <Hidden smDown>
                     <Grid item xs={12}>
-                      <DogProfileHeading name={frontmatter.name} />
+                      <DogProfileHeading name={frontmatter.title} />
                     </Grid>
                   </Hidden>
                   <Grid item xs={12}>
@@ -96,7 +96,7 @@ const Dog = props => {
                   <Grid item xs={12}>
                     <DogProfileVideo url={frontmatter.youtube} />
                   </Grid>
-                  <Grid item>
+                  <Grid item xs={12}>
                     <DogProfileDescription
                       description={frontmatter.description[language]}
                     />
@@ -122,7 +122,7 @@ export const pageQuery = graphql`
         sterilised
         sex
         ppp
-        name
+        title
         location
         description {
           en

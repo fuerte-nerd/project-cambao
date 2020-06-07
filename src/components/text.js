@@ -343,4 +343,12 @@ export default {
     en: "Get in touch with us",
     es: "Póngase en contacto con nosotros",
   },
+  sorryNoVideo: {
+    en: "Sorry.  We currently don't have video to show you.",
+    es: "Lo siento.  Actualmente no tenemos un video para mostrarte.",
+  },
+  showMeTheDogs: {
+    en: "Show me the dogs!",
+    es: "¡Muéstrame los perros!",
+  },
 }

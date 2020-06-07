@@ -2,8 +2,10 @@ import React from "react"
 import { graphql, navigate } from "gatsby"
 import { connect } from "react-redux"
 import { setRedirect, setLanguage } from "../redux/actions"
-import { Container } from "@material-ui/core"
+import { Container, Box, Button } from "@material-ui/core"
 import { Pagination } from "@material-ui/lab"
+import { Icon } from "@iconify/react"
+import DogIcon from "@iconify/icons-whh/dog"
 import Head from "../components/head"
 import Heading from "../components/homeHeading"
 import ArticleCard from "../components/ArticleCard"
@@ -40,21 +42,37 @@ const Index = props => {
         description={`${text.homeHeading[language]} - ${text.homeSubheading[language]}`}
         titleOverride
       />
-      <Heading
-        heading={text.homeHeading[language]}
-        subheading={text.homeSubheading[language]}
-      />
       <Container>
-        <Pagination
-          count={numPages}
-          page={currentPage}
-          onChange={handleClick}
-          style={{
-            marginBottom: ".35rem",
-            display: "flex",
-            justifyContent: "center",
-          }}
+        <Heading
+          heading={text.homeHeading[language]}
+          subheading={text.homeSubheading[language]}
         />
+        {currentPage === 1 ? (
+          <Box mb={2} align="center">
+            <Button
+              onClick={() => {
+                navigate(`/${language}/the-dogs`)
+              }}
+              variant="contained"
+              color="secondary"
+              style={{ color: "white" }}
+              endIcon={<Icon icon={DogIcon} />}
+            >
+              {text.showMeTheDogs[language]}
+            </Button>
+          </Box>
+        ) : (
+          <Pagination
+            count={numPages}
+            page={currentPage}
+            onChange={handleClick}
+            style={{
+              marginBottom: ".35rem",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          />
+        )}
         {articles.map(i => (
           <ArticleCard
             title={i.title}

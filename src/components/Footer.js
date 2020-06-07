@@ -92,7 +92,8 @@ const Footer = props => {
         </Box>
         <Typography display="block" variant="caption">
           {text.registeredCharity[props.lang]}
-          {` `}
+        </Typography>
+        <Typography display="block" variant="caption">
           (G1/S1/19399-13/F)
         </Typography>
         <Typography display="block" variant="caption">

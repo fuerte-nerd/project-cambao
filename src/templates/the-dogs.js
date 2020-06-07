@@ -15,7 +15,7 @@ const TheDogs = props => {
   const dogs = props.data.dogs.edges.map(i => {
     const dog = i.node.childMarkdownRemark.frontmatter
     return {
-      name: dog.name,
+      name: dog.title,
       image: dog.main_image.childImageSharp.fixed.src,
       summary: dog.summary[language],
       slug: i.node.childMarkdownRemark.fields.slug,
@@ -69,7 +69,7 @@ export const data = graphql`
         node {
           childMarkdownRemark {
             frontmatter {
-              name
+              title
               main_image {
                 childImageSharp {
                   fixed(width: 845) {

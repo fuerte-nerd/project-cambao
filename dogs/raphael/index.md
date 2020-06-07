@@ -1,5 +1,5 @@
 ---
-name: Raphael
+title: Raphael
 main_image: ./test.jpg
 images:
   - ./test.jpg

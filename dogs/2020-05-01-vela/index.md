@@ -1,5 +1,5 @@
 ---
-name: Vela
+title: Vela
 main_image: ./test.jpg
 images:
   - ./franky.jpg

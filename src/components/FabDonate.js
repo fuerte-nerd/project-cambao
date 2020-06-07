@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { setDonateDialog } from "../redux/actions"
-import { Fab, Hidden } from "@material-ui/core"
+import { Button, Hidden, Box } from "@material-ui/core"
 import { Icon } from "@iconify/react"
 import EuroIcon from "@iconify/icons-fa-solid/euro-sign"
 import text from "./text"
@@ -12,11 +12,8 @@ const FabDonate = props => {
   }
   return (
     <Hidden mdUp>
-      <Fab
-        onClick={handleClick}
-        variant="extended"
-        color="inherit"
-        size="small"
+      <Box
+        color="primary.dark"
         style={{
           position: "fixed",
           bottom: ".5rem",
@@ -24,9 +21,16 @@ const FabDonate = props => {
           zIndex: 1100,
         }}
       >
-        <Icon icon={EuroIcon} style={{ marginRight: ".5rem" }} />
-        {text.donate[props.lang]}
-      </Fab>
+        <Button
+          onClick={handleClick}
+          variant="contained"
+          color="inherit"
+          size="small"
+          endIcon={<Icon icon={EuroIcon} style={{ marginRight: ".5rem" }} />}
+        >
+          {text.donate[props.lang]}
+        </Button>
+      </Box>
     </Hidden>
   )
 }
