@@ -156,7 +156,9 @@ const Layout = props => {
               <Box mx={isNotMobile ? 3 : 1} my={isNotMobile ? 3 : 2}>
                 <AnimatePresence>
                   <motion.main
-                    key={props.location.pathname}
+                    key={
+                      props.location.pathname ? props.location.pathname : "404"
+                    }
                     variants={variants}
                     initial="initial"
                     animate="enter"
