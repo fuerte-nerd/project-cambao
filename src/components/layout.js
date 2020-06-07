@@ -153,19 +153,17 @@ const Layout = props => {
             <Grid item xs={12} md={10} justify="center">
               <Box mx={isNotMobile ? 3 : 1} my={isNotMobile ? 3 : 2}>
                 <AnimatePresence>
-                  <motion.main
-                    key={
-                      typeof window.location.pathname !== `undefined`
-                        ? window.location.pathname
-                        : "404"
-                    }
-                    variants={variants}
-                    initial="initial"
-                    animate="enter"
-                    exit="exit"
-                  >
-                    {props.children}
-                  </motion.main>
+                  {window.location.pathname !== `undefined` ? (
+                    <motion.main
+                      key={window.location.pathname}
+                      variants={variants}
+                      initial="initial"
+                      animate="enter"
+                      exit="exit"
+                    >
+                      {props.children}
+                    </motion.main>
+                  ) : null}
                 </AnimatePresence>
               </Box>
             </Grid>
