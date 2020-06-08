@@ -30,7 +30,7 @@ const Article = props => {
 
   useEffect(() => {
     props.dispatch(setRedirect("/"))
-    props.dispatch(setLanguage(props.pageContext.lang))
+    props.dispatch(setLanguage(language))
     //eslint-disable-next-line
   }, [])
 
