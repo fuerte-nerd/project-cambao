@@ -22,7 +22,7 @@ collections:
     - label: Featured Image
       name: featured_image
       widget: image
-      default: /images/defaultArticle.png
+      default: /images/default_article.png
     - label: Date
       name: date
       widget: datetime

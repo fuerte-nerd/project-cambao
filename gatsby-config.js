@@ -10,7 +10,7 @@ module.exports = {
         "Nos ocupamos de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura",
     },
     supportedLanguages: ["en", "es"],
-    url: "https://fuerteventuradogrescue.org",
+    url: "https://stoic-hamilton-cab241.netlify.app",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
