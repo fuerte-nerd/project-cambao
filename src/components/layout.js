@@ -153,7 +153,7 @@ const Layout = props => {
             <Grid item xs={12} md={10} justify="center">
               <Box mx={isNotMobile ? 3 : 1} my={isNotMobile ? 3 : 2}>
                 <AnimatePresence>
-                  {window.location.pathname !== `undefined` ? (
+                  {typeof window !== `undefined` ? (
                     <motion.main
                       key={window.location.pathname}
                       variants={variants}
