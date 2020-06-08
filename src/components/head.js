@@ -9,9 +9,11 @@ import React from "react"
 import { connect } from "react-redux"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { useLocation } from "@reach/router"
 import defaultOG from "../images/def_og.png"
 
 function Head(props) {
+  const { pathname } = useLocation()
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -29,17 +31,18 @@ function Head(props) {
     `
   )
 
-  const metaDescription =
-    props.description || site.siteMetadata.description[props.lang]
+  const { title, titleOverride, description, ogImage, lang, siteLang } = props
 
-  const metaOGImage = props.ogImage || defaultOG
+  const metaDescription = description || site.siteMetadata.description[siteLang]
+
+  const metaOGImage = ogImage || defaultOG
 
   return (
     <Helmet
       htmlAttributes={{
-        lang: props.lang,
+        lang: lang,
       }}
-      title={`${props.title} | ${site.siteMetadata.title}`}
+      title={`${title} | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -47,9 +50,9 @@ function Head(props) {
         },
         {
           property: `og:title`,
-          content: props.titleOverride
+          content: titleOverride
             ? site.siteMetadata.title
-            : `${props.title} | ${site.siteMetadata.title}`,
+            : `${title} | ${site.siteMetadata.title}`,
         },
         {
           property: `og:image`,
@@ -61,7 +64,7 @@ function Head(props) {
         },
         {
           property: `og:url`,
-          content: site.siteMetadata.url,
+          content: `${site.siteMetadata.url}${pathname}`,
         },
         {
           property: `og:site_name`,
@@ -82,7 +85,7 @@ Head.defaultProps = {
   description: ``,
 }
 const mapStateToProps = state => ({
-  lang: state.siteLang,
+  siteLang: state.siteLang,
 })
 
 export default connect(mapStateToProps)(Head)

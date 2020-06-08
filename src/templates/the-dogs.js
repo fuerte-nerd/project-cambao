@@ -28,6 +28,7 @@ const TheDogs = props => {
         lang={language}
         title={text.theDogsHeading[language]}
         description={text.theDogsSubheading[language]}
+        location="/the-dogs/"
       />
       <Container>
         <Box color="white">

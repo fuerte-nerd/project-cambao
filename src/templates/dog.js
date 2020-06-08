@@ -49,6 +49,7 @@ const Dog = props => {
   return (
     <>
       <Head
+        lang={language}
         title={frontmatter.title}
         description={frontmatter.summary[language]}
         ogImage={props.data.og.frontmatter.main_image.childImageSharp.fixed.src}
