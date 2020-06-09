@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, navigate } from "gatsby"
 import { connect } from "react-redux"
 import { setRedirect, setLanguage } from "../redux/actions"
@@ -13,12 +13,16 @@ import text from "../components/text"
 
 const Index = props => {
   const { language, currentPage, numPages } = props.pageContext
-  props.dispatch(setLanguage(language))
-  props.dispatch(setRedirect("/"))
+  useEffect(() => {
+    props.dispatch(setLanguage(language))
+    props.dispatch(setRedirect("/"))
+    //eslint-disable-next-line
+  }, [])
   const title = text.labelHome[language]
   const articles = props.data.allFile.edges.map(i => {
     const article = i.node.childMarkdownRemark
     return {
+      id: article.id,
       title: article.frontmatter.title,
       body: article.html,
       image: article.frontmatter.featured_image.childImageSharp.fixed.src,
@@ -75,6 +79,7 @@ const Index = props => {
         )}
         {articles.map(i => (
           <ArticleCard
+            key={i.id}
             title={i.title}
             body={i.body}
             image={i.image}
@@ -112,6 +117,7 @@ export const homeQuery = graphql`
             fields {
               slug
             }
+            id
             frontmatter {
               title
               language

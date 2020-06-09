@@ -20,13 +20,7 @@ const NavbarToolsIcon = props => {
   }
   return (
     <Tooltip title={props.tooltip}>
-      <IconButton
-        id={props.id}
-        onClick={handleClick}
-        color="inherit"
-        classes={{ root: { fontSize: ".6rem" } }}
-        style={{ fontSize: ".7rem" }}
-      >
+      <IconButton id={props.id} onClick={handleClick} color="inherit">
         {props.children}
       </IconButton>
     </Tooltip>

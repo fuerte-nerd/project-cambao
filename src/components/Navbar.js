@@ -11,7 +11,6 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  makeStyles,
 } from "@material-ui/core"
 import {
   Menu,
@@ -25,14 +24,8 @@ import Img from "gatsby-image"
 import NavbarToolsIcon from "./NavbarToolsIcon"
 import text from "./text"
 
-const useStyles = makeStyles(() => ({
-  navToolsButton: {
-    fontSize: "1.2rem",
-  },
-}))
-
 const Navbar = props => {
-  const classes = useStyles()
+  const { lang } = props
   const handleClick = e => {
     const f = e.currentTarget
     switch (f.id) {
@@ -81,7 +74,7 @@ const Navbar = props => {
     <AppBar>
       <Toolbar>
         <InternalLink to="/">
-          <Tooltip title={text.homeTooltip[props.lang]}>
+          <Tooltip title={lang ? text.homeTooltip[lang] : ""}>
             <Box display="flex" style={{ cursor: "pointer" }}>
               <Img fixed={data.logo.childImageSharp.fixed} />
             </Box>
@@ -96,34 +89,37 @@ const Navbar = props => {
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Hidden smDown>
-          <NavbarToolsIcon tooltip={text.donateTooltip[props.lang]} id="donate">
-            <EuroSymbol className={classes.navToolsButton} />
+          <NavbarToolsIcon
+            tooltip={lang ? text.donateTooltip[lang] : ""}
+            id="donate"
+          >
+            <EuroSymbol style={middleIconsStyle} />
           </NavbarToolsIcon>
           <NavbarToolsIcon
-            tooltip={text.facebookTooltip[props.lang]}
+            tooltip={lang ? text.facebookTooltip[lang] : ""}
             username={data.links.childMarkdownRemark.frontmatter.facebook}
             id="facebook"
           >
-            <Facebook className={classes.navToolsButton} />
+            <Facebook style={middleIconsStyle} />
           </NavbarToolsIcon>
           <NavbarToolsIcon
-            tooltip={text.instagramTooltip[props.lang]}
+            tooltip={lang ? text.instagramTooltip[lang] : ""}
             username={data.links.childMarkdownRemark.frontmatter.instagram}
             id="instagram"
           >
-            <Instagram className={classes.navToolsButton} />
+            <Instagram style={middleIconsStyle} />
           </NavbarToolsIcon>
           <NavbarToolsIcon
-            tooltip={text.messengerTooltip[props.lang]}
+            tooltip={lang ? text.messengerTooltip[lang] : ""}
             username={data.links.childMarkdownRemark.frontmatter.facebook}
             id="messenger"
           >
-            <FacebookMessenger className={classes.navToolsButton} />
+            <FacebookMessenger style={middleIconsStyle} />
           </NavbarToolsIcon>
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Box mr={2}>
-          <Tooltip title={text.shareTooltip[props.lang]}>
+          <Tooltip title={lang ? text.shareTooltip[lang] : ""}>
             <Button
               onClick={handleClick}
               id="share"
@@ -132,12 +128,12 @@ const Navbar = props => {
               color="inherit"
               endIcon={<Share />}
             >
-              {text.share[props.lang]}
+              {lang ? text.share[lang] : ""}
             </Button>
           </Tooltip>
         </Box>
         <Box color="primary.dark">
-          <Tooltip title={text.menuTooltip[props.lang]}>
+          <Tooltip title={lang ? text.menuTooltip[lang] : ""}>
             <Button
               variant="contained"
               onClick={handleClick}
@@ -146,7 +142,7 @@ const Navbar = props => {
               edge="end"
               endIcon={<Menu />}
             >
-              {text.menu[props.lang]}
+              {lang ? text.menu[lang] : ""}
             </Button>
           </Tooltip>
         </Box>
@@ -154,6 +150,7 @@ const Navbar = props => {
     </AppBar>
   )
 }
+const middleIconsStyle = { fontSize: "1.2rem" }
 
 const mapStateToProps = state => ({
   lang: state.siteLang,

@@ -150,7 +150,7 @@ const Layout = props => {
             <Hidden smDown>
               <Sidebar />
             </Hidden>
-            <Grid item xs={12} md={10} justify="center">
+            <Grid item xs={12} md={10}>
               <Box mx={isNotMobile ? 3 : 1} my={isNotMobile ? 3 : 2}>
                 <AnimatePresence>
                   {typeof window !== `undefined` ? (

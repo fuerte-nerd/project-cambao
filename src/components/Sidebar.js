@@ -10,7 +10,7 @@ import SidebarOpeningHours from "./SidebarOpeningHours"
 
 const Sidebar = () => {
   return (
-    <Grid item xs={0} md={2}>
+    <Grid item xs={false} md={2}>
       <Box py={2} bgcolor="primary.light" boxShadow={2}>
         <Container>
           <SidebarLanguage />

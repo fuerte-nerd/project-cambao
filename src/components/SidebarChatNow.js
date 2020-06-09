@@ -9,6 +9,7 @@ import SidebarSectionTitle from "./SidebarSectionTitle"
 import text from "./text"
 
 const SidebarChatNow = props => {
+  const { lang } = props
   const data = useStaticQuery(graphql`
     {
       notice: file(
@@ -42,9 +43,9 @@ const SidebarChatNow = props => {
         return props.dispatch(
           setNoticeDialog({
             visible: true,
-            heading: text.notice.heading[props.lang],
-            body: data.notice.childMarkdownRemark.frontmatter[props.lang],
-            btnText: text.notice.close[props.lang],
+            heading: text.reportLostHeading[lang],
+            body: data.notice.childMarkdownRemark.frontmatter[lang],
+            btnText: text.close[lang],
           })
         )
       case "messenger":
@@ -64,8 +65,8 @@ const SidebarChatNow = props => {
 
   return (
     <Box>
-      <SidebarSectionTitle title={text.chatNowHeading[props.lang]} />
-      <Typography variant="caption">{text.chatNowIntro[props.lang]}</Typography>
+      <SidebarSectionTitle title={text.chatNowHeading[lang]} />
+      <Typography variant="caption">{text.chatNowIntro[lang]}</Typography>
       <Button
         fullWidth
         variant="contained"
@@ -85,15 +86,13 @@ const SidebarChatNow = props => {
         id="email"
         onClick={handleClick}
       >
-        {text.email[props.lang]}
+        {text.email[lang]}
       </Button>
       <Typography variant="caption" align="justify">
-        {text.reportLostQuestion[props.lang]}
+        {text.reportLostQuestion[lang]}
         {` `}
         <Link onClick={handleClick} id="report" color="inherit">
-          <strong style={{ cursor: "pointer" }}>
-            {text.click[props.lang]}
-          </strong>
+          <strong style={{ cursor: "pointer" }}>{text.click[lang]}</strong>
         </Link>
         .
       </Typography>

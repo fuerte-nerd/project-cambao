@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
 import { setLanguage, setRedirect } from "../redux/actions"
@@ -10,8 +10,11 @@ import text from "../components/text"
 
 const TheDogs = props => {
   const { language } = props.pageContext
-  props.dispatch(setLanguage(language))
-  props.dispatch(setRedirect("/the-dogs"))
+  useEffect(() => {
+    props.dispatch(setLanguage(language))
+    props.dispatch(setRedirect("/the-dogs"))
+    // eslint-disable-next-line
+  }, [])
   const dogs = props.data.dogs.edges.map(i => {
     const dog = i.node.childMarkdownRemark.frontmatter
     return {
@@ -19,6 +22,7 @@ const TheDogs = props => {
       image: dog.main_image.childImageSharp.fixed.src,
       summary: dog.summary[language],
       slug: i.node.childMarkdownRemark.fields.slug,
+      key: i.node.childMarkdownRemark.id,
     }
   })
 
@@ -42,8 +46,17 @@ const TheDogs = props => {
         <Box>
           <Grid container spacing={1}>
             {dogs.map(dog => (
-              <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
+              <Grid
+                key={`${dog.key}-grid`}
+                item
+                xs={12}
+                sm={6}
+                md={6}
+                lg={4}
+                xl={3}
+              >
                 <DogListing
+                  key={dog.key}
                   name={dog.name}
                   image={dog.image}
                   summary={dog.summary}
@@ -69,6 +82,7 @@ export const data = graphql`
       edges {
         node {
           childMarkdownRemark {
+            id
             frontmatter {
               title
               main_image {

@@ -17,10 +17,10 @@ const DogProfileVideo = props => {
           title="Video of dog"
           width="560"
           height="315"
-          src={`http://youtube.com/embed/${props.url}`}
-          frameborder="0"
+          src={`https://youtube.com/embed/${props.url}`}
+          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen="true"
+          allowFullScreen={true}
           webkitallowfullscreen="true"
           mozallowfullscreen="true"
           style={{

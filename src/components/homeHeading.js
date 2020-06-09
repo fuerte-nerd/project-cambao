@@ -1,12 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import {
-  useTheme,
-  useMediaQuery,
-  Container,
-  Box,
-  Typography,
-} from "@material-ui/core"
+import { useTheme, useMediaQuery, Box, Typography } from "@material-ui/core"
 import Img from "gatsby-image"
 
 const Heading = props => {

@@ -27,7 +27,7 @@ const NavMenuSocialLinksItem = props => {
         id={props.id}
         onClick={handleClick}
         color="inherit"
-        edge={props.end ? "end" : "default"}
+        edge={props.end ? "end" : false}
       >
         {props.children}
       </IconButton>

@@ -20,11 +20,13 @@ import "moment/locale/es"
 import text from "./text"
 
 const ArticleCard = props => {
+  const { lang } = props
   const theme = useTheme()
-  moment.locale(props.lang)
+  moment.locale(lang)
+  //eslint-disable-next-line
 
   const handleClick = () => {
-    navigate(`/${props.lang}/articles${props.slug}`)
+    navigate(`/${lang}/articles${props.slug}`)
   }
   return (
     <Box mb={1}>
@@ -63,7 +65,7 @@ const ArticleCard = props => {
             color="inherit"
             startIcon={<LocalLibrary />}
           >
-            {text.readMore[props.lang]}
+            {lang ? text.readMore[lang] : ""}
           </Button>
         </CardActions>
       </Card>

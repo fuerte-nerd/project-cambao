@@ -13,8 +13,8 @@ const DogProfilePhotoGalleryThumbs = props => {
   }
   return (
     <Grid container spacing={smUp ? 1 : 0}>
-      {props.images.map(img => (
-        <Grid item xs={3} sm={2} md={3} lg={2}>
+      {props.images.map((img, ind) => (
+        <Grid item key={`${ind}-grid`} xs={3} sm={2} md={3} lg={2}>
           <Box
             onClick={handleClick}
             id={img.childImageSharp.id}

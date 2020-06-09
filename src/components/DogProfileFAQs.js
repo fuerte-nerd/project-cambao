@@ -6,29 +6,30 @@ import InternalLink from "./InternalLink"
 import text from "./text"
 
 const DogProfileFAQs = props => {
+  const { lang } = props
   return (
     <DogProfileExpansionPanel
-      title={text.faqTitle[props.lang]}
+      title={lang ? text.faqTitle[lang] : ""}
       headingVariant="h6"
     >
       <Box>
         <Question
-          question={text.adoptQuestion[props.lang]}
-          answer={text.adoptAnswer[props.lang]}
+          question={lang ? text.adoptQuestion[lang] : ""}
+          answer={lang ? text.adoptAnswer[lang] : ""}
           link="/adopt"
-          linkLabel={text.adoptADog[props.lang]}
+          linkLabel={lang ? text.adoptADog[lang] : ""}
         />
         <Question
-          question={text.fosterQuestion[props.lang]}
-          answer={text.fosterAnswer[props.lang]}
+          question={lang ? text.fosterQuestion[lang] : ""}
+          answer={lang ? text.fosterAnswer[lang] : ""}
           link="/foster"
-          linkLabel={text.fosterADog[props.lang]}
+          linkLabel={lang ? text.fosterADog[lang] : ""}
         />
         <Question
-          question={text.donateQuestion[props.lang]}
-          answer={text.donateAnswer[props.lang]}
+          question={lang ? text.donateQuestion[lang] : ""}
+          answer={lang ? text.donateAnswer[lang] : ""}
           link="/donate"
-          linkLabel={text.donateNowHeading[props.lang]}
+          linkLabel={lang ? text.donateNowHeading[lang] : ""}
           last
         />
       </Box>

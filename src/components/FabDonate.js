@@ -7,6 +7,7 @@ import EuroIcon from "@iconify/icons-fa-solid/euro-sign"
 import text from "./text"
 
 const FabDonate = props => {
+  const { lang } = props
   const handleClick = () => {
     props.dispatch(setDonateDialog(true))
   }
@@ -28,7 +29,7 @@ const FabDonate = props => {
           size="small"
           endIcon={<Icon icon={EuroIcon} style={{ marginRight: ".5rem" }} />}
         >
-          {text.donate[props.lang]}
+          {lang ? text.donate[lang] : ""}
         </Button>
       </Box>
     </Hidden>

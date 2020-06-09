@@ -25,10 +25,10 @@ const DonateDialog = props => {
       <DialogTitle>{text.donateNowHeading[props.lang]}</DialogTitle>
       <DialogContent dividers>
         <Typography>{text.donateDialogBody[props.lang]}</Typography>
-        <Box fullWidth m={3} align="center">
+        <Box m={3} align="center">
           <PaypalButton />
         </Box>
-        <Box mt={3} fullWidth align="center">
+        <Box mt={3} align="center">
           <Typography display="block" variant="subtitle2">
             <strong>{text.bank[props.lang]}:</strong> Sabadell
           </Typography>
