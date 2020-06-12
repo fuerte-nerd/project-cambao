@@ -78,7 +78,10 @@ export const data = graphql`
   query DogsQuery {
     dogs: allFile(
       filter: { sourceInstanceName: { eq: "dogs" }, extension: { eq: "md" } }
-      sort: { fields: childMarkdownRemark___frontmatter___date_entered }
+      sort: {
+        fields: childMarkdownRemark___frontmatter___date_entered
+        order: ASC
+      }
     ) {
       edges {
         node {
