@@ -13,8 +13,8 @@ module.exports = {
     url: "https://fuerteventuradogrescue.netlify.app",
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-material-ui`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
