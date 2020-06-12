@@ -7,7 +7,7 @@ import text from "./text"
 const SidebarLanguage = props => {
   return (
     <>
-      <SidebarSectionTitle title={text.siteLanguageHeading[props.lang]} top />
+      <SidebarSectionTitle title={text.siteLanguageHeading[props.lang]} />
       <LanguageSelector fullWidth />
     </>
   )

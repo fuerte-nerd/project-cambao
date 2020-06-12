@@ -10,7 +10,7 @@ summary:
     dog?  Yes he is.
   es: Frankie es un perro hermoso.  Es un hermoso perro.  ¿Es un perro
     hermoso?  Sí, lo es.
-main_image: img_20191225_105353-01.jpeg
+main_image: frankie.jpg
 images: []
 youtube: ""
 ppp: "0"

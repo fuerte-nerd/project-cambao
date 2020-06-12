@@ -149,7 +149,7 @@ export const pageQuery = graphql`
         images {
           childImageSharp {
             id
-            fluid(maxWidth: 844, maxHeight: 1055) {
+            fluid(maxWidth: 844, maxHeight: 1055, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -157,7 +157,7 @@ export const pageQuery = graphql`
         main_image {
           childImageSharp {
             id
-            fluid(maxWidth: 844, maxHeight: 1055) {
+            fluid(maxWidth: 844, maxHeight: 1055, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -170,7 +170,7 @@ export const pageQuery = graphql`
         images {
           childImageSharp {
             id
-            fluid(maxWidth: 130, maxHeight: 130) {
+            fluid(maxWidth: 130, maxHeight: 130, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -178,7 +178,7 @@ export const pageQuery = graphql`
         main_image {
           childImageSharp {
             id
-            fluid(maxWidth: 130, maxHeight: 130) {
+            fluid(maxWidth: 130, maxHeight: 130, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -189,7 +189,7 @@ export const pageQuery = graphql`
       frontmatter {
         main_image {
           childImageSharp {
-            fixed(width: 1200, height: 627) {
+            fixed(width: 1200, height: 627, cropFocus: CENTER) {
               ...GatsbyImageSharpFixed
             }
           }

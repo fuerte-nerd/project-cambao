@@ -10,8 +10,8 @@ summary:
     dog?  Yes she is.
   es: Sookie es un perro hermoso.  Es un hermosa perra.  ¿Es un perra
     hermosa?  Sí, lo es.
-main_image: img_20191225_105353-01.jpeg
-images: []
+main_image: sookie2.jpg
+images: ['sookie1.jpg']
 youtube: ""
 ppp: "0"
 dog_friendly: "1"

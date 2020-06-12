@@ -10,9 +10,8 @@ summary:
     dog?  Yes she is.
   es: Vela es un perro hermoso.  Es una hermosa perra.  ¿Es un perro hermoso?  Sí,
     lo es.
-main_image: ./test.jpg
-images:
-  - ./franky.jpg
+main_image: ./vela.jpg
+images: []
 youtube: ""
 ppp: "1"
 dog_friendly: "1"

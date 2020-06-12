@@ -44,7 +44,7 @@ const TheDogs = props => {
           </Typography>
         </Box>
         <Box>
-          <Grid container spacing={1}>
+          <Grid container spacing={2}>
             {dogs.map(dog => (
               <Grid
                 key={`${dog.key}-grid`}
@@ -78,6 +78,7 @@ export const data = graphql`
   query DogsQuery {
     dogs: allFile(
       filter: { sourceInstanceName: { eq: "dogs" }, extension: { eq: "md" } }
+      sort: { fields: childMarkdownRemark___frontmatter___date_entered }
     ) {
       edges {
         node {

@@ -10,7 +10,7 @@ summary:
     dog?  Yes she is.
   es: Rubia es un perro hermoso.  Es un hermosa perra.  ¿Es un perra hermosa?  Sí,
     lo es.
-main_image: img_20191225_105353-01.jpeg
+main_image: rubia.jpg 
 images: []
 youtube: ""
 ppp: "1"

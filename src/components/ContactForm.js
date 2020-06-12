@@ -53,6 +53,7 @@ const ContactForm = props => {
                 style={{ color: "white" }}
                 fullWidth
                 endIcon={<Send />}
+                type="submit"
               >
                 {text.send[language]}
               </Button>

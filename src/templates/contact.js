@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { connect } from "react-redux"
-import { setLanguage, setRedirect } from "../redux/actions"
-import { Button, Box, Typography, Container } from "@material-ui/core"
+import { setLanguage, setRedirect, setNoticeDialog } from "../redux/actions"
+import { Button, Link, Box, Typography, Container } from "@material-ui/core"
 import { Email } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 
@@ -15,7 +15,18 @@ const Contact = props => {
 
   const data = useStaticQuery(graphql`
     {
-      file(
+      lostorabandoned: file(
+        name: { eq: "lostorabandoned" }
+        sourceInstanceName: { eq: "static_content" }
+      ) {
+        childMarkdownRemark {
+          frontmatter {
+            en
+            es
+          }
+        }
+      }
+      links: file(
         name: { eq: "links" }
         sourceInstanceName: { eq: "static_content" }
       ) {
@@ -28,7 +39,7 @@ const Contact = props => {
       }
     }
   `)
-  const { facebook, email } = data.file.childMarkdownRemark.frontmatter
+  const { facebook, email } = data.links.childMarkdownRemark.frontmatter
 
   useEffect(() => {
     props.dispatch(setRedirect("/contact"))
@@ -42,6 +53,17 @@ const Contact = props => {
         return window.open(`http://m.me/${facebook}`, "_blank")
       case "email":
         return window.open(`mailto:${email}`, "_blank")
+      case "report":
+        return props.dispatch(
+          setNoticeDialog({
+            visible: true,
+            heading: text.reportLostHeading[language],
+            body:
+              data.lostorabandoned.childMarkdownRemark.frontmatter[language],
+            btnText: text.close[language],
+          })
+        )
+
       default:
         return
     }
@@ -58,7 +80,17 @@ const Contact = props => {
         <Box color="white">
           <Typography variant="h2">{text.contactHeading[language]}</Typography>
         </Box>
-        <Box py={2}>
+        <Box pt={2}>
+          <Typography variant="caption" paragraph>
+            {text.reportLostQuestion[language]}{" "}
+            <Link onClick={handleClick} id="report" color="inherit">
+              <strong style={{ cursor: "pointer" }}>
+                {text.click[language]}
+              </strong>
+            </Link>
+          </Typography>
+        </Box>
+        <Box mt={2}>
           <Typography paragraph>
             {text.contactMessenger[language]}...
           </Typography>

@@ -22,7 +22,7 @@ const SidebarQuickLinks = props => {
   }
   return (
     <>
-      <SidebarSectionTitle title={text.quickNavigation[props.lang]} />
+      <SidebarSectionTitle title={text.quickNavigation[props.lang]} top />
       <List disablePadding dense>
         <SidebarQuickLinksItem
           label={text.labelHome[props.lang]}

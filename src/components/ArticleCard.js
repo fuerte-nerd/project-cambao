@@ -23,13 +23,12 @@ const ArticleCard = props => {
   const { lang } = props
   const theme = useTheme()
   moment.locale(lang)
-  //eslint-disable-next-line
 
   const handleClick = () => {
     navigate(`/${lang}/articles${props.slug}`)
   }
   return (
-    <Box mb={1}>
+    <Box mb={3}>
       <Card>
         <CardActionArea onClick={handleClick}>
           <Grid container>

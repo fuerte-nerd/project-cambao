@@ -9,6 +9,7 @@ import {
   Typography,
   Button,
 } from "@material-ui/core"
+import ReactMarkdown from "react-markdown"
 
 const NoticeDialog = props => {
   const handleClose = () => {
@@ -26,7 +27,12 @@ const NoticeDialog = props => {
     <Dialog open={props.notice.visible} maxWidth="md" onClose={handleClose}>
       <DialogTitle>{props.notice.heading}</DialogTitle>
       <DialogContent dividers>
-        <Typography>{props.notice.body}</Typography>
+        <ReactMarkdown
+          source={props.notice.body}
+          renderers={{
+            paragraph: MyTypography,
+          }}
+        />
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>{props.notice.btnText}</Button>
@@ -34,6 +40,10 @@ const NoticeDialog = props => {
     </Dialog>
   )
 }
+
+const MyTypography = ({ children }) => (
+  <Typography paragraph>{children}</Typography>
+)
 
 const mapStateToProps = state => ({
   notice: state.noticeDialog,

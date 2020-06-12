@@ -13,8 +13,8 @@ const Sidebar = () => {
     <Grid item xs={false} md={2}>
       <Box py={2} bgcolor="primary.light" boxShadow={2}>
         <Container>
-          <SidebarLanguage />
           <SidebarQuickLinks />
+          <SidebarLanguage />
           <SidebarChatNow />
           <SidebarDonate />
           <SidebarLocation />

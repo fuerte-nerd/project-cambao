@@ -1,6 +1,15 @@
 ---
-en: >-
-    Amet corporis mollitia pariatur ipsum animi Obcaecati vel praesentium voluptatibus ipsam quod Eaque id consequuntur aliquam distinctio sequi libero fugit Quaerat repellendus voluptas dicta sed necessitatibus? Sint sequi tempora dignissimos cum ab Illum quibusdam consectetur asperiores aliquid aliquam asperiores a Earum magni quam temporibus accusamus aliquid, odio vitae Dolor saepe ipsam qui culpa rem reprehenderit! Iure quo eius sequi corporis
-es: >-
-    Amet corporis mollitia pariatur ipsum animi Obcaecati vel praesentium voluptatibus ipsam quod Eaque id consequuntur aliquam distinctio sequi libero fugit Quaerat repellendus voluptas dicta sed necessitatibus? Sint sequi tempora dignissimos cum ab Illum quibusdam consectetur asperiores aliquid aliquam asperiores a Earum magni quam temporibus accusamus aliquid, odio vitae Dolor saepe ipsam qui culpa rem reprehenderit! Iure quo eius sequi corporis
+en: |-
+    **LOST**: If you have lost your dog you can contact us and we will post it on our Facebook page. We will need a photo of the dog and to know when you lost it, where abouts on the island, male or female and if it has chip. You should also report the loss to the police and there is a section on Zoocan (chip register) to report your dog as lost.
+
+    **FOUND**: If you find a dog the first step is to take it to a veterinary clinic or the local police to check for a chip. If the dog doesn´t have a chip then it will need to go into the shelter of your area (please note a dog must go into the shelter of the area it was found in). If the town hall is open, the police or veterinary clinic should be able to help you contact the local town hall. If the town hall is out of hours, the police may be able to keep the dog (in the case of the local police in Corralejo, they have a couple of cages for that purpose). Please note, as we don´t have our own land, we are unable to collect dogs that have been found.
+
+    **ILL TREATMENT**: If you see that a dog is being ill-treated, either physically or is kept in poor conditions, you can report this to the local police but you must provide the full address of where the dog is and photographic evidence. They will then investigate along with the vet from the town hall. We are not law agents and under no circumstances can we go into private land or houses to get dogs, only the police can do this.
+es: |-
+    **PERDIDO**: Si ha perdido a su perro, puede contactarnos y lo publicaremos en nuestra página de Facebook. Necesitaremos una foto del perro y saber cuándo lo perdiste, en qué lugar de la isla, si es macho o hembra y si tiene un chip. También debe reportar la pérdida a la policía y hay una sección en Zoocan (registro de chip) para reportar su perro como perdido.
+
+    **ENCONTRADO**: Si encuentras un perro, el primer paso es llevarlo a una clínica veterinaria o a la policía local para buscar un chip. Si el perro no tiene un chip entonces tendrá que ir al refugio de su área (por favor, tenga en cuenta que un perro debe ir al refugio de la zona en la que fue encontrado). Si el ayuntamiento está abierto, la policía o la clínica veterinaria debería poder ayudarle a contactar con el ayuntamiento local. Si el ayuntamiento está fuera de horario, la policía puede quedarse con el perro (en el caso de la policía local de Corralejo, tienen un par de jaulas para ese fin). Tenga en cuenta que, como no tenemos nuestro propio terreno, no podemos recoger los perros que se han encontrado.
+
+
+    **MAL TRATAMIENTO**: Si ve que un perro está siendo maltratado, ya sea físicamente o en malas condiciones, puede denunciarlo a la policía local, pero debe proporcionar la dirección completa del lugar donde se encuentra el perro y pruebas fotográficas. Entonces investigarán junto con el veterinario del ayuntamiento. No somos agentes de la ley y bajo ninguna circunstancia podemos entrar en terrenos o casas privadas para conseguir perros, sólo la policía puede hacerlo.
 ---

@@ -60,6 +60,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 const DogListing = props => {
+  const { lang, name, summary } = props
   const theme = useTheme()
   const classes = useStyles()
 
@@ -69,13 +70,13 @@ const DogListing = props => {
         return props.dispatch(
           setPopup({
             visible: true,
-            href: `${data.site.siteMetadata.url}/${props.lang}/dogs${props.slug}`,
+            href: `${data.site.siteMetadata.url}/${lang}/dogs${props.slug}`,
             title: props.name + " | Fuerteventura Dog Rescue",
           })
         )
 
       default:
-        navigate(`${props.lang}/dogs/${props.slug}`)
+        navigate(`${lang}/dogs/${props.slug}`)
     }
   }
 
@@ -95,16 +96,16 @@ const DogListing = props => {
         <CardMedia image={props.image} className={classes.cardImage} />
 
         <CardContent>
-          <Typography variant="h3">{props.name}</Typography>
+          <Typography variant="h3">{name}</Typography>
           <Divider style={{ margin: ".5rem 0" }} />
-          <Typography variant="body2">{props.summary}</Typography>
+          <Typography variant="body2">{summary}</Typography>
         </CardContent>
       </CardActionArea>
       <CardActions
         style={{ background: theme.palette.secondary.main, color: "#fafafa" }}
       >
         <Button color="inherit" startIcon={<Info />} onClick={handleClick}>
-          {text.moreInfo[props.lang]}
+          {lang ? text.moreInfo[lang] : ""}
         </Button>
         <Button
           color="inherit"
@@ -112,7 +113,7 @@ const DogListing = props => {
           onClick={handleClick}
           id="share"
         >
-          {text.share[props.lang]}
+          {lang ? text.share[lang] : ""}
         </Button>
       </CardActions>
     </Card>

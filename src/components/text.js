@@ -65,12 +65,12 @@ export default {
     es: "Contáctenos ahora por...",
   },
   reportLostQuestion: {
-    en: "Do you want to report a lost or abandoned dog?",
-    es: "¿Quiere reportar un perro perdido o abandonado?",
+    en: "Do you want to report a lost, abandoned or ill-treated dog?",
+    es: "¿Quiere denunciar un perro perdido, abandonado o maltratado?",
   },
   reportLostHeading: {
-    en: "Report a lost or abandoned dog",
-    es: "Reportar un perro perdido o abandonado",
+    en: "Report a lost, abandoned or ill-treated dog",
+    es: "Reportar un perro perdido, abandonado o maltratado",
   },
   close: { en: "Close", es: "Cerrar" },
   click: {
@@ -350,5 +350,9 @@ export default {
   showMeTheDogs: {
     en: "Show me the dogs!",
     es: "¡Muéstrame los perros!",
+  },
+  forFurtherInfo: {
+    en: "For futher information",
+    es: "Para más información",
   },
 }

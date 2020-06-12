@@ -144,7 +144,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const staticPageTemplate = path.resolve("src/templates/staticPage.js")
   const whoAreWeQuery = await graphql(`
     {
-      file(name: { eq: "whoarewe" }) {
+      file(
+        name: { eq: "whoarewe" }
+        sourceInstanceName: { eq: "static_content" }
+      ) {
         childMarkdownRemark {
           id
         }
