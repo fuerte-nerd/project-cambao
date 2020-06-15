@@ -8,9 +8,11 @@ import {
   SET_NOTICE_DIALOG,
   SET_DONATE_DIALOG,
   SET_LANGUAGE_REDIRECT_DIALOG,
+  SET_SITE_READY,
 } from "./types"
 
 const initialState = {
+  siteReady: false,
   siteLang: null,
   navOpen: false,
   redirect: "/",
@@ -36,6 +38,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SET_SITE_READY:
+      return {
+        ...state,
+        siteReady: action.payload,
+      }
     case SET_LANGUAGE_REDIRECT_DIALOG:
       return {
         ...state,

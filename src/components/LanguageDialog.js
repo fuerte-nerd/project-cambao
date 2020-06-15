@@ -11,6 +11,7 @@ import {
   ListItem,
   Typography,
 } from "@material-ui/core"
+import text from "./text"
 
 const LanguageDialog = props => {
   const handleClick = e => {
@@ -22,9 +23,6 @@ const LanguageDialog = props => {
 
   const handleClose = () => {
     props.dispatch(setLanguageDialog(false))
-  }
-  const text = {
-    cancel: { en: "Cancel", es: "Cancelar" },
   }
   return (
     <Dialog open={props.languageDialog} onClose={handleClose}>

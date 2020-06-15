@@ -128,6 +128,9 @@ export const pageQuery = graphql`
         description {
           en
           es
+          de
+          fr
+          it
         }
         date_of_birth
         date_entered
@@ -138,6 +141,9 @@ export const pageQuery = graphql`
         summary {
           en
           es
+          de
+          fr
+          it
         }
       }
       fields {

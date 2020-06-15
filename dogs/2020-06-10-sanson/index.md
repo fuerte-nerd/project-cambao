@@ -10,6 +10,9 @@ summary:
     dog?  Yes he is.
   es: Sansón es un perro hermoso.  Es un hermoso perro.  ¿Es un perro
     hermoso?  Sí, lo es.
+  de: The German summary for Sansón. 
+  fr: The French summary for Sansón. 
+  it: The Italian summary for Sansón. 
 main_image: sanson.jpg 
 images: []
 youtube: ""
@@ -19,37 +22,9 @@ cat_friendly: "0"
 family_friendly: "0"
 sterilised: "1"
 description:
-  en: The English description for Sansón.
-  es: The Spanish description for Sansón.
-  de: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nisi. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
-  it: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nii. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
-  fr: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nisi. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
+  en: This is the English description for Sansón.
+  es: This is the Spanish description for Sansón.
+  de: This is the German description for Sansón.
+  fr: This is the French description for Sansón.
+  it: This is the Italian description for Sansón.
 ---
-s

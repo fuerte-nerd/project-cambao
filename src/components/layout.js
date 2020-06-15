@@ -1,8 +1,7 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { setLanguageRedirectDialog } from "../redux//actions"
+import { setLanguageRedirectDialog, setSiteReady } from "../redux/actions"
 import detectBrowserLanguage from "detect-browser-language"
-import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { navigate, useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
@@ -13,13 +12,9 @@ import {
   Grid,
   Hidden,
   Toolbar,
-  CssBaseline,
   useTheme,
   useMediaQuery,
 } from "@material-ui/core"
-
-import { ThemeProvider } from "@material-ui/core/styles"
-import siteTheme from "./theme"
 
 import ShareDialog from "./ShareDialog"
 import LanguageRedirectDialog from "./LanguageRedirectDialog"
@@ -99,83 +94,83 @@ const Layout = props => {
         localStorage.setItem("fdr_lang_pref", browserLang)
       }
     }
+    if (!props.siteReady) {
+      props.dispatch(setSiteReady(true))
+    }
     //eslint-disable-next-line
   }, [props.lang])
 
-  return (
-    <ThemeProvider theme={siteTheme}>
-      <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
-      <CssBaseline>
-        {typeof window !== `undefined` ? (
-          window.location.pathname === "/" ? (
-            <Box
-              position="fixed"
-              bgcolor="primary.light"
-              zIndex={10000}
-              top={0}
-              left={0}
-              height="100vh"
-              width="100vw"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Box width="70%" maxWidth={750}>
-                <LinearProgress color="secondary" />
-              </Box>
+  return props.siteReady ? (
+    <>
+      {typeof window !== `undefined` ? (
+        window.location.pathname === "/" ? (
+          <SiteLoadOverlay />
+        ) : null
+      ) : null}
+      <NoticeDialog />
+      <LanguageRedirectDialog />
+      <LanguageDialog />
+      <DonateDialog />
+      <ShareDialog />
+      <Navbar siteTitle={data.site.siteMetadata.title} />
+      <NavMenu />
+      <Box
+        bgcolor="primary.main"
+        width="100%"
+        minHeight="100vh"
+        component="main"
+      >
+        <FabDonate />
+        <Toolbar />
+        <Grid container>
+          <Hidden smDown>
+            <Sidebar />
+          </Hidden>
+          <Grid item xs={12} md={10}>
+            <Box mx={isNotMobile ? 3 : 1} my={isNotMobile ? 3 : 2}>
+              <AnimatePresence>
+                {typeof window !== `undefined` ? (
+                  <motion.main
+                    key={window.location.pathname}
+                    variants={variants}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                  >
+                    {" "}
+                    {props.children}
+                  </motion.main>
+                ) : null}
+              </AnimatePresence>
             </Box>
-          ) : null
-        ) : null}
-        <NoticeDialog />
-        <LanguageRedirectDialog />
-        <LanguageDialog />
-        <DonateDialog />
-        <ShareDialog />
-        <Navbar siteTitle={data.site.siteMetadata.title} />
-        <NavMenu />
-        <Box
-          bgcolor="primary.main"
-          width="100%"
-          minHeight="100vh"
-          component="main"
-        >
-          <FabDonate />
-          <Toolbar />
-          <Grid container>
-            <Hidden smDown>
-              <Sidebar />
-            </Hidden>
-            <Grid item xs={12} md={10}>
-              <Box mx={isNotMobile ? 3 : 1} my={isNotMobile ? 3 : 2}>
-                <AnimatePresence>
-                  {typeof window !== `undefined` ? (
-                    <motion.main
-                      key={window.location.pathname}
-                      variants={variants}
-                      initial="initial"
-                      animate="enter"
-                      exit="exit"
-                    >
-                      {props.children}
-                    </motion.main>
-                  ) : null}
-                </AnimatePresence>
-              </Box>
-            </Grid>
-            <Grid item xs={12}>
-              <Footer />
-            </Grid>
           </Grid>
-        </Box>
-      </CssBaseline>
-    </ThemeProvider>
-  )
+          <Grid item xs={12}>
+            <Footer />
+          </Grid>
+        </Grid>
+      </Box>
+    </>
+  ) : null
 }
+
+const SiteLoadOverlay = () => (
+  <Box
+    position="fixed"
+    bgcolor="primary.light"
+    zIndex={10000}
+    top={0}
+    left={0}
+    height="100vh"
+    width="100vw"
+    display="flex"
+    alignItems="center"
+    justifyContent="center"
+  >
+    <Box width="70%" maxWidth={750}>
+      <LinearProgress color="secondary" />
+    </Box>
+  </Box>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
@@ -184,6 +179,7 @@ Layout.propTypes = {
 const mapStateToProps = state => ({
   lang: state.siteLang,
   redirectUrl: state.redirect,
+  siteReady: state.siteReady,
 })
 
 export default connect(mapStateToProps)(Layout)

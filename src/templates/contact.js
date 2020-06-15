@@ -23,6 +23,9 @@ const Contact = props => {
           frontmatter {
             en
             es
+            de
+            fr
+            it
           }
         }
       }

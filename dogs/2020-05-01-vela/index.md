@@ -10,6 +10,9 @@ summary:
     dog?  Yes she is.
   es: Vela es un perro hermoso.  Es una hermosa perra.  ¿Es un perro hermoso?  Sí,
     lo es.
+  de: The German summary for Vela. 
+  fr: The French summary for Vela. 
+  it: The Italian summary for Vela. 
 main_image: ./vela.jpg
 images: []
 youtube: ""
@@ -19,55 +22,9 @@ cat_friendly: "2"
 family_friendly: "1"
 sterilised: "0"
 description:
-  en: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nisi. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
-  es: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nisi. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
-  de: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nisi. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
-  it: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nii. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
-  fr: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nisi. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
+  en: This is the English description for Vela.
+  es: This is the Spanish description for Vela.
+  de: This is the German description for Vela.
+  fr: This is the French description for Vela.
+  it: This is the Italian description for Vela.
 ---
-s

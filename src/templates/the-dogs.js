@@ -15,16 +15,21 @@ const TheDogs = props => {
     props.dispatch(setRedirect("/the-dogs"))
     // eslint-disable-next-line
   }, [])
-  const dogs = props.data.dogs.edges.map(i => {
-    const dog = i.node.childMarkdownRemark.frontmatter
-    return {
-      name: dog.title,
-      image: dog.main_image.childImageSharp.fixed.src,
-      summary: dog.summary[language],
-      slug: i.node.childMarkdownRemark.fields.slug,
-      key: i.node.childMarkdownRemark.id,
-    }
-  })
+  const dogs = props.data.dogs.edges
+    .map(i => {
+      const dog = i.node.childMarkdownRemark.frontmatter
+      return {
+        name: dog.title,
+        image: dog.main_image.childImageSharp.fixed.src,
+        summary: dog.summary[language],
+        slug: i.node.childMarkdownRemark.fields.slug,
+        key: i.node.childMarkdownRemark.id,
+        date_entered: dog.date_entered,
+      }
+    })
+    .sort((a, b) => {
+      return new Date(a.date_entered) - new Date(b.date_entered)
+    })
 
   return (
     <>
@@ -89,6 +94,7 @@ export const data = graphql`
             id
             frontmatter {
               title
+              date_entered
               main_image {
                 childImageSharp {
                   fixed(width: 845) {
@@ -99,6 +105,9 @@ export const data = graphql`
               summary {
                 en
                 es
+                de
+                fr
+                it
               }
             }
             fields {

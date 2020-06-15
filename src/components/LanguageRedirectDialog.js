@@ -9,6 +9,7 @@ import {
   DialogActions,
   Button,
 } from "@material-ui/core"
+import text from "./text"
 
 const LanguageRedirectDialog = props => {
   const handleClick = e => {
@@ -35,27 +36,21 @@ const LanguageRedirectDialog = props => {
       })
     )
   }
-  const text = {
-    title: {
-      en: "Is this your preferred language?",
-      es: "¿Este es tu idioma preferido?",
-    },
-    question: {
-      en: "This site is available in English.  Would you prefer that?",
-      es: "Este sitio web está disponible en español.  ¿Preferirías eso?",
-    },
-    yes: { en: "Yes", es: "Sí" },
-    no: { en: "No", es: "No" },
-  }
   return (
     <Dialog open={props.isOpen} onClose={handleClose}>
-      <DialogTitle>{text.title[props.lang]}</DialogTitle>
-      <DialogContent dividers>{text.question[props.lang]}</DialogContent>
+      <DialogTitle>
+        {props.lang ? text.preferredLanguage[props.lang] : ""}
+      </DialogTitle>
+      <DialogContent dividers>
+        {props.lang ? text.languageAvailable[props.lang] : ""}
+      </DialogContent>
       <DialogActions>
         <Button id="yes" onClick={handleClick}>
-          {text.yes[props.lang]}
+          {props.lang ? text.yes[props.lang] : ""}
         </Button>
-        <Button onClick={handleClose}>{text.no[props.lang]}</Button>
+        <Button onClick={handleClose}>
+          {props.lang ? text.no[props.lang] : ""}
+        </Button>
       </DialogActions>
     </Dialog>
   )

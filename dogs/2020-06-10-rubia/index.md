@@ -10,6 +10,9 @@ summary:
     dog?  Yes she is.
   es: Rubia es un perro hermoso.  Es un hermosa perra.  ¿Es un perra hermosa?  Sí,
     lo es.
+  de: The German summary for Rubia. 
+  fr: The French summary for Rubia. 
+  it: The Italian summary for Rubia. 
 main_image: rubia.jpg 
 images: []
 youtube: ""
@@ -19,37 +22,9 @@ cat_friendly: "2"
 family_friendly: "1"
 sterilised: "0"
 description:
-  en: The English description for Rubia.
-  es: The Spanish description for Rubia.
-  de: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nisi. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
-  it: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nii. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
-  fr: >-
-    Aliquam suscipit metus eget leo pretium fermentum. Sed commodo magna nec
-    felis lacinia, in egestas sapien sollicitudin. Phasellus luctus dictum
-    dolor, et facilisis mi faucibus et. Sed orci erat, aliquet in augue non,
-    mattis tempor neque. Nulla massa augue, elementum vel felis sit amet,
-    fermentum scelerisque quam. In placerat nibh eget dignissim congue. Donec
-    faucibus nibh eu massa porta ullamcorper.
-
-
-    Aenean a odio at nisl posuere maximus mattis a sapien. Integer eget viverra dui. Nunc vel lectus enim. Curabitur ultricies orci sit amet diam auctor molestie. Nunc dui ante, porta ut sagittis vitae, facilisis ut nisi. Fusce id dolor lorem. Vestibulum tincidunt ut nunc ut aliquam. Fusce interdum purus felis, sed ultricies augue dapibus non.
+  en: This is the English description for Rubia.
+  es: This is the Spanish description for Rubia.
+  de: This is the German description for Rubia.
+  fr: This is the French description for Rubia.
+  it: This is the Italian description for Rubia.
 ---
-s

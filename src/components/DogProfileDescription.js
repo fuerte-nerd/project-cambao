@@ -1,16 +1,14 @@
 import React from "react"
 import { connect } from "react-redux"
 import { Typography } from "@material-ui/core"
+import text from "./text"
 
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 
 const DogProfileDescription = props => {
-  const text = {
-    title: { en: "Description", es: "Descripción" },
-  }
   return (
     <DogProfileExpansionPanel
-      title={text.title[props.lang]}
+      title={text.description[props.lang]}
       headingVariant="h6"
       expanded
       expandOnMobile

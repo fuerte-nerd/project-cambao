@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { setDonateDialog } from "../redux/actions"
 import { Tooltip, IconButton } from "@material-ui/core"
 
-const NavbarToolsIcon = props => {
+const NavbarSocialButton = props => {
   const handleClick = e => {
     switch (e.currentTarget.id) {
       case "donate":
@@ -27,4 +27,4 @@ const NavbarToolsIcon = props => {
   )
 }
 
-export default connect()(NavbarToolsIcon)
+export default connect()(NavbarSocialButton)

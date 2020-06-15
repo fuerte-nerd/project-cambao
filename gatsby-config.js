@@ -9,11 +9,16 @@ module.exports = {
       es:
         "Nos ocupamos de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura",
     },
-    supportedLanguages: ["en", "es"],
+    supportedLanguages: ["en", "es", "de", "fr", "it"],
     url: "https://fuerteventuradogrescue.netlify.app",
   },
   plugins: [
-    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: { injectFirst: true },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     {

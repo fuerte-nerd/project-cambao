@@ -8,7 +8,13 @@ import {
   SET_NOTICE_DIALOG,
   SET_DONATE_DIALOG,
   SET_LANGUAGE_REDIRECT_DIALOG,
+  SET_SITE_READY,
 } from "./types"
+
+export const setSiteReady = isReady => ({
+  type: SET_SITE_READY,
+  payload: isReady,
+})
 
 export const setLanguageRedirectDialog = obj => ({
   type: SET_LANGUAGE_REDIRECT_DIALOG,

@@ -20,6 +20,9 @@ const SidebarChatNow = props => {
           frontmatter {
             en
             es
+            de
+            fr
+            it
           }
         }
       }

@@ -1,9 +1,11 @@
 import React from "react"
 import { connect } from "react-redux"
-import { setNav, setPopup, setDonateDialog } from "../redux/actions"
+import { setNav, setPopup } from "../redux/actions"
 import { graphql, useStaticQuery } from "gatsby"
 import InternalLink from "./InternalLink"
 import {
+  useMediaQuery,
+  useTheme,
   Tooltip,
   Button,
   Hidden,
@@ -12,27 +14,22 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core"
-import {
-  Menu,
-  EuroSymbol,
-  Facebook,
-  Instagram,
-  Share,
-} from "@material-ui/icons"
+import { Menu, Facebook, Instagram, Share } from "@material-ui/icons"
 import { FacebookMessenger } from "mdi-material-ui"
 import Img from "gatsby-image"
-import NavbarToolsIcon from "./NavbarToolsIcon"
+import NavbarSocialButton from "./NavbarSocialButton"
 import text from "./text"
 
 const Navbar = props => {
   const { lang } = props
+
+  const mdUp = useMediaQuery(useTheme().breakpoints.up("md"))
+
   const handleClick = e => {
     const f = e.currentTarget
     switch (f.id) {
       case "open-menu":
         return props.dispatch(setNav(true))
-      case "donate":
-        return props.dispatch(setDonateDialog(true))
       case "share":
         return props.dispatch(
           setPopup({
@@ -89,36 +86,44 @@ const Navbar = props => {
         </Hidden>
         <Box style={{ flex: 1 }} />
         <Hidden smDown>
-          <NavbarToolsIcon
-            tooltip={lang ? text.donateTooltip[lang] : ""}
-            id="donate"
-          >
-            <EuroSymbol style={middleIconsStyle} />
-          </NavbarToolsIcon>
-          <NavbarToolsIcon
+          <NavbarSocialButton
             tooltip={lang ? text.facebookTooltip[lang] : ""}
             username={data.links.childMarkdownRemark.frontmatter.facebook}
             id="facebook"
           >
-            <Facebook style={middleIconsStyle} />
-          </NavbarToolsIcon>
-          <NavbarToolsIcon
+            <Facebook
+              style={{
+                ...middleIconsStyle,
+                background: socialBackgrounds.facebook,
+              }}
+            />
+          </NavbarSocialButton>
+          <NavbarSocialButton
             tooltip={lang ? text.instagramTooltip[lang] : ""}
             username={data.links.childMarkdownRemark.frontmatter.instagram}
             id="instagram"
           >
-            <Instagram style={middleIconsStyle} />
-          </NavbarToolsIcon>
-          <NavbarToolsIcon
+            <Instagram
+              style={{
+                ...middleIconsStyle,
+                background: socialBackgrounds.instagram,
+              }}
+            />
+          </NavbarSocialButton>
+          <NavbarSocialButton
             tooltip={lang ? text.messengerTooltip[lang] : ""}
             username={data.links.childMarkdownRemark.frontmatter.facebook}
             id="messenger"
           >
-            <FacebookMessenger style={middleIconsStyle} />
-          </NavbarToolsIcon>
+            <FacebookMessenger
+              style={{
+                ...middleIconsStyle,
+                background: socialBackgrounds.messenger,
+              }}
+            />
+          </NavbarSocialButton>
         </Hidden>
-        <Box style={{ flex: 1 }} />
-        <Box mr={2}>
+        <Box mr={2} ml={mdUp ? 1 : 0}>
           <Tooltip title={lang ? text.shareTooltip[lang] : ""}>
             <Button
               onClick={handleClick}
@@ -139,7 +144,6 @@ const Navbar = props => {
               onClick={handleClick}
               id="open-menu"
               color="inherit"
-              edge="end"
               endIcon={<Menu />}
             >
               {lang ? text.menu[lang] : ""}
@@ -150,8 +154,20 @@ const Navbar = props => {
     </AppBar>
   )
 }
-const middleIconsStyle = { fontSize: "1.2rem" }
+const middleIconsStyle = {
+  fontSize: "1.2rem",
+  width: "1.75rem",
+  height: "1.75rem",
+  padding: "0.3rem",
+  borderRadius: "50%",
+}
 
+const socialBackgrounds = {
+  facebook: "#1877f2",
+  instagram:
+    "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
+  messenger: "#0084FF",
+}
 const mapStateToProps = state => ({
   lang: state.siteLang,
 })

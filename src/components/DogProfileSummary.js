@@ -10,6 +10,10 @@ import {
 import DogProfileExpansionPanel from "./DogProfileExpansionPanel"
 import moment from "moment"
 import "moment/locale/es"
+import "moment/locale/de"
+import "moment/locale/fr"
+import "moment/locale/it"
+
 import text from "./text"
 
 const DogProfileSummary = props => {
