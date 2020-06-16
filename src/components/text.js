@@ -98,7 +98,7 @@ export default {
     it: "Fine settimana",
   },
   holidays: {
-    en: "Pubic holidays",
+    en: "Public holidays",
     es: "Días festivos",
     de: "Feiertage",
     fr: "Jours fériés",
@@ -795,7 +795,7 @@ export default {
   },
   labelFoster: {
     en: "Foster",
-    es: "Formentar",
+    es: "Acogida",
     de: "Fördern",
     fr: "Foster",
     it: "Promuovere",
@@ -809,7 +809,7 @@ export default {
   },
   labelVolunteer: {
     en: "Volunteer",
-    es: "Ofrecer",
+    es: "Voluntario",
     de: "Freiwilligen",
     fr: "Bénévole",
     it: "Volontario",
