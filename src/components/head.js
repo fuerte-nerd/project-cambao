@@ -23,6 +23,9 @@ function Head(props) {
             description {
               en
               es
+              de
+              fr
+              it
             }
             url
           }

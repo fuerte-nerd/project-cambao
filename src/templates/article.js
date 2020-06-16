@@ -62,66 +62,69 @@ const Article = props => {
           props.data.og.frontmatter.featured_image.childImageSharp.fixed.src
         }
       />
-      <Container>
-        <Box color="white">
-          <InternalLink to="/">
-            <Button color="inherit" startIcon={<ArrowLeft />}>
-              {text.back[language]}
-            </Button>
-          </InternalLink>
-        </Box>
-        <Box mb={2}>
-          <Card>
-            <Grid container>
-              <Grid item xs={12} md={6} lg={5}>
-                <CardMedia
-                  image={
-                    article.frontmatter.featured_image.childImageSharp.fluid.src
-                  }
-                  style={{ width: "100%", height: 400 }}
-                />
-              </Grid>
-              <Grid item xs={12} md={6} lg={7}>
-                <Box
-                  height="100%"
-                  display="flex"
-                  flexDirection="column"
-                  justifyContent="space-between"
-                >
-                  <CardContent>
-                    <Typography variant="h2">
-                      {article.frontmatter.title}
-                    </Typography>
-                    <Typography variant="overline">
-                      {moment(article.frontmatter.date).format(
-                        "dddd D MMMM YYYY"
-                      )}
-                    </Typography>
-                  </CardContent>
-                  <CardActions
-                    style={{
-                      background: theme.palette.secondary.main,
-                      color: "white",
-                    }}
+      {props.siteReady ? (
+        <Container>
+          <Box color="white">
+            <InternalLink to="/">
+              <Button color="inherit" startIcon={<ArrowLeft />}>
+                {text.back[language]}
+              </Button>
+            </InternalLink>
+          </Box>
+          <Box mb={2}>
+            <Card>
+              <Grid container>
+                <Grid item xs={12} md={6} lg={5}>
+                  <CardMedia
+                    image={
+                      article.frontmatter.featured_image.childImageSharp.fluid
+                        .src
+                    }
+                    style={{ width: "100%", height: 400 }}
+                  />
+                </Grid>
+                <Grid item xs={12} md={6} lg={7}>
+                  <Box
+                    height="100%"
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="space-between"
                   >
-                    <Button
-                      onClick={handleClick}
-                      id="share"
-                      color="inherit"
-                      startIcon={<Share />}
+                    <CardContent>
+                      <Typography variant="h2">
+                        {article.frontmatter.title}
+                      </Typography>
+                      <Typography variant="overline">
+                        {moment(article.frontmatter.date).format(
+                          "dddd D MMMM YYYY"
+                        )}
+                      </Typography>
+                    </CardContent>
+                    <CardActions
+                      style={{
+                        background: theme.palette.secondary.main,
+                        color: "white",
+                      }}
                     >
-                      {text.share[language]}
-                    </Button>
-                  </CardActions>
-                </Box>
+                      <Button
+                        onClick={handleClick}
+                        id="share"
+                        color="inherit"
+                        startIcon={<Share />}
+                      >
+                        {text.share[language]}
+                      </Button>
+                    </CardActions>
+                  </Box>
+                </Grid>
               </Grid>
-            </Grid>
-          </Card>
-        </Box>
-        <Box>
-          <Typography dangerouslySetInnerHTML={{ __html: article.html }} />
-        </Box>
-      </Container>
+            </Card>
+          </Box>
+          <Box>
+            <Typography dangerouslySetInnerHTML={{ __html: article.html }} />
+          </Box>
+        </Container>
+      ) : null}
     </>
   )
 }
@@ -158,6 +161,7 @@ export const pageQuery = graphql`
 `
 
 const mapStateToProps = state => ({
+  siteReady: state.siteReady,
   lang: state.siteLang,
 })
 export default connect(mapStateToProps)(Article)

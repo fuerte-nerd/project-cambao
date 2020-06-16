@@ -54,63 +54,65 @@ const Dog = props => {
         description={frontmatter.summary[language]}
         ogImage={props.data.og.frontmatter.main_image.childImageSharp.fixed.src}
       />
-      <Box>
-        <Container>
-          <Box color="white">
-            <InternalLink to="/the-dogs">
-              <Button color="inherit" startIcon={<ArrowLeft />}>
-                {text.back[language]}
-              </Button>
-            </InternalLink>
-          </Box>
-          <Grid container spacing={mdUp ? 1 : 0}>
-            <Grid item xs={12} md={4}>
-              <Hidden mdUp>
-                <DogProfileHeading name={frontmatter.title} mobile />
-              </Hidden>
-              <DogProfilePhotoGallery images={images} />
-            </Grid>
-            <Grid item xs={12} md={8}>
-              <Box px={mdUp ? 2 : 0}>
-                <Grid container spacing={0} alignItems="center">
-                  <Hidden smDown>
+      {props.siteReady ? (
+        <Box>
+          <Container>
+            <Box color="white">
+              <InternalLink to="/the-dogs">
+                <Button color="inherit" startIcon={<ArrowLeft />}>
+                  {text.back[language]}
+                </Button>
+              </InternalLink>
+            </Box>
+            <Grid container spacing={mdUp ? 1 : 0}>
+              <Grid item xs={12} md={4}>
+                <Hidden mdUp>
+                  <DogProfileHeading name={frontmatter.title} mobile />
+                </Hidden>
+                <DogProfilePhotoGallery images={images} />
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <Box px={mdUp ? 2 : 0}>
+                  <Grid container spacing={0} alignItems="center">
+                    <Hidden smDown>
+                      <Grid item xs={12}>
+                        <DogProfileHeading name={frontmatter.title} />
+                      </Grid>
+                    </Hidden>
                     <Grid item xs={12}>
-                      <DogProfileHeading name={frontmatter.title} />
+                      <DogProfileSummary
+                        dogData={{
+                          sterilised: frontmatter.sterilised,
+                          sex: frontmatter.sex,
+                          ppp: frontmatter.ppp,
+                          location: frontmatter.location,
+                          date_of_birth: frontmatter.date_of_birth,
+                          date_entered: frontmatter.date_entered,
+                          family_friendly: frontmatter.family_friendly,
+                          dog_friendly: frontmatter.dog_friendly,
+                          cat_friendly: frontmatter.cat_friendly,
+                          breed: frontmatter.breed,
+                        }}
+                      />
                     </Grid>
-                  </Hidden>
-                  <Grid item xs={12}>
-                    <DogProfileSummary
-                      dogData={{
-                        sterilised: frontmatter.sterilised,
-                        sex: frontmatter.sex,
-                        ppp: frontmatter.ppp,
-                        location: frontmatter.location,
-                        date_of_birth: frontmatter.date_of_birth,
-                        date_entered: frontmatter.date_entered,
-                        family_friendly: frontmatter.family_friendly,
-                        dog_friendly: frontmatter.dog_friendly,
-                        cat_friendly: frontmatter.cat_friendly,
-                        breed: frontmatter.breed,
-                      }}
-                    />
+                    <Grid item xs={12}>
+                      <DogProfileVideo url={frontmatter.youtube} />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <DogProfileDescription
+                        description={frontmatter.description[language]}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <DogProfileFAQs />
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12}>
-                    <DogProfileVideo url={frontmatter.youtube} />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <DogProfileDescription
-                      description={frontmatter.description[language]}
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <DogProfileFAQs />
-                  </Grid>
-                </Grid>
-              </Box>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
-      </Box>
+          </Container>
+        </Box>
+      ) : null}
     </>
   )
 }
@@ -206,6 +208,7 @@ export const pageQuery = graphql`
 `
 
 const mapStateToProps = state => ({
+  siteReady: state.siteReady,
   lang: state.siteLang,
 })
 export default connect(mapStateToProps)(Dog)

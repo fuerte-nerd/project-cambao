@@ -8,17 +8,17 @@ module.exports = {
         "We take care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura",
       es:
         "Nos ocupamos de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura",
+      de:
+        "Wir kümmern uns um die ausgesetzten und misshandelten Hunde aus dem La Oliva Gebiet von Fuerteventura",
+      fr:
+        "Nous prenons soin des chiens abandonnés et maltraités de la région de La Oliva de Fuerteventura",
+      it:
+        "Ci prendiamo cura dei cani abbandonati e maltrattati della zona La Oliva di Fuerteventura",
     },
     supportedLanguages: ["en", "es", "de", "fr", "it"],
     url: "https://fuerteventuradogrescue.netlify.app",
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: { injectFirst: true },
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     {

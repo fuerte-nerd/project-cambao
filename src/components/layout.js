@@ -93,14 +93,14 @@ const Layout = props => {
         }
         localStorage.setItem("fdr_lang_pref", browserLang)
       }
-    }
-    if (!props.siteReady) {
-      props.dispatch(setSiteReady(true))
+      if (!props.siteReady) {
+        props.dispatch(setSiteReady(true))
+      }
     }
     //eslint-disable-next-line
   }, [props.lang])
 
-  return props.siteReady ? (
+  return (
     <>
       {typeof window !== `undefined` ? (
         window.location.pathname === "/" ? (
@@ -150,7 +150,7 @@ const Layout = props => {
         </Grid>
       </Box>
     </>
-  ) : null
+  )
 }
 
 const SiteLoadOverlay = () => (
@@ -179,7 +179,6 @@ Layout.propTypes = {
 const mapStateToProps = state => ({
   lang: state.siteLang,
   redirectUrl: state.redirect,
-  siteReady: state.siteReady,
 })
 
 export default connect(mapStateToProps)(Layout)

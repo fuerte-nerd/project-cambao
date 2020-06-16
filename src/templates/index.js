@@ -46,55 +46,57 @@ const Index = props => {
         description={`${text.homeHeading[language]} - ${text.homeSubheading[language]}`}
         titleOverride
       />
-      <Container>
-        <Heading
-          heading={text.homeHeading[language]}
-          subheading={text.homeSubheading[language]}
-        />
-        {currentPage === 1 ? (
-          <Box mb={2} align="center">
-            <Button
-              onClick={() => {
-                navigate(`/${language}/the-dogs`)
+      {props.siteReady ? (
+        <Container>
+          <Heading
+            heading={text.homeHeading[language]}
+            subheading={text.homeSubheading[language]}
+          />
+          {currentPage === 1 ? (
+            <Box mb={2} align="center">
+              <Button
+                onClick={() => {
+                  navigate(`/${language}/the-dogs`)
+                }}
+                variant="contained"
+                color="secondary"
+                style={{ color: "white" }}
+                endIcon={<Icon icon={DogIcon} />}
+              >
+                {text.showMeTheDogs[language]}
+              </Button>
+            </Box>
+          ) : (
+            <Pagination
+              count={numPages}
+              page={currentPage}
+              onChange={handleClick}
+              style={{
+                marginBottom: ".35rem",
+                display: "flex",
+                justifyContent: "center",
               }}
-              variant="contained"
-              color="secondary"
-              style={{ color: "white" }}
-              endIcon={<Icon icon={DogIcon} />}
-            >
-              {text.showMeTheDogs[language]}
-            </Button>
-          </Box>
-        ) : (
+            />
+          )}
+          {articles.map(i => (
+            <ArticleCard
+              key={i.id}
+              title={i.title}
+              body={i.body}
+              image={i.image}
+              date={i.date}
+              slug={i.slug}
+              excerpt={i.excerpt}
+            />
+          ))}
           <Pagination
             count={numPages}
             page={currentPage}
             onChange={handleClick}
-            style={{
-              marginBottom: ".35rem",
-              display: "flex",
-              justifyContent: "center",
-            }}
+            style={{ display: "flex", justifyContent: "center" }}
           />
-        )}
-        {articles.map(i => (
-          <ArticleCard
-            key={i.id}
-            title={i.title}
-            body={i.body}
-            image={i.image}
-            date={i.date}
-            slug={i.slug}
-            excerpt={i.excerpt}
-          />
-        ))}
-        <Pagination
-          count={numPages}
-          page={currentPage}
-          onChange={handleClick}
-          style={{ display: "flex", justifyContent: "center" }}
-        />
-      </Container>
+        </Container>
+      ) : null}
     </>
   )
 }
@@ -141,6 +143,7 @@ export const homeQuery = graphql`
 
 const mapStateToProps = state => ({
   lang: state.siteLang,
+  siteReady: state.siteReady,
 })
 
 export default connect(mapStateToProps)(Index)

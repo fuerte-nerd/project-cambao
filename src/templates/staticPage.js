@@ -47,68 +47,73 @@ const StaticPage = props => {
         title={text[heading][language]}
         description={`${body.split(" ", 25).join(" ")}...`}
       />
-
-      <Container>
-        <Box color="white">
-          <Typography variant="h2">{text[heading][language]}</Typography>
-        </Box>
-        <Grid container spacing={mdUp ? 6 : 2}>
-          <Box clone order={{ xs: 1, md: 2 }}>
-            <Grid item xs={12} md={7}>
-              <Box borderRadius="borderRadius" boxShadow={3}>
-                <Img
-                  fluid={
-                    props.data.markdownRemark.frontmatter.image.childImageSharp
-                      .fluid
-                  }
-                />
-              </Box>
-            </Grid>
+      {props.siteReady ? (
+        <Container>
+          <Box color="white">
+            <Typography variant="h2">{text[heading][language]}</Typography>
           </Box>
-          <Box clone order={{ xs: 2, md: 1 }}>
-            <Grid item xs={12} md={5}>
-              <Box>
-                {pageName === `donate` ? (
-                  <Box align="center" mb={2}>
-                    <Typography variant="subtitle1">
-                      {text.donateNowIntro[language]}
-                    </Typography>
-                    <Box mb={2} color="primary.dark">
-                      <Button
-                        size="large"
-                        color="inherit"
-                        variant="contained"
-                        endIcon={<Icon icon={EuroIcon} />}
-                        onClick={handleClick}
-                        id="donate"
-                      >
-                        {text.donate[language]}
-                      </Button>
+          <Grid container spacing={mdUp ? 6 : 2}>
+            <Box clone order={{ xs: 1, md: 2 }}>
+              <Grid item xs={12} md={7}>
+                <Box borderRadius="borderRadius" boxShadow={3}>
+                  <Img
+                    fluid={
+                      props.data.markdownRemark.frontmatter.image
+                        .childImageSharp.fluid
+                    }
+                  />
+                </Box>
+              </Grid>
+            </Box>
+            <Box clone order={{ xs: 2, md: 1 }}>
+              <Grid item xs={12} md={5}>
+                <Box>
+                  {pageName === `donate` ? (
+                    <Box align="center" mb={2}>
+                      <Typography variant="subtitle1">
+                        {text.donateNowIntro[language]}
+                      </Typography>
+                      <Box mb={2} color="primary.dark">
+                        <Button
+                          size="large"
+                          color="inherit"
+                          variant="contained"
+                          endIcon={<Icon icon={EuroIcon} />}
+                          onClick={handleClick}
+                          id="donate"
+                        >
+                          {text.donate[language]}
+                        </Button>
+                      </Box>
+                      <Divider />
                     </Box>
-                    <Divider />
-                  </Box>
-                ) : null}
-                <ReactMarkdown
-                  source={body}
-                  renderers={{
-                    paragraph: MyTypography,
-                  }}
-                />
-                <Box color="white" align="center">
-                  <Typography>{text.forFurtherInfo[language]}...</Typography>
-                  <Box color="primary.dark">
-                    <InternalLink to="/contact">
-                      <Button id="contact" color="inherit" variant="contained">
-                        {text.contactHeading[language]}
-                      </Button>
-                    </InternalLink>
+                  ) : null}
+                  <ReactMarkdown
+                    source={body}
+                    renderers={{
+                      paragraph: MyTypography,
+                    }}
+                  />
+                  <Box color="white" align="center">
+                    <Typography>{text.forFurtherInfo[language]}...</Typography>
+                    <Box color="primary.dark">
+                      <InternalLink to="/contact">
+                        <Button
+                          id="contact"
+                          color="inherit"
+                          variant="contained"
+                        >
+                          {text.contactHeading[language]}
+                        </Button>
+                      </InternalLink>
+                    </Box>
                   </Box>
                 </Box>
-              </Box>
-            </Grid>
-          </Box>
-        </Grid>
-      </Container>
+              </Grid>
+            </Box>
+          </Grid>
+        </Container>
+      ) : null}
     </>
   )
 }
@@ -141,6 +146,7 @@ export const query = graphql`
 `
 
 const mapStateToProps = state => ({
+  siteReady: state.siteReady,
   redirect: state.redirect,
 })
 

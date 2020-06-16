@@ -37,46 +37,50 @@ const TheDogs = props => {
         lang={language}
         title={text.theDogsHeading[language]}
         description={text.theDogsSubheading[language]}
-        location="/the-dogs/"
       />
-      <Container>
-        <Box color="white">
-          <Typography variant="h2">{text.theDogsHeading[language]}</Typography>
-        </Box>
-        <Box mb={2}>
-          <Typography variant="subtitle1">
-            {text.theDogsSubheading[language]}
-          </Typography>
-        </Box>
-        <Box>
-          <Grid container spacing={2}>
-            {dogs.map(dog => (
-              <Grid
-                key={`${dog.key}-grid`}
-                item
-                xs={12}
-                sm={6}
-                md={6}
-                lg={4}
-                xl={3}
-              >
-                <DogListing
-                  key={dog.key}
-                  name={dog.name}
-                  image={dog.image}
-                  summary={dog.summary}
-                  slug={dog.slug}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Container>
+      {props.siteReady ? (
+        <Container>
+          <Box color="white">
+            <Typography variant="h2">
+              {text.theDogsHeading[language]}
+            </Typography>
+          </Box>
+          <Box mb={2}>
+            <Typography variant="subtitle1">
+              {text.theDogsSubheading[language]}
+            </Typography>
+          </Box>
+          <Box>
+            <Grid container spacing={2}>
+              {dogs.map(dog => (
+                <Grid
+                  key={`${dog.key}-grid`}
+                  item
+                  xs={12}
+                  sm={6}
+                  md={6}
+                  lg={4}
+                  xl={3}
+                >
+                  <DogListing
+                    key={dog.key}
+                    name={dog.name}
+                    image={dog.image}
+                    summary={dog.summary}
+                    slug={dog.slug}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Container>
+      ) : null}
     </>
   )
 }
 
 const mapStateToProps = state => ({
+  siteReady: state.siteReady,
   lang: state.siteLang,
 })
 export const data = graphql`

@@ -1,6 +1,6 @@
 import React from "react"
-import { Provider } from "react-redux"
 import { Helmet } from "react-helmet"
+import { Provider } from "react-redux"
 import { ThemeProvider } from "@material-ui/core/styles"
 import { CssBaseline } from "@material-ui/core"
 
