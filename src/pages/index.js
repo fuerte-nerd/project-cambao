@@ -1,13 +1,29 @@
 import React, { useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { connect } from "react-redux"
 import { setLanguage } from "../redux/actions"
 import Head from "../components/head"
 
 const IndexPage = props => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+          supportedLanguages
+        }
+      }
+    }
+  `)
   useEffect(() => {
     const storedLang = localStorage.getItem("fdr_lang_pref")
-
-    props.dispatch(setLanguage(storedLang ? storedLang : "es"))
+    props.dispatch(
+      setLanguage(
+        data.site.siteMetadata.supportedLanguages.includes(storedLang)
+          ? storedLang
+          : "es"
+      )
+    )
     //eslint-disable-next-line
   }, [])
   return (

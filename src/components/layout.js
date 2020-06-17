@@ -64,7 +64,7 @@ const Layout = props => {
   useEffect(() => {
     if (props.lang) {
       const langPref = localStorage.getItem("fdr_lang_pref")
-      if (langPref) {
+      if (data.site.siteMetadata.supportedLanguages.includes(langPref)) {
         if (window.location.pathname === "/") {
           navigate(`/${langPref}/`)
         } else {
