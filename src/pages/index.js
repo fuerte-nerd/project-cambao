@@ -5,7 +5,9 @@ import Head from "../components/head"
 
 const IndexPage = props => {
   useEffect(() => {
-    props.dispatch(setLanguage("es"))
+    const storedLang = localStorage.getItem("fdr_lang_pref")
+
+    props.dispatch(setLanguage(storedLang ? storedLang : "es"))
     //eslint-disable-next-line
   }, [])
   return (

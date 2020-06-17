@@ -79,6 +79,7 @@ const Layout = props => {
       } else {
         const browserLang = detectBrowserLanguage().toLowerCase().substr(0, 2)
         if (data.site.siteMetadata.supportedLanguages.includes(browserLang)) {
+          localStorage.setItem("fdr_lang_pref", browserLang)
           if (window.location.pathname === "/") {
             navigate(`/${browserLang}/`)
           } else {
@@ -90,8 +91,11 @@ const Layout = props => {
               }
             }, 3000)
           }
+        } else {
+          if (window.location.pathname === "/") {
+            navigate(`/es/`)
+          }
         }
-        localStorage.setItem("fdr_lang_pref", browserLang)
       }
       if (!props.siteReady) {
         props.dispatch(setSiteReady(true))

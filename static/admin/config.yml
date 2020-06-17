@@ -4,7 +4,7 @@ backend:
 
 media_folder: content/images
 site_url: https://fuerteventuradogrescue.netlify.app
-logo_url: https://fuerteventuradogrescue.netlify.app/static/e51369760fde3f62aab3cbd7692ec889/dfcae/logo.png
+logo_url: https://fuerteventuradogrescue.netlify.app/static/e51369760fde3f62aab3cbd7692ec889/ff4be/logo.png
 collections:
 - name: articles
   label: Articles
