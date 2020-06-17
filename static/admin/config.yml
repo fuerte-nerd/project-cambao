@@ -3,6 +3,8 @@ backend:
   branch: master
 
 media_folder: content/images
+site_url: https://fuerteventuradogrescue.netlify.app
+logo_url: https://fuerteventuradogrescue.netlify.app/static/e51369760fde3f62aab3cbd7692ec889/dfcae/logo.png
 collections:
 - name: articles
   label: Articles
@@ -32,6 +34,9 @@ collections:
       options:
         - { label: "English", value: "en" }
         - { label: "Español", value: "es" }
+        - { label: "Deutsch", value: "de" }
+        - { label: "Italiano", value: "it" }
+        - { label: "Français", value: "fr" }
       default: "en"
     - label: Body
       name: body
@@ -82,6 +87,9 @@ collections:
       fields:
         - { label: "English", name: "en", widget: text, pattern: ['.{2,60}', "Must be between 2 and 60 characters"] }
         - { label: "Español", name: "es", widget: text, pattern: ['.{2,60}', "Must be between 2 and 60 characters"] }
+        - { label: "Deutsch", name: "de", widget: text, pattern: ['.{2,60}', "Must be between 2 and 60 characters"] }
+        - { label: "Italiano", name: "it", widget: text, pattern: ['.{2,60}', "Must be between 2 and 60 characters"] }
+        - { label: "Français", name: "fr", widget: text, pattern: ['.{2,60}', "Must be between 2 and 60 characters"] }
     - label: Main image
       name: main_image
       widget: image
@@ -134,6 +142,9 @@ collections:
       fields:
         - { label: "English", name: "en", widget: markdown, buttons: ["bold", "italic", "link"], editorComponents: [] }
         - { label: "Español", name: "es", widget: markdown, buttons: ["bold", "italic", "link"], editorComponents: [] }
+        - { label: "Deutsch", name: "de", widget: markdown, buttons: ["bold", "italic", "link"], editorComponents: [] }
+        - { label: "Italiano", name: "it", widget: markdown, buttons: ["bold", "italic", "link"], editorComponents: [] }
+        - { label: "Français", name: "fr", widget: markdown, buttons: ["bold", "italic", "link"], editorComponents: [] }
 - label: "Admin"
   name: "admin"
   editor:
@@ -167,13 +178,28 @@ collections:
         - label: "Image"
           name: image
           widget: image
-        - label: "English text"
+        - label: "English"
           name: en
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
-        - label: "Español text"
+        - label: "Español"
           name: es
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Deutsch"
+          name: de
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Italiano"
+          name: it
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Français"
+          name: fr
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
@@ -184,13 +210,28 @@ collections:
         - label: "Image"
           name: image
           widget: image
-        - label: "English text"
+        - label: "English"
           name: en
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
-        - label: "Español text"
+        - label: "Español"
           name: es
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Deutsch"
+          name: de
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Italiano"
+          name: it
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Français"
+          name: fr
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
@@ -201,13 +242,28 @@ collections:
         - label: "Image"
           name: image
           widget: image
-        - label: "English text"
+        - label: "English"
           name: en
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
-        - label: "Español text"
+        - label: "Español"
           name: es
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Deutsch"
+          name: de
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Italiano"
+          name: it
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Français"
+          name: fr
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
@@ -218,13 +274,28 @@ collections:
         - label: "Image"
           name: image
           widget: image
-        - label: "English text"
+        - label: "English"
           name: en
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
-        - label: "Español text"
+        - label: "Español"
           name: es
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Deutsch"
+          name: de
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Italiano"
+          name: it
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Français"
+          name: fr
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
@@ -235,13 +306,28 @@ collections:
         - label: "Image"
           name: image
           widget: image
-        - label: "English text"
+        - label: "English"
           name: en
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
-        - label: "Español text"
+        - label: "Español"
           name: es
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Deutsch"
+          name: de
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Italiano"
+          name: it
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Français"
+          name: fr
           widget: markdown
           buttons: ["bold", "italic", "link"]
           editorComponents: []
@@ -249,9 +335,28 @@ collections:
       name: "lostorabandoned"
       file: "content/lostorabandoned.md"
       fields:
-        - label: "English text"
+        - label: "English"
           name: en
-          widget: text
-        - label: "Español text"
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Español"
           name: es
-          widget: text
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Deutsch"
+          name: de
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Italiano"
+          name: it
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
+        - label: "Français"
+          name: fr
+          widget: markdown
+          buttons: ["bold", "italic", "link"]
+          editorComponents: []
