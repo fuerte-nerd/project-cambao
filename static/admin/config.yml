@@ -1,10 +1,9 @@
 backend:
   name: git-gateway
   branch: master
-
 media_folder: content/images
 site_url: https://fuerteventuradogrescue.netlify.app
-logo_url: https://fuerteventuradogrescue.netlify.app/static/e51369760fde3f62aab3cbd7692ec889/ff4be/logo.png
+logo_url: https://fuerteventuradogrescue.netlify.app/netlifycmslogo.png
 collections:
 - name: articles
   label: Articles
@@ -16,6 +15,7 @@ collections:
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
   path: '{{slug}}/index'
   media_folder: ''
+  summary: "{{title}} ({{language}}) - {{day}}/{{month}}/{{year}}"
   fields:
     - label: Title
       name: title

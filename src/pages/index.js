@@ -9,7 +9,6 @@ const IndexPage = props => {
     {
       site {
         siteMetadata {
-          title
           supportedLanguages
         }
       }
