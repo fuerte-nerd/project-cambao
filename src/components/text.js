@@ -1,11 +1,5 @@
 export default {
-  menu: {
-    en: "Menu",
-    es: "Menú",
-    de: "Menü",
-    fr: "Menu",
-    it: "Menu",
-  },
+  menu: { en: "Menu", es: "Menú", de: "Menü", fr: "Menu", it: "Menu" },
   share: {
     en: "Share",
     es: "Compartir",
@@ -30,42 +24,42 @@ export default {
   facebookTooltip: {
     en: "Visit us on Facebook",
     es: "Visítanos en Facebook",
-    de: "Besuchen Sie uns auf Facebook",
+    de: "Besuche uns auf Facebook",
     fr: "Visitez-nous sur Facebook",
     it: "Visitaci su Facebook",
   },
   instagramTooltip: {
     en: "Visit us on Instagram",
     es: "Visítanos en Instagram",
-    de: "Besuchen Sie uns auf Instagram",
+    de: "Besuche uns auf Instagram",
     fr: "Visitez-nous sur Instagram",
     it: "Vieni a trovarci su Instagram",
   },
   messengerTooltip: {
     en: "Contact us on Messenger",
     es: "Contáctenos en el Messenger",
-    de: "Kontaktieren Sie uns über Messenger",
+    de: "Kontaktiere uns über Messenger",
     fr: "Contactez-nous sur Messenger",
     it: "Contattaci su Messenger",
   },
   shareTooltip: {
     en: "Share this page!",
     es: "¡Comparte esta página!",
-    de: "Diese Seite weitergeben",
+    de: "Diese Seite teilen",
     fr: "Partagez cette page!",
     it: "Condividi questa pagina!",
   },
   menuTooltip: {
     en: "Show me the menu!",
     es: "¡Muéstrame el menú!",
-    de: "Zeigen Sie mir das Seitenmenü!",
+    de: "Zeigen mir das Seitenmenü!",
     fr: "Montrez-moi le menu!",
     it: "Mostrami il menu del sito!",
   },
   locationHeading: {
     en: "Where are we?",
     es: "¿Donde estamos?",
-    de: "Wo stehen wir?",
+    de: "Wo wir sind ?",
     fr: "Où sommes-nous?",
     it: "Dove siamo?",
   },
@@ -145,14 +139,14 @@ export default {
   chatNowHeading: {
     en: "Send us a message",
     es: "Envíenos un mensaje",
-    de: "Senden Sie uns eine Nachricht",
+    de: "Sende uns eine Nachricht",
     fr: "Envoyez-nous un message",
     it: "Inviaci un messaggio",
   },
   chatNowIntro: {
     en: "Contact us now via...",
     es: "Contáctenos ahora por...",
-    de: "Kontaktieren Sie uns jetzt über...",
+    de: "Kontaktiere uns jetzt über...",
     fr: "Contactez-nous dès maintenant via",
     it: "Contattaci ora tramite",
   },
@@ -160,7 +154,7 @@ export default {
     en: "Do you want to report a lost, abandoned or ill-treated dog?",
     es: "¿Quiere denunciar un perro perdido, abandonado o maltratado?",
     de:
-      "Möchten Sie einen verlorenen, ausgesetzten oder misshandelten Hund melden?",
+      "Möchtest Du einen verlorenen, ausgesetzten oder misshandelten Hund melden?",
     fr: "Voulez-vous signaler un chien perdu, abandonné ou maltraité?",
     it: "Vuoi denunciare un cane smarrito, abbandonato o maltrattato?",
   },
@@ -181,7 +175,7 @@ export default {
   click: {
     en: "Click here",
     es: "Haga clic aquí",
-    de: "Klicken Sie hier",
+    de: "Klicke hier",
     fr: "Cliquez ici",
     it: "Clicca qui",
   },
@@ -200,11 +194,11 @@ export default {
     it: "Dona ora",
   },
   donateNowIntro: {
-    en: "We are a volunteer organization and appreciate anything you can give.",
+    en: "We are a volunteer organisation and appreciate anything you can give.",
     es:
       "Somos una organización de voluntarios y apreciamos cualquier cosa que pueda dar.",
     de:
-      "Wir sind eine Freiwilligenorganisation und schätzen alles, was Sie geben können.",
+      "Wir sind eine Freiwilligenorganisation und schätzen alles, was Du spenden kannst.",
     fr:
       "Nous sommes une organisation bénévole et apprécions tout ce que vous pouvez donner.",
     it:
@@ -213,7 +207,7 @@ export default {
   donate: {
     en: "Donate",
     es: "Donar",
-    de: "Spenden Sie",
+    de: "Spende",
     fr: "Donner",
     it: "Donare",
   },
@@ -245,13 +239,7 @@ export default {
     fr: "Copié dans le presse-papiers",
     it: "Copiato negli Appunti",
   },
-  name: {
-    en: "Name",
-    es: "Nombre",
-    de: "Name",
-    fr: "Nom",
-    it: "Nome",
-  },
+  name: { en: "Name", es: "Nombre", de: "Name", fr: "Nom", it: "Nome" },
   phone: {
     en: "Phone",
     es: "Teléfono",
@@ -266,19 +254,13 @@ export default {
     fr: "Message",
     it: "Messaggio",
   },
-  send: {
-    en: "Send",
-    es: "Enviar",
-    de: "Senden Sie",
-    fr: "Envoyer",
-    it: "Invia",
-  },
+  send: { en: "Send", es: "Enviar", de: "Sende  ", fr: "Envoyer", it: "Invia" },
   donateDialogBody: {
-    en: "You can make donations to us by cash*, PayPal or by bank transfer.",
+    en: "You can make donations to us in cash* or by PayPal or bank transfer.",
     es:
       "Puede hacernos donaciones en efectivo*, PayPal o transferencia bancaria.",
     de:
-      "Sie können uns Spenden in bar, per PayPal oder per Banküberweisung zukommen lassen.",
+      "Du kannst uns Spenden in bar, per PayPal oder per Banküberweisung zukommen lassen.",
     fr:
       "Vous pouvez nous faire des dons en espèces*, PayPal ou par virement bancaire.",
     it:
@@ -290,13 +272,12 @@ export default {
     es:
       "Por favor, visítenos durante el horario de apertura de la perrera para hacer donaciones en efectivo.  Gracias.",
     de:
-      "Bitte besuchen Sie uns während der Öffnungszeiten des Tierheims, um Bargeld zu spenden.  Wir danken Ihnen.",
+      "Bitte besuche uns während der Öffnungszeiten des Tierheims, um Bargeld zu spenden.  Wir danken Dir.",
     fr:
       "S’il vous plaît visitez-nous pendant les heures d’ouverture livre de chien pour faire des dons en espèces. Merci.",
     it:
       "Si prega di visitare noi durante gli orari di apertura cane libbra per fare donazioni in denaro. Grazie.",
   },
-
   accountName: {
     en: "Account name",
     es: "Nombre de cuenta",
@@ -304,17 +285,11 @@ export default {
     fr: "Nom du compte",
     it: "Nome account",
   },
-  bank: {
-    en: "Bank",
-    es: "Banco",
-    de: "Bank",
-    fr: "Banque",
-    it: "Banca",
-  },
+  bank: { en: "Bank", es: "Banco", de: "Bank", fr: "Banque", it: "Banca" },
   donateViaPaypal: {
     en: "Donate via PayPal",
     es: "Donar con PayPal",
-    de: "Spenden Sie über PayPal",
+    de: "Spende über PayPal",
     fr: "Faites un don via PayPal",
     it: "Fai una donazione tramite PayPal",
   },
@@ -333,7 +308,7 @@ export default {
     it: "Domande frequenti",
   },
   adoptQuestion: {
-    en: "How do I adopt a dog?",
+    en: "How can I adopt a dog?",
     es: "¿Cómo adopto un perro?",
     de: "Wie adoptiere ich einen Hund?",
     fr: "Comment puis-je adopter un chien?",
@@ -345,7 +320,7 @@ export default {
     es:
       "Puede encontrar más información sobre el proceso de adopción en el siguiente enlace.",
     de:
-      "Weitere Informationen über das Adoptionsverfahren finden Sie unter folgendem Link",
+      "Weitere Informationen über das Adoptionsverfahren findest Du unter folgendem Link",
     fr:
       "Vous pouvez trouver plus d’informations sur le processus d’adoption en suivant le lien ci-dessous.",
     it:
@@ -354,7 +329,7 @@ export default {
   fosterQuestion: {
     en: "How can I foster a dog?",
     es: "¿Cómo puedo acoger a un perro?",
-    de: "Wie kann ich einen Hund pflegen?",
+    de: "Wie kann ich einen Hund in pflegen nehmen?",
     fr: "Comment puis-je favoriser un chien?",
     it: "Come posso favorire un cane?",
   },
@@ -364,14 +339,14 @@ export default {
     es:
       "Puede encontrar más información sobre el proceso de acogida en el siguiente enlace.",
     de:
-      "Weitere Informationen über den Förderprozess finden Sie unter folgendem Link.",
+      "Weitere Informationen über den Förderprozess findest Du unter folgendem Link.",
     fr:
       "Vous pouvez trouver de plus amples informations sur le processus d’accueil en suivant le lien ci-dessous.",
     it:
       "Puoi trovare ulteriori informazioni sul processo di promozione seguendo il link qui sotto.",
   },
   donateQuestion: {
-    en: "How do I donate?",
+    en: "How can I donate?",
     es: "¿Cómo puedo donar?",
     de: "Wie kann ich spenden?",
     fr: "Comment puis-je faire un don?",
@@ -397,18 +372,12 @@ export default {
   },
   fosterADog: {
     en: "Foster a dog",
-    es: "Formenta un perro",
-    de: "Einen Hund pflegen",
+    es: "Casa de acogida",
+    de: "Einen Hund in Pflege nehmen",
     fr: "Favoriser un chien",
     it: "Promuovere un cane",
   },
-  video: {
-    en: "Video",
-    es: "Video",
-    de: "Video",
-    fr: "Vidéo",
-    it: "Video",
-  },
+  video: { en: "Video", es: "Video", de: "Video", fr: "Vidéo", it: "Video" },
   summary: {
     en: "Summary",
     es: "Resumen",
@@ -416,29 +385,11 @@ export default {
     fr: "Résumé",
     it: "Riepilogo",
   },
-  age: {
-    en: "Age",
-    es: "Edad",
-    de: "Alter",
-    fr: "Âge",
-    it: "Età",
-  },
-  breed: {
-    en: "Breed",
-    es: "Raza",
-    de: "Rassen",
-    fr: "Race",
-    it: "Razza",
-  },
-  sex: {
-    en: "Sex",
-    es: "Sexo",
-    de: "Geschlecht",
-    fr: "Sexe",
-    it: "Sesso",
-  },
+  age: { en: "Age", es: "Edad", de: "Alter", fr: "Âge", it: "Età" },
+  breed: { en: "Breed", es: "Raza", de: "Rassen", fr: "Race", it: "Razza" },
+  sex: { en: "Sex", es: "Sexo", de: "Geschlecht", fr: "Sexe", it: "Sesso" },
   ppp: {
-    en: "Licence required",
+    en: "Licence required?",
     es: "Requiere licencia",
     de: "Lizenz erforderlich",
     fr: "Licence requise",
@@ -489,7 +440,7 @@ export default {
   readMore: {
     en: "Read more",
     es: "leer más",
-    de: "Lesen Sie mehr",
+    de: "Lese mehr",
     fr: "En savoir plus",
     it: "Per saperne di più",
   },
@@ -507,20 +458,8 @@ export default {
     fr: "Famille d’accueil",
     it: "Famiglia di riposo",
   },
-  other: {
-    en: "Other",
-    es: "Otra",
-    de: "Andere",
-    fr: "Autres",
-    it: "Altro",
-  },
-  male: {
-    en: "Male",
-    es: "Macho",
-    de: "Männlich",
-    fr: "Mâle",
-    it: "Maschio",
-  },
+  other: { en: "Other", es: "Otra", de: "Andere", fr: "Autres", it: "Altro" },
+  male: { en: "Male", es: "Macho", de: "Männlich", fr: "Mâle", it: "Maschio" },
   female: {
     en: "Female",
     es: "Hembra",
@@ -528,20 +467,8 @@ export default {
     fr: "Femelle",
     it: "Femmina",
   },
-  yes: {
-    en: "Yes",
-    es: "Sí",
-    de: "Ja",
-    fr: "Oui",
-    it: "Sì",
-  },
-  no: {
-    en: "No",
-    es: "No",
-    de: "Nein",
-    fr: "Non",
-    it: "No",
-  },
+  yes: { en: "Yes", es: "Sí", de: "Ja", fr: "Oui", it: "Sì" },
+  no: { en: "No", es: "No", de: "Nein", fr: "Non", it: "No" },
   tbc: {
     en: "TBC",
     es: "Por confirmar",
@@ -566,7 +493,7 @@ export default {
   homeHeading: {
     en: "We are their voice!",
     es: "¡Somos su voz!",
-    de: "Wir sind ihre Stimme",
+    de: "Wir sind Deine Stimme",
     fr: "Nous sommes leur voix!",
     it: "Noi siamo la loro voce!",
   },
@@ -574,7 +501,7 @@ export default {
     en:
       "Taking care of the abandoned and mistreated dogs from the La Oliva area of Fuerteventura since 2013.",
     es:
-      "Cuidando de los perros abandonados y maltratados de la zona de La Oliva en Fuerteventura desde 2013.",
+      "Cuidando de los perros abandonados y maltratados en el municipio de La Oliva en Fuerteventura desde 2013.",
     de:
       "Betreuung der ausgesetzten und misshandelten Hunde aus der Gegend von La Oliva auf Fuerteventura seit 2013",
     fr:
@@ -601,7 +528,7 @@ export default {
       "We have received your message and we will respond as soon as possible.",
     es: "Hemos recibido su mensaje y responderemos lo antes posible.",
     de:
-      "Wir haben Ihre Nachricht erhalten und werden Ihnen so schnell wie möglich antworten.",
+      "Wir haben Deine Nachricht erhalten und werden Dir so schnell wie möglich antworten.",
     fr:
       "Nous avons reçu votre message et nous vous répondrons dès que possible.",
     it: "Abbiamo ricevuto il tuo messaggio e risponderemo il prima possibile.",
@@ -611,8 +538,7 @@ export default {
       "We will redirect you back to the previous page automatically but if you cannot wait",
     es:
       "Automáticamente te redirigiremos a la página anterior, pero si no puedes esperar",
-    de:
-      "Wir werden Sie automatisch auf die vorherige Seite zurückleiten, aber wenn Sie nicht warten können",
+    de: "Wir werden Dich automatisch auf die vorherige Seite zurückleiten",
     fr:
       "Nous vous redirigerons automatiquement vers la page précédente, mais si vous ne pouvez pas attendre",
     it:
@@ -621,14 +547,14 @@ export default {
   contactHeading: {
     en: "Contact us",
     es: "Contacta con nosotros",
-    de: "Kontaktieren Sie uns",
+    de: "Kontaktiere uns",
     fr: "Contactez-nous",
     it: "Contattaci",
   },
   contactDescription: {
     en: "Get in touch with Fuerteventura Dog Rescue",
     es: "Contacte con Fuerteventura Dog Rescue",
-    de: "Kontaktieren Sie Fuerteventura Dog Rescue",
+    de: "Kontaktiere Fuerteventura Dog Rescue",
     fr: "Entrez en contact avec Fuerteventura Dog Rescue",
     it: "Entra in contatto con Fuerteventura Dog Rescue",
   },
@@ -653,29 +579,23 @@ export default {
   dontUseMessengerBody: {
     en: "No problem! You can also contact us by email",
     es: "No hay problema.  También puede contactarnos por correo electrónico",
-    de: "Kein Problem!  Sie können uns auch per E-Mail kontaktieren.",
+    de: "Kein Problem!  Du kannst uns auch per E-Mail kontaktieren.",
     fr: "Aucun problème!  Vous pouvez également nous contacter par e-mail.",
     it: "Non c'è problema!  Puoi anche contattarci via e-mail.",
   },
   contactFormIntro: {
     en:
-      "If you prefer, you can send us a message directly from this site by completing and submitting the below form.",
+      "If you prefer, you can send us a message directly from this site by completing and submitting the form below.",
     es:
       "Si lo prefiere, puede enviarnos un mensaje directamente desde este sitio completando y enviando el siguiente formulario.",
     de:
-      "Wenn Sie es vorziehen, können Sie uns eine Nachricht direkt von dieser Website senden, indem Sie das untenstehende Formular ausfüllen und absenden.",
+      "Wenn Du es vorziehst, kannst Du uns eine Nachricht direkt von dieser Website senden, indem Du das untenstehende Formular ausfüllst und absendest.",
     fr:
       "Si vous préférez, vous pouvez nous envoyer un message directement à partir de ce site en remplissant et en soumettant le formulaire ci-dessous.",
     it:
       "Se preferisci, puoi inviarci un messaggio direttamente da questo sito compilando e inviando il seguente modulo.",
   },
-  open: {
-    en: "Open",
-    es: "Abra",
-    de: "Öffnen",
-    fr: "Ouvert",
-    it: "Aperto",
-  },
+  open: { en: "Open", es: "Abra", de: "Öffnen", fr: "Ouvert", it: "Aperto" },
   theDogsHeading: {
     en: "The Dogs",
     es: "Los Perros",
@@ -689,7 +609,7 @@ export default {
     es:
       "Tenemos un montón de perros esperando su hogar para siempre.  ¡Vengan a conocerlos!  No pueden esperar a conocerte.",
     de:
-      "Wir haben viele Hunde, die auf ihr ewiges Zuhause warten.  Kommen Sie und treffen Sie sie!  Sie können es kaum erwarten, dich zu treffen!",
+      "Wir haben viele Hunde, die auf ihr neues Zuhause warten.  Komm und treffe sie!  Sie können es kaum erwarten, dich zu treffen!",
     fr:
       "Nous avons beaucoup de chiens qui attendent leur maison pour toujours.  Venez les rencontrer !  Ils ont hâte de vous rencontrer!",
     it:
@@ -705,21 +625,21 @@ export default {
   adoptHeading: {
     en: "Adopt a dog",
     es: "Adopte un perro",
-    de: "Adoptieren Sie einen Hund",
+    de: "Adoptiere einen Hund",
     fr: "Adopter un chien",
     it: "Adottare un cane",
   },
   fosterHeading: {
     en: "Foster a dog",
-    es: "Acojas un perro",
-    de: "Fördern Sie einen Hund",
+    es: "Casa de acogida",
+    de: "Fördere/Pflege einen Hund",
     fr: "Favoriser un chien",
     it: "Promuovere un cane",
   },
   donateHeading: {
     en: "Donate to the dogs",
     es: "Donar a los perros",
-    de: "Spenden sie an die Hunde",
+    de: "Spende an die Hunde",
     fr: "Faire un don aux chiens",
     it: "Fai una donazione ai cani",
   },
@@ -753,8 +673,8 @@ export default {
   },
   subtitleTheDogs: {
     en: "Meet our current guests",
-    es: "Conoce a nuestros invitados actuales",
-    de: "Treffen Sie unsere aktuellen Gäste",
+    es: "Conoce a nuestros perros actuales",
+    de: "Treffe unsere aktuellen Gäste",
     fr: "Rencontrez nos invités actuels",
     it: "Incontra i nostri ospiti attuali",
   },
@@ -775,14 +695,14 @@ export default {
   labelHelpUs: {
     en: "Help us",
     es: "Ayúdanos",
-    de: "Helfen Sie uns",
+    de: "Hilf uns",
     fr: "Aidez-nous",
     it: "Aiutaci",
   },
   subtitleHelpUs: {
     en: "Find out how you can help",
     es: "Averigua cómo puedes ayudarnos",
-    de: "Finden Sie heraus, wie Sie helfen können",
+    de: "Finde heraus, wie Du helfen kannst",
     fr: "Découvrez comment vous pouvez aider",
     it: "Scopri come puoi aiutarti",
   },
@@ -810,35 +730,35 @@ export default {
   labelVolunteer: {
     en: "Volunteer",
     es: "Voluntario",
-    de: "Freiwilligen",
+    de: "Freiwillige",
     fr: "Bénévole",
     it: "Volontario",
   },
   labelContact: {
     en: "Contact us",
     es: "Contáctanos",
-    de: "Kontaktieren Sie uns",
+    de: "Kontaktiere uns",
     fr: "Contactez-nous",
     it: "Contattaci",
   },
   subtitleContact: {
     en: "Get in touch with us",
     es: "Póngase en contacto con nosotros",
-    de: "Finden Sie heraus, wie Sie in Kontakt treten",
+    de: "Finde heraus, wie Du in Kontakt treten kannst",
     fr: "Découvrez comment entrer en contact",
     it: "Scopri come contattarti",
   },
   sorryNoVideo: {
     en: "Sorry.  We currently don't have video to show you.",
     es: "Lo siento.  Actualmente no tenemos un video para mostrarte.",
-    de: "Tut mir Leid.  Wir haben derzeit kein Video, das Sie zeigt.",
+    de: "Tut mir Leid.  Wir haben derzeit kein Video.",
     fr: "Pardon.  Nous n’avons actuellement pas de vidéo à vous montrer.",
     it: "Siamo spiacenti.  Al momento non abbiamo video da mostrarti.",
   },
   showMeTheDogs: {
     en: "Show me the dogs!",
     es: "¡Muéstrame los perros!",
-    de: "Zeidier mir die Hunde!",
+    de: "Zeige mir die Hunde!",
     fr: "Montre-moi les chiens!",
     it: "Mostrami i cani!",
   },
@@ -852,15 +772,14 @@ export default {
   preferredLanguage: {
     en: "Is this your preferred language?",
     es: "¿Este es tu idioma preferido?",
-    de: "Ist dies Ihre bevorzugte Sprache?",
+    de: "Ist dies Deine bevorzugte Sprache?",
     fr: "Est-ce votre langue préférée?",
     it: "È questa la tua lingua preferita?",
   },
   languageAvailable: {
     en: "This site is available in English.  Would you prefer that?",
     es: "Este sitio web está disponible en español.  ¿Preferirías eso?",
-    de:
-      "Diese Seite ist in deutscher Sprache verfügbar. Würden Sie das vorziehen?",
+    de: "Diese Seite ist in deutscher Sprache verfügbar. Ziehst Du das vor?",
     fr: "Ce site est disponible en Français. Tu préfères ça ?",
     it: "Questo sito è disponibile in italiano. Preferiresti questo?",
   },
@@ -871,4 +790,4 @@ export default {
     fr: "Description",
     it: "Descrizione",
   },
-}
+};
