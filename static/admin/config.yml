@@ -15,7 +15,7 @@ collections:
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
   path: '{{slug}}/index'
   media_folder: ''
-  summary: "TITLE:{{title}} LANG:{{language}} POSTED: {{day}}/{{month}}/{{year}}"
+  summary: "TITLE: {{title}}, LANG: {{language}}, POSTED: {{day}}/{{month}}/{{year}}"
   fields:
     - label: Title
       name: title
@@ -51,7 +51,7 @@ collections:
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
   path: '{{slug}}/index'
   media_folder: ''
-  summary: "NAME:{{title}} BREED:{{breed}} POSTED: {{day}}/{{month}}/{{year}}"
+  summary: "NAME: {{title}}, BREED: {{breed}}"
   fields:
     - label: Name
       name: title
